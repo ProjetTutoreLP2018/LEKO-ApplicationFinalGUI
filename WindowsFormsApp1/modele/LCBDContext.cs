@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1.modele
         public virtual DbSet<Statut> Statut { get; set; }
         public virtual DbSet<TypeStatut> TypeStatut { get; set; }
         public virtual DbSet<Utilisateur> Utilisateur { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -197,6 +197,7 @@
     <Compile Include="modele\Etat.cs" />
     <Compile Include="modele\Lc.cs" />
     <Compile Include="modele\LCBDContext.cs" />
+    <Compile Include="modele\Model.cs" />
     <Compile Include="modele\Modele.cs" />
     <Compile Include="modele\Statut.cs" />
     <Compile Include="modele\TypeStatut.cs" />
