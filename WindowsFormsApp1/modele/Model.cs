@@ -20,5 +20,11 @@ namespace WindowsFormsApp1.modele
         {
             return context.Droit.ToList();
         }
+
+        public void CreerUtilisateur(Utilisateur utilisateur)
+        {
+            context.Utilisateur.Add(utilisateur);
+            context.SaveChanges();
+        }
     }
 }

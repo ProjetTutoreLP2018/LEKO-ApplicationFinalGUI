@@ -15,11 +15,20 @@ using Newtonsoft.Json;
 using Google.Apis.Auth.OAuth2;
 using WindowsFormsApp1;
 using Google.Apis.Drive.v3;
+using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Word;
 
 namespace lot1
 {
     public partial class FenFormulaireGenerationLC : UserControl
     {
+
+        private dynamic refFichier;
+
+        // objet vide pour les parémétres inutilisés
+        private Object missing = System.Reflection.Missing.Value;
+
+
         public FenFormulaireGenerationLC()
         {
             InitializeComponent();
@@ -117,7 +126,10 @@ namespace lot1
 
                     document.SaveAs(@fenGenerationLC.DestinationSelectionnee);
 
+
+                    
                     ChoisirSauvegarde(true, @fenGenerationLC.DestinationSelectionnee);
+                    AfficherLC(@fenGenerationLC.DestinationSelectionnee);
 
                     MessageBox.Show("La lettre de coopération a été générée dans le fichier " + fenGenerationLC.DestinationSelectionnee, "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -172,6 +184,37 @@ namespace lot1
         private void button2_Click(object sender, EventArgs e)
         {
             ChargerDonnees();
+        }
+
+        private void AfficherLC(string pathOrigine)
+        {
+
+            Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
+            this.refFichier = fichier;
+
+            // permet de visualisé les opérations
+            fichier.Visible = true;
+
+            // objet vide pour les parémétres inutilisés
+            Object missing = System.Reflection.Missing.Value;
+
+            // chemin du doc a ouvrir
+            String path = pathOrigine;
+
+            // ouvrir le doc word 
+            fichier.Documents.Open(path, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing);
+
+
+
+            // désactiver le bouton ouvrir et activé le bouton fermer
+            // close.Enabled = true;
+            // open.Enabled = false;
+
         }
 
         private void ChoisirSauvegarde(bool sauvegardeDrive, string pathOrigine)

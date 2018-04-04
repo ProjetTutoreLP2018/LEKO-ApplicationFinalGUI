@@ -13,5 +13,18 @@ namespace WindowsFormsApp1.modele
         public string MdpUtilisateur { get; set; }
 
         public Droit IdDroitNavigation { get; set; }
+
+
+        public override string ToString()
+        {
+
+            string valeur = "Nom : " + this.NomUtilisateur;
+            valeur += "\nPrenom : " + this.PrenomUtilisateur;
+            valeur += "\nEmail : " + this.EmailUtilisateur;
+            valeur += "\nDroit : " + this.IdDroit;
+            valeur += "\nMot de passe : " + this.MdpUtilisateur;
+
+            return valeur;
+        }
     }
 }

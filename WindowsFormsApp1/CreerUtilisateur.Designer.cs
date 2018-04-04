@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.textConfirmEmail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bAnnuler = new System.Windows.Forms.Button();
+            this.bValider = new System.Windows.Forms.Button();
+            this.comboDroit = new System.Windows.Forms.ComboBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.textPrenom = new System.Windows.Forms.TextBox();
+            this.textNom = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textConfPass = new System.Windows.Forms.TextBox();
+            this.textPass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textNom = new System.Windows.Forms.TextBox();
-            this.textPrenom = new System.Windows.Forms.TextBox();
-            this.textEmail = new System.Windows.Forms.TextBox();
-            this.textPass = new System.Windows.Forms.TextBox();
-            this.textConfPass = new System.Windows.Forms.TextBox();
-            this.comboDroit = new System.Windows.Forms.ComboBox();
-            this.bValider = new System.Windows.Forms.Button();
-            this.bAnnuler = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textConfirmEmail = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -72,42 +72,98 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nouvel Utilisateur";
             // 
-            // label1
+            // textConfirmEmail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.No;
-            this.label1.Location = new System.Drawing.Point(35, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom : ";
+            this.textConfirmEmail.Location = new System.Drawing.Point(123, 149);
+            this.textConfirmEmail.Name = "textConfirmEmail";
+            this.textConfirmEmail.Size = new System.Drawing.Size(152, 20);
+            this.textConfirmEmail.TabIndex = 14;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Prenom : ";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Confirmation : ";
             // 
-            // label3
+            // bAnnuler
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Adresse Email : ";
+            this.bAnnuler.BackColor = System.Drawing.Color.Red;
+            this.bAnnuler.Location = new System.Drawing.Point(300, 341);
+            this.bAnnuler.Name = "bAnnuler";
+            this.bAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.bAnnuler.TabIndex = 12;
+            this.bAnnuler.Text = "Annuler";
+            this.bAnnuler.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // bValider
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Droit : ";
+            this.bValider.BackColor = System.Drawing.Color.YellowGreen;
+            this.bValider.Location = new System.Drawing.Point(403, 341);
+            this.bValider.Name = "bValider";
+            this.bValider.Size = new System.Drawing.Size(75, 23);
+            this.bValider.TabIndex = 11;
+            this.bValider.Text = "Valider";
+            this.bValider.UseVisualStyleBackColor = false;
+            this.bValider.Click += new System.EventHandler(this.bValider_Click);
+            // 
+            // comboDroit
+            // 
+            this.comboDroit.FormattingEnabled = true;
+            this.comboDroit.Location = new System.Drawing.Point(123, 180);
+            this.comboDroit.Name = "comboDroit";
+            this.comboDroit.Size = new System.Drawing.Size(152, 21);
+            this.comboDroit.TabIndex = 10;
+            // 
+            // textEmail
+            // 
+            this.textEmail.Location = new System.Drawing.Point(123, 114);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(152, 20);
+            this.textEmail.TabIndex = 9;
+            // 
+            // textPrenom
+            // 
+            this.textPrenom.Location = new System.Drawing.Point(123, 79);
+            this.textPrenom.Name = "textPrenom";
+            this.textPrenom.Size = new System.Drawing.Size(152, 20);
+            this.textPrenom.TabIndex = 8;
+            // 
+            // textNom
+            // 
+            this.textNom.Location = new System.Drawing.Point(123, 46);
+            this.textNom.Name = "textNom";
+            this.textNom.Size = new System.Drawing.Size(152, 20);
+            this.textNom.TabIndex = 7;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textConfPass);
+            this.groupBox2.Controls.Add(this.textPass);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(27, 233);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(451, 100);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Mot de passe";
+            // 
+            // textConfPass
+            // 
+            this.textConfPass.Location = new System.Drawing.Point(160, 56);
+            this.textConfPass.Name = "textConfPass";
+            this.textConfPass.Size = new System.Drawing.Size(152, 20);
+            this.textConfPass.TabIndex = 11;
+            // 
+            // textPass
+            // 
+            this.textPass.Location = new System.Drawing.Point(160, 25);
+            this.textPass.Name = "textPass";
+            this.textPass.Size = new System.Drawing.Size(152, 20);
+            this.textPass.TabIndex = 10;
             // 
             // label5
             // 
@@ -127,97 +183,42 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Confirmation mot de passe : ";
             // 
-            // groupBox2
+            // label4
             // 
-            this.groupBox2.Controls.Add(this.textConfPass);
-            this.groupBox2.Controls.Add(this.textPass);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(27, 233);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 100);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Mot de passe";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Droit : ";
             // 
-            // textNom
+            // label3
             // 
-            this.textNom.Location = new System.Drawing.Point(123, 46);
-            this.textNom.Name = "textNom";
-            this.textNom.Size = new System.Drawing.Size(152, 20);
-            this.textNom.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Adresse Email : ";
             // 
-            // textPrenom
+            // label2
             // 
-            this.textPrenom.Location = new System.Drawing.Point(123, 79);
-            this.textPrenom.Name = "textPrenom";
-            this.textPrenom.Size = new System.Drawing.Size(152, 20);
-            this.textPrenom.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Prenom : ";
             // 
-            // textEmail
+            // label1
             // 
-            this.textEmail.Location = new System.Drawing.Point(123, 114);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(152, 20);
-            this.textEmail.TabIndex = 9;
-            // 
-            // textPass
-            // 
-            this.textPass.Location = new System.Drawing.Point(160, 25);
-            this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(152, 20);
-            this.textPass.TabIndex = 10;
-            // 
-            // textConfPass
-            // 
-            this.textConfPass.Location = new System.Drawing.Point(160, 56);
-            this.textConfPass.Name = "textConfPass";
-            this.textConfPass.Size = new System.Drawing.Size(152, 20);
-            this.textConfPass.TabIndex = 11;
-            // 
-            // comboDroit
-            // 
-            this.comboDroit.FormattingEnabled = true;
-            this.comboDroit.Location = new System.Drawing.Point(123, 180);
-            this.comboDroit.Name = "comboDroit";
-            this.comboDroit.Size = new System.Drawing.Size(152, 21);
-            this.comboDroit.TabIndex = 10;
-            // 
-            // bValider
-            // 
-            this.bValider.BackColor = System.Drawing.Color.YellowGreen;
-            this.bValider.Location = new System.Drawing.Point(403, 341);
-            this.bValider.Name = "bValider";
-            this.bValider.Size = new System.Drawing.Size(75, 23);
-            this.bValider.TabIndex = 11;
-            this.bValider.Text = "Valider";
-            this.bValider.UseVisualStyleBackColor = false;
-            // 
-            // bAnnuler
-            // 
-            this.bAnnuler.BackColor = System.Drawing.Color.Red;
-            this.bAnnuler.Location = new System.Drawing.Point(300, 341);
-            this.bAnnuler.Name = "bAnnuler";
-            this.bAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.bAnnuler.TabIndex = 12;
-            this.bAnnuler.Text = "Annuler";
-            this.bAnnuler.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 149);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Confirmation : ";
-            // 
-            // textConfirmEmail
-            // 
-            this.textConfirmEmail.Location = new System.Drawing.Point(123, 149);
-            this.textConfirmEmail.Name = "textConfirmEmail";
-            this.textConfirmEmail.Size = new System.Drawing.Size(152, 20);
-            this.textConfirmEmail.TabIndex = 14;
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.No;
+            this.label1.Location = new System.Drawing.Point(35, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom : ";
             // 
             // CreerUtilisateur
             // 

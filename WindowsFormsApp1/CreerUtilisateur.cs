@@ -10,14 +10,18 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using WindowsFormsApp1.modele;
 
+
 namespace WindowsFormsApp1
 {
     public partial class CreerUtilisateur : UserControl
     {
 
         
-        List<Droit> droits = new List<Droit>();
-        Model model = new Model();
+        private List<Droit> droits = new List<Droit>();
+        private WindowsFormsApp1.modele.Model model = new WindowsFormsApp1.modele.Model();
+       
+
+
 
         public CreerUtilisateur()
         {
@@ -39,6 +43,29 @@ namespace WindowsFormsApp1
             }
 
             base.OnLoad(e);
+        }
+
+        private void bValider_Click(object sender, EventArgs e)
+        {
+            Utilisateur utilisateur = new Utilisateur();
+            utilisateur.NomUtilisateur = textNom.Text;
+            utilisateur.PrenomUtilisateur = textPrenom.Text;
+            utilisateur.EmailUtilisateur = textEmail.Text;
+
+            int index = 0;
+
+            foreach (Droit d in droits)
+                if (d.Permission.Equals(comboDroit.SelectedText))
+                    index = d.IdDroit;
+
+            utilisateur.IdDroit = index+1;
+
+            utilisateur.MdpUtilisateur = textPass.Text;
+
+            MessageBox.Show(utilisateur.ToString());
+
+            model.CreerUtilisateur(utilisateur);
+
         }
     }
 }
