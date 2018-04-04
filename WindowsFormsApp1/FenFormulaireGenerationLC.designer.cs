@@ -30,6 +30,8 @@
         {
             this.Onglets = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Millesime = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -82,8 +84,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.ouvrirSourceDonnees = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Onglets.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,11 +104,12 @@
             this.Onglets.Margin = new System.Windows.Forms.Padding(0);
             this.Onglets.Name = "Onglets";
             this.Onglets.SelectedIndex = 0;
-            this.Onglets.Size = new System.Drawing.Size(829, 514);
+            this.Onglets.Size = new System.Drawing.Size(873, 474);
             this.Onglets.TabIndex = 2;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.Millesime);
@@ -124,10 +125,32 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(821, 488);
+            this.tabPage1.Size = new System.Drawing.Size(865, 448);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entité";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.Location = new System.Drawing.Point(535, 301);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Charger Client";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.YellowGreen;
+            this.button1.Location = new System.Drawing.Point(687, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Generer";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Millesime
             // 
@@ -395,7 +418,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(782, 334);
+            this.tabPage2.Size = new System.Drawing.Size(782, 416);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Informations comptable";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -628,28 +651,6 @@
             // 
             this.ouvrirSourceDonnees.Filter = "Documents Excel|*.xlsx";
             this.ouvrirSourceDonnees.Title = "Sélectionner un fichier client";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.YellowGreen;
-            this.button1.Location = new System.Drawing.Point(687, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Generer";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.YellowGreen;
-            this.button2.Location = new System.Drawing.Point(535, 301);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Charger Client";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FenFormulaireGenerationLC
             // 

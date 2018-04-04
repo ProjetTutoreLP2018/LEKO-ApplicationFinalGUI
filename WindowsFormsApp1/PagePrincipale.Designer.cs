@@ -133,6 +133,7 @@
             // 
             this.créerUnUtilisateurToolStripMenuItem.Name = "créerUnUtilisateurToolStripMenuItem";
             resources.ApplyResources(this.créerUnUtilisateurToolStripMenuItem, "créerUnUtilisateurToolStripMenuItem");
+            this.créerUnUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.créerUnUtilisateurToolStripMenuItem_Click);
             // 
             // voirModifierUnUtilisateurToolStripMenuItem
             // 

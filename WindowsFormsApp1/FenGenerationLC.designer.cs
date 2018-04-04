@@ -68,43 +68,48 @@
             // 
             // ParcourirModele
             // 
+            this.ParcourirModele.BackColor = System.Drawing.Color.YellowGreen;
+            this.ParcourirModele.ForeColor = System.Drawing.Color.Black;
             this.ParcourirModele.Location = new System.Drawing.Point(440, 23);
             this.ParcourirModele.Name = "ParcourirModele";
             this.ParcourirModele.Size = new System.Drawing.Size(93, 20);
             this.ParcourirModele.TabIndex = 2;
             this.ParcourirModele.Text = "Parcourir";
-            this.ParcourirModele.UseVisualStyleBackColor = true;
+            this.ParcourirModele.UseVisualStyleBackColor = false;
             this.ParcourirModele.Click += new System.EventHandler(this.ParcourirModele_Click);
             // 
             // BoutonAnnuler
             // 
+            this.BoutonAnnuler.BackColor = System.Drawing.Color.Red;
             this.BoutonAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BoutonAnnuler.Location = new System.Drawing.Point(369, 181);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.BoutonAnnuler.TabIndex = 3;
             this.BoutonAnnuler.Text = "Annuler";
-            this.BoutonAnnuler.UseVisualStyleBackColor = true;
+            this.BoutonAnnuler.UseVisualStyleBackColor = false;
             // 
             // BoutonGenerer
             // 
+            this.BoutonGenerer.BackColor = System.Drawing.Color.YellowGreen;
             this.BoutonGenerer.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BoutonGenerer.Location = new System.Drawing.Point(464, 181);
             this.BoutonGenerer.Name = "BoutonGenerer";
             this.BoutonGenerer.Size = new System.Drawing.Size(75, 23);
             this.BoutonGenerer.TabIndex = 4;
             this.BoutonGenerer.Text = "OK";
-            this.BoutonGenerer.UseVisualStyleBackColor = true;
+            this.BoutonGenerer.UseVisualStyleBackColor = false;
             this.BoutonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);
             // 
             // ParcourirDestination
             // 
+            this.ParcourirDestination.BackColor = System.Drawing.Color.YellowGreen;
             this.ParcourirDestination.Location = new System.Drawing.Point(440, 23);
             this.ParcourirDestination.Name = "ParcourirDestination";
             this.ParcourirDestination.Size = new System.Drawing.Size(93, 20);
             this.ParcourirDestination.TabIndex = 7;
             this.ParcourirDestination.Text = "Parcourir";
-            this.ParcourirDestination.UseVisualStyleBackColor = true;
+            this.ParcourirDestination.UseVisualStyleBackColor = false;
             this.ParcourirDestination.Click += new System.EventHandler(this.ParcourirDestination_Click);
             // 
             // SelectionDestination
@@ -165,6 +170,7 @@
             this.AcceptButton = this.BoutonGenerer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.BoutonAnnuler;
             this.ClientSize = new System.Drawing.Size(566, 218);
             this.Controls.Add(this.SelectionDestination);
