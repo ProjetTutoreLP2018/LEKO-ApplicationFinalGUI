@@ -21,6 +21,10 @@ namespace WindowsFormsApp1
         private UserControl ajou_mod_lc = new Ajout_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
+
+        public static int Droit { get; set; }
+
+       
         
 
         List<UserControl> listUserControle = new List<UserControl>();
@@ -74,22 +78,30 @@ namespace WindowsFormsApp1
 
         private void signerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            InitUserContole(signerLC);
+            if (pagePrincipale.Droit == 2)
+                InitUserContole(signerLC);
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
 
         }
 
         private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-      
-            InitUserContole(creerUtilisateur);
+
+            if (pagePrincipale.Droit == 2)
+                InitUserContole(creerUtilisateur);
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
 
         }
 
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            InitUserContole(manageUtilisateur);
+            if (pagePrincipale.Droit == 2)
+                InitUserContole(manageUtilisateur);
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
 
 

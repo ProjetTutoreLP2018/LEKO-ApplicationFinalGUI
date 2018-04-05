@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
 using WindowsFormsApp1.modele;
 
 
@@ -45,10 +38,8 @@ namespace WindowsFormsApp1
             droits = model.GetListDroit();
 
             foreach (Droit d in droits)
-            {
-                MessageBox.Show("Dans la list Droit : " + d.Permission);
                 comboDroit.Items.Add(d.Permission);
-            }
+            
 
             Init();
 
@@ -65,16 +56,12 @@ namespace WindowsFormsApp1
             int index = 0;
 
             foreach (Droit d in droits)
-                if (d.Permission.Equals(comboDroit.SelectedText))
+                if (d.Permission.Equals(comboDroit.SelectedItem))
                     index = d.IdDroit;
-
-            MessageBox.Show("" + index);
+            
 
             utilisateur.IdDroit = index;
-
             utilisateur.MdpUtilisateur = textPass.Text;
-
-            MessageBox.Show("Votre utilisateur " + utilisateur.NomUtilisateur + " a bien était créer");
 
             model.CreerUtilisateur(utilisateur);
             Init();

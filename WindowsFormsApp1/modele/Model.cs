@@ -46,21 +46,27 @@ namespace WindowsFormsApp1.modele
             context.SaveChanges();
         }
 
-        public Boolean seConnecter(string login, string mdp)
+        public Utilisateur seConnecter(string login, string mdp)
         {
-             
+
             var users = from user in context.Utilisateur
                         where user.EmailUtilisateur == login
                         && user.MdpUtilisateur == mdp
                         select user;
-            if (users.ToList().Count() > 0)
+
+            Utilisateur utilisateur = new Utilisateur();
+
+            foreach(var result in users)
             {
-                return true;
+                utilisateur.NomUtilisateur = result.NomUtilisateur;
+                utilisateur.PrenomUtilisateur = result.PrenomUtilisateur;
+                utilisateur.EmailUtilisateur= result.EmailUtilisateur;
+                utilisateur.MdpUtilisateur= result.MdpUtilisateur;
+                utilisateur.IdDroit = result.IdDroit;
+
             }
-            else
-            {
-                return false;
-            }
+
+            return utilisateur;
 
         }
     }

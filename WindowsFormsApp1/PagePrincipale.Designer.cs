@@ -194,6 +194,7 @@
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenu);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "pagePrincipale";
             this.Load += new System.EventHandler(this.Form1_Load);

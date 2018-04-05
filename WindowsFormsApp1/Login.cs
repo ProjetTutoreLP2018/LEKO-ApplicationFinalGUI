@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.modele;
 
@@ -24,11 +17,13 @@ namespace WindowsFormsApp1
             if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
             {
                 Model connexion = new Model();
-                Boolean connecte = connexion.seConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
+                Utilisateur connecte = connexion.seConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
 
-                if (connecte)
+                if (connecte != null)
                 {
                     this.Visible = false;
+                    pagePrincipale.Droit = connecte.IdDroit;
+
 
                     Panel panel = (Panel)this.Parent.Controls.Find("mainPanel", false)[0];
 

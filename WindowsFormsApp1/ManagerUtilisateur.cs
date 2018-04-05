@@ -77,12 +77,22 @@ namespace WindowsFormsApp1
         // Modify user
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             utilisateurs[index].NomUtilisateur = textNom.Text;
             utilisateurs[index].PrenomUtilisateur = textPrenom.Text;
             utilisateurs[index].EmailUtilisateur = textEmail.Text;
 
             if(!textPass.Text.Equals("") && textPass.Text.Equals(textPassConfirm.Text))
                 utilisateurs[index].MdpUtilisateur = textPass.Text;
+
+            int indexDroit = 0;
+
+            foreach (Droit d in droits)
+                if (d.Permission.Equals(comboDroit.SelectedItem))
+                    indexDroit = d.IdDroit;
+
+            utilisateurs[index].IdDroit = indexDroit;
 
             model.ModifUtilisateur();
             MessageBox.Show("Votre utilisateur a bien était modifier");
