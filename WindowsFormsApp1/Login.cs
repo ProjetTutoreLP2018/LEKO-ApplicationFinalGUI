@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.modele;
 
 namespace WindowsFormsApp1
 {
@@ -20,23 +21,27 @@ namespace WindowsFormsApp1
         private void buttonConnexion_Click(object sender, EventArgs e)
         {
 
-            //TODO: Voire dans la base de données les 
-            // identifiants pour pouvoir 
-            // vérifier la connexion
-
-            if (this.textBoxUtilisateur.Text.Equals("azerty") && this.textBoxPass.Text.Equals("azerty"))
+            if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
             {
-                this.Visible = false;
+                Model connexion = new Model();
+                Boolean connecte = connexion.seConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
 
-                Panel panel = (Panel) this.Parent.Controls.Find("mainPanel", false)[0];
+                if (connecte)
+                {
+                    this.Visible = false;
 
-                panel.Visible = true;
+                    Panel panel = (Panel)this.Parent.Controls.Find("mainPanel", false)[0];
 
+                    panel.Visible = true;
+                } else
+                {
+                    this.labelErrorConnect.Text = "Identifiants incorrects";
+                }
 
             }
             else
             {
-                this.labelErrorConnect.Text = "Identifiant ou mot de passe incorrecte !";
+                this.labelErrorConnect.Text = "Merci de renseigner les champs vides.";
             }
            
         }

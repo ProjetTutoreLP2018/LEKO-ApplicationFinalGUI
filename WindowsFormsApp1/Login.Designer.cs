@@ -63,7 +63,7 @@
             this.labelErrorConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelErrorConnect.ForeColor = System.Drawing.Color.Red;
             this.labelErrorConnect.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelErrorConnect.Location = new System.Drawing.Point(281, 246);
+            this.labelErrorConnect.Location = new System.Drawing.Point(297, 246);
             this.labelErrorConnect.Name = "labelErrorConnect";
             this.labelErrorConnect.Size = new System.Drawing.Size(0, 17);
             this.labelErrorConnect.TabIndex = 6;

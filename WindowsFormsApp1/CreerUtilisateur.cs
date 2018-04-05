@@ -17,30 +17,40 @@ namespace WindowsFormsApp1
     {
 
         
-        private List<Droit> droits = new List<Droit>();
+        private List<Droit> droits;
         private WindowsFormsApp1.modele.Model model = new WindowsFormsApp1.modele.Model();
-       
-
 
 
         public CreerUtilisateur()
         {
             InitializeComponent();
+            
+        }
+
+
+        private void Init()
+        {
+
+            textNom.Text = string.Empty;
+            textPrenom.Text = string.Empty;
+            textEmail.Text = string.Empty;
+            textConfirmEmail.Text = string.Empty;
+            textPass.Text = string.Empty;
+            textConfPass.Text = string.Empty;
         }
 
         protected override void OnLoad(EventArgs e)
         {
-            //Your code to run on load goes here 
-
-            // Call the base class OnLoad to ensure any delegate event handlers are still callled
-
+            
             droits = model.GetListDroit();
 
             foreach (Droit d in droits)
             {
-                Console.WriteLine(d);
+                MessageBox.Show("Dans la list Droit : " + d.Permission);
                 comboDroit.Items.Add(d.Permission);
             }
+
+            Init();
 
             base.OnLoad(e);
         }
@@ -58,14 +68,16 @@ namespace WindowsFormsApp1
                 if (d.Permission.Equals(comboDroit.SelectedText))
                     index = d.IdDroit;
 
-            utilisateur.IdDroit = index+1;
+            MessageBox.Show("" + index);
+
+            utilisateur.IdDroit = index;
 
             utilisateur.MdpUtilisateur = textPass.Text;
 
-            MessageBox.Show(utilisateur.ToString());
+            MessageBox.Show("Votre utilisateur " + utilisateur.NomUtilisateur + " a bien était créer");
 
             model.CreerUtilisateur(utilisateur);
-
+            Init();
         }
     }
 }

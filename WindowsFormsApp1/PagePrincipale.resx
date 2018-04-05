@@ -121,47 +121,11 @@
     <value>17, 3</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="créerUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer une LC</value>
-  </data>
-  <data name="voirModifierUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir/Modifier une LC</value>
-  </data>
-  <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="signerUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Signer une LC</value>
-  </data>
-  <data name="envoyerUneLCAuClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="envoyerUneLCAuClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Envoyer une LC au client</value>
-  </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestion des LC</value>
-  </data>
-  <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer un Client</value>
-  </data>
-  <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir/Modifier un Client</value>
   </data>
   <data name="gestionDesClientsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 20</value>
@@ -170,22 +134,16 @@
     <value>Gestion des Clients</value>
   </data>
   <data name="créerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
+    <value>194, 22</value>
   </data>
   <data name="créerUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer un Utilisateur</value>
   </data>
-  <data name="voirModifierUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
+  <data name="ManagerUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
   </data>
-  <data name="voirModifierUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir/Modifier un Utilisateur</value>
-  </data>
-  <data name="supprimerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 22</value>
-  </data>
-  <data name="supprimerUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
-    <value>Supprimer un Utilisateur</value>
+  <data name="ManagerUtilisateurToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manager un Utilisateur</value>
   </data>
   <data name="gestionDesUtilisateursToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 20</value>
@@ -223,6 +181,42 @@
   </data>
   <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="créerUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer une LC</value>
+  </data>
+  <data name="voirModifierUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir/Modifier une LC</value>
+  </data>
+  <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="signerUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Signer une LC</value>
+  </data>
+  <data name="envoyerUneLCAuClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="envoyerUneLCAuClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Envoyer une LC au client</value>
+  </data>
+  <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 22</value>
+  </data>
+  <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer un Client</value>
+  </data>
+  <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 22</value>
+  </data>
+  <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir/Modifier un Client</value>
   </data>
   <data name="labelUtilisateur.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -946,16 +940,10 @@
   <data name="&gt;&gt;créerUnUtilisateurToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;voirModifierUnUtilisateurToolStripMenuItem.Name" xml:space="preserve">
-    <value>voirModifierUnUtilisateurToolStripMenuItem</value>
+  <data name="&gt;&gt;ManagerUtilisateurToolStripMenuItem.Name" xml:space="preserve">
+    <value>ManagerUtilisateurToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;voirModifierUnUtilisateurToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;supprimerUnUtilisateurToolStripMenuItem.Name" xml:space="preserve">
-    <value>supprimerUnUtilisateurToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;supprimerUnUtilisateurToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ManagerUtilisateurToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;aProposToolStripMenuItem.Name" xml:space="preserve">

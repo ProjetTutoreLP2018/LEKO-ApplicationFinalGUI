@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         private UserControl signerLC = new SignerLC();
         private UserControl ajou_mod_lc = new Ajout_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
+        private UserControl manageUtilisateur = new ManagerUtilisateur();
         
 
         List<UserControl> listUserControle = new List<UserControl>();
@@ -49,6 +50,9 @@ namespace WindowsFormsApp1
             signerLC.Parent = mainPanel;
             signerLC.Visible = false;
 
+            manageUtilisateur.Parent = mainPanel;
+            manageUtilisateur.Visible = false;
+
             log.Parent = this;
             log.Dock = DockStyle.Top;
             log.Show();
@@ -57,33 +61,43 @@ namespace WindowsFormsApp1
 
         private void créerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(creerLC);
-            creerLC.Visible = true;
+   
+            InitUserContole(creerLC);
         }
 
         private void voirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(ajou_mod_lc);
-            ajou_mod_lc.Visible = true;
-            
+
+            InitUserContole(ajou_mod_lc);
+
         }
 
         private void signerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(signerLC);
-            signerLC.Visible = true;
+
+            InitUserContole(signerLC);
 
         }
 
         private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
-            mainPanel.Controls.Add(creerUtilisateur);
-            creerUtilisateur.Visible = true;
+      
+            InitUserContole(creerUtilisateur);
 
+        }
+
+        private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            InitUserContole(manageUtilisateur);
+        }
+
+
+        private void InitUserContole(UserControl userControl)
+        {
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(userControl);
+            userControl.Visible = true;
         }
     }
 }

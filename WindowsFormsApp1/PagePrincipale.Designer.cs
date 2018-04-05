@@ -40,8 +40,7 @@
             this.voirModifierUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.voirModifierUnUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supprimerUnUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ManagerUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelUtilisateur = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
@@ -123,8 +122,7 @@
             // 
             this.gestionDesUtilisateursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.créerUnUtilisateurToolStripMenuItem,
-            this.voirModifierUnUtilisateurToolStripMenuItem,
-            this.supprimerUnUtilisateurToolStripMenuItem});
+            this.ManagerUtilisateurToolStripMenuItem});
             this.gestionDesUtilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gestionDesUtilisateursToolStripMenuItem.Name = "gestionDesUtilisateursToolStripMenuItem";
             resources.ApplyResources(this.gestionDesUtilisateursToolStripMenuItem, "gestionDesUtilisateursToolStripMenuItem");
@@ -135,15 +133,11 @@
             resources.ApplyResources(this.créerUnUtilisateurToolStripMenuItem, "créerUnUtilisateurToolStripMenuItem");
             this.créerUnUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.créerUnUtilisateurToolStripMenuItem_Click);
             // 
-            // voirModifierUnUtilisateurToolStripMenuItem
+            // ManagerUtilisateurToolStripMenuItem
             // 
-            this.voirModifierUnUtilisateurToolStripMenuItem.Name = "voirModifierUnUtilisateurToolStripMenuItem";
-            resources.ApplyResources(this.voirModifierUnUtilisateurToolStripMenuItem, "voirModifierUnUtilisateurToolStripMenuItem");
-            // 
-            // supprimerUnUtilisateurToolStripMenuItem
-            // 
-            this.supprimerUnUtilisateurToolStripMenuItem.Name = "supprimerUnUtilisateurToolStripMenuItem";
-            resources.ApplyResources(this.supprimerUnUtilisateurToolStripMenuItem, "supprimerUnUtilisateurToolStripMenuItem");
+            this.ManagerUtilisateurToolStripMenuItem.Name = "ManagerUtilisateurToolStripMenuItem";
+            resources.ApplyResources(this.ManagerUtilisateurToolStripMenuItem, "ManagerUtilisateurToolStripMenuItem");
+            this.ManagerUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.ManagerUtilisateurToolStripMenuItem_Click);
             // 
             // aProposToolStripMenuItem
             // 
@@ -224,8 +218,7 @@
         private System.Windows.Forms.ToolStripMenuItem créerUnClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem voirModifierUnClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem créerUnUtilisateurToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem voirModifierUnUtilisateurToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supprimerUnUtilisateurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ManagerUtilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
         private System.Windows.Forms.Label labelUtilisateur;
         private System.Windows.Forms.PictureBox pictureLogo;

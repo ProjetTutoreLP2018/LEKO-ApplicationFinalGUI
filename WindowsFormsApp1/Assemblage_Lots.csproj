@@ -200,6 +200,12 @@
       <DependentUpon>FenGenerationLC.cs</DependentUpon>
     </Compile>
     <Compile Include="GoogleDriveManager.cs" />
+    <Compile Include="ManagerUtilisateur.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUtilisateur.Designer.cs">
+      <DependentUpon>ManagerUtilisateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="modele\Activite.cs" />
     <Compile Include="modele\Adresse.cs" />
     <Compile Include="modele\Client.cs" />
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FenGenerationLC.resx">
       <DependentUpon>FenGenerationLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUtilisateur.resx">
+      <DependentUpon>ManagerUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagePrincipale.fr.resx">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
