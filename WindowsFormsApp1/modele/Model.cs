@@ -54,6 +54,10 @@ namespace WindowsFormsApp1.modele
                         && user.MdpUtilisateur == mdp
                         select user;
 
+
+            if (users.ToList().Count() == 0)
+                return null;
+
             Utilisateur utilisateur = new Utilisateur();
 
             foreach(var result in users)

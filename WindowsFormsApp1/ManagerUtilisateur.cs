@@ -30,6 +30,8 @@ namespace WindowsFormsApp1
 
         private void Init()
         {
+            this.textPass.PasswordChar = '•';
+            this.textPassConfirm.PasswordChar = '•';
 
             utilisateurs = new List<Utilisateur>();
             droits = new List<Droit>();
@@ -95,7 +97,7 @@ namespace WindowsFormsApp1
             utilisateurs[index].IdDroit = indexDroit;
 
             model.ModifUtilisateur();
-            MessageBox.Show("Votre utilisateur a bien était modifier");
+            MessageBox.Show("Votre utilisateur a bien été modifié");
             Init();
         }
 
@@ -104,7 +106,7 @@ namespace WindowsFormsApp1
         {
 
             model.SupprimerUtilisateur(utilisateurs[index]);
-            MessageBox.Show("Votre utilisateur a bien était supprimer");
+            MessageBox.Show("Votre utilisateur a bien été supprimé");
             Init();
 
         }

@@ -30,6 +30,9 @@ namespace WindowsFormsApp1
             textConfirmEmail.Text = string.Empty;
             textPass.Text = string.Empty;
             textConfPass.Text = string.Empty;
+
+            this.textPass.PasswordChar = '•';
+            this.textConfPass.PasswordChar = '•';
         }
 
         protected override void OnLoad(EventArgs e)

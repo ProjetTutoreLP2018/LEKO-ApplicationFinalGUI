@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
+            this.textBoxPass.PasswordChar = '•';
         }
 
         private void buttonConnexion_Click(object sender, EventArgs e)
