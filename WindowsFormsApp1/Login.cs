@@ -12,6 +12,13 @@ namespace WindowsFormsApp1
             this.textBoxPass.PasswordChar = '•';
         }
 
+
+        /// <summary>
+        /// Méthode qui permet la vérification des informations de 
+        /// connexion avec la base de données.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonConnexion_Click(object sender, EventArgs e)
         {
 

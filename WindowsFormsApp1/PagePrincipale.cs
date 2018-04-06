@@ -1,12 +1,6 @@
 ﻿using lot1;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.modele;
 
@@ -36,6 +30,11 @@ namespace WindowsFormsApp1
            
         }
 
+
+        /// <summary>
+        /// Méthode d'initialisation des éléments
+        /// de la page
+        /// </summary>
         private void Init()
         {
             mainPanel.Visible = false;
@@ -73,12 +72,24 @@ namespace WindowsFormsApp1
            
         }
 
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Créer Une Lc"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void créerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
    
             InitUserContole(creerLC);
         }
 
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Voir / Modifier une LC"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void voirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -86,6 +97,12 @@ namespace WindowsFormsApp1
 
         }
 
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Signer une LC"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void signerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pagePrincipale.Utilisateur.IdDroit == 2)
@@ -95,6 +112,12 @@ namespace WindowsFormsApp1
 
         }
 
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Créer un Utilisateur"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -105,6 +128,12 @@ namespace WindowsFormsApp1
 
         }
 
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Manager un Utilisateur"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -115,6 +144,11 @@ namespace WindowsFormsApp1
         }
 
 
+        /// <summary>
+        /// Initialisation de l'User Controle avant chaque séléctions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InitUserContole(UserControl userControl)
         {
             mainPanel.Controls.Clear();
@@ -122,14 +156,27 @@ namespace WindowsFormsApp1
             userControl.Visible = true;
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de retourner à la page d'accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
         }
 
+
+        /// <summary>
+        /// Méthode qui gére la déconnection de l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureLogout_Click(object sender, EventArgs e)
         {
             Init();
+            MessageBox.Show("Vous avez été déconnecté");
         }
     }
 }

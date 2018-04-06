@@ -71,6 +71,7 @@
             // buttonConnexion
             // 
             this.buttonConnexion.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonConnexion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonConnexion.BackgroundImage")));
             this.buttonConnexion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonConnexion.Location = new System.Drawing.Point(362, 400);
             this.buttonConnexion.Name = "buttonConnexion";

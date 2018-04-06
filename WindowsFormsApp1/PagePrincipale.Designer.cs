@@ -62,13 +62,13 @@
             // 
             // mainMenu
             // 
-            this.mainMenu.BackColor = System.Drawing.Color.YellowGreen;
+            this.mainMenu.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.mainMenu, "mainMenu");
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionDesLettreDeCoToolStripMenuItem,
             this.gestionDesClientsToolStripMenuItem,
             this.gestionDesUtilisateursToolStripMenuItem,
             this.aProposToolStripMenuItem});
-            resources.ApplyResources(this.mainMenu, "mainMenu");
             this.mainMenu.Name = "mainMenu";
             // 
             // gestionDesLettreDeCoToolStripMenuItem
@@ -196,7 +196,6 @@
             // 
             this.imageHome.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.imageHome, "imageHome");
-            this.imageHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imageHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imageHome.Name = "imageHome";
             this.imageHome.TabStop = false;
@@ -211,15 +210,14 @@
             // labelUser
             // 
             resources.ApplyResources(this.labelUser, "labelUser");
-            this.labelUser.BackColor = System.Drawing.Color.YellowGreen;
+            this.labelUser.BackColor = System.Drawing.Color.Transparent;
             this.labelUser.ForeColor = System.Drawing.Color.Maroon;
             this.labelUser.Name = "labelUser";
             // 
             // pictureLogout
             // 
-            this.pictureLogout.BackColor = System.Drawing.Color.YellowGreen;
+            this.pictureLogout.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.pictureLogout, "pictureLogout");
-            this.pictureLogout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureLogout.Name = "pictureLogout";
             this.pictureLogout.TabStop = false;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenFormulaireGenerationLC));
             this.Onglets = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -133,6 +134,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Location = new System.Drawing.Point(535, 360);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 23);
@@ -656,6 +658,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.Onglets);
             this.Name = "FenFormulaireGenerationLC";
             this.Size = new System.Drawing.Size(872, 484);

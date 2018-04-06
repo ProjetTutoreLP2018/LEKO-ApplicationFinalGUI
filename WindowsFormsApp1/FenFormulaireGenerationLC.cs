@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using ExcelDataReader;
@@ -15,8 +9,7 @@ using Newtonsoft.Json;
 using Google.Apis.Auth.OAuth2;
 using WindowsFormsApp1;
 using Google.Apis.Drive.v3;
-using Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Interop.Word;
+
 
 namespace lot1
 {
@@ -35,6 +28,13 @@ namespace lot1
             DateCourante.Value = DateTime.Now;
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de générer la Ville
+        /// en fonction du code postal entré
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void CP_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(CP.Text))

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.modele;
 
@@ -24,10 +18,14 @@ namespace WindowsFormsApp1
         public ManagerUtilisateur()
         {
             InitializeComponent();
-            Init();
             
         }
 
+
+        /// <summary>
+        /// Méthode d'initialisation de la
+        /// page.
+        /// </summary>
         private void Init()
         {
             this.textPass.PasswordChar = '•';
@@ -59,6 +57,11 @@ namespace WindowsFormsApp1
                 comboDroit.Items.Add(d.Permission);
         }
 
+
+        /// <summary>
+        /// Méthode de gestion du chagement de la page
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -66,6 +69,15 @@ namespace WindowsFormsApp1
 
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de gérer le changement
+        /// de l'élément séléctionner dans la comboBox.
+        /// Elle permet de chager les éléments dans le
+        /// reste de la page en fonction de la séléction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboNomUtilisateur_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.index = comboNomUtilisateur.SelectedIndex;
@@ -78,6 +90,13 @@ namespace WindowsFormsApp1
         }
 
         // Modify user
+        /// <summary>
+        /// Méthode qui permet de modifier les éléments
+        /// inscrit dans les champs en fonction de l'élément séléctionné
+        /// dans la comboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -103,6 +122,14 @@ namespace WindowsFormsApp1
         }
 
         // Delete user
+        /// <summary>
+        /// Méthode qui permet de supprimer 
+        /// de la base de données l'utilisateur
+        /// en fonction de l'élément séléctionné
+        /// dans la comboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
 

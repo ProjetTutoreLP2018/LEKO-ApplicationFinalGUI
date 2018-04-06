@@ -20,7 +20,9 @@ namespace WindowsFormsApp1
             
         }
 
-
+        /// <summary>
+        /// Méthode d'initialisation de la page
+        /// </summary>
         private void Init()
         {
 
@@ -35,20 +37,33 @@ namespace WindowsFormsApp1
             this.textConfPass.PasswordChar = '•';
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de gérer l'événement
+        /// de chargement de la page.
+        /// On y initialise la liste de droit prise
+        /// dans la base de données
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
         {
-            
+            base.OnLoad(e);
+
             droits = model.GetListDroit();
 
             foreach (Droit d in droits)
                 comboDroit.Items.Add(d.Permission);
-            
 
             Init();
-
-            base.OnLoad(e);
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de valider une
+        /// création d'un utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bValider_Click(object sender, EventArgs e)
         {
             Utilisateur utilisateur = new Utilisateur();

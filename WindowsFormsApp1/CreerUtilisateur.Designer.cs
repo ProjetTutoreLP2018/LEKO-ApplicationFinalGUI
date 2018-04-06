@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreerUtilisateur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textConfirmEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -101,6 +102,7 @@
             // bValider
             // 
             this.bValider.BackColor = System.Drawing.Color.YellowGreen;
+            this.bValider.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bValider.BackgroundImage")));
             this.bValider.Location = new System.Drawing.Point(403, 341);
             this.bValider.Name = "bValider";
             this.bValider.Size = new System.Drawing.Size(75, 23);

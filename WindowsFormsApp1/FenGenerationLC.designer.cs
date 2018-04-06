@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenGenerationLC));
             this.label1 = new System.Windows.Forms.Label();
             this.SelectionModele = new System.Windows.Forms.TextBox();
             this.ParcourirModele = new System.Windows.Forms.Button();
@@ -69,6 +70,7 @@
             // ParcourirModele
             // 
             this.ParcourirModele.BackColor = System.Drawing.Color.YellowGreen;
+            this.ParcourirModele.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ParcourirModele.BackgroundImage")));
             this.ParcourirModele.ForeColor = System.Drawing.Color.Black;
             this.ParcourirModele.Location = new System.Drawing.Point(440, 23);
             this.ParcourirModele.Name = "ParcourirModele";
@@ -92,6 +94,7 @@
             // BoutonGenerer
             // 
             this.BoutonGenerer.BackColor = System.Drawing.Color.YellowGreen;
+            this.BoutonGenerer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoutonGenerer.BackgroundImage")));
             this.BoutonGenerer.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BoutonGenerer.Location = new System.Drawing.Point(464, 181);
             this.BoutonGenerer.Name = "BoutonGenerer";
@@ -104,6 +107,7 @@
             // ParcourirDestination
             // 
             this.ParcourirDestination.BackColor = System.Drawing.Color.YellowGreen;
+            this.ParcourirDestination.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ParcourirDestination.BackgroundImage")));
             this.ParcourirDestination.Location = new System.Drawing.Point(440, 23);
             this.ParcourirDestination.Name = "ParcourirDestination";
             this.ParcourirDestination.Size = new System.Drawing.Size(93, 20);
