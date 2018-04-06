@@ -62,7 +62,8 @@ namespace WindowsFormsApp1
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-           
+            Init();
+
         }
 
         private void comboNomUtilisateur_SelectedIndexChanged(object sender, EventArgs e)

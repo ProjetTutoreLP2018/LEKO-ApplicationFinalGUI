@@ -50,8 +50,14 @@
             this.buttonConnexion = new System.Windows.Forms.Button();
             this.labelErrorConnect = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.imageHome = new System.Windows.Forms.PictureBox();
+            this.labelWelcome = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.pictureLogout = new System.Windows.Forms.PictureBox();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogout)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -186,11 +192,48 @@
             resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
             // 
+            // imageHome
+            // 
+            this.imageHome.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.imageHome, "imageHome");
+            this.imageHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageHome.Name = "imageHome";
+            this.imageHome.TabStop = false;
+            this.imageHome.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // labelWelcome
+            // 
+            resources.ApplyResources(this.labelWelcome, "labelWelcome");
+            this.labelWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.labelWelcome.Name = "labelWelcome";
+            // 
+            // labelUser
+            // 
+            resources.ApplyResources(this.labelUser, "labelUser");
+            this.labelUser.BackColor = System.Drawing.Color.YellowGreen;
+            this.labelUser.ForeColor = System.Drawing.Color.Maroon;
+            this.labelUser.Name = "labelUser";
+            // 
+            // pictureLogout
+            // 
+            this.pictureLogout.BackColor = System.Drawing.Color.YellowGreen;
+            resources.ApplyResources(this.pictureLogout, "pictureLogout");
+            this.pictureLogout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureLogout.Name = "pictureLogout";
+            this.pictureLogout.TabStop = false;
+            this.pictureLogout.Click += new System.EventHandler(this.pictureLogout_Click);
+            // 
             // pagePrincipale
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureLogout);
+            this.Controls.Add(this.labelUser);
+            this.Controls.Add(this.labelWelcome);
+            this.Controls.Add(this.imageHome);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainMenu);
             this.DoubleBuffered = true;
@@ -201,6 +244,8 @@
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLogout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +274,10 @@
         private System.Windows.Forms.Button buttonConnexion;
         private System.Windows.Forms.Label labelErrorConnect;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.PictureBox imageHome;
+        private System.Windows.Forms.Label labelWelcome;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.PictureBox pictureLogout;
     }
 }
 

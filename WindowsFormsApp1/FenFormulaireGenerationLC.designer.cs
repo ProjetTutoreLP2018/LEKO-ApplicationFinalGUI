@@ -109,6 +109,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
@@ -128,12 +129,11 @@
             this.tabPage1.Size = new System.Drawing.Size(865, 448);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entité";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.YellowGreen;
-            this.button2.Location = new System.Drawing.Point(535, 301);
+            this.button2.Location = new System.Drawing.Point(535, 360);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 23);
             this.button2.TabIndex = 22;
@@ -144,7 +144,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.YellowGreen;
-            this.button1.Location = new System.Drawing.Point(687, 301);
+            this.button1.Location = new System.Drawing.Point(687, 360);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 21;
@@ -154,7 +154,7 @@
             // 
             // Millesime
             // 
-            this.Millesime.Location = new System.Drawing.Point(404, 12);
+            this.Millesime.Location = new System.Drawing.Point(406, 29);
             this.Millesime.Name = "Millesime";
             this.Millesime.Size = new System.Drawing.Size(135, 20);
             this.Millesime.TabIndex = 20;
@@ -162,7 +162,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(344, 15);
+            this.label22.Location = new System.Drawing.Point(342, 33);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(58, 13);
             this.label22.TabIndex = 19;
@@ -179,7 +179,7 @@
             this.groupBox2.Controls.Add(this.Monsieur);
             this.groupBox2.Controls.Add(this.Madame);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(9, 68);
+            this.groupBox2.Location = new System.Drawing.Point(9, 93);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(281, 227);
             this.groupBox2.TabIndex = 17;
@@ -268,7 +268,7 @@
             // DateCourante
             // 
             this.DateCourante.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateCourante.Location = new System.Drawing.Point(51, 11);
+            this.DateCourante.Location = new System.Drawing.Point(51, 31);
             this.DateCourante.Name = "DateCourante";
             this.DateCourante.Size = new System.Drawing.Size(200, 20);
             this.DateCourante.TabIndex = 15;
@@ -289,7 +289,7 @@
             "SCIC",
             "SCOP",
             "SNC"});
-            this.FormeJuridique.Location = new System.Drawing.Point(404, 131);
+            this.FormeJuridique.Location = new System.Drawing.Point(404, 153);
             this.FormeJuridique.Name = "FormeJuridique";
             this.FormeJuridique.Size = new System.Drawing.Size(150, 21);
             this.FormeJuridique.TabIndex = 14;
@@ -297,7 +297,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 12);
+            this.label7.Location = new System.Drawing.Point(6, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 13);
             this.label7.TabIndex = 13;
@@ -305,7 +305,7 @@
             // 
             // Adresse
             // 
-            this.Adresse.Location = new System.Drawing.Point(404, 161);
+            this.Adresse.Location = new System.Drawing.Point(404, 186);
             this.Adresse.Name = "Adresse";
             this.Adresse.Size = new System.Drawing.Size(358, 20);
             this.Adresse.TabIndex = 8;
@@ -313,7 +313,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(363, 228);
+            this.label5.Location = new System.Drawing.Point(360, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 5;
@@ -321,7 +321,7 @@
             // 
             // RaisonSociale
             // 
-            this.RaisonSociale.Location = new System.Drawing.Point(404, 94);
+            this.RaisonSociale.Location = new System.Drawing.Point(404, 115);
             this.RaisonSociale.Name = "RaisonSociale";
             this.RaisonSociale.Size = new System.Drawing.Size(311, 20);
             this.RaisonSociale.TabIndex = 1;
@@ -336,7 +336,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(296, 68);
+            this.groupBox1.Location = new System.Drawing.Point(296, 92);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(480, 227);
             this.groupBox1.TabIndex = 16;
@@ -369,7 +369,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 66);
+            this.label2.Location = new System.Drawing.Point(7, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 2;
@@ -405,7 +405,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 27);
+            this.label1.Location = new System.Drawing.Point(13, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 0;
@@ -418,7 +418,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(782, 416);
+            this.tabPage2.Size = new System.Drawing.Size(865, 448);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Informations comptable";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -433,7 +433,7 @@
             this.groupBox4.Controls.Add(this.LeveeFinancement);
             this.groupBox4.Controls.Add(this.PeriodeAFinancer);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Location = new System.Drawing.Point(6, 179);
+            this.groupBox4.Location = new System.Drawing.Point(6, 216);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(770, 149);
             this.groupBox4.TabIndex = 1;
@@ -525,7 +525,7 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(6, 15);
+            this.groupBox3.Location = new System.Drawing.Point(6, 46);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(770, 158);
             this.groupBox3.TabIndex = 0;
@@ -658,7 +658,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Onglets);
             this.Name = "FenFormulaireGenerationLC";
-            this.Size = new System.Drawing.Size(790, 360);
+            this.Size = new System.Drawing.Size(872, 484);
             this.Onglets.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

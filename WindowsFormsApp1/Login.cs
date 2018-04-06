@@ -23,12 +23,33 @@ namespace WindowsFormsApp1
                 if (connecte != null)
                 {
                     this.Visible = false;
-                    pagePrincipale.Droit = connecte.IdDroit;
+                    pagePrincipale.Utilisateur = connecte;
 
 
                     Panel panel = (Panel)this.Parent.Controls.Find("mainPanel", false)[0];
-
                     panel.Visible = true;
+
+                    PictureBox imageHome = (PictureBox)this.Parent.Controls.Find("imageHome", false)[0];
+                    imageHome.Visible = true;
+
+                    PictureBox pictureLogout = (PictureBox)this.Parent.Controls.Find("pictureLogout", false)[0];
+                    pictureLogout.Visible = true;
+
+                    Label labelUser = (Label)this.Parent.Controls.Find("labelUser", false)[0];
+                    labelUser.Visible = true;
+
+
+
+                    Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
+                    labelWelcome.Text = pagePrincipale.Utilisateur.NomUtilisateur
+                + " " + pagePrincipale.Utilisateur.PrenomUtilisateur;
+
+
+                    this.textBoxUtilisateur.Text = string.Empty;
+                    this.textBoxPass.Text = string.Empty;
+
+                    this.labelErrorConnect.Text = string.Empty;
+
                 } else
                 {
                     this.labelErrorConnect.Text = "Identifiants incorrects";

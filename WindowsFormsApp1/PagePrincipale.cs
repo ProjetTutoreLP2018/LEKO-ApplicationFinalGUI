@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.modele;
 
 namespace WindowsFormsApp1
 {
@@ -22,7 +23,7 @@ namespace WindowsFormsApp1
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
 
-        public static int Droit { get; set; }
+        public static Utilisateur Utilisateur { get; set; }
 
        
         
@@ -35,14 +36,15 @@ namespace WindowsFormsApp1
            
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Init()
         {
             mainPanel.Visible = false;
+            pictureLogout.Visible = false;
+            labelUser.Visible = false;
 
-            
             creerLC.Parent = mainPanel;
             creerLC.Visible = false;
-           // mainPanel.Controls.Add(creerLC);
+            // mainPanel.Controls.Add(creerLC);
 
             ajou_mod_lc.Parent = mainPanel;
             ajou_mod_lc.Visible = false;
@@ -60,6 +62,14 @@ namespace WindowsFormsApp1
             log.Parent = this;
             log.Dock = DockStyle.Top;
             log.Show();
+
+            imageHome.Visible = false;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Init();
            
         }
 
@@ -78,7 +88,7 @@ namespace WindowsFormsApp1
 
         private void signerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Droit == 2)
+            if (pagePrincipale.Utilisateur.IdDroit == 2)
                 InitUserContole(signerLC);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -88,7 +98,7 @@ namespace WindowsFormsApp1
         private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Droit == 2)
+            if (pagePrincipale.Utilisateur.IdDroit == 2)
                 InitUserContole(creerUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -98,7 +108,7 @@ namespace WindowsFormsApp1
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Droit == 2)
+            if (pagePrincipale.Utilisateur.IdDroit == 2)
                 InitUserContole(manageUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -110,6 +120,16 @@ namespace WindowsFormsApp1
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(userControl);
             userControl.Visible = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+        }
+
+        private void pictureLogout_Click(object sender, EventArgs e)
+        {
+            Init();
         }
     }
 }
