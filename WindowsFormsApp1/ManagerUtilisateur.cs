@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
 
         private List<Utilisateur> utilisateurs;
         private List<Droit> droits;
-        private WindowsFormsApp1.modele.Model model;
+        private Model model;
         private int index;
 
 
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
 
             utilisateurs = new List<Utilisateur>();
             droits = new List<Droit>();
-            model = new WindowsFormsApp1.modele.Model();
+            model = new Model();
             index = 0;
             comboNomUtilisateur.Items.Clear();
             comboNomUtilisateur.ResetText();

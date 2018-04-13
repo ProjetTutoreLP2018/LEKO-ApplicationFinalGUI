@@ -17,11 +17,11 @@ namespace WindowsFormsApp1.modele
         }
 
 
-
         public List<Droit> GetListDroit()
         {
             return context.Droit.ToList();
         }
+
 
         public void CreerUtilisateur(Utilisateur utilisateur)
         {
@@ -29,22 +29,44 @@ namespace WindowsFormsApp1.modele
             context.SaveChanges();
         }
 
+
         public List<Utilisateur> GetListUtilisateurs()
         {
 
             return context.Utilisateur.ToList();
         }
 
+
         public void ModifUtilisateur()
         {
             context.SaveChanges();
         }
+
 
         public void SupprimerUtilisateur(Utilisateur utilisateur)
         {
             context.Utilisateur.Remove(utilisateur);
             context.SaveChanges();
         }
+
+
+        public List<Lc> GetListLc()
+        {
+            return context.Lc.ToList();
+        }
+
+
+        public List<Client> GetListClient()
+        {
+            return context.Client.ToList();
+        }
+
+
+        public List<Lc> GestLcFromClient(int indexClient)
+        {
+            return context.Lc.Where(a => a.IdClient == indexClient).ToList();
+        }
+
 
         public Utilisateur seConnecter(string login, string mdp)
         {

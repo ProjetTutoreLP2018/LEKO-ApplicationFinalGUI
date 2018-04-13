@@ -35,16 +35,11 @@
             this.ParcourirModele = new System.Windows.Forms.Button();
             this.BoutonAnnuler = new System.Windows.Forms.Button();
             this.BoutonGenerer = new System.Windows.Forms.Button();
-            this.ParcourirDestination = new System.Windows.Forms.Button();
-            this.SelectionDestination = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.OuvrirModele = new System.Windows.Forms.OpenFileDialog();
             this.OuvrirDestination = new System.Windows.Forms.SaveFileDialog();
             this.AffichageErreurs = new System.Windows.Forms.ErrorProvider(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AffichageErreurs)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +79,7 @@
             // 
             this.BoutonAnnuler.BackColor = System.Drawing.Color.Red;
             this.BoutonAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BoutonAnnuler.Location = new System.Drawing.Point(369, 181);
+            this.BoutonAnnuler.Location = new System.Drawing.Point(367, 150);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.BoutonAnnuler.TabIndex = 3;
@@ -96,7 +91,7 @@
             this.BoutonGenerer.BackColor = System.Drawing.Color.YellowGreen;
             this.BoutonGenerer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoutonGenerer.BackgroundImage")));
             this.BoutonGenerer.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BoutonGenerer.Location = new System.Drawing.Point(464, 181);
+            this.BoutonGenerer.Location = new System.Drawing.Point(464, 150);
             this.BoutonGenerer.Name = "BoutonGenerer";
             this.BoutonGenerer.Size = new System.Drawing.Size(75, 23);
             this.BoutonGenerer.TabIndex = 4;
@@ -104,51 +99,12 @@
             this.BoutonGenerer.UseVisualStyleBackColor = false;
             this.BoutonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);
             // 
-            // ParcourirDestination
-            // 
-            this.ParcourirDestination.BackColor = System.Drawing.Color.YellowGreen;
-            this.ParcourirDestination.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ParcourirDestination.BackgroundImage")));
-            this.ParcourirDestination.Location = new System.Drawing.Point(440, 23);
-            this.ParcourirDestination.Name = "ParcourirDestination";
-            this.ParcourirDestination.Size = new System.Drawing.Size(93, 20);
-            this.ParcourirDestination.TabIndex = 7;
-            this.ParcourirDestination.Text = "Parcourir";
-            this.ParcourirDestination.UseVisualStyleBackColor = false;
-            this.ParcourirDestination.Click += new System.EventHandler(this.ParcourirDestination_Click);
-            // 
-            // SelectionDestination
-            // 
-            this.SelectionDestination.Location = new System.Drawing.Point(88, 114);
-            this.SelectionDestination.Name = "SelectionDestination";
-            this.SelectionDestination.Size = new System.Drawing.Size(338, 20);
-            this.SelectionDestination.TabIndex = 6;
-            this.SelectionDestination.TextChanged += new System.EventHandler(this.SelectionDestination_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Destination : ";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ParcourirDestination);
-            this.groupBox1.Location = new System.Drawing.Point(6, 91);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(548, 59);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sélection de la destination";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.SelectionModele);
             this.groupBox2.Controls.Add(this.ParcourirModele);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 13);
+            this.groupBox2.Location = new System.Drawing.Point(6, 43);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(548, 56);
             this.groupBox2.TabIndex = 9;
@@ -176,24 +132,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.BoutonAnnuler;
-            this.ClientSize = new System.Drawing.Size(566, 218);
-            this.Controls.Add(this.SelectionDestination);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(566, 192);
             this.Controls.Add(this.BoutonGenerer);
             this.Controls.Add(this.BoutonAnnuler);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FenGenerationLC";
             this.ShowIcon = false;
             this.Text = "Nouvelle lettre de coopération";
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AffichageErreurs)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -204,10 +155,6 @@
         private System.Windows.Forms.Button ParcourirModele;
         private System.Windows.Forms.Button BoutonAnnuler;
         private System.Windows.Forms.Button BoutonGenerer;
-        private System.Windows.Forms.Button ParcourirDestination;
-        private System.Windows.Forms.TextBox SelectionDestination;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.OpenFileDialog OuvrirModele;
         private System.Windows.Forms.SaveFileDialog OuvrirDestination;

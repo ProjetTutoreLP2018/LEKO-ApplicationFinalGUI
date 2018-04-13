@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
         //private UserControl creerLC = new CreerUneLC();
         private UserControl creerLC = new FenFormulaireGenerationLC();
         private UserControl signerLC = new SignerLC();
-        private UserControl ajou_mod_lc = new Ajout_Modif_LC();
+        private UserControl voir_mod_lc = new Voir_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
 
@@ -45,8 +45,8 @@ namespace WindowsFormsApp1
             creerLC.Visible = false;
             // mainPanel.Controls.Add(creerLC);
 
-            ajou_mod_lc.Parent = mainPanel;
-            ajou_mod_lc.Visible = false;
+            voir_mod_lc.Parent = mainPanel;
+            voir_mod_lc.Visible = false;
             //mainPanel.Controls.Add(ajou_mod_lc);
 
             creerUtilisateur.Parent = mainPanel;
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
         private void voirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            InitUserContole(ajou_mod_lc);
+            InitUserContole(voir_mod_lc);
 
         }
 

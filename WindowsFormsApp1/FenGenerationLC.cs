@@ -7,6 +7,8 @@ namespace lot1
 {
     public partial class FenGenerationLC : Form
     {
+
+       
         /// <summary>
         /// Contient le chemin vers le modèle sélectionné par l'utilisateur
         /// </summary>
@@ -15,7 +17,7 @@ namespace lot1
         /// <summary>
         /// Contient le chemin vers le fichier de destination sélectionné par l'utilisateur
         /// </summary>
-        public String DestinationSelectionnee;
+        public String DestinationSelectionnee = @"C:\Users\Dupeyrat\Desktop\FINACOOP\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer\";
 
         /// <summary>
         /// Initialise les composants graphiques et active ou désactive le bouton Générer
@@ -34,24 +36,12 @@ namespace lot1
         private void ParcourirModele_Click(object sender, EventArgs e)
         {
             //OuvrirModele.InitialDirectory = Properties.Settings.Default.dossierLC;
-            if(OuvrirModele.ShowDialog() == DialogResult.OK)
+            if (OuvrirModele.ShowDialog() == DialogResult.OK)
             {
                 SelectionModele.Text = OuvrirModele.FileName;
             }
         }
 
-        /// <summary>
-        /// Affiche une boîte de dialogue pour sélectionner un fichier cible
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ParcourirDestination_Click(object sender, EventArgs e)
-        {
-            if(OuvrirDestination.ShowDialog() == DialogResult.OK)
-            {
-                SelectionDestination.Text = OuvrirDestination.FileName;
-            }
-        }
 
         /// <summary>
         /// Place les chemins des deux fichiers modèle et destination dans les variables ModeleSelectionne et DestinationSelectionnee
@@ -60,8 +50,8 @@ namespace lot1
         /// <param name="e"></param>
         private void BoutonGenerer_Click(object sender, EventArgs e)
         {
-                ModeleSelectionne = SelectionModele.Text;
-                DestinationSelectionnee = SelectionDestination.Text;
+            ModeleSelectionne = SelectionModele.Text;
+            //DestinationSelectionnee = SelectionDestination.Text;
         }
 
         /// <summary>
@@ -69,9 +59,7 @@ namespace lot1
         /// </summary>
         private void ActiverBoutonGenerer()
         {
-            BoutonGenerer.Enabled = (SelectionModele.Text != "" 
-                && SelectionDestination.Text != "" 
-                && File.Exists(@SelectionModele.Text) ?  true : false);
+            BoutonGenerer.Enabled = (SelectionModele.Text != "" && File.Exists(@SelectionModele.Text) ? true : false);
         }
 
         /// <summary>
@@ -88,10 +76,11 @@ namespace lot1
             }
             else
             {
-                if(File.Exists(@SelectionModele.Text))
+                if (File.Exists(@SelectionModele.Text))
                 {
                     AffichageErreurs.SetError(SelectionModele, "");
-                } else
+                }
+                else
                 {
                     AffichageErreurs.SetIconPadding(SelectionModele, 2);
                     AffichageErreurs.SetError(SelectionModele, "Le fichier n'existe pas");
@@ -99,25 +88,7 @@ namespace lot1
             }
             ActiverBoutonGenerer();
         }
-
-        /// <summary>
-        /// Vérifie que le champ Destination est bien renseigné, affiche une erreur le cas échéant et désactive le bouton Générer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SelectionDestination_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(@SelectionDestination.Text))
-            {
-                AffichageErreurs.SetIconPadding(SelectionDestination, 2);
-                AffichageErreurs.SetError(SelectionDestination, "Le champ doit être renseigné");
-            }
-            else
-            {
-                AffichageErreurs.SetError(SelectionDestination, "");
-            }
-            ActiverBoutonGenerer();
-        }
+ 
 
         /// <summary>
         /// Permet de valider l'existence du fichier modèle à la perte du focus du champ Modèle, affiche une erreur le cas échéant et désactive le bouton Générer

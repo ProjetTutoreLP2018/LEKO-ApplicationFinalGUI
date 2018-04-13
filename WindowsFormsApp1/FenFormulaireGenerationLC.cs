@@ -6,9 +6,7 @@ using ExcelDataReader;
 using Xceed.Words.NET;
 using System.Net.Http;
 using Newtonsoft.Json;
-using Google.Apis.Auth.OAuth2;
-using WindowsFormsApp1;
-using Google.Apis.Drive.v3;
+
 
 
 namespace lot1
@@ -124,12 +122,23 @@ namespace lot1
                         document.ReplaceText("{{" + item.Key + "}}", (String.IsNullOrWhiteSpace(item.Value) ? item.Key : item.Value));
                     }
 
-                    document.SaveAs(@fenGenerationLC.DestinationSelectionnee);
+
+                    fenGenerationLC.DestinationSelectionnee += RaisonSociale.Text;
 
 
-                    
-                    ChoisirSauvegarde(true, @fenGenerationLC.DestinationSelectionnee);
-                    AfficherLC(@fenGenerationLC.DestinationSelectionnee);
+                    if(!Directory.Exists(@fenGenerationLC.DestinationSelectionnee))
+                    {
+                        Directory.CreateDirectory(@fenGenerationLC.DestinationSelectionnee);
+                        File.SetAttributes(@fenGenerationLC.DestinationSelectionnee, FileAttributes.Normal);
+
+                    }
+                        
+
+                    document.SaveAs(@fenGenerationLC.DestinationSelectionnee + @"\test.docx");
+
+
+                   // ChoisirSauvegarde(true, @fenGenerationLC.DestinationSelectionnee);
+                    AfficherLC(@fenGenerationLC.DestinationSelectionnee + @"\test.docx");
 
                     MessageBox.Show("La lettre de coopération a été générée dans le fichier " + fenGenerationLC.DestinationSelectionnee, "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -216,40 +225,6 @@ namespace lot1
             // open.Enabled = false;
 
         }
-
-        private void ChoisirSauvegarde(bool sauvegardeDrive, string pathOrigine)
-        {
-            if(sauvegardeDrive)
-                SauvegardeGoogleDrive(pathOrigine);
-            else
-                SauvegardeLocal(pathOrigine);
-
-        }
-
-        private void SauvegardeGoogleDrive(string pathOrigine)
-        {
-
-            Console.WriteLine("Create creditential");
-            UserCredential credential = GoogleDriveManager.GetUserCredential();
-
-            Console.WriteLine("Get service");
-            DriveService service = GoogleDriveManager.GetDriveService(credential);
-
-            Console.WriteLine("Uploading File");
-            var fileId = GoogleDriveManager.UploadFileToDrive(service, "LC_Test", pathOrigine);
-
-         
-
-            Console.WriteLine("End");
-            Console.ReadLine();
-
-        }
-
-        private void SauvegardeLocal(string pathOrigine)
-        {
-
-        }
-
 
     }
 

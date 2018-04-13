@@ -169,17 +169,65 @@
         AIAE8QIAACSIFwAAIEG8AAAACeIFAAAIOMw/f5d0mtLs3mQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="créerUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer une LC</value>
+  </data>
+  <data name="voirModifierUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir/Modifier une LC</value>
+  </data>
+  <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="signerUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Signer une LC</value>
+  </data>
+  <data name="envoyerUneLCAuClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="envoyerUneLCAuClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Envoyer une LC au client</value>
+  </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestion des LC</value>
   </data>
+  <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 22</value>
+  </data>
+  <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer un Client</value>
+  </data>
+  <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 22</value>
+  </data>
+  <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir/Modifier un Client</value>
+  </data>
   <data name="gestionDesClientsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 20</value>
   </data>
   <data name="gestionDesClientsToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestion des Clients</value>
+  </data>
+  <data name="créerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="créerUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer un Utilisateur</value>
+  </data>
+  <data name="ManagerUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="ManagerUtilisateurToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manager un Utilisateur</value>
   </data>
   <data name="gestionDesUtilisateursToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 20</value>
@@ -217,54 +265,6 @@
   </data>
   <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="créerUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer une LC</value>
-  </data>
-  <data name="voirModifierUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir/Modifier une LC</value>
-  </data>
-  <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="signerUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Signer une LC</value>
-  </data>
-  <data name="envoyerUneLCAuClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="envoyerUneLCAuClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Envoyer une LC au client</value>
-  </data>
-  <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer un Client</value>
-  </data>
-  <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir/Modifier un Client</value>
-  </data>
-  <data name="créerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="créerUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer un Utilisateur</value>
-  </data>
-  <data name="ManagerUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="ManagerUtilisateurToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manager un Utilisateur</value>
   </data>
   <data name="labelUtilisateur.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -865,14 +865,13 @@
   </data>
   <data name="imageHome.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfiBAYTDyjr/kApAAABJ0lEQVRIS+WNsUsCYRjG
-        r+tERUswcOgQwY4uyCMQsWsSnPoHdHSo1cm9JheHhpZGIRoaVNAp2lzCIf+nV17hDr33Se8+dJCGH3y8
-        3/N7Hm0yd2mf/KOB8e8tNR5Maj6ayzfKIEINDH6qdFfPkqZpS2r3ZzScVWE2yNaBz2mFnMqpX+7BN/5D
-        ziobB/pfZSpYSVHucXGVovfvMnQ9/hx4G91Q7jwOi1fhDGdRBwMHev1rOskYsBCRycbo5aMkehgx8Pxq
-        Uzyhw6JNsMNusG9toP1UJP0YF4TBMI6o07XwQKudh5IK3CUG/AMQoiD6xAFIURB94gAkRjknDkBilHPi
-        ACRGOScOQGKUc+IAJEY5Jw5AYpRzwcNlKR1OBBnbSctc8LBrDn3ApQW1a7W5E6FTdAAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
+        1wAADdcBQiibeAAAAAd0SU1FB+IEBhMPKOv+QCkAAAEnSURBVEhL5Y2xSwJhGMav60RFSzBw6BDBji7I
+        IxCxaxKc+gd0dKjVyb0mF4eGlkYhGhpU0CnaXMIh/6dXXuEOvfdJ7z50kIYffLzf83sebTJ3aZ/8o4Hx
+        7y01HkxqPprLN8ogQg0Mfqp0V8+SpmlLavdnNJxVYTbI1oHPaYWcyqlf7sE3/kPOKhsH+l9lKlhJUe5x
+        cZWi9+8ydD3+HHgb3VDuPA6LV+EMZ1EHAwd6/Ws6yRiwEJHJxujloyR6GDHw/GpTPKHDok2ww26wb22g
+        /VQk/RgXhMEwjqjTtfBAq52HkgrcJQb8AxCiIPrEAUhREH3iACRGOScOQGKUc+IAJEY5Jw5AYpRz4gAk
+        RjknDkBilHPBw2UpHU4EGdtJy1zwsGsOfcClBbVrtbkToVN0AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="imageHome.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -1003,27 +1002,27 @@
   </data>
   <data name="pictureLogout.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfiBAYTEA+DrvvcAAAEUElEQVRoQ+2Z3W8UVRjG
-        /ac6s9EIiPJVtqBgoZEPJZEAMWIKXtAihUBvCEk13oMXfH+ogRbapUCNYLFQIqCR5cIaw4XEFBHS2e02
-        Q1/PMzBkzpxnZs/0I3STXvxudp7zvu8z55w9H/Pa2cGc1DKzBl41swYCbrrS950rv3Q48kezKw/X1Mnj
-        Bkfj7zXPn0HT970btKGxMjIpAz2XXPltryPD7zky8nY2hlc4qq0rPZd5bFsmZOD8jzkp7nLk6UJeXBYQ
-        416bK11XJ9YjmQ1cP+TIv2pIsGImw6PljvR/k92EtYFzA64UW3jyqaS40w1ysRoYVgY6f8rJX1t4wukA
-        ubr67UxUNdD5sysPPuaJppMHG+uC3KymKFUN3G/lCaoht+5qME01MLlZTVFSDVw/yAPbMBUGQLWJnWig
-        +0pO/qvnQW2YKgOP845c+IHXCBIN3N/BA4Z49W/KyKI36DNgbUDFCGKxZy8oqmHMagTUQOFiTp4u4MEC
-        Fr4u/unT4h85LCPvuFRjZUC1RQzEQkyqUaCWQq9ZJ6AGsMSzQCFjX3W8LGys4wDVRIsHTIO24fOxL3mc
-        kF/beS8YBs4N5IJVkQUBpXXviwze1oob3f6JoYs+B/HnaKNpBu+o2CsNXcijd+vk7A29VmAY6DuT/vb9
-        U6e0xOO9V8RrmG/oohoQf+4tmx+0jWr8kycNXRTseOP1Ggbu7E82UGpapiUE5Y3rqDauY5rypvWGrrQ6
-        T7Xg9gELA0Of8sag0r5HS+YfP051IKoDTAP8Eyc0XWVfG9WBoc/UMIrVaxh4+AFvDNDF0WSjO5qpDkR1
-        gGnAaMt2TQdDTAdwUIrXaxjAwsEag2c9F7Vkad0d1QGmAaWm5ZruWXeB6gC28fF6DQNph5Tx/ptasmoL
-        kA1e/Rwt5nj/DaoDqC1er2kgZQGLGxhZMgMNpA6hwiUtWampgeqyYAwhNUyZDlgNofRJrK8BmIBMl4XR
-        1s+1mJOexPirYo1BpX23dTJb4i+lsncX1YGhZoseSF3IVuW1ZKC86UOqtaG8ZYMRz2tcQrXAaiGrupWI
-        LTwYs15+HtWm4eXfMuaUf+wY1YZYbSVwYza8kgcAbDOH7TAKYnoG9k7+mW+1GIhZWruC6sE/jWr4kNs8
-        04Aiy3Y6ZLz3stVwKm/+yNjEgaRteYj1dhp097nyZBEPFLAgZwylEOyPsMXwGuufn9hw4mpcqn7bltom
-        6WAEnixOPlZSA6D4BQ8W4i2dm1hQFlA8YrEcIb+38bcPEg10XXPVIYIHfInqibGv1XCKzQkrVBsMRcSg
-        sV+Ag0znNV4jSDQAbK9VMLGz9AbeOtqwWHEmfK0SkuViC+tEZU+r+EePqL/XgsjArQDsMHF4r+xuCeYD
-        a8u4N9mLrQB1Dh3ayhNMJ39uVcVbfASpbkBR05e7ITV9vR6lZj9wRKnpT0xRavYjn0HCZ9aw2Bn7mXUm
-        MGvgVVPjBnLyPzmHInLgKSqEAAAAAElFTkSuQmCC
+        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
+        cuApKoQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="pictureLogout.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
