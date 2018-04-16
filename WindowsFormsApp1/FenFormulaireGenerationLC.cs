@@ -199,7 +199,7 @@ namespace lot1
         {
 
             Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
-            this.refFichier = fichier;
+          //  this.refFichier = fichier;
 
             // permet de visualisé les opérations
             fichier.Visible = true;

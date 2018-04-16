@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             droits = model.GetListDroit();
 
             foreach (Droit d in droits)
-                comboDroit.Items.Add(d.Permission);
+                comboDroit.Items.Add(d.permission);
 
             Init();
         }
@@ -67,19 +67,19 @@ namespace WindowsFormsApp1
         private void bValider_Click(object sender, EventArgs e)
         {
             Utilisateur utilisateur = new Utilisateur();
-            utilisateur.NomUtilisateur = textNom.Text;
-            utilisateur.PrenomUtilisateur = textPrenom.Text;
-            utilisateur.EmailUtilisateur = textEmail.Text;
+            utilisateur.nom_utilisateur = textNom.Text;
+            utilisateur.prenom_utilisateur = textPrenom.Text;
+            utilisateur.email_utilisateur = textEmail.Text;
 
             int index = 0;
 
             foreach (Droit d in droits)
-                if (d.Permission.Equals(comboDroit.SelectedItem))
-                    index = d.IdDroit;
+                if (d.permission.Equals(comboDroit.SelectedItem))
+                    index = d.id_droit;
             
 
-            utilisateur.IdDroit = index;
-            utilisateur.MdpUtilisateur = textPass.Text;
+            utilisateur.id_droit = index;
+            utilisateur.mdp_utilisateur= textPass.Text;
 
             model.CreerUtilisateur(utilisateur);
             Init();

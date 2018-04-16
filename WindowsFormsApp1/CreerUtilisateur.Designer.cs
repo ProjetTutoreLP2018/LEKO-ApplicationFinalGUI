@@ -47,12 +47,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxAdmin);
             this.groupBox1.Controls.Add(this.textConfirmEmail);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.bAnnuler);
@@ -222,6 +224,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
             // 
+            // checkBoxAdmin
+            // 
+            this.checkBoxAdmin.AutoSize = true;
+            this.checkBoxAdmin.Location = new System.Drawing.Point(331, 184);
+            this.checkBoxAdmin.Name = "checkBoxAdmin";
+            this.checkBoxAdmin.Size = new System.Drawing.Size(92, 17);
+            this.checkBoxAdmin.TabIndex = 16;
+            this.checkBoxAdmin.Text = "Administrateur";
+            this.checkBoxAdmin.UseVisualStyleBackColor = true;
+            // 
             // CreerUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,5 +270,6 @@
         private System.Windows.Forms.Button bValider;
         private System.Windows.Forms.TextBox textConfirmEmail;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxAdmin;
     }
 }

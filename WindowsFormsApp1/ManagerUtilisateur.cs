@@ -50,11 +50,11 @@ namespace WindowsFormsApp1
             droits = model.GetListDroit();
 
             foreach (Utilisateur u in utilisateurs)
-                comboNomUtilisateur.Items.Add(u.NomUtilisateur);
+                comboNomUtilisateur.Items.Add(u.nom_utilisateur);
 
 
             foreach (Droit d in droits)
-                comboDroit.Items.Add(d.Permission);
+                comboDroit.Items.Add(d.permission);
         }
 
 
@@ -81,11 +81,11 @@ namespace WindowsFormsApp1
         private void comboNomUtilisateur_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.index = comboNomUtilisateur.SelectedIndex;
-            textNom.Text = utilisateurs[index].NomUtilisateur;
-            textPrenom.Text = utilisateurs[index].PrenomUtilisateur;
-            textEmail.Text = utilisateurs[index].EmailUtilisateur;
+            textNom.Text = utilisateurs[index].nom_utilisateur;
+            textPrenom.Text = utilisateurs[index].prenom_utilisateur;
+            textEmail.Text = utilisateurs[index].email_utilisateur;
 
-            comboDroit.SelectedIndex = utilisateurs[index].IdDroit - 1;
+            comboDroit.SelectedIndex = utilisateurs[index].id_droit - 1;
 
         }
 
@@ -101,20 +101,20 @@ namespace WindowsFormsApp1
         {
 
 
-            utilisateurs[index].NomUtilisateur = textNom.Text;
-            utilisateurs[index].PrenomUtilisateur = textPrenom.Text;
-            utilisateurs[index].EmailUtilisateur = textEmail.Text;
+            utilisateurs[index].nom_utilisateur = textNom.Text;
+            utilisateurs[index].prenom_utilisateur = textPrenom.Text;
+            utilisateurs[index].email_utilisateur = textEmail.Text;
 
             if(!textPass.Text.Equals("") && textPass.Text.Equals(textPassConfirm.Text))
-                utilisateurs[index].MdpUtilisateur = textPass.Text;
+                utilisateurs[index].mdp_utilisateur = textPass.Text;
 
             int indexDroit = 0;
 
             foreach (Droit d in droits)
-                if (d.Permission.Equals(comboDroit.SelectedItem))
-                    indexDroit = d.IdDroit;
+                if (d.permission.Equals(comboDroit.SelectedItem))
+                    indexDroit = d.id_droit;
 
-            utilisateurs[index].IdDroit = indexDroit;
+            utilisateurs[index].id_droit = indexDroit;
 
             model.ModifUtilisateur();
             MessageBox.Show("Votre utilisateur a bien été modifié");

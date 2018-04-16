@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.modele;
 
 namespace WindowsFormsApp1
 {
@@ -14,9 +15,17 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pagePrincipale());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new pagePrincipale());
+
+            } catch (System.Data.SqlClient.SqlException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet.");
+            }
         }
     }
 }

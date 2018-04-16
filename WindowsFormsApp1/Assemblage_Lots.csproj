@@ -68,6 +68,12 @@
     <Reference Include="Carbon.Versioning, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Carbon.Versioning.1.5.0\lib\netstandard2.0\Carbon.Versioning.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="ExcelDataReader, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelDataReader.3.4.0\lib\net45\ExcelDataReader.dll</HintPath>
     </Reference>
@@ -182,6 +188,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
@@ -217,6 +225,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modele\Activite.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\ADOModele.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOModele.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\ADOModele.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\ADOModele.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOModele.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Adresse.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Client.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Droit.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Etat.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\LC.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Model.cs" />
+    <Compile Include="modele\Modele.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Statut.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\TypeStatut.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modele\Utilisateur.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
     <Compile Include="Voir_Modif_LC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,18 +307,6 @@
     <Compile Include="ManagerUtilisateur.Designer.cs">
       <DependentUpon>ManagerUtilisateur.cs</DependentUpon>
     </Compile>
-    <Compile Include="modele\Activite.cs" />
-    <Compile Include="modele\Adresse.cs" />
-    <Compile Include="modele\Client.cs" />
-    <Compile Include="modele\Droit.cs" />
-    <Compile Include="modele\Etat.cs" />
-    <Compile Include="modele\Lc.cs" />
-    <Compile Include="modele\LCBDContext.cs" />
-    <Compile Include="modele\Model.cs" />
-    <Compile Include="modele\Modele.cs" />
-    <Compile Include="modele\Statut.cs" />
-    <Compile Include="modele\TypeStatut.cs" />
-    <Compile Include="modele\Utilisateur.cs" />
     <Compile Include="PagePrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +368,13 @@
       <DependentUpon>SignerLC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="client_secret.json" />
+    <EntityDeploy Include="modele\ADOModele.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADOModele.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="modele\ADOModele.edmx.diagram">
+      <DependentUpon>ADOModele.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -344,6 +393,16 @@
     <Content Include="Images\finacoop.png" />
     <Content Include="Images\logo %281%29.ico" />
     <Content Include="logo %281%29.ico" />
+    <Content Include="modele\ADOModele.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ADOModele.edmx</DependentUpon>
+      <LastGenOutput>ADOModele.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="modele\ADOModele.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ADOModele.edmx</DependentUpon>
+      <LastGenOutput>ADOModele.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -356,6 +415,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

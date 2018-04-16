@@ -9,11 +9,11 @@ namespace WindowsFormsApp1.modele
     class Model
     {
 
-        private LCBDContext context;
+        private LCBDEntities2 context;
 
         public Model()
         {
-            context = new LCBDContext();
+            context = new LCBDEntities2();
         }
 
 
@@ -50,9 +50,9 @@ namespace WindowsFormsApp1.modele
         }
 
 
-        public List<Lc> GetListLc()
+        public List<LC> GetListLc()
         {
-            return context.Lc.ToList();
+            return context.LC.ToList();
         }
 
 
@@ -62,9 +62,9 @@ namespace WindowsFormsApp1.modele
         }
 
 
-        public List<Lc> GestLcFromClient(int indexClient)
+        public List<LC> GestLcFromClient(int indexClient)
         {
-            return context.Lc.Where(a => a.IdClient == indexClient).ToList();
+            return context.LC.Where(a => a.id_client == indexClient).ToList();
         }
 
 
@@ -72,8 +72,8 @@ namespace WindowsFormsApp1.modele
         {
 
             var users = from user in context.Utilisateur
-                        where user.EmailUtilisateur == login
-                        && user.MdpUtilisateur == mdp
+                        where user.email_utilisateur == login
+                        && user.mdp_utilisateur == mdp
                         select user;
 
 
@@ -84,16 +84,21 @@ namespace WindowsFormsApp1.modele
 
             foreach(var result in users)
             {
-                utilisateur.NomUtilisateur = result.NomUtilisateur;
-                utilisateur.PrenomUtilisateur = result.PrenomUtilisateur;
-                utilisateur.EmailUtilisateur= result.EmailUtilisateur;
-                utilisateur.MdpUtilisateur= result.MdpUtilisateur;
-                utilisateur.IdDroit = result.IdDroit;
+                utilisateur.nom_utilisateur = result.nom_utilisateur;
+                utilisateur.prenom_utilisateur = result.prenom_utilisateur;
+                utilisateur.email_utilisateur = result.email_utilisateur;
+                utilisateur.mdp_utilisateur = result.mdp_utilisateur;
+                utilisateur.id_droit = result.id_droit;
 
             }
 
             return utilisateur;
 
+        }
+
+        public Etat GetStatut(int? index)
+        {
+            return context.Etat.Find(index);
         }
     }
 }

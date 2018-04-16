@@ -20,8 +20,6 @@ namespace WindowsFormsApp1
         public static Utilisateur Utilisateur { get; set; }
 
        
-        
-
         List<UserControl> listUserControle = new List<UserControl>();
 
         public pagePrincipale()
@@ -105,7 +103,7 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void signerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Utilisateur.IdDroit == 2)
+            if (pagePrincipale.Utilisateur.id_droit == 2)
                 InitUserContole(signerLC);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -121,7 +119,7 @@ namespace WindowsFormsApp1
         private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Utilisateur.IdDroit == 2)
+            if (pagePrincipale.Utilisateur.id_droit == 2)
                 InitUserContole(creerUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -137,7 +135,7 @@ namespace WindowsFormsApp1
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Utilisateur.IdDroit == 2)
+            if (pagePrincipale.Utilisateur.id_droit == 2)
                 InitUserContole(manageUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");

@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Voir_Modif_LC));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboClient = new System.Windows.Forms.ComboBox();
-            this.comboLC = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.labelDateCrea = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboLC = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +55,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Client";
             // 
+            // comboClient
+            // 
+            this.comboClient.FormattingEnabled = true;
+            this.comboClient.Location = new System.Drawing.Point(224, 32);
+            this.comboClient.Name = "comboClient";
+            this.comboClient.Size = new System.Drawing.Size(234, 21);
+            this.comboClient.TabIndex = 1;
+            this.comboClient.SelectedIndexChanged += new System.EventHandler(this.comboClient_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Choisir un client : ";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.labelStatus);
             this.groupBox2.Controls.Add(this.labelDateCrea);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -70,14 +88,50 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lettre de coopération";
             // 
-            // label1
+            // labelStatus
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Choisir un client : ";
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(259, 99);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(35, 13);
+            this.labelStatus.TabIndex = 5;
+            this.labelStatus.Text = "label6";
+            // 
+            // labelDateCrea
+            // 
+            this.labelDateCrea.AutoSize = true;
+            this.labelDateCrea.Location = new System.Drawing.Point(259, 73);
+            this.labelDateCrea.Name = "labelDateCrea";
+            this.labelDateCrea.Size = new System.Drawing.Size(35, 13);
+            this.labelDateCrea.TabIndex = 4;
+            this.labelDateCrea.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(158, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Status : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(158, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Date de création : ";
+            // 
+            // comboLC
+            // 
+            this.comboLC.FormattingEnabled = true;
+            this.comboLC.Location = new System.Drawing.Point(224, 36);
+            this.comboLC.Name = "comboLC";
+            this.comboLC.Size = new System.Drawing.Size(234, 21);
+            this.comboLC.TabIndex = 1;
+            this.comboLC.SelectedIndexChanged += new System.EventHandler(this.comboLC_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -87,23 +141,6 @@
             this.label2.Size = new System.Drawing.Size(168, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Choisir une lettre de coopération : ";
-            // 
-            // comboClient
-            // 
-            this.comboClient.FormattingEnabled = true;
-            this.comboClient.Location = new System.Drawing.Point(224, 32);
-            this.comboClient.Name = "comboClient";
-            this.comboClient.Size = new System.Drawing.Size(234, 21);
-            this.comboClient.TabIndex = 1;
-            this.comboClient.SelectedIndexChanged += new System.EventHandler(this.comboClient_SelectedIndexChanged);
-            // 
-            // comboLC
-            // 
-            this.comboLC.FormattingEnabled = true;
-            this.comboLC.Location = new System.Drawing.Point(224, 36);
-            this.comboLC.Name = "comboLC";
-            this.comboLC.Size = new System.Drawing.Size(234, 21);
-            this.comboLC.TabIndex = 1;
             // 
             // button1
             // 
@@ -115,42 +152,6 @@
             this.button1.Text = "Afficher";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(224, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Date de création : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Status : ";
-            // 
-            // labelDateCrea
-            // 
-            this.labelDateCrea.AutoSize = true;
-            this.labelDateCrea.Location = new System.Drawing.Point(326, 73);
-            this.labelDateCrea.Name = "labelDateCrea";
-            this.labelDateCrea.Size = new System.Drawing.Size(35, 13);
-            this.labelDateCrea.TabIndex = 4;
-            this.labelDateCrea.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(326, 99);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
             // 
             // Voir_Modif_LC
             // 
@@ -181,7 +182,7 @@
         private System.Windows.Forms.ComboBox comboLC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label labelDateCrea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

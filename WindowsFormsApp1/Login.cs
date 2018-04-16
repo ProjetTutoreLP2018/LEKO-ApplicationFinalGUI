@@ -48,8 +48,8 @@ namespace WindowsFormsApp1
 
 
                     Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
-                    labelWelcome.Text = pagePrincipale.Utilisateur.NomUtilisateur
-                + " " + pagePrincipale.Utilisateur.PrenomUtilisateur;
+                    labelWelcome.Text = pagePrincipale.Utilisateur.nom_utilisateur
+                + " " + pagePrincipale.Utilisateur.prenom_utilisateur;
 
 
                     this.textBoxUtilisateur.Text = string.Empty;
