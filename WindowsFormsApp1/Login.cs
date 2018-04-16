@@ -6,10 +6,13 @@ namespace WindowsFormsApp1
 {
     public partial class Login : UserControl
     {
+
+       
         public Login()
         {
             InitializeComponent();
             this.textBoxPass.PasswordChar = '•';
+
         }
 
 

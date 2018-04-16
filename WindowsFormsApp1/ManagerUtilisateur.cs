@@ -87,6 +87,11 @@ namespace WindowsFormsApp1
 
             comboDroit.SelectedIndex = utilisateurs[index].id_droit - 1;
 
+            if (utilisateurs[index].isAdmin)
+                checkBoxAdmin.Checked = true;
+            else
+                checkBoxAdmin.Checked = false;
+
         }
 
         // Modify user
@@ -115,6 +120,11 @@ namespace WindowsFormsApp1
                     indexDroit = d.id_droit;
 
             utilisateurs[index].id_droit = indexDroit;
+
+            if (checkBoxAdmin.Checked)
+                utilisateurs[index].isAdmin = true;
+            else
+                utilisateurs[index].isAdmin = false;
 
             model.ModifUtilisateur();
             MessageBox.Show("Votre utilisateur a bien été modifié");

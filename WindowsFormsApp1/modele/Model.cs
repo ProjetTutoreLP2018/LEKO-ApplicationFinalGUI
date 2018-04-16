@@ -100,5 +100,10 @@ namespace WindowsFormsApp1.modele
         {
             return context.Etat.Find(index);
         }
+
+        public Utilisateur GetUser(int? index)
+        {
+            return context.Utilisateur.Find(index);
+        }
     }
 }

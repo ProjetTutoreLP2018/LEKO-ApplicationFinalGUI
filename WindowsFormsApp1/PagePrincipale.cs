@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         private UserControl voir_mod_lc = new Voir_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
-
+        
         public static Utilisateur Utilisateur { get; set; }
 
        
@@ -24,9 +24,10 @@ namespace WindowsFormsApp1
 
         public pagePrincipale()
         {
-            InitializeComponent();
-           
+
+            InitializeComponent();         
         }
+
 
 
         /// <summary>
@@ -60,12 +61,16 @@ namespace WindowsFormsApp1
             log.Dock = DockStyle.Top;
             log.Show();
 
+            
+
             imageHome.Visible = false;
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+          
             Init();
            
         }

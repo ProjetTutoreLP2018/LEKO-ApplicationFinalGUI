@@ -76,7 +76,11 @@ namespace WindowsFormsApp1
             foreach (Droit d in droits)
                 if (d.permission.Equals(comboDroit.SelectedItem))
                     index = d.id_droit;
-            
+
+            if (checkBoxAdmin.Checked)
+                utilisateur.isAdmin = true;
+            else
+                utilisateur.isAdmin = false;
 
             utilisateur.id_droit = index;
             utilisateur.mdp_utilisateur= textPass.Text;

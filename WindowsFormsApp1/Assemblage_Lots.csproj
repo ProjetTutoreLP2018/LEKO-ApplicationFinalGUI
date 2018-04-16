@@ -225,6 +225,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChoosePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoosePath.Designer.cs">
+      <DependentUpon>ChoosePath.cs</DependentUpon>
+    </Compile>
     <Compile Include="modele\Activite.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
@@ -328,6 +334,9 @@
       <DependentUpon>SignerLC.cs</DependentUpon>
     </Compile>
     <Compile Include="Ville.cs" />
+    <EmbeddedResource Include="ChoosePath.resx">
+      <DependentUpon>ChoosePath.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Voir_Modif_LC.resx">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
     </EmbeddedResource>

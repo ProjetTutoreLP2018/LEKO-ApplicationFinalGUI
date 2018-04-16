@@ -40,6 +40,8 @@
             this.comboLC = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelCreateur = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +77,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelCreateur);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.labelStatus);
             this.groupBox2.Controls.Add(this.labelDateCrea);
             this.groupBox2.Controls.Add(this.label4);
@@ -93,18 +97,18 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.Location = new System.Drawing.Point(259, 99);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(35, 13);
+            this.labelStatus.Size = new System.Drawing.Size(16, 13);
             this.labelStatus.TabIndex = 5;
-            this.labelStatus.Text = "label6";
+            this.labelStatus.Text = "...";
             // 
             // labelDateCrea
             // 
             this.labelDateCrea.AutoSize = true;
             this.labelDateCrea.Location = new System.Drawing.Point(259, 73);
             this.labelDateCrea.Name = "labelDateCrea";
-            this.labelDateCrea.Size = new System.Drawing.Size(35, 13);
+            this.labelDateCrea.Size = new System.Drawing.Size(16, 13);
             this.labelDateCrea.TabIndex = 4;
-            this.labelDateCrea.Text = "label5";
+            this.labelDateCrea.Text = "...";
             // 
             // label4
             // 
@@ -153,6 +157,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(158, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Créateur : ";
+            // 
+            // labelCreateur
+            // 
+            this.labelCreateur.AutoSize = true;
+            this.labelCreateur.Location = new System.Drawing.Point(259, 124);
+            this.labelCreateur.Name = "labelCreateur";
+            this.labelCreateur.Size = new System.Drawing.Size(16, 13);
+            this.labelCreateur.TabIndex = 7;
+            this.labelCreateur.Text = "...";
+            // 
             // Voir_Modif_LC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +208,7 @@
         private System.Windows.Forms.Label labelDateCrea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelCreateur;
+        private System.Windows.Forms.Label label5;
     }
 }

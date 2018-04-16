@@ -35,12 +35,15 @@
             this.voirModifierUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signerUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.envoyerUneLCAuClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.retourLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archiveLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.voirModifierUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesUtilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagerUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterUnModèleDeLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelUtilisateur = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
@@ -54,9 +57,7 @@
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureLogout = new System.Windows.Forms.PictureBox();
-            this.ajouterUnModèleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.retourLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.archiveLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerCheminDossierFINACOOPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageHome)).BeginInit();
@@ -81,7 +82,6 @@
             this.voirModifierUneLCToolStripMenuItem,
             this.signerUneLCToolStripMenuItem,
             this.envoyerUneLCAuClientToolStripMenuItem,
-            this.ajouterUnModèleToolStripMenuItem,
             this.retourLCToolStripMenuItem,
             this.archiveLCToolStripMenuItem});
             this.gestionDesLettreDeCoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -111,6 +111,16 @@
             this.envoyerUneLCAuClientToolStripMenuItem.Name = "envoyerUneLCAuClientToolStripMenuItem";
             resources.ApplyResources(this.envoyerUneLCAuClientToolStripMenuItem, "envoyerUneLCAuClientToolStripMenuItem");
             // 
+            // retourLCToolStripMenuItem
+            // 
+            this.retourLCToolStripMenuItem.Name = "retourLCToolStripMenuItem";
+            resources.ApplyResources(this.retourLCToolStripMenuItem, "retourLCToolStripMenuItem");
+            // 
+            // archiveLCToolStripMenuItem
+            // 
+            this.archiveLCToolStripMenuItem.Name = "archiveLCToolStripMenuItem";
+            resources.ApplyResources(this.archiveLCToolStripMenuItem, "archiveLCToolStripMenuItem");
+            // 
             // gestionDesClientsToolStripMenuItem
             // 
             this.gestionDesClientsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -134,7 +144,9 @@
             // 
             this.gestionDesUtilisateursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.créerUnUtilisateurToolStripMenuItem,
-            this.ManagerUtilisateurToolStripMenuItem});
+            this.ManagerUtilisateurToolStripMenuItem,
+            this.ajouterUnModèleDeLCToolStripMenuItem,
+            this.changerCheminDossierFINACOOPToolStripMenuItem});
             this.gestionDesUtilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gestionDesUtilisateursToolStripMenuItem.Name = "gestionDesUtilisateursToolStripMenuItem";
             resources.ApplyResources(this.gestionDesUtilisateursToolStripMenuItem, "gestionDesUtilisateursToolStripMenuItem");
@@ -150,6 +162,11 @@
             this.ManagerUtilisateurToolStripMenuItem.Name = "ManagerUtilisateurToolStripMenuItem";
             resources.ApplyResources(this.ManagerUtilisateurToolStripMenuItem, "ManagerUtilisateurToolStripMenuItem");
             this.ManagerUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.ManagerUtilisateurToolStripMenuItem_Click);
+            // 
+            // ajouterUnModèleDeLCToolStripMenuItem
+            // 
+            this.ajouterUnModèleDeLCToolStripMenuItem.Name = "ajouterUnModèleDeLCToolStripMenuItem";
+            resources.ApplyResources(this.ajouterUnModèleDeLCToolStripMenuItem, "ajouterUnModèleDeLCToolStripMenuItem");
             // 
             // aProposToolStripMenuItem
             // 
@@ -229,20 +246,10 @@
             this.pictureLogout.TabStop = false;
             this.pictureLogout.Click += new System.EventHandler(this.pictureLogout_Click);
             // 
-            // ajouterUnModèleToolStripMenuItem
+            // changerCheminDossierFINACOOPToolStripMenuItem
             // 
-            this.ajouterUnModèleToolStripMenuItem.Name = "ajouterUnModèleToolStripMenuItem";
-            resources.ApplyResources(this.ajouterUnModèleToolStripMenuItem, "ajouterUnModèleToolStripMenuItem");
-            // 
-            // retourLCToolStripMenuItem
-            // 
-            this.retourLCToolStripMenuItem.Name = "retourLCToolStripMenuItem";
-            resources.ApplyResources(this.retourLCToolStripMenuItem, "retourLCToolStripMenuItem");
-            // 
-            // archiveLCToolStripMenuItem
-            // 
-            this.archiveLCToolStripMenuItem.Name = "archiveLCToolStripMenuItem";
-            resources.ApplyResources(this.archiveLCToolStripMenuItem, "archiveLCToolStripMenuItem");
+            this.changerCheminDossierFINACOOPToolStripMenuItem.Name = "changerCheminDossierFINACOOPToolStripMenuItem";
+            resources.ApplyResources(this.changerCheminDossierFINACOOPToolStripMenuItem, "changerCheminDossierFINACOOPToolStripMenuItem");
             // 
             // pagePrincipale
             // 
@@ -297,9 +304,10 @@
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.PictureBox pictureLogout;
-        private System.Windows.Forms.ToolStripMenuItem ajouterUnModèleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem retourLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem archiveLCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterUnModèleDeLCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changerCheminDossierFINACOOPToolStripMenuItem;
     }
 }
 

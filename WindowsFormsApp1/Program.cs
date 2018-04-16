@@ -9,6 +9,9 @@ namespace WindowsFormsApp1
 {
     static class Program
     {
+
+        public static string FINACOOPFolder { get; set; }
+
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -17,8 +20,23 @@ namespace WindowsFormsApp1
         {
             try
             {
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+
+                if (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP))
+                {
+                    ChoosePath choosePath = new ChoosePath();
+                    Application.Run(choosePath);
+
+                    Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
+                    Properties.Settings.Default.Save();
+                } else
+                {
+                    FINACOOPFolder = Properties.Settings.Default.PathFINACOOP;
+                }
+
+
                 Application.Run(new pagePrincipale());
 
             } catch (System.Data.SqlClient.SqlException e)

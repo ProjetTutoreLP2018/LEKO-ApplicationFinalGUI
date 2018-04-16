@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
 
+            MessageBox.Show(listLc[indexLc].chemin_lc);
             AfficherLC(listLc[indexLc].chemin_lc);
         }
 
@@ -89,11 +90,6 @@ namespace WindowsFormsApp1
                     ref missing);
 
 
-
-            // désactiver le bouton ouvrir et activé le bouton fermer
-            // close.Enabled = true;
-            // open.Enabled = false;
-
         }
 
 
@@ -104,7 +100,12 @@ namespace WindowsFormsApp1
 
             Etat etat = model.GetStatut(listLc[indexLc].id_etat);
 
-            if(etat.libelle_etat.Equals("C"))
+            Utilisateur utilisateur = model.GetUser(listLc[indexLc].id_utilisateur);
+
+            labelCreateur.Text = utilisateur.nom_utilisateur + " " +
+                utilisateur.prenom_utilisateur;
+
+            if (etat.libelle_etat.Equals("C"))
                 labelStatus.Text = "En attente de validation comptable";
             if (etat.libelle_etat.Equals("ATCL"))
                 labelStatus.Text = "En attente de signature du client";
