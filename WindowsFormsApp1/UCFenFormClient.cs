@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LettreCooperation.modele;
 using WindowsFormsApp1.Model;
@@ -17,6 +10,7 @@ namespace lot1
 		public UCFenFormClient()
 		{
 			InitializeComponent();
+            ESSNon.Checked = true;
 		}
 
 		private void préremplirAutomatiquementToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -86,7 +80,9 @@ namespace lot1
 
                 MessageBox.Show("Votre client " + client.raison_sociale + " a bien était enregistré");
 
-			}
+                Init();
+
+            }
 			catch (Exception ex)
 			{
 				MessageBox.Show("Une erreur est survenue. Veuillez réessayer.\nSi cette erreur se reproduit à l'avenir, contactez le développeur du logiciel en lui indiquant le message d'erreur.\nMessage d'erreur : " + ex.StackTrace, "Erreur");
@@ -103,6 +99,33 @@ namespace lot1
         private void Init()
         {
 
+
+            NumeroVoie.Text = string.Empty;
+
+            IndiceRepetition.Items.Clear();
+            Adresse.Text = string.Empty;
+            Complement.Text = string.Empty;
+            CodePostal.Text = string.Empty;
+            Ville.Text = string.Empty;
+            
+            CA.Value = 0;
+            DateImmatriculation.Value = DateTime.Now;
+            Effectif.Value = 0;
+            ESSOui.Checked = false;
+            FonctionRepresentant.Text = string.Empty;
+            FormeJuridique.Text = string.Empty;
+            LieuImmatriculation.Text = string.Empty;
+            NomRepresentant.Text = string.Empty;
+            OrganisationComptable.Text = string.Empty;
+            PrenomRepresentant.Text = string.Empty;
+            NomOrganisation.Text = string.Empty;
+            SexeRepresentant.Text = string.Empty;
+            NumeroSiret.Text = string.Empty;
+            SiteInternet.Text = string.Empty;
+            TelephoneRepresentant.Text = string.Empty;
+            TelephonePortableRepresentant.Text = string.Empty;
+            VolumesAnnuels.Text = string.Empty;
+            
         }
  
     }

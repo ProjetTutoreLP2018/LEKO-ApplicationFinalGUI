@@ -63,7 +63,6 @@
             this.Effectif = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.ESSOui = new System.Windows.Forms.RadioButton();
-            this.ESSJnsp = new System.Windows.Forms.RadioButton();
             this.ESSNon = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -216,7 +215,6 @@
             this.groupBox1.Controls.Add(this.Effectif);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ESSOui);
-            this.groupBox1.Controls.Add(this.ESSJnsp);
             this.groupBox1.Controls.Add(this.ESSNon);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -442,7 +440,7 @@
             // ESSOui
             // 
             this.ESSOui.AutoSize = true;
-            this.ESSOui.Location = new System.Drawing.Point(130, 233);
+            this.ESSOui.Location = new System.Drawing.Point(130, 237);
             this.ESSOui.Name = "ESSOui";
             this.ESSOui.Size = new System.Drawing.Size(41, 17);
             this.ESSOui.TabIndex = 12;
@@ -450,21 +448,10 @@
             this.ESSOui.Text = "Oui";
             this.ESSOui.UseVisualStyleBackColor = true;
             // 
-            // ESSJnsp
-            // 
-            this.ESSJnsp.AutoSize = true;
-            this.ESSJnsp.Location = new System.Drawing.Point(130, 261);
-            this.ESSJnsp.Name = "ESSJnsp";
-            this.ESSJnsp.Size = new System.Drawing.Size(92, 17);
-            this.ESSJnsp.TabIndex = 14;
-            this.ESSJnsp.TabStop = true;
-            this.ESSJnsp.Text = "Je ne sais pas";
-            this.ESSJnsp.UseVisualStyleBackColor = true;
-            // 
             // ESSNon
             // 
             this.ESSNon.AutoSize = true;
-            this.ESSNon.Location = new System.Drawing.Point(181, 232);
+            this.ESSNon.Location = new System.Drawing.Point(181, 238);
             this.ESSNon.Name = "ESSNon";
             this.ESSNon.Size = new System.Drawing.Size(45, 17);
             this.ESSNon.TabIndex = 13;
@@ -843,7 +830,6 @@
         private System.Windows.Forms.NumericUpDown Effectif;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton ESSOui;
-        private System.Windows.Forms.RadioButton ESSJnsp;
         private System.Windows.Forms.RadioButton ESSNon;
         private System.Windows.Forms.NumericUpDown VolumesAnnuels;
         private System.Windows.Forms.TextBox NumeroSiret;

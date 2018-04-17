@@ -142,21 +142,11 @@ namespace WindowsFormsApp1
             
 
 
-
-
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
+    
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
+        private void bAnnuler_Click(object sender, EventArgs e)
         {
 
         }

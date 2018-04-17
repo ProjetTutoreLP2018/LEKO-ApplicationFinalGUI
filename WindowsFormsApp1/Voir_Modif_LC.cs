@@ -52,6 +52,7 @@ namespace LettreCooperation
         {
             this.indexClient = comboClient.SelectedIndex;
             comboLC.Items.Clear();
+            comboLC.ResetText();
 
             listLc =  model.GestLcFromClient(listClient[indexClient].id_client);
 
