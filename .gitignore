@@ -9,6 +9,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+/WindowsFormsApp1/App.config
 /App.config
  
 # Build results 
