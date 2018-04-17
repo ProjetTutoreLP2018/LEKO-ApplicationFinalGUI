@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 using WindowsFormsApp1.Model;
 
 namespace LettreCooperation
@@ -15,11 +16,12 @@ namespace LettreCooperation
         private UserControl voir_mod_lc = new Voir_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
+        private UserControl formulaireClient = new UCFormulaireClient();
         
         public static Utilisateur Utilisateur { get; set; }
 
        
-        List<UserControl> listUserControle = new List<UserControl>();
+        //List<UserControl> listUserControle = new List<UserControl>();
 
         public pagePrincipale()
         {
@@ -56,6 +58,9 @@ namespace LettreCooperation
 
             manageUtilisateur.Parent = mainPanel;
             manageUtilisateur.Visible = false;
+
+            formulaireClient.Parent = mainPanel;
+            formulaireClient.Visible = false;
 
             log.Parent = this;
             log.Dock = DockStyle.Top;
@@ -235,7 +240,7 @@ namespace LettreCooperation
 
         private void créerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            InitUserContole(formulaireClient);
         }
 
         private void voirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
