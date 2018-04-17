@@ -25,7 +25,7 @@ namespace LettreCooperation
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 // =================================================
-                WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP = String.Empty;
+              //  WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP = String.Empty;
                 //==================================================
 
                 

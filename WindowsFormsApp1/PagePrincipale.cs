@@ -16,7 +16,7 @@ namespace LettreCooperation
         private UserControl voir_mod_lc = new Voir_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
-        private UserControl formulaireClient = new UCFormulaireClient();
+        private UserControl formulaireClient = new UCFenFormClient();
         
         public static Utilisateur Utilisateur { get; set; }
 

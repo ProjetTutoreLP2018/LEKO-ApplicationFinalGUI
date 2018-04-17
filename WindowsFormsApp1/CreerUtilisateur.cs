@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
                     {
                         utilisateur.isAdmin = false;
                     }
-
+                    
                     int index = 0;
 
                     foreach (Droit d in droits)

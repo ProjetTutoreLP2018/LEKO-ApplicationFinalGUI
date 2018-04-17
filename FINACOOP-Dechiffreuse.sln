@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assemblage_Lots", "WindowsFormsApp1\Assemblage_Lots.csproj", "{7839F175-E185-446A-84E4-2E0135BC3A84}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OuiInstaller", "OuiInstaller\OuiInstaller.vdproj", "{1B6000AC-D685-4AC2-B8CA-5549F307E9B5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{7839F175-E185-446A-84E4-2E0135BC3A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7839F175-E185-446A-84E4-2E0135BC3A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7839F175-E185-446A-84E4-2E0135BC3A84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B6000AC-D685-4AC2-B8CA-5549F307E9B5}.Debug|Any CPU.ActiveCfg = Debug
-		{1B6000AC-D685-4AC2-B8CA-5549F307E9B5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

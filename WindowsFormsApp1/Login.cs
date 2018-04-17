@@ -31,8 +31,7 @@ namespace LettreCooperation
                 ModelManager connexion = new ModelManager();
                 Utilisateur connecte = connexion.seConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
 
-                MessageBox.Show("Admin : " + connecte.isAdmin);
-
+               
                 if (connecte != null)
                 {
                     this.Visible = false;

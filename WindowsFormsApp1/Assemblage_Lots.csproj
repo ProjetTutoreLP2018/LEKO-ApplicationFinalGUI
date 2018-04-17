@@ -296,12 +296,6 @@
     <Compile Include="UCFenFormClient.designer.cs">
       <DependentUpon>UCFenFormClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCFormulaireClient.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCFormulaireClient.Designer.cs">
-      <DependentUpon>UCFormulaireClient.cs</DependentUpon>
-    </Compile>
     <Compile Include="Voir_Modif_LC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -367,9 +361,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCFenFormClient.resx">
       <DependentUpon>UCFenFormClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCFormulaireClient.resx">
-      <DependentUpon>UCFormulaireClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Voir_Modif_LC.resx">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>

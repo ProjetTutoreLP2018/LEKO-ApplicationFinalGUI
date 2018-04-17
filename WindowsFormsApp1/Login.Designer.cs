@@ -87,6 +87,7 @@
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(188, 20);
             this.textBoxPass.TabIndex = 4;
+            this.textBoxPass.Text = "azerty";
             // 
             // labelPass
             // 
@@ -104,6 +105,7 @@
             this.textBoxUtilisateur.Name = "textBoxUtilisateur";
             this.textBoxUtilisateur.Size = new System.Drawing.Size(188, 20);
             this.textBoxUtilisateur.TabIndex = 2;
+            this.textBoxUtilisateur.Text = "charlotte.picois@gmail.com";
             // 
             // labelUtilisateur
             // 
