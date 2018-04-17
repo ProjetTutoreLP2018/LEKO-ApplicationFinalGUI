@@ -23,7 +23,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonConnexion_Click(object sender, EventArgs e)
+        private void ButtonConnexion_Click(object sender, EventArgs e)
         {
 
             if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
@@ -35,7 +35,7 @@ namespace LettreCooperation
                 if (connecte != null)
                 {
                     this.Visible = false;
-                    pagePrincipale.Utilisateur = connecte;
+                    PagePrincipale.Utilisateur = connecte;
 
                     this.InitMainPage();
 
@@ -79,8 +79,8 @@ namespace LettreCooperation
 
 
             Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
-            labelWelcome.Text = pagePrincipale.Utilisateur.nom_utilisateur
-        + " " + pagePrincipale.Utilisateur.prenom_utilisateur;
+            labelWelcome.Text = PagePrincipale.Utilisateur.nom_utilisateur
+        + " " + PagePrincipale.Utilisateur.prenom_utilisateur;
 
         }
     }

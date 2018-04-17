@@ -7,7 +7,7 @@ using WindowsFormsApp1.Model;
 
 namespace LettreCooperation
 {
-    public partial class pagePrincipale : Form
+    public partial class PagePrincipale : Form
     {
 
         private UserControl log = new Login();
@@ -20,10 +20,8 @@ namespace LettreCooperation
         
         public static Utilisateur Utilisateur { get; set; }
 
-       
-        //List<UserControl> listUserControle = new List<UserControl>();
 
-        public pagePrincipale()
+        public PagePrincipale()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -36,7 +34,7 @@ namespace LettreCooperation
 
         /// <summary>
         /// Méthode d'initialisation des éléments
-        /// de la page
+        /// du menu
         /// </summary>
         private void Init()
         {
@@ -87,7 +85,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void créerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CréerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
    
             InitUserContole(creerLC);
@@ -99,7 +97,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void voirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
+        private void VoirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             InitUserContole(voir_mod_lc);
@@ -112,9 +110,9 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void signerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SignerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Utilisateur.id_droit == 2)
+            if (PagePrincipale.Utilisateur.id_droit == 2)
                 InitUserContole(signerLC);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -127,10 +125,10 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CréerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Utilisateur.isAdmin)
+            if (PagePrincipale.Utilisateur.isAdmin)
                 InitUserContole(creerUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -146,7 +144,7 @@ namespace LettreCooperation
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Utilisateur.isAdmin)
+            if (PagePrincipale.Utilisateur.isAdmin)
                 InitUserContole(manageUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -171,7 +169,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureHome_Click(object sender, EventArgs e)
         {
             mainPanel.Controls.Clear();
         }
@@ -182,15 +180,21 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pictureLogout_Click(object sender, EventArgs e)
+        private void PictureLogout_Click(object sender, EventArgs e)
         {
             Init();
             MessageBox.Show("Vous avez été déconnecté");
         }
 
-        private void envoyerUneLCAuClientToolStripMenuItem_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui gére l'envoir de la LC au client par mail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EnvoyerUneLCAuClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Utilisateur.id_droit == 2)
+            if (PagePrincipale.Utilisateur.id_droit == 2)
             {
                 ///TODO: Page d'envoie de LC au client
             }
@@ -198,9 +202,15 @@ namespace LettreCooperation
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
 
-        private void retourLCToolStripMenuItem_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui gère le retour de la LC signée par le client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RetourLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Utilisateur.id_droit == 2)
+            if (PagePrincipale.Utilisateur.id_droit == 2)
             {
                 ///TODO: Page de gestion de retour de LC
             }
@@ -208,19 +218,15 @@ namespace LettreCooperation
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
 
-        private void archiveLCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (pagePrincipale.Utilisateur.id_droit == 2)
-            {
-                ///TODO: Page d'archivage d'une LC
-            }
-            else
-                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
-        }
 
-        private void managerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Méthode qu gère les modèles de LC
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ManagerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Utilisateur.isAdmin)
+            if (PagePrincipale.Utilisateur.isAdmin)
             {
                 ///TODO: Page d'ajout/suppression d'un modele
             }
@@ -228,9 +234,16 @@ namespace LettreCooperation
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
 
-        private void changerCheminDossierFINACOOPToolStripMenuItem_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui permet de changer le chemin du
+        /// fichier FINACOOP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ChangerCheminDossierFINACOOPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (pagePrincipale.Utilisateur.isAdmin)
+            if (PagePrincipale.Utilisateur.isAdmin)
             {
                 ///TODO: Page de changement de Path pour le dossier FINACOOP
             }
@@ -238,12 +251,37 @@ namespace LettreCooperation
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
 
-        private void créerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui permet de créer un client
+        /// dans la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CréerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InitUserContole(formulaireClient);
         }
 
-        private void voirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui permet de voir et modifier un client
+        /// dans la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void VoirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de montrer la page ' A propos '
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -79,7 +79,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void comboNomUtilisateur_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboNomUtilisateur_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.index = comboNomUtilisateur.SelectedIndex;
             textNom.Text = utilisateurs[index].nom_utilisateur;
@@ -95,7 +95,7 @@ namespace LettreCooperation
 
         }
 
-        // Modify user
+
         /// <summary>
         /// Méthode qui permet de modifier les éléments
         /// inscrit dans les champs en fonction de l'élément séléctionné
@@ -103,7 +103,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonModifier_Click(object sender, EventArgs e)
         {
 
 
@@ -132,7 +132,7 @@ namespace LettreCooperation
             Init();
         }
 
-        // Delete user
+
         /// <summary>
         /// Méthode qui permet de supprimer 
         /// de la base de données l'utilisateur
@@ -141,7 +141,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
 
             model.SupprimerUtilisateur(utilisateurs[index]);

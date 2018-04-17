@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class pagePrincipale
+    partial class PagePrincipale
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pagePrincipale));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagePrincipale));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.gestionDesLettreDeCoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +36,6 @@
             this.signerUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.envoyerUneLCAuClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retourLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.archiveLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.voirModifierUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,8 +81,7 @@
             this.voirModifierUneLCToolStripMenuItem,
             this.signerUneLCToolStripMenuItem,
             this.envoyerUneLCAuClientToolStripMenuItem,
-            this.retourLCToolStripMenuItem,
-            this.archiveLCToolStripMenuItem});
+            this.retourLCToolStripMenuItem});
             this.gestionDesLettreDeCoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gestionDesLettreDeCoToolStripMenuItem.Name = "gestionDesLettreDeCoToolStripMenuItem";
             resources.ApplyResources(this.gestionDesLettreDeCoToolStripMenuItem, "gestionDesLettreDeCoToolStripMenuItem");
@@ -92,37 +90,31 @@
             // 
             this.créerUneLCToolStripMenuItem.Name = "créerUneLCToolStripMenuItem";
             resources.ApplyResources(this.créerUneLCToolStripMenuItem, "créerUneLCToolStripMenuItem");
-            this.créerUneLCToolStripMenuItem.Click += new System.EventHandler(this.créerUneLCToolStripMenuItem_Click);
+            this.créerUneLCToolStripMenuItem.Click += new System.EventHandler(this.CréerUneLCToolStripMenuItem_Click);
             // 
             // voirModifierUneLCToolStripMenuItem
             // 
             this.voirModifierUneLCToolStripMenuItem.Name = "voirModifierUneLCToolStripMenuItem";
             resources.ApplyResources(this.voirModifierUneLCToolStripMenuItem, "voirModifierUneLCToolStripMenuItem");
-            this.voirModifierUneLCToolStripMenuItem.Click += new System.EventHandler(this.voirModifierUneLCToolStripMenuItem_Click);
+            this.voirModifierUneLCToolStripMenuItem.Click += new System.EventHandler(this.VoirModifierUneLCToolStripMenuItem_Click);
             // 
             // signerUneLCToolStripMenuItem
             // 
             this.signerUneLCToolStripMenuItem.Name = "signerUneLCToolStripMenuItem";
             resources.ApplyResources(this.signerUneLCToolStripMenuItem, "signerUneLCToolStripMenuItem");
-            this.signerUneLCToolStripMenuItem.Click += new System.EventHandler(this.signerUneLCToolStripMenuItem_Click);
+            this.signerUneLCToolStripMenuItem.Click += new System.EventHandler(this.SignerUneLCToolStripMenuItem_Click);
             // 
             // envoyerUneLCAuClientToolStripMenuItem
             // 
             this.envoyerUneLCAuClientToolStripMenuItem.Name = "envoyerUneLCAuClientToolStripMenuItem";
             resources.ApplyResources(this.envoyerUneLCAuClientToolStripMenuItem, "envoyerUneLCAuClientToolStripMenuItem");
-            this.envoyerUneLCAuClientToolStripMenuItem.Click += new System.EventHandler(this.envoyerUneLCAuClientToolStripMenuItem_Click);
+            this.envoyerUneLCAuClientToolStripMenuItem.Click += new System.EventHandler(this.EnvoyerUneLCAuClientToolStripMenuItem_Click);
             // 
             // retourLCToolStripMenuItem
             // 
             this.retourLCToolStripMenuItem.Name = "retourLCToolStripMenuItem";
             resources.ApplyResources(this.retourLCToolStripMenuItem, "retourLCToolStripMenuItem");
-            this.retourLCToolStripMenuItem.Click += new System.EventHandler(this.retourLCToolStripMenuItem_Click);
-            // 
-            // archiveLCToolStripMenuItem
-            // 
-            this.archiveLCToolStripMenuItem.Name = "archiveLCToolStripMenuItem";
-            resources.ApplyResources(this.archiveLCToolStripMenuItem, "archiveLCToolStripMenuItem");
-            this.archiveLCToolStripMenuItem.Click += new System.EventHandler(this.archiveLCToolStripMenuItem_Click);
+            this.retourLCToolStripMenuItem.Click += new System.EventHandler(this.RetourLCToolStripMenuItem_Click);
             // 
             // gestionDesClientsToolStripMenuItem
             // 
@@ -137,13 +129,13 @@
             // 
             this.créerUnClientToolStripMenuItem.Name = "créerUnClientToolStripMenuItem";
             resources.ApplyResources(this.créerUnClientToolStripMenuItem, "créerUnClientToolStripMenuItem");
-            this.créerUnClientToolStripMenuItem.Click += new System.EventHandler(this.créerUnClientToolStripMenuItem_Click);
+            this.créerUnClientToolStripMenuItem.Click += new System.EventHandler(this.CréerUnClientToolStripMenuItem_Click);
             // 
             // voirModifierUnClientToolStripMenuItem
             // 
             this.voirModifierUnClientToolStripMenuItem.Name = "voirModifierUnClientToolStripMenuItem";
             resources.ApplyResources(this.voirModifierUnClientToolStripMenuItem, "voirModifierUnClientToolStripMenuItem");
-            this.voirModifierUnClientToolStripMenuItem.Click += new System.EventHandler(this.voirModifierUnClientToolStripMenuItem_Click);
+            this.voirModifierUnClientToolStripMenuItem.Click += new System.EventHandler(this.VoirModifierUnClientToolStripMenuItem_Click);
             // 
             // gestionDesUtilisateursToolStripMenuItem
             // 
@@ -160,7 +152,7 @@
             // 
             this.créerUnUtilisateurToolStripMenuItem.Name = "créerUnUtilisateurToolStripMenuItem";
             resources.ApplyResources(this.créerUnUtilisateurToolStripMenuItem, "créerUnUtilisateurToolStripMenuItem");
-            this.créerUnUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.créerUnUtilisateurToolStripMenuItem_Click);
+            this.créerUnUtilisateurToolStripMenuItem.Click += new System.EventHandler(this.CréerUnUtilisateurToolStripMenuItem_Click);
             // 
             // ManagerUtilisateurToolStripMenuItem
             // 
@@ -172,19 +164,20 @@
             // 
             this.ajouterUnModèleDeLCToolStripMenuItem.Name = "ajouterUnModèleDeLCToolStripMenuItem";
             resources.ApplyResources(this.ajouterUnModèleDeLCToolStripMenuItem, "ajouterUnModèleDeLCToolStripMenuItem");
-            this.ajouterUnModèleDeLCToolStripMenuItem.Click += new System.EventHandler(this.managerUnModèleDeLCToolStripMenuItem_Click);
+            this.ajouterUnModèleDeLCToolStripMenuItem.Click += new System.EventHandler(this.ManagerUnModèleDeLCToolStripMenuItem_Click);
             // 
             // changerCheminDossierFINACOOPToolStripMenuItem
             // 
             this.changerCheminDossierFINACOOPToolStripMenuItem.Name = "changerCheminDossierFINACOOPToolStripMenuItem";
             resources.ApplyResources(this.changerCheminDossierFINACOOPToolStripMenuItem, "changerCheminDossierFINACOOPToolStripMenuItem");
-            this.changerCheminDossierFINACOOPToolStripMenuItem.Click += new System.EventHandler(this.changerCheminDossierFINACOOPToolStripMenuItem_Click);
+            this.changerCheminDossierFINACOOPToolStripMenuItem.Click += new System.EventHandler(this.ChangerCheminDossierFINACOOPToolStripMenuItem_Click);
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
             resources.ApplyResources(this.aProposToolStripMenuItem, "aProposToolStripMenuItem");
+            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.AProposToolStripMenuItem_Click);
             // 
             // labelUtilisateur
             // 
@@ -234,7 +227,7 @@
             this.imageHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imageHome.Name = "imageHome";
             this.imageHome.TabStop = false;
-            this.imageHome.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.imageHome.Click += new System.EventHandler(this.PictureHome_Click);
             // 
             // labelWelcome
             // 
@@ -256,9 +249,9 @@
             this.pictureLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureLogout.Name = "pictureLogout";
             this.pictureLogout.TabStop = false;
-            this.pictureLogout.Click += new System.EventHandler(this.pictureLogout_Click);
+            this.pictureLogout.Click += new System.EventHandler(this.PictureLogout_Click);
             // 
-            // pagePrincipale
+            // PagePrincipale
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +265,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.mainMenu;
-            this.Name = "pagePrincipale";
+            this.Name = "PagePrincipale";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();

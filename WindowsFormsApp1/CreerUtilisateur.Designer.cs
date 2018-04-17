@@ -139,7 +139,7 @@
             this.bAnnuler.TabIndex = 12;
             this.bAnnuler.Text = "Annuler";
             this.bAnnuler.UseVisualStyleBackColor = false;
-            this.bAnnuler.Click += new System.EventHandler(this.bAnnuler_Click);
+            this.bAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
             // 
             // bValider
             // 
@@ -151,7 +151,7 @@
             this.bValider.TabIndex = 11;
             this.bValider.Text = "Valider";
             this.bValider.UseVisualStyleBackColor = false;
-            this.bValider.Click += new System.EventHandler(this.bValider_Click);
+            this.bValider.Click += new System.EventHandler(this.ButtonValider_Click);
             // 
             // comboDroit
             // 

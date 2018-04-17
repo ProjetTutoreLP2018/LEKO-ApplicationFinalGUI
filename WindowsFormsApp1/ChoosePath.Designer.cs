@@ -55,7 +55,7 @@
             this.butonParcour.TabIndex = 1;
             this.butonParcour.Text = "Parcourir...";
             this.butonParcour.UseVisualStyleBackColor = true;
-            this.butonParcour.Click += new System.EventHandler(this.butonParcour_Click);
+            this.butonParcour.Click += new System.EventHandler(this.ButonParcour_Click);
             // 
             // textBoxPath
             // 
@@ -74,7 +74,7 @@
             this.buttonValider.TabIndex = 3;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
-            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
+            this.buttonValider.Click += new System.EventHandler(this.ButtonValider_Click);
             // 
             // buttonAnnuler
             // 
@@ -85,7 +85,7 @@
             this.buttonAnnuler.TabIndex = 4;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = false;
-            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            this.buttonAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
             // 
             // ChoosePath
             // 

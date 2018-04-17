@@ -70,7 +70,7 @@
             this.comboNomUtilisateur.Name = "comboNomUtilisateur";
             this.comboNomUtilisateur.Size = new System.Drawing.Size(121, 21);
             this.comboNomUtilisateur.TabIndex = 1;
-            this.comboNomUtilisateur.SelectedIndexChanged += new System.EventHandler(this.comboNomUtilisateur_SelectedIndexChanged);
+            this.comboNomUtilisateur.SelectedIndexChanged += new System.EventHandler(this.ComboNomUtilisateur_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -125,7 +125,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Supprimer";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // button1
             // 
@@ -137,7 +137,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Modifier";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ButtonModifier_Click);
             // 
             // groupBox3
             // 

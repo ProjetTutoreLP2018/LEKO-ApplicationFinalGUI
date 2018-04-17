@@ -401,7 +401,6 @@
     <EmbeddedResource Include="SignerLC.resx">
       <DependentUpon>SignerLC.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="client_secret.json" />
     <EntityDeploy Include="Model\ADOModele.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ADOModele.Designer.cs</LastGenOutput>

@@ -29,9 +29,6 @@ namespace WindowsFormsApp1
         {
 
 
-
-
-
             textNom.Text = string.Empty;
             textPrenom.Text = string.Empty;
             textEmail.Text = string.Empty;
@@ -43,7 +40,9 @@ namespace WindowsFormsApp1
             adresseMailConfMess.Text = string.Empty;
             mdpConfMess.Text = string.Empty;
 
-            
+            comboDroit.ResetText();
+
+            checkBoxAdmin.Checked = false;
 
             this.textPass.PasswordChar = '•';
             this.textConfPass.PasswordChar = '•';
@@ -76,7 +75,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bValider_Click(object sender, EventArgs e)
+        private void ButtonValider_Click(object sender, EventArgs e)
         {
 
             adresseMailMess.Text = string.Empty;
@@ -132,7 +131,8 @@ namespace WindowsFormsApp1
 
                     model.CreerUtilisateur(utilisateur);
                     Init();
-                    
+                    MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
+                        " " + utilisateur.prenom_utilisateur + " a bien était créer");
                     
                 }
 
@@ -144,11 +144,16 @@ namespace WindowsFormsApp1
 
         }
 
-    
 
-        private void bAnnuler_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Méthode qui permet de réinitialiser
+        /// le formulaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonAnnuler_Click(object sender, EventArgs e)
         {
-
+            Init();
         }
     }
 }

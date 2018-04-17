@@ -5,11 +5,19 @@ namespace LettreCooperation
 {
     public partial class ChoosePath : Form
     {
+
+        /// <summary>
+        /// Constructeur de class qui permet
+        /// de l'initialiser
+        /// </summary>
         public ChoosePath()
         {
             InitializeComponent();
 
+            // Centrage de la page
             this.CenterToScreen();
+
+            // Nous fixons les dimmentions de l'application
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -21,13 +29,19 @@ namespace LettreCooperation
         }
 
 
-        private void buttonValider_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Méthode qui va gérer l'événement du clique
+        /// sur le bouton valider.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonValider_Click(object sender, EventArgs e)
         {
+            // Si le chemin du dossier est renseigné,
+            // nous pouvons ouvrir l'application
             if (!String.IsNullOrEmpty(textBoxPath.Text))
             {
-
                 Program.FINACOOPFolder = textBoxPath.Text;
-
                 this.Close();
 
             } else
@@ -37,7 +51,14 @@ namespace LettreCooperation
         }
 
 
-        private void butonParcour_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Méthode qui permet de gérer le parcour
+        /// sur le Disque Dur de l'utilisateur pour trouver
+        /// le dossier FINACOOP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButonParcour_Click(object sender, EventArgs e)
         {
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
@@ -45,7 +66,13 @@ namespace LettreCooperation
             }
         }
 
-        private void buttonAnnuler_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui permet de quitter l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonAnnuler_Click(object sender, EventArgs e)
         {
             Application.Exit();
             Program.QuitApp = true;

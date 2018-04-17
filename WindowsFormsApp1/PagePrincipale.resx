@@ -199,12 +199,6 @@
   <data name="retourLCToolStripMenuItem.Text" xml:space="preserve">
     <value>Retour LC</value>
   </data>
-  <data name="archiveLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="archiveLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Archive LC</value>
-  </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
@@ -3893,12 +3887,6 @@
   <data name="&gt;&gt;retourLCToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;archiveLCToolStripMenuItem.Name" xml:space="preserve">
-    <value>archiveLCToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;archiveLCToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;gestionDesClientsToolStripMenuItem.Name" xml:space="preserve">
     <value>gestionDesClientsToolStripMenuItem</value>
   </data>
@@ -3954,7 +3942,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>pagePrincipale</value>
+    <value>PagePrincipale</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

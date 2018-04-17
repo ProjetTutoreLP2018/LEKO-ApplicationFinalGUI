@@ -79,7 +79,7 @@
             this.buttonConnexion.TabIndex = 5;
             this.buttonConnexion.Text = "Connexion";
             this.buttonConnexion.UseVisualStyleBackColor = false;
-            this.buttonConnexion.Click += new System.EventHandler(this.buttonConnexion_Click);
+            this.buttonConnexion.Click += new System.EventHandler(this.ButtonConnexion_Click);
             // 
             // textBoxPass
             // 

@@ -55,7 +55,7 @@ namespace LettreCooperation
                 }
 
                 if(!QuitApp)
-                    Application.Run(new pagePrincipale());
+                    Application.Run(new PagePrincipale());
 
             } catch (System.Data.SqlClient.SqlException)
             {
