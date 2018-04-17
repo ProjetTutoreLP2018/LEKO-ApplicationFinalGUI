@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.Model
         public Utilisateur()
         {
             this.LC = new HashSet<LC>();
+            this.LC1 = new HashSet<LC>();
         }
     
         public int id_utilisateur { get; set; }
@@ -31,5 +32,7 @@ namespace WindowsFormsApp1.Model
         public virtual Droit Droit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LC> LC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LC> LC1 { get; set; }
     }
 }

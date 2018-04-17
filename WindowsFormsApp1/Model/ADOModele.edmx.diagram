@@ -24,6 +24,7 @@
         <AssociationConnector Association="LCBDModel.FK_LC_modele" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_LC_UTILISATEUR" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_Statut_TypeStatut" ManuallyRouted="false" />
+        <AssociationConnector Association="LCBDModel.FK_SignerLC" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LCBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LCBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Activite">
           <Key>
             <PropertyRef Name="id_activite" />
@@ -69,7 +69,7 @@
             <PropertyRef Name="id_lc" />
           </Key>
           <Property Name="id_lc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="chemin_lc" Type="varchar" MaxLength="100" />
+          <Property Name="chemin_lc" Type="varchar" MaxLength="500" />
           <Property Name="date_lc" Type="date" Nullable="false" />
           <Property Name="date_debut" Type="date" />
           <Property Name="date_fin" Type="date" />
@@ -78,6 +78,7 @@
           <Property Name="nom_lc" Type="varchar" MaxLength="150" />
           <Property Name="id_etat" Type="int" />
           <Property Name="id_utilisateur" Type="int" />
+          <Property Name="id_signataire" Type="int" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -209,6 +210,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SignerLC">
+          <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+          <End Role="LC" Type="Self.LC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utilisateur">
+              <PropertyRef Name="id_utilisateur" />
+            </Principal>
+            <Dependent Role="LC">
+              <PropertyRef Name="id_signataire" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Statut_TypeStatut">
           <End Role="TypeStatut" Type="Self.TypeStatut" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -274,6 +287,10 @@
             <End Role="Utilisateur" EntitySet="Utilisateur" />
             <End Role="LC" EntitySet="LC" />
           </AssociationSet>
+          <AssociationSet Name="FK_SignerLC" Association="Self.FK_SignerLC">
+            <End Role="Utilisateur" EntitySet="Utilisateur" />
+            <End Role="LC" EntitySet="LC" />
+          </AssociationSet>
           <AssociationSet Name="FK_Statut_TypeStatut" Association="Self.FK_Statut_TypeStatut">
             <End Role="TypeStatut" EntitySet="TypeStatut" />
             <End Role="Statut" EntitySet="Statut" />
@@ -283,8 +300,7 @@
             <End Role="Utilisateur" EntitySet="Utilisateur" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LCBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -360,7 +376,7 @@
             <PropertyRef Name="id_lc" />
           </Key>
           <Property Name="id_lc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="chemin_lc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="chemin_lc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="date_lc" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="date_debut" Type="DateTime" Precision="0" />
           <Property Name="date_fin" Type="DateTime" Precision="0" />
@@ -373,6 +389,8 @@
           <NavigationProperty Name="Etat" Relationship="Self.FK_LC_Etat" FromRole="LC" ToRole="Etat" />
           <NavigationProperty Name="Modele" Relationship="Self.FK_LC_modele" FromRole="LC" ToRole="Modele" />
           <NavigationProperty Name="Utilisateur" Relationship="Self.FK_LC_UTILISATEUR" FromRole="LC" ToRole="Utilisateur" />
+          <Property Name="id_signataire" Type="Int32" />
+          <NavigationProperty Name="Utilisateur1" Relationship="LCBDModel.FK_SignerLC" FromRole="LC" ToRole="Utilisateur" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -415,6 +433,7 @@
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Droit" Relationship="Self.FK_Utilisateur_id_droit" FromRole="Utilisateur" ToRole="Droit" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_UTILISATEUR" FromRole="Utilisateur" ToRole="LC" />
+          <NavigationProperty Name="LC1" Relationship="LCBDModel.FK_SignerLC" FromRole="Utilisateur" ToRole="LC" />
         </EntityType>
         <Association Name="FK_Client_Activite">
           <End Role="Activite" Type="Self.Activite" Multiplicity="0..1">
@@ -583,7 +602,23 @@
             <End Role="TypeStatut" EntitySet="TypeStatut" />
             <End Role="Statut" EntitySet="Statut" />
           </AssociationSet>
+          <AssociationSet Name="FK_SignerLC" Association="LCBDModel.FK_SignerLC">
+            <End Role="Utilisateur" EntitySet="Utilisateur" />
+            <End Role="LC" EntitySet="LC" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_SignerLC">
+          <End Type="LCBDModel.Utilisateur" Role="Utilisateur" Multiplicity="0..1" />
+          <End Type="LCBDModel.LC" Role="LC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utilisateur">
+              <PropertyRef Name="id_utilisateur" />
+            </Principal>
+            <Dependent Role="LC">
+              <PropertyRef Name="id_signataire" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -657,6 +692,7 @@
           <EntitySetMapping Name="LC">
             <EntityTypeMapping TypeName="LCBDModel.LC">
               <MappingFragment StoreEntitySet="LC">
+                <ScalarProperty Name="id_signataire" ColumnName="id_signataire" />
                 <ScalarProperty Name="id_lc" ColumnName="id_lc" />
                 <ScalarProperty Name="chemin_lc" ColumnName="chemin_lc" />
                 <ScalarProperty Name="date_lc" ColumnName="date_lc" />

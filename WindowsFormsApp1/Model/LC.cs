@@ -24,10 +24,12 @@ namespace WindowsFormsApp1.Model
         public string nom_lc { get; set; }
         public Nullable<int> id_etat { get; set; }
         public Nullable<int> id_utilisateur { get; set; }
+        public Nullable<int> id_signataire { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Etat Etat { get; set; }
         public virtual Modele Modele { get; set; }
         public virtual Utilisateur Utilisateur { get; set; }
+        public virtual Utilisateur Utilisateur1 { get; set; }
     }
 }
