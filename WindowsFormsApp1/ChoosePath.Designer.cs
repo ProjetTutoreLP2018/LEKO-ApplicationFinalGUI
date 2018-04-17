@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace LettreCooperation
 {
     partial class ChoosePath
     {
@@ -34,6 +34,7 @@
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.buttonValider = new System.Windows.Forms.Button();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.buttonAnnuler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelMessage
@@ -48,7 +49,7 @@
             // butonParcour
             // 
             this.butonParcour.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butonParcour.BackgroundImage")));
-            this.butonParcour.Location = new System.Drawing.Point(333, 96);
+            this.butonParcour.Location = new System.Drawing.Point(336, 95);
             this.butonParcour.Name = "butonParcour";
             this.butonParcour.Size = new System.Drawing.Size(75, 23);
             this.butonParcour.TabIndex = 1;
@@ -75,12 +76,24 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
+            // buttonAnnuler
+            // 
+            this.buttonAnnuler.BackColor = System.Drawing.Color.Red;
+            this.buttonAnnuler.Location = new System.Drawing.Point(314, 143);
+            this.buttonAnnuler.Name = "buttonAnnuler";
+            this.buttonAnnuler.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnnuler.TabIndex = 4;
+            this.buttonAnnuler.Text = "Annuler";
+            this.buttonAnnuler.UseVisualStyleBackColor = false;
+            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            // 
             // ChoosePath
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(494, 184);
+            this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.textBoxPath);
             this.Controls.Add(this.butonParcour);
@@ -99,5 +112,6 @@
         private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.FolderBrowserDialog folderBrowser;
+        private System.Windows.Forms.Button buttonAnnuler;
     }
 }

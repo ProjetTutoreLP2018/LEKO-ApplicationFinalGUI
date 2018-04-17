@@ -6,18 +6,18 @@ using ExcelDataReader;
 using Xceed.Words.NET;
 using System.Net.Http;
 using Newtonsoft.Json;
-
-
+using LettreCooperation;
+using LettreCooperation.modele;
 
 namespace lot1
 {
     public partial class FenFormulaireGenerationLC : UserControl
     {
 
-        private dynamic refFichier;
-
         // objet vide pour les parémétres inutilisés
         private Object missing = System.Reflection.Missing.Value;
+        private ModelManager model;
+        private string pathFolder = Program.FINACOOPFolder;
 
 
         public FenFormulaireGenerationLC()
@@ -47,7 +47,7 @@ namespace lot1
                 {
                     codePostal = Int32.Parse(CP.Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Le code postal doit être constitué de 5 chiffres", "Code postal incorrect", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
@@ -124,23 +124,21 @@ namespace lot1
 
 
                     fenGenerationLC.DestinationSelectionnee += RaisonSociale.Text;
+                    pathFolder += @fenGenerationLC.DestinationSelectionnee;
 
-
-                    if(!Directory.Exists(@fenGenerationLC.DestinationSelectionnee))
+                    if (!Directory.Exists(pathFolder))
                     {
-                        Directory.CreateDirectory(@fenGenerationLC.DestinationSelectionnee);
-                        File.SetAttributes(@fenGenerationLC.DestinationSelectionnee, FileAttributes.Normal);
+                        Directory.CreateDirectory(pathFolder);
+                        File.SetAttributes(pathFolder, FileAttributes.Normal);
 
                     }
                         
 
-                    document.SaveAs(@fenGenerationLC.DestinationSelectionnee + @"\test.docx");
+                    document.SaveAs(pathFolder + @"\test.docx");
+                    
+                    AfficherLC(pathFolder + @"\test.docx");
 
-
-                   // ChoisirSauvegarde(true, @fenGenerationLC.DestinationSelectionnee);
-                    AfficherLC(@fenGenerationLC.DestinationSelectionnee + @"\test.docx");
-
-                    MessageBox.Show("La lettre de coopération a été générée dans le fichier " + fenGenerationLC.DestinationSelectionnee, "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder, "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -150,7 +148,7 @@ namespace lot1
         /// </summary>
         private void ChargerDonnees()
         {
-            if (ouvrirSourceDonnees.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ouvrirSourceDonnees.ShowDialog() == DialogResult.OK)
             {
                 using (var stream = File.Open(@ouvrirSourceDonnees.FileName, FileMode.Open, FileAccess.Read))
                 {
@@ -187,13 +185,16 @@ namespace lot1
         private void button1_Click(object sender, EventArgs e)
         {
             GenererLC();
-            
+            Panel panel = (Panel)this.Parent.Controls.Find("mainPanel", false)[0];
+            panel.Controls.Clear(); 
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ChargerDonnees();
         }
+
 
         private void AfficherLC(string pathOrigine)
         {

@@ -7,28 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.modele
+namespace WindowsFormsApp1.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Utilisateur
+    public partial class Modele
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Utilisateur()
+        public Modele()
         {
             this.LC = new HashSet<LC>();
         }
     
-        public int id_utilisateur { get; set; }
-        public string nom_utilisateur { get; set; }
-        public string prenom_utilisateur { get; set; }
-        public string email_utilisateur { get; set; }
-        public int id_droit { get; set; }
-        public string mdp_utilisateur { get; set; }
-        public bool isAdmin { get; set; }
+        public int id_modele { get; set; }
+        public string chemin_modele { get; set; }
+        public string nom_fichier { get; set; }
+        public string nom_mission { get; set; }
     
-        public virtual Droit Droit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LC> LC { get; set; }
     }

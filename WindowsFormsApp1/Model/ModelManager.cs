@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp1.Model;
 
-namespace WindowsFormsApp1.modele
+namespace LettreCooperation.modele
 {
-    class Model
+    class ModelManager
     {
 
         private LCBDEntities2 context;
 
-        public Model()
+        public ModelManager()
         {
             context = new LCBDEntities2();
         }
@@ -89,6 +90,7 @@ namespace WindowsFormsApp1.modele
                 utilisateur.email_utilisateur = result.email_utilisateur;
                 utilisateur.mdp_utilisateur = result.mdp_utilisateur;
                 utilisateur.id_droit = result.id_droit;
+                utilisateur.isAdmin = result.isAdmin;
 
             }
 
@@ -104,6 +106,19 @@ namespace WindowsFormsApp1.modele
         public Utilisateur GetUser(int? index)
         {
             return context.Utilisateur.Find(index);
+        }
+
+
+        public void CreerClient(Client client)
+        {
+            context.Client.Add(client);
+            context.SaveChanges();
+        }
+
+        public void CreerAdresse(Adresse adresse)
+        {
+            context.Adresse.Add(adresse);
+            context.SaveChanges();
         }
     }
 }

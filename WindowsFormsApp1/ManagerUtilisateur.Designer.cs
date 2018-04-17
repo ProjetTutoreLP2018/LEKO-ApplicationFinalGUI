@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace LettreCooperation
 {
     partial class ManagerUtilisateur
     {
@@ -33,6 +33,7 @@
             this.comboNomUtilisateur = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -48,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -103,6 +103,18 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Détail utilisateur";
+            // 
+            // checkBoxAdmin
+            // 
+            this.checkBoxAdmin.AutoSize = true;
+            this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAdmin.ForeColor = System.Drawing.Color.Red;
+            this.checkBoxAdmin.Location = new System.Drawing.Point(395, 156);
+            this.checkBoxAdmin.Name = "checkBoxAdmin";
+            this.checkBoxAdmin.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxAdmin.TabIndex = 15;
+            this.checkBoxAdmin.Text = "Administrateur";
+            this.checkBoxAdmin.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -236,16 +248,6 @@
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
-            // 
-            // checkBoxAdmin
-            // 
-            this.checkBoxAdmin.AutoSize = true;
-            this.checkBoxAdmin.Location = new System.Drawing.Point(395, 168);
-            this.checkBoxAdmin.Name = "checkBoxAdmin";
-            this.checkBoxAdmin.Size = new System.Drawing.Size(92, 17);
-            this.checkBoxAdmin.TabIndex = 15;
-            this.checkBoxAdmin.Text = "Administrateur";
-            this.checkBoxAdmin.UseVisualStyleBackColor = true;
             // 
             // ManagerUtilisateur
             // 

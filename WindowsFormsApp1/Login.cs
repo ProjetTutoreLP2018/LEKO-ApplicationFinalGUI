@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using WindowsFormsApp1.modele;
+using LettreCooperation.modele;
+using WindowsFormsApp1.Model;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class Login : UserControl
     {
@@ -27,33 +28,17 @@ namespace WindowsFormsApp1
 
             if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
             {
-                Model connexion = new Model();
+                ModelManager connexion = new ModelManager();
                 Utilisateur connecte = connexion.seConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
+
+                MessageBox.Show("Admin : " + connecte.isAdmin);
 
                 if (connecte != null)
                 {
                     this.Visible = false;
                     pagePrincipale.Utilisateur = connecte;
 
-
-                    Panel panel = (Panel)this.Parent.Controls.Find("mainPanel", false)[0];
-                    panel.Visible = true;
-
-                    PictureBox imageHome = (PictureBox)this.Parent.Controls.Find("imageHome", false)[0];
-                    imageHome.Visible = true;
-
-                    PictureBox pictureLogout = (PictureBox)this.Parent.Controls.Find("pictureLogout", false)[0];
-                    pictureLogout.Visible = true;
-
-                    Label labelUser = (Label)this.Parent.Controls.Find("labelUser", false)[0];
-                    labelUser.Visible = true;
-
-
-
-                    Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
-                    labelWelcome.Text = pagePrincipale.Utilisateur.nom_utilisateur
-                + " " + pagePrincipale.Utilisateur.prenom_utilisateur;
-
+                    this.InitMainPage();
 
                     this.textBoxUtilisateur.Text = string.Empty;
                     this.textBoxPass.Text = string.Empty;
@@ -71,6 +56,33 @@ namespace WindowsFormsApp1
                 this.labelErrorConnect.Text = "Merci de renseigner les champs vides.";
             }
            
+        }
+
+
+        /// <summary>
+        /// Permet d'initialiser les élélements
+        /// de la page principale après la connexion
+        /// </summary>
+        private void InitMainPage()
+        {
+            Panel panel = (Panel)this.Parent.Controls.Find("mainPanel", false)[0];
+            panel.Visible = true;
+
+            PictureBox imageHome = (PictureBox)this.Parent.Controls.Find("imageHome", false)[0];
+            imageHome.Visible = true;
+
+            PictureBox pictureLogout = (PictureBox)this.Parent.Controls.Find("pictureLogout", false)[0];
+            pictureLogout.Visible = true;
+
+            Label labelUser = (Label)this.Parent.Controls.Find("labelUser", false)[0];
+            labelUser.Visible = true;
+
+
+
+            Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
+            labelWelcome.Text = pagePrincipale.Utilisateur.nom_utilisateur
+        + " " + pagePrincipale.Utilisateur.prenom_utilisateur;
+
         }
     }
 }

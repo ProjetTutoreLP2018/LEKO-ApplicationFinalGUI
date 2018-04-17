@@ -2,15 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WindowsFormsApp1.modele;
+using WindowsFormsApp1.Model;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class pagePrincipale : Form
     {
 
         private UserControl log = new Login();
-        //private UserControl creerLC = new CreerUneLC();
         private UserControl creerLC = new FenFormulaireGenerationLC();
         private UserControl signerLC = new SignerLC();
         private UserControl voir_mod_lc = new Voir_Modif_LC();
@@ -24,8 +23,11 @@ namespace WindowsFormsApp1
 
         public pagePrincipale()
         {
-
-            InitializeComponent();         
+            InitializeComponent();
+            this.CenterToScreen();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
 
@@ -42,11 +44,9 @@ namespace WindowsFormsApp1
 
             creerLC.Parent = mainPanel;
             creerLC.Visible = false;
-            // mainPanel.Controls.Add(creerLC);
 
             voir_mod_lc.Parent = mainPanel;
             voir_mod_lc.Visible = false;
-            //mainPanel.Controls.Add(ajou_mod_lc);
 
             creerUtilisateur.Parent = mainPanel;
             creerUtilisateur.Visible = false;
@@ -59,9 +59,7 @@ namespace WindowsFormsApp1
 
             log.Parent = this;
             log.Dock = DockStyle.Top;
-            log.Show();
-
-            
+            log.Show(); 
 
             imageHome.Visible = false;
 
@@ -69,11 +67,14 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-          
-            Init();
-           
+            Init();      
         }
+
+
+        ///======================================================================
+        ///== Gestion du Menu
+        ///======================================================================
+
 
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace WindowsFormsApp1
         private void créerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Utilisateur.id_droit == 2)
+            if (pagePrincipale.Utilisateur.isAdmin)
                 InitUserContole(creerUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -140,7 +141,7 @@ namespace WindowsFormsApp1
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (pagePrincipale.Utilisateur.id_droit == 2)
+            if (pagePrincipale.Utilisateur.isAdmin)
                 InitUserContole(manageUtilisateur);
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -180,6 +181,66 @@ namespace WindowsFormsApp1
         {
             Init();
             MessageBox.Show("Vous avez été déconnecté");
+        }
+
+        private void envoyerUneLCAuClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pagePrincipale.Utilisateur.id_droit == 2)
+            {
+                ///TODO: Page d'envoie de LC au client
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+        private void retourLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pagePrincipale.Utilisateur.id_droit == 2)
+            {
+                ///TODO: Page de gestion de retour de LC
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+        private void archiveLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pagePrincipale.Utilisateur.id_droit == 2)
+            {
+                ///TODO: Page d'archivage d'une LC
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+        private void managerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pagePrincipale.Utilisateur.isAdmin)
+            {
+                ///TODO: Page d'ajout/suppression d'un modele
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+        private void changerCheminDossierFINACOOPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pagePrincipale.Utilisateur.isAdmin)
+            {
+                ///TODO: Page de changement de Path pour le dossier FINACOOP
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+        private void créerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void voirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

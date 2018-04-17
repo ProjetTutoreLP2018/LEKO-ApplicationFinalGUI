@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WindowsFormsApp1.modele;
+using LettreCooperation.modele;
+using WindowsFormsApp1.Model;
 
-
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class CreerUtilisateur : UserControl
     {
 
         
         private List<Droit> droits;
-        private WindowsFormsApp1.modele.Model model = new WindowsFormsApp1.modele.Model();
+        private LettreCooperation.modele.ModelManager model = new LettreCooperation.modele.ModelManager();
 
 
         public CreerUtilisateur()

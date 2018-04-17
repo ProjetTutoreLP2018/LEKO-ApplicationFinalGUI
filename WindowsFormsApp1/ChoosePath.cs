@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class ChoosePath : Form
     {
@@ -9,10 +9,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
+            this.CenterToScreen();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
             labelMessage.Text = "Bonjour, bienvenue dans votre application\n" +
                 "de gestion de Lettres de Coopérations.\n" +
                 "Merci de renseigner ici le chemin d'accès à votre dossier\n" +
-                "'FINACOOP' afin de continuer.";
+                "'FINACOOP' de votre ordinateur afin de continuer.";
         }
 
 
@@ -27,7 +32,7 @@ namespace WindowsFormsApp1
 
             } else
             {
-                MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'.");
+                MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
             }
         }
 
@@ -38,6 +43,12 @@ namespace WindowsFormsApp1
             {
                 textBoxPath.Text = folderBrowser.SelectedPath;
             }
+        }
+
+        private void buttonAnnuler_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            Program.QuitApp = true;
         }
     }
 }

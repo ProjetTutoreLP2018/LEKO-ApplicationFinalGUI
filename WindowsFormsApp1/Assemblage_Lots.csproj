@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -231,50 +231,69 @@
     <Compile Include="ChoosePath.Designer.cs">
       <DependentUpon>ChoosePath.cs</DependentUpon>
     </Compile>
-    <Compile Include="modele\Activite.cs">
+    <Compile Include="FenPreRemplissageAutomatique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FenPreRemplissageAutomatique.designer.cs">
+      <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulaireClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulaireClient.designer.cs">
+      <DependentUpon>FormulaireClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Activite.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\ADOModele.Context.cs">
+    <Compile Include="Model\ADOModele.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ADOModele.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\ADOModele.cs">
+    <Compile Include="Model\ADOModele.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\ADOModele.Designer.cs">
+    <Compile Include="Model\ADOModele.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ADOModele.edmx</DependentUpon>
     </Compile>
-    <Compile Include="modele\Adresse.cs">
+    <Compile Include="Model\Adresse.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\Client.cs">
+    <Compile Include="Model\Client.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\Droit.cs">
+    <Compile Include="Model\Droit.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\Etat.cs">
+    <Compile Include="Model\Etat.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\LC.cs">
+    <Compile Include="Model\Facet.cs" />
+    <Compile Include="Model\FacetGroup.cs" />
+    <Compile Include="Model\Fields.cs" />
+    <Compile Include="Model\Geometry.cs" />
+    <Compile Include="Model\LC.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\Model.cs" />
-    <Compile Include="modele\Modele.cs">
+    <Compile Include="Model\ModelManager.cs" />
+    <Compile Include="Model\Modele.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\Statut.cs">
+    <Compile Include="Model\Parameters.cs" />
+    <Compile Include="Model\Record.cs" />
+    <Compile Include="Model\SIRENE.cs" />
+    <Compile Include="Model\Statut.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\TypeStatut.cs">
+    <Compile Include="Model\TypeStatut.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="modele\Utilisateur.cs">
+    <Compile Include="Model\Utilisateur.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
     <Compile Include="Voir_Modif_LC.cs">
@@ -333,9 +352,15 @@
     <Compile Include="SignerLC.Designer.cs">
       <DependentUpon>SignerLC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ville.cs" />
+    <Compile Include="Model\Ville.cs" />
     <EmbeddedResource Include="ChoosePath.resx">
       <DependentUpon>ChoosePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FenPreRemplissageAutomatique.resx">
+      <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulaireClient.resx">
+      <DependentUpon>FormulaireClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Voir_Modif_LC.resx">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
@@ -377,11 +402,11 @@
       <DependentUpon>SignerLC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="client_secret.json" />
-    <EntityDeploy Include="modele\ADOModele.edmx">
+    <EntityDeploy Include="Model\ADOModele.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ADOModele.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="modele\ADOModele.edmx.diagram">
+    <None Include="Model\ADOModele.edmx.diagram">
       <DependentUpon>ADOModele.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -402,16 +427,29 @@
     <Content Include="Images\finacoop.png" />
     <Content Include="Images\logo %281%29.ico" />
     <Content Include="logo %281%29.ico" />
-    <Content Include="modele\ADOModele.Context.tt">
+    <Content Include="Model\ADOModele.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ADOModele.edmx</DependentUpon>
       <LastGenOutput>ADOModele.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="modele\ADOModele.tt">
+    <Content Include="Model\ADOModele.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ADOModele.edmx</DependentUpon>
       <LastGenOutput>ADOModele.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\Close_16x.png" />
+    <Content Include="Resources\Copy_16x.png" />
+    <Content Include="Resources\Cut_16x.png" />
+    <Content Include="Resources\GenerateAllFromTemplate_16x.png" />
+    <Content Include="Resources\HelpApplication_16x.png" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\logo1.png" />
+    <Content Include="Resources\Paste_16x.png" />
+    <Content Include="Resources\Pen2_16x.png" />
+    <Content Include="Resources\Redo_grey_16x.png" />
+    <Content Include="Resources\Toolbox_16x.png" />
+    <Content Include="Resources\Undo_grey_16x.png" />
+    <Content Include="Resources\UploadFile_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

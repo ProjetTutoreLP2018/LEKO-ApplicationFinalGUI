@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WindowsFormsApp1.modele;
+using LettreCooperation.modele;
+using WindowsFormsApp1.Model;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class ManagerUtilisateur : UserControl
     {
@@ -11,7 +12,7 @@ namespace WindowsFormsApp1
 
         private List<Utilisateur> utilisateurs;
         private List<Droit> droits;
-        private Model model;
+        private ModelManager model;
         private int index;
 
 
@@ -33,7 +34,7 @@ namespace WindowsFormsApp1
 
             utilisateurs = new List<Utilisateur>();
             droits = new List<Droit>();
-            model = new Model();
+            model = new ModelManager();
             index = 0;
             comboNomUtilisateur.Items.Clear();
             comboNomUtilisateur.ResetText();

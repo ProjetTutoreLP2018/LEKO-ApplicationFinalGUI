@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LettreCooperation;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace lot1
         /// <summary>
         /// Contient le chemin vers le fichier de destination sélectionné par l'utilisateur
         /// </summary>
-        public String DestinationSelectionnee = @"C:\Users\Dupeyrat\Desktop\FINACOOP\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer\";
+        public String DestinationSelectionnee = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer\";
 
         /// <summary>
         /// Initialise les composants graphiques et active ou désactive le bouton Générer

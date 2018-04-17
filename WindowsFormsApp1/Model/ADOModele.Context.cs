@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.modele
+namespace WindowsFormsApp1.Model
 {
     using System;
     using System.Data.Entity;

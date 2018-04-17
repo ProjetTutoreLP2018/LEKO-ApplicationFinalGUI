@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace LettreCooperation
 {
     partial class CreerUtilisateur
     {
@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreerUtilisateur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.textConfirmEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.bAnnuler = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nouvel Utilisateur";
+            // 
+            // checkBoxAdmin
+            // 
+            this.checkBoxAdmin.AutoSize = true;
+            this.checkBoxAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAdmin.ForeColor = System.Drawing.Color.Red;
+            this.checkBoxAdmin.Location = new System.Drawing.Point(331, 184);
+            this.checkBoxAdmin.Name = "checkBoxAdmin";
+            this.checkBoxAdmin.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxAdmin.TabIndex = 16;
+            this.checkBoxAdmin.Text = "Administrateur";
+            this.checkBoxAdmin.UseVisualStyleBackColor = false;
             // 
             // textConfirmEmail
             // 
@@ -223,16 +236,6 @@
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
-            // 
-            // checkBoxAdmin
-            // 
-            this.checkBoxAdmin.AutoSize = true;
-            this.checkBoxAdmin.Location = new System.Drawing.Point(331, 184);
-            this.checkBoxAdmin.Name = "checkBoxAdmin";
-            this.checkBoxAdmin.Size = new System.Drawing.Size(92, 17);
-            this.checkBoxAdmin.TabIndex = 16;
-            this.checkBoxAdmin.Text = "Administrateur";
-            this.checkBoxAdmin.UseVisualStyleBackColor = true;
             // 
             // CreerUtilisateur
             // 

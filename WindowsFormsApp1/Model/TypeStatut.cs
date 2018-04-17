@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.modele
+namespace WindowsFormsApp1.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Droit
+    public partial class TypeStatut
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Droit()
+        public TypeStatut()
         {
-            this.Utilisateur = new HashSet<Utilisateur>();
+            this.Statut = new HashSet<Statut>();
         }
     
-        public int id_droit { get; set; }
-        public string permission { get; set; }
+        public int id_typeStatut { get; set; }
+        public string libelle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Utilisateur> Utilisateur { get; set; }
+        public virtual ICollection<Statut> Statut { get; set; }
     }
 }

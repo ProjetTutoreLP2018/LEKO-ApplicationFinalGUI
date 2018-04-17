@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WindowsFormsApp1.modele;
+using LettreCooperation.modele;
+using WindowsFormsApp1.Model;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class Voir_Modif_LC : UserControl
     {
 
-        private Model model;
+        private ModelManager model;
         private List<LC> listLc;
         private List<Client> listClient;
         private int indexClient;
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
 
             indexClient = 0;
             indexLc = 0;
-            model = new Model();
+            model = new ModelManager();
             listLc = new List<LC>();
             listClient = new List<Client>();
 

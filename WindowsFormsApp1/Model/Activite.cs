@@ -7,25 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.modele
+namespace WindowsFormsApp1.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Statut
+    public partial class Activite
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Statut()
+        public Activite()
         {
             this.Client = new HashSet<Client>();
         }
     
-        public int id_statut { get; set; }
-        public string libelle { get; set; }
-        public int id_typestatut { get; set; }
+        public int id_activite { get; set; }
+        public string libelle_activite { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Client { get; set; }
-        public virtual TypeStatut TypeStatut { get; set; }
     }
 }

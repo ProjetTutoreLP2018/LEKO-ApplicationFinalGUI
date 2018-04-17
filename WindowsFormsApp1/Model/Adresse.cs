@@ -7,21 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.modele
+namespace WindowsFormsApp1.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Activite
+    public partial class Adresse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Activite()
+        public Adresse()
         {
             this.Client = new HashSet<Client>();
         }
     
-        public int id_activite { get; set; }
-        public string libelle_activite { get; set; }
+        public int id_adresse { get; set; }
+        public string numero { get; set; }
+        public string indice { get; set; }
+        public string voie { get; set; }
+        public string code_postal { get; set; }
+        public string ville { get; set; }
+        public string complements { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Client { get; set; }

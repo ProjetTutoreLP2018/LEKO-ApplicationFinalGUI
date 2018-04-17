@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.modele;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     static class Program
     {
 
         public static string FINACOOPFolder { get; set; }
+        public static bool QuitApp { get; set; }
 
         /// <summary>
         /// Point d'entrée principal de l'application.
@@ -18,28 +15,49 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+
+            QuitApp = false;
+
             try
             {
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                if (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP))
-                {
-                    ChoosePath choosePath = new ChoosePath();
-                    Application.Run(choosePath);
+                // =================================================
+                WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP = String.Empty;
+                //==================================================
 
-                    Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
-                    Properties.Settings.Default.Save();
+                
+
+                if (String.IsNullOrEmpty(WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP))
+                {
+                    
+                    while (String.IsNullOrEmpty(WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP) && !QuitApp)
+                    {
+                        ChoosePath choosePath = new ChoosePath();
+                        Application.Run(choosePath);
+
+                        if (!String.IsNullOrEmpty(FINACOOPFolder))
+                        {
+                            WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
+                            WindowsFormsApp1.Properties.Settings.Default.Save();
+                        } else
+                        {
+                            MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
+                        }
+        
+                    }
+
                 } else
                 {
-                    FINACOOPFolder = Properties.Settings.Default.PathFINACOOP;
+                    FINACOOPFolder = WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP;
                 }
 
+                if(!QuitApp)
+                    Application.Run(new pagePrincipale());
 
-                Application.Run(new pagePrincipale());
-
-            } catch (System.Data.SqlClient.SqlException e)
+            } catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet.");

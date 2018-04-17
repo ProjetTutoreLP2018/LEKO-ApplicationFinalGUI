@@ -2,6 +2,73 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WindowsFormsApp1.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
+    <Setting Name="MillesimeADateCourante" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FormatDate" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="DateCouranteADateDuJour" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EmplacementFichiersClient" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmplacementModeles" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmplacementFichiersGeneres" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EnregistrerFichiersGoogleDrive" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EnregistrerFichiersLocal" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LCBDConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=lcbd.database.windows.net;Initial Catalog=LCBD;Persist Security Info=True;User ID=lcbd&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=lcbd.database.windows.net;Initial Catalog=LCBD;Persist Security Info=True;User ID=lcbd</Value>
+    </Setting>
+    <Setting Name="BDDNomUtilisateur" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BDDMotDePasse" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BDDNomHote" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BDDNom" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FormesJuridiques" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;EI&lt;/string&gt;
+  &lt;string&gt;EIRL&lt;/string&gt;
+  &lt;string&gt;EURL&lt;/string&gt;
+  &lt;string&gt;SA&lt;/string&gt;
+  &lt;string&gt;SARL&lt;/string&gt;
+  &lt;string&gt;SAS&lt;/string&gt;
+  &lt;string&gt;SASU&lt;/string&gt;
+  &lt;string&gt;SC&lt;/string&gt;
+  &lt;string&gt;SCA&lt;/string&gt;
+  &lt;string&gt;SCIC&lt;/string&gt;
+  &lt;string&gt;SCOP&lt;/string&gt;
+  &lt;string&gt;SNC&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="DelimiteurDebutVariable" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{{</Value>
+    </Setting>
+    <Setting Name="DelimiteurFinVariable" Type="System.String" Scope="User">
+      <Value Profile="(Default)">}}</Value>
+    </Setting>
     <Setting Name="PathFINACOOP" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
