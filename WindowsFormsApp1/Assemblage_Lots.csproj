@@ -202,17 +202,14 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WordToPDF">
+      <HintPath>..\..\..\..\Desktop\WordToPDF.dll</HintPath>
+    </Reference>
     <Reference Include="Xceed.Words.NET, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\DocX.1.1.0\lib\Xceed.Words.NET.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddPasswordMail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddPasswordMail.Designer.cs">
-      <DependentUpon>AddPasswordMail.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChangePath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,9 +350,6 @@
       <DependentUpon>SignerLC.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Ville.cs" />
-    <EmbeddedResource Include="AddPasswordMail.resx">
-      <DependentUpon>AddPasswordMail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChangePath.resx">
       <DependentUpon>ChangePath.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,6 +452,7 @@
     <Content Include="Resources\Toolbox_16x.png" />
     <Content Include="Resources\Undo_grey_16x.png" />
     <Content Include="Resources\UploadFile_16x.png" />
+    <Content Include="WordToPDF.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

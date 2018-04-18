@@ -231,5 +231,18 @@ namespace LettreCooperation.modele
             lc.id_etat = etat;
             context.SaveChanges();
         }
+
+
+        /// <summary>
+        /// Méthode qui permet de changer le chemin du fichier
+        /// aprés envoie au client
+        /// </summary>
+        /// <param name="lc"></param>
+        /// <param name="path"></param>
+        public void UpdatePathLc(LC lc, string path)
+        {
+            lc.chemin_lc = path;
+            context.SaveChanges();
+        }
     }
 }

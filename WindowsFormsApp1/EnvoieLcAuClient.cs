@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
+using WordToPDF;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -13,11 +15,14 @@ namespace WindowsFormsApp1
 
         private ModelManager modelManager = new ModelManager();
         private List<LC> listLc;
+        private string pathPDF;
+        private const string _PATHLCENVOYE = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC envoyées\";
+        private bool envoieMail = false;
 
         public EnvoieLcAuClient()
         {
             InitializeComponent();
-
+            this.textBoxPass.PasswordChar = '•';
             Init();
         }
 
@@ -27,8 +32,8 @@ namespace WindowsFormsApp1
         /// </summary>
         private void Init()
         {
-
-
+            this.textBoxPass.Text = "";
+            buttonEnvoyer.Enabled = false;
             listLc = modelManager.GetListLCWaitingSend();
 
             for(int i = 0; i < listLc.Count; i++)
@@ -52,6 +57,20 @@ namespace WindowsFormsApp1
 
 
         /// <summary>
+        /// Méthode qui permet de vérifier le champ du mot de passe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxPass_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(this.textBoxPass.Text))
+                this.buttonEnvoyer.Enabled = true;
+            else
+                this.buttonEnvoyer.Enabled = false;
+        }
+
+
+        /// <summary>
         /// Méthode qui permet de valider l'envoir
         /// au clients
         /// </summary>
@@ -68,10 +87,13 @@ namespace WindowsFormsApp1
                 if (chkchecking.Value != null && (bool)chkchecking.Value)
                 {
 
-                    // Demander le mot de passe à l'utilisateur
+                    CopyLc(listLc[i]);
+                    CreatePDF(listLc[i]);
+                    SendMailClient(listLc[i], this.textBoxPass.Text);
+                    
+                    if(envoieMail)
+                        ChangeEtat(listLc[i]);
 
-                    SendMailClient(listLc[i], "");
-                    ChangeEtat(listLc[i]);
                 }
             }
 
@@ -99,7 +121,8 @@ namespace WindowsFormsApp1
             oMail.From = from;
 
             //Password du type
-            string pass = "@Gmail.com77";
+            //string pass = "@Gmail.com77";
+            string pass = password;
 
             // Set recipient email address
             string to = client.mail_referent;
@@ -114,7 +137,7 @@ namespace WindowsFormsApp1
             oMail.TextBody = content;
 
             //Test PJ
-            string pj = Program.FINACOOPFolder + lc.chemin_lc;
+            string pj = Program.FINACOOPFolder + pathPDF;
             if (!pj.Equals(""))
                 oMail.AddAttachment(pj);
 
@@ -143,11 +166,11 @@ namespace WindowsFormsApp1
             {
                 oSmtp.SendMail(oServer, oMail);
                 MessageBox.Show("Votre mail a bien été envoyé à l'adresse : " + to, "Message envoyé");
-              
+                envoieMail = true;
             }
             catch (Exception ep)
             {
-                MessageBox.Show("Problème lors de l'envoi du message : " + ep.StackTrace, "Erreur : Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Problème lors de l'envoi du message : Merci de vérifier votre Adresse Mail", "Erreur : Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -170,6 +193,56 @@ namespace WindowsFormsApp1
         private void CopyLc(LC lc)
         {
 
+            string dossier = Program.FINACOOPFolder + _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale;
+
+            if (!Directory.Exists(dossier))
+            {
+                Directory.CreateDirectory(dossier);
+                File.SetAttributes(dossier, FileAttributes.Normal);
+
+            }
+
+            File.Copy(
+                Program.FINACOOPFolder + lc.chemin_lc,
+                dossier + "\\" + lc.nom_lc + ".docx",
+                true
+                );
         }
+
+
+        /// <summary>
+        /// Méthode qui permet de créer le PDF que nous enverons au client
+        /// </summary>
+        /// <param name="lc"></param>
+        private void CreatePDF(LC lc)
+        {
+
+            Word2Pdf ObjetWord = new Word2Pdf();
+            string dossier = Program.FINACOOPFolder + _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale;
+
+            if (!Directory.Exists(dossier))
+            {
+                Directory.CreateDirectory(dossier);
+                File.SetAttributes(dossier, FileAttributes.Normal);
+
+            }
+
+
+            string nomDuFichierAConvertir = lc.nom_lc + ".docx";
+            object CheminDuFichier = Program.FINACOOPFolder + lc.chemin_lc;
+            string ExtensionDuFichier = Path.GetExtension(nomDuFichierAConvertir);
+            string ExtensionCible = nomDuFichierAConvertir.Replace(ExtensionDuFichier, ".pdf");
+            if (ExtensionDuFichier == ".doc" || ExtensionDuFichier == ".docx")
+            {
+                object DossierCible = dossier + "\\" + ExtensionCible;
+                ObjetWord.InputLocation = CheminDuFichier;
+                ObjetWord.OutputLocation = DossierCible;
+                ObjetWord.Word2PdfCOnversion();
+            }
+
+            modelManager.UpdatePathLc(lc, _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc + ".docx");
+            pathPDF = _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
+        }
+
     }
 }

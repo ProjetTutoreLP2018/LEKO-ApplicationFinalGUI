@@ -64,7 +64,7 @@ namespace LettreCooperation
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
+            //MessageBox.Show(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
             AfficherLC(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
         }
 
