@@ -68,11 +68,14 @@
     <Reference Include="Carbon.Versioning, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Carbon.Versioning.1.5.0\lib\netstandard2.0\Carbon.Versioning.dll</HintPath>
     </Reference>
+    <Reference Include="EASendMail45, Version=7.3.1.9, Culture=neutral, PublicKeyToken=88adb80ecd66540b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EASendMail.7.3.1.9\lib\net45\EASendMail45.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="ExcelDataReader, Version=3.4.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelDataReader.3.4.0\lib\net45\ExcelDataReader.dll</HintPath>
@@ -82,27 +85,6 @@
     </Reference>
     <Reference Include="GitHub, Version=1.11.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GitHub.1.11.4\lib\netstandard2.0\GitHub.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis, Version=1.32.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.32.2\lib\net45\Google.Apis.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.32.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.32.2\lib\net45\Google.Apis.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.32.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.32.2\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.32.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Core.1.32.2\lib\net45\Google.Apis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Drive.v2, Version=1.32.2.1184, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Drive.v2.1.32.2.1184\lib\net45\Google.Apis.Drive.v2.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Drive.v3, Version=1.32.2.1184, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Drive.v3.1.32.2.1184\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.32.2.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.32.2\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.0.2\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
@@ -225,11 +207,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPasswordMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPasswordMail.Designer.cs">
+      <DependentUpon>AddPasswordMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePath.Designer.cs">
+      <DependentUpon>ChangePath.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChoosePath.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChoosePath.Designer.cs">
       <DependentUpon>ChoosePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnvoieLcAuClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnvoieLcAuClient.Designer.cs">
+      <DependentUpon>EnvoieLcAuClient.cs</DependentUpon>
     </Compile>
     <Compile Include="FenPreRemplissageAutomatique.cs">
       <SubType>Form</SubType>
@@ -353,8 +353,17 @@
       <DependentUpon>SignerLC.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Ville.cs" />
+    <EmbeddedResource Include="AddPasswordMail.resx">
+      <DependentUpon>AddPasswordMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePath.resx">
+      <DependentUpon>ChangePath.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChoosePath.resx">
       <DependentUpon>ChoosePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnvoieLcAuClient.resx">
+      <DependentUpon>EnvoieLcAuClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FenPreRemplissageAutomatique.resx">
       <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>

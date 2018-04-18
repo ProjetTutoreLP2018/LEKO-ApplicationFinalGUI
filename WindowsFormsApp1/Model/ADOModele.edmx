@@ -49,6 +49,7 @@
           <Property Name="tel_fix" Type="varchar" MaxLength="20" />
           <Property Name="tel_portable" Type="varchar" MaxLength="20" />
           <Property Name="id_statut" Type="int" />
+          <Property Name="mail_referent" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -113,7 +114,7 @@
           <Property Name="prenom_utilisateur" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="email_utilisateur" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_droit" Type="int" Nullable="false" />
-          <Property Name="mdp_utilisateur" Type="varchar" MaxLength="50" />
+          <Property Name="mdp_utilisateur" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="isAdmin" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Client_Activite">
@@ -354,6 +355,7 @@
           <NavigationProperty Name="Adresse" Relationship="Self.FK_Client_Adresse" FromRole="Client" ToRole="Adresse" />
           <NavigationProperty Name="Statut" Relationship="Self.FK_Client_Statut" FromRole="Client" ToRole="Statut" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_client" FromRole="Client" ToRole="LC" />
+          <Property Name="mail_referent" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -429,7 +431,7 @@
           <Property Name="prenom_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_droit" Type="Int32" Nullable="false" />
-          <Property Name="mdp_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mdp_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Droit" Relationship="Self.FK_Utilisateur_id_droit" FromRole="Utilisateur" ToRole="Droit" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_UTILISATEUR" FromRole="Utilisateur" ToRole="LC" />
@@ -649,6 +651,7 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="LCBDModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="mail_referent" ColumnName="mail_referent" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />
                 <ScalarProperty Name="siret" ColumnName="siret" />
                 <ScalarProperty Name="forme_juridique" ColumnName="forme_juridique" />

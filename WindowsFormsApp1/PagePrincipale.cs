@@ -1,6 +1,5 @@
 ﻿using lot1;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 using WindowsFormsApp1.Model;
@@ -17,6 +16,7 @@ namespace LettreCooperation
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
         private UserControl formulaireClient = new UCFenFormClient();
+        private UserControl envoieLcAuClient = new EnvoieLcAuClient();
         
         public static Utilisateur Utilisateur { get; set; }
 
@@ -59,6 +59,9 @@ namespace LettreCooperation
 
             formulaireClient.Parent = mainPanel;
             formulaireClient.Visible = false;
+
+            envoieLcAuClient.Parent = mainPanel;
+            envoieLcAuClient.Visible = false;
 
             log.Parent = this;
             log.Dock = DockStyle.Top;
@@ -196,7 +199,7 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.id_droit == 2)
             {
-                ///TODO: Page d'envoie de LC au client
+                InitUserContole(envoieLcAuClient);
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -245,7 +248,8 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.isAdmin)
             {
-                ///TODO: Page de changement de Path pour le dossier FINACOOP
+                ChangePath changePath = new ChangePath();
+                changePath.Show();
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");

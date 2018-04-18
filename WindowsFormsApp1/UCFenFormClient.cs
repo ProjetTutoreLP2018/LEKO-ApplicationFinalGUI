@@ -75,6 +75,7 @@ namespace lot1
 				client.tel_portable = TelephonePortableRepresentant.Text;
 				client.volume_annuel = Double.Parse(VolumesAnnuels.Text);
 				client.id_adresse = adresse.id_adresse;
+                client.mail_referent = CourrielRepresentant.Text;
 
 				modele.CreerClient(client);
 

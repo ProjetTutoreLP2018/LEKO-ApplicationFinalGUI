@@ -29,7 +29,7 @@ namespace LettreCooperation
             if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
             {
                 ModelManager connexion = new ModelManager();
-                Utilisateur connecte = connexion.seConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
+                Utilisateur connecte = connexion.SeConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
 
                
                 if (connecte != null)

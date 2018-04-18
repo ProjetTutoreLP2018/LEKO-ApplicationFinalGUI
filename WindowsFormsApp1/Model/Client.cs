@@ -41,6 +41,7 @@ namespace WindowsFormsApp1.Model
         public string tel_fix { get; set; }
         public string tel_portable { get; set; }
         public Nullable<int> id_statut { get; set; }
+        public string mail_referent { get; set; }
     
         public virtual Activite Activite { get; set; }
         public virtual Adresse Adresse { get; set; }

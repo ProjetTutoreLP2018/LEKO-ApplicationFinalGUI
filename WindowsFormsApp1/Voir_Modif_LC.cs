@@ -64,8 +64,8 @@ namespace LettreCooperation
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(listLc[indexLc].chemin_lc);
-            AfficherLC(listLc[indexLc].chemin_lc);
+            MessageBox.Show(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
+            AfficherLC(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
         }
 
         private void AfficherLC(string pathOrigine)
@@ -100,7 +100,7 @@ namespace LettreCooperation
             this.indexLc = comboLC.SelectedIndex;
             labelDateCrea.Text = listLc[indexLc].date_debut.ToString();
 
-            Etat etat = model.GetStatut(listLc[indexLc].id_etat);
+            Etat etat = model.GetEtat(listLc[indexLc].id_etat);
 
             Utilisateur utilisateur = model.GetUser(listLc[indexLc].id_utilisateur);
 
@@ -109,7 +109,7 @@ namespace LettreCooperation
 
             if (etat.libelle_etat.Equals("C"))
                 labelStatus.Text = "En attente de validation comptable";
-            if (etat.libelle_etat.Equals("ATCL"))
+            if (etat.libelle_etat.Equals("AC"))
                 labelStatus.Text = "En attente de signature du client";
             if (etat.libelle_etat.Equals("S"))
                 labelStatus.Text = "Signée par le client";
@@ -117,6 +117,8 @@ namespace LettreCooperation
                 labelStatus.Text = "Archivée";
             if (etat.libelle_etat.Equals("R"))
                 labelStatus.Text = "Refus du client";
+            if (etat.libelle_etat.Equals("SE"))
+                labelStatus.Text = "Signée par l'expert-comptable";
         }
     }
 }
