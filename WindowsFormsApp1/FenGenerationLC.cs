@@ -15,7 +15,7 @@ namespace Lot2_PartieLC
         private ModelManager modeleManager = new ModelManager();
         private List<Client> clients = new List<Client>();
         private List<Modele> modeles = new List<Modele>();
-        private string _PATH = Program.FINACOOPFolder + @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer";
+        private string _PATH =  @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer";
 
 
 		public FenGenerationLC()
@@ -30,7 +30,7 @@ namespace Lot2_PartieLC
             modeles = modeleManager.GetModeles();
 
             foreach (Modele modele in modeles)
-                comboBoxModel.Items.Add(modele.id_modele);
+                comboBoxModel.Items.Add(modele.nom_fichier);
 
             foreach (Client client in clients)
                 ListeDeroulanteChoixClient.Items.Add(client.raison_sociale);
@@ -96,7 +96,7 @@ namespace Lot2_PartieLC
 				documentModele.ReplaceText("{{" + item.Key + "}}", item.Value);
 			}
 
-            string pathFolder = _PATH + "\\" + client.raison_sociale;
+            string pathFolder = Program.FINACOOPFolder + _PATH + "\\" + client.raison_sociale;
 
             if (!Directory.Exists(pathFolder))
             {
@@ -107,7 +107,7 @@ namespace Lot2_PartieLC
 
             LC lc = new LC();
 
-            lc.chemin_lc = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer" + "\\" + client.raison_sociale + @"\test.docx";
+            lc.chemin_lc = _PATH + "\\" + client.raison_sociale + @"\test2.docx";
             lc.date_debut = DateTime.Today;
             lc.id_client = client.id_client;
             lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;

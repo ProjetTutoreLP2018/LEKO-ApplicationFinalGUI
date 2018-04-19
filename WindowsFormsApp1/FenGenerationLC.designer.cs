@@ -35,15 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BoutonGenerer = new System.Windows.Forms.ToolStripButton();
             this.ouvrirFichierValoHonoraires = new System.Windows.Forms.OpenFileDialog();
             this.sauvegarderFichier = new System.Windows.Forms.SaveFileDialog();
             this.ouvrirFichierModele = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonGenerer = new System.Windows.Forms.Button();
             this.comboBoxModel = new System.Windows.Forms.ComboBox();
-            this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,17 +57,17 @@
             // 
             // FichierValoHonoraires
             // 
-            this.FichierValoHonoraires.Location = new System.Drawing.Point(286, 118);
+            this.FichierValoHonoraires.Location = new System.Drawing.Point(239, 118);
             this.FichierValoHonoraires.Name = "FichierValoHonoraires";
-            this.FichierValoHonoraires.Size = new System.Drawing.Size(217, 20);
+            this.FichierValoHonoraires.Size = new System.Drawing.Size(264, 20);
             this.FichierValoHonoraires.TabIndex = 20;
             // 
             // ListeDeroulanteChoixClient
             // 
             this.ListeDeroulanteChoixClient.FormattingEnabled = true;
-            this.ListeDeroulanteChoixClient.Location = new System.Drawing.Point(286, 30);
+            this.ListeDeroulanteChoixClient.Location = new System.Drawing.Point(239, 30);
             this.ListeDeroulanteChoixClient.Name = "ListeDeroulanteChoixClient";
-            this.ListeDeroulanteChoixClient.Size = new System.Drawing.Size(217, 21);
+            this.ListeDeroulanteChoixClient.Size = new System.Drawing.Size(373, 21);
             this.ListeDeroulanteChoixClient.TabIndex = 19;
             // 
             // label3
@@ -99,25 +96,6 @@
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Client : ";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BoutonGenerer});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(829, 25);
-            this.toolStrip1.TabIndex = 26;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // BoutonGenerer
-            // 
-            this.BoutonGenerer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BoutonGenerer.Name = "BoutonGenerer";
-            this.BoutonGenerer.Size = new System.Drawing.Size(52, 22);
-            this.BoutonGenerer.Text = "Générer";
-            this.BoutonGenerer.ToolTipText = "Générer la lettre de coopération";
-            this.BoutonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);
             // 
             // ouvrirFichierValoHonoraires
             // 
@@ -160,9 +138,9 @@
             // comboBoxModel
             // 
             this.comboBoxModel.FormattingEnabled = true;
-            this.comboBoxModel.Location = new System.Drawing.Point(286, 172);
+            this.comboBoxModel.Location = new System.Drawing.Point(239, 172);
             this.comboBoxModel.Name = "comboBoxModel";
-            this.comboBoxModel.Size = new System.Drawing.Size(217, 21);
+            this.comboBoxModel.Size = new System.Drawing.Size(373, 21);
             this.comboBoxModel.TabIndex = 23;
             // 
             // FenGenerationLC
@@ -172,16 +150,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonGenerer);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "FenGenerationLC";
             this.Size = new System.Drawing.Size(829, 461);
             this.Load += new System.EventHandler(this.FenGenerationLC_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
@@ -192,8 +166,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ToolStrip toolStrip1;
-		private System.Windows.Forms.ToolStripButton BoutonGenerer;
 		private System.Windows.Forms.OpenFileDialog ouvrirFichierValoHonoraires;
 		private System.Windows.Forms.SaveFileDialog sauvegarderFichier;
 		private System.Windows.Forms.OpenFileDialog ouvrirFichierModele;
