@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.modele;
 using WindowsFormsApp1.Model;
@@ -40,8 +41,35 @@ namespace lot1
 
 		private  void BoutonValider_ClickAsync(object sender, EventArgs e)
 		{
-			
-			try
+
+
+            messageErr.Text = string.Empty;
+            adresseMailMess.Text = string.Empty;
+
+            string email = CourrielRepresentant.Text;
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+
+
+            if (!match.Success)
+            {
+                adresseMailMess.Text = "L'adresse email n'est pas valide.";
+                return;
+            }
+
+            if (NomOrganisation.Text.Equals("") || FormeJuridique.Text.Equals("") || Effectif.Text.Equals("") ||
+                NumeroSiret.Text.Equals("") || OrganisationComptable.Text.Equals("") || NumeroVoie.Text.Equals("") ||
+                Adresse.Text.Equals("") || CodePostal.Text.Equals("") || Ville.Text.Equals("") ||
+                NomRepresentant.Text.Equals("") || PrenomRepresentant.Text.Equals("") || CourrielRepresentant.Text.Equals("") ||
+                SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals(""))
+            {
+                messageErr.Text = "Veuillez renseigner tous les champs.";
+                return;
+            }
+
+
+
+                try
 			{
 				ModelManager modele = new ModelManager();
 
@@ -128,6 +156,7 @@ namespace lot1
             VolumesAnnuels.Text = string.Empty;
             
         }
- 
+
+   
     }
 }

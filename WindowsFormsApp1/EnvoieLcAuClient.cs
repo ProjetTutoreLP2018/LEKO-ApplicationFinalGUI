@@ -117,11 +117,10 @@ namespace WindowsFormsApp1
             Client client = modelManager.FindClient(lc.id_client);
 
             // Your gmail email address
-            string from = "kevin.dupeyrat@gmail.com";
+            string from = PagePrincipale.Utilisateur.email_utilisateur;
             oMail.From = from;
 
             //Password du type
-            //string pass = "@Gmail.com77";
             string pass = password;
 
             // Set recipient email address

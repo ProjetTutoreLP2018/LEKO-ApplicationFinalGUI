@@ -39,6 +39,7 @@ namespace WindowsFormsApp1
             adresseMailMess.Text = string.Empty;
             adresseMailConfMess.Text = string.Empty;
             mdpConfMess.Text = string.Empty;
+            messageErr.Text = string.Empty;
 
             comboDroit.ResetText();
 
@@ -81,66 +82,70 @@ namespace WindowsFormsApp1
             adresseMailMess.Text = string.Empty;
             adresseMailConfMess.Text = string.Empty;
             mdpConfMess.Text = string.Empty;
+            messageErr.Text = string.Empty;
 
             string email = textEmail.Text;
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match match = regex.Match(email);
 
 
-            
-            if (match.Success) {
-                if (!textEmail.Text.Equals(textConfirmEmail.Text) || !textPass.Text.Equals(textConfPass.Text))
-                {
 
-                    if (!textEmail.Text.Equals(textConfirmEmail.Text))
-                    {
-                        adresseMailConfMess.Text = "L'adresse email ne correspond pas.";
-
-                    }
-                    else if (!textPass.Text.Equals(textConfPass.Text))
-                    {
-                        mdpConfMess.Text = "Le mot de passe \n ne correspond pas.";
-                    }
-
-                }
-                else
-                {
-                    Utilisateur utilisateur = new Utilisateur();
-                    utilisateur.nom_utilisateur = textNom.Text;
-                    utilisateur.prenom_utilisateur = textPrenom.Text;
-                    utilisateur.email_utilisateur = textEmail.Text;
-
-                    if (checkBoxAdmin.Checked)
-                    {
-                        utilisateur.isAdmin = true;
-                    }
-                    else
-                    {
-                        utilisateur.isAdmin = false;
-                    }
-                    
-                    int index = 0;
-
-                    foreach (Droit d in droits)
-                        if (d.permission.Equals(comboDroit.SelectedItem))
-                            index = d.id_droit;
-
-
-                    utilisateur.id_droit = index;
-                    utilisateur.mdp_utilisateur = textPass.Text;
-
-                    model.CreerUtilisateur(utilisateur);
-                    Init();
-                    MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
-                        " " + utilisateur.prenom_utilisateur + " a bien était créer");
-                    
-                }
-
-            } else {
-                    adresseMailMess.Text = "L'adresse email n'est pas valide.";
+            if (!match.Success) {
+                adresseMailMess.Text = "L'adresse email n'est pas valide.";
+                return;
             }
-            
 
+
+            if (!textEmail.Text.Equals(textConfirmEmail.Text))
+            {
+                adresseMailConfMess.Text = "L'adresse email ne correspond pas.";
+                return;
+
+            }
+            if (!textPass.Text.Equals(textConfPass.Text))
+            {
+                mdpConfMess.Text = "Le mot de passe \n ne correspond pas.";
+                return;
+            }
+
+
+
+            if (textNom.Text.Equals("") || textPrenom.Text.Equals("") || textEmail.Text.Equals("") ||
+                textConfirmEmail.Text.Equals("") ||
+                textPass.Text.Equals("") || textConfPass.Text.Equals(""))
+            {
+                messageErr.Text = "Veuillez renseigner tous les champs.";
+                return;
+            }
+
+            Utilisateur utilisateur = new Utilisateur();
+            utilisateur.nom_utilisateur = textNom.Text;
+            utilisateur.prenom_utilisateur = textPrenom.Text;
+            utilisateur.email_utilisateur = textEmail.Text;
+
+            if (checkBoxAdmin.Checked)
+            {
+                utilisateur.isAdmin = true;
+            }
+            else
+            {
+                utilisateur.isAdmin = false;
+            }
+                    
+            int index = 0;
+
+            foreach (Droit d in droits)
+                if (d.permission.Equals(comboDroit.SelectedItem))
+                    index = d.id_droit;
+
+
+            utilisateur.id_droit = index;
+            utilisateur.mdp_utilisateur = textPass.Text;
+
+            model.CreerUtilisateur(utilisateur);
+            Init();
+            MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
+                " " + utilisateur.prenom_utilisateur + " a bien était créer");
 
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.modele;
 using WindowsFormsApp1.Model;
@@ -106,12 +107,35 @@ namespace LettreCooperation
         private void ButtonModifier_Click(object sender, EventArgs e)
         {
 
+            adresseMailMess.Text = string.Empty;
+            mdpConfMess.Text = string.Empty;
+            messageErr.Text = string.Empty;
+
+            string email = textEmail.Text;
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+
+
+
+            if (!match.Success)
+            {
+                adresseMailMess.Text = "L'adresse email n'est pas valide.";
+                return;
+            }
+
+            if (!textPass.Text.Equals(textPassConfirm.Text))
+            {
+                mdpConfMess.Text = "Le mot de passe \n ne correspond pas.";
+                return;
+            }
+
+
 
             utilisateurs[index].nom_utilisateur = textNom.Text;
             utilisateurs[index].prenom_utilisateur = textPrenom.Text;
             utilisateurs[index].email_utilisateur = textEmail.Text;
 
-            if(!textPass.Text.Equals("") && textPass.Text.Equals(textPassConfirm.Text))
+            if(String.IsNullOrWhiteSpace(textPass.Text))
                 utilisateurs[index].mdp_utilisateur = textPass.Text;
 
             int indexDroit = 0;

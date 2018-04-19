@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreerUtilisateur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.messageErr = new System.Windows.Forms.Label();
             this.adresseMailConfMess = new System.Windows.Forms.Label();
             this.adresseMailMess = new System.Windows.Forms.Label();
             this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
@@ -57,6 +58,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.messageErr);
             this.groupBox1.Controls.Add(this.adresseMailConfMess);
             this.groupBox1.Controls.Add(this.adresseMailMess);
             this.groupBox1.Controls.Add(this.checkBoxAdmin);
@@ -79,13 +81,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nouvel Utilisateur";
-
+            // 
+            // messageErr
+            // 
+            this.messageErr.AutoSize = true;
+            this.messageErr.BackColor = System.Drawing.Color.White;
+            this.messageErr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageErr.ForeColor = System.Drawing.Color.Red;
+            this.messageErr.Location = new System.Drawing.Point(50, 346);
+            this.messageErr.Name = "messageErr";
+            this.messageErr.Size = new System.Drawing.Size(0, 13);
+            this.messageErr.TabIndex = 19;
             // 
             // adresseMailConfMess
             // 
             this.adresseMailConfMess.AutoSize = true;
+            this.adresseMailConfMess.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adresseMailConfMess.ForeColor = System.Drawing.Color.Red;
-            this.adresseMailConfMess.Location = new System.Drawing.Point(314, 149);
+            this.adresseMailConfMess.Location = new System.Drawing.Point(299, 149);
             this.adresseMailConfMess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.adresseMailConfMess.Name = "adresseMailConfMess";
             this.adresseMailConfMess.Size = new System.Drawing.Size(0, 13);
@@ -94,8 +107,9 @@
             // adresseMailMess
             // 
             this.adresseMailMess.AutoSize = true;
+            this.adresseMailMess.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adresseMailMess.ForeColor = System.Drawing.Color.Red;
-            this.adresseMailMess.Location = new System.Drawing.Point(348, 117);
+            this.adresseMailMess.Location = new System.Drawing.Point(299, 117);
             this.adresseMailMess.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.adresseMailMess.Name = "adresseMailMess";
             this.adresseMailMess.Size = new System.Drawing.Size(0, 13);
@@ -105,11 +119,11 @@
             // 
             this.checkBoxAdmin.AutoSize = true;
             this.checkBoxAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAdmin.ForeColor = System.Drawing.Color.Black;
             this.checkBoxAdmin.Location = new System.Drawing.Point(331, 184);
             this.checkBoxAdmin.Name = "checkBoxAdmin";
-            this.checkBoxAdmin.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxAdmin.Size = new System.Drawing.Size(92, 17);
             this.checkBoxAdmin.TabIndex = 16;
             this.checkBoxAdmin.Text = "Administrateur";
             this.checkBoxAdmin.UseVisualStyleBackColor = false;
@@ -315,5 +329,6 @@
         private System.Windows.Forms.Label adresseMailMess;
         private System.Windows.Forms.Label adresseMailConfMess;
         private System.Windows.Forms.Label mdpConfMess;
+        private System.Windows.Forms.Label messageErr;
     }
 }

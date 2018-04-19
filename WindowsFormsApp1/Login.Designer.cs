@@ -105,7 +105,7 @@
             this.textBoxUtilisateur.Name = "textBoxUtilisateur";
             this.textBoxUtilisateur.Size = new System.Drawing.Size(188, 20);
             this.textBoxUtilisateur.TabIndex = 2;
-            this.textBoxUtilisateur.Text = "charlotte.picois@gmail.com";
+            this.textBoxUtilisateur.Text = "kevin.dupeyrat@gmail.com";
             // 
             // labelUtilisateur
             // 

@@ -49,6 +49,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.adresseMailMess = new System.Windows.Forms.Label();
+            this.mdpConfMess = new System.Windows.Forms.Label();
+            this.messageErr = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,6 +88,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.messageErr);
+            this.groupBox2.Controls.Add(this.adresseMailMess);
             this.groupBox2.Controls.Add(this.checkBoxAdmin);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
@@ -108,7 +113,7 @@
             // 
             this.checkBoxAdmin.AutoSize = true;
             this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxAdmin.ForeColor = System.Drawing.Color.Red;
+            this.checkBoxAdmin.ForeColor = System.Drawing.Color.Black;
             this.checkBoxAdmin.Location = new System.Drawing.Point(395, 156);
             this.checkBoxAdmin.Name = "checkBoxAdmin";
             this.checkBoxAdmin.Size = new System.Drawing.Size(106, 17);
@@ -141,6 +146,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.mdpConfMess);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.textPass);
             this.groupBox3.Controls.Add(this.textPassConfirm);
@@ -249,6 +255,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
             // 
+            // adresseMailMess
+            // 
+            this.adresseMailMess.AutoSize = true;
+            this.adresseMailMess.ForeColor = System.Drawing.Color.Red;
+            this.adresseMailMess.Location = new System.Drawing.Point(234, 82);
+            this.adresseMailMess.Name = "adresseMailMess";
+            this.adresseMailMess.Size = new System.Drawing.Size(0, 13);
+            this.adresseMailMess.TabIndex = 16;
+            // 
+            // mdpConfMess
+            // 
+            this.mdpConfMess.AutoSize = true;
+            this.mdpConfMess.ForeColor = System.Drawing.Color.Red;
+            this.mdpConfMess.Location = new System.Drawing.Point(120, 95);
+            this.mdpConfMess.Name = "mdpConfMess";
+            this.mdpConfMess.Size = new System.Drawing.Size(0, 13);
+            this.mdpConfMess.TabIndex = 11;
+            // 
+            // messageErr
+            // 
+            this.messageErr.AutoSize = true;
+            this.messageErr.ForeColor = System.Drawing.Color.Red;
+            this.messageErr.Location = new System.Drawing.Point(285, 228);
+            this.messageErr.Name = "messageErr";
+            this.messageErr.Size = new System.Drawing.Size(0, 13);
+            this.messageErr.TabIndex = 17;
+            // 
             // ManagerUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,5 +323,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBoxAdmin;
+        private System.Windows.Forms.Label adresseMailMess;
+        private System.Windows.Forms.Label mdpConfMess;
+        private System.Windows.Forms.Label messageErr;
     }
 }
