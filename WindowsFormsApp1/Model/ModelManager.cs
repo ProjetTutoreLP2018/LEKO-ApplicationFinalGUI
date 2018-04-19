@@ -241,5 +241,67 @@ namespace LettreCooperation.modele
             lc.chemin_lc = path;
             context.SaveChanges();
         }
+
+        /// <summary>
+        /// Méthode de modification d'un client
+        /// </summary>
+        public void ModifClient()
+        {
+            context.SaveChanges();
+        }
+
+
+        /// <summary>
+        /// Méthode de suppression d'un clinet
+        /// </summary>
+        /// <param name="client"></param>
+        /// <returns></returns>
+        public bool SupprimerClient(Client client)
+        {
+            bool PossedeLC = false;
+            foreach (LC lc in GetListLc())
+            {
+                if (client.id_client == lc.id_client)
+                {
+                    PossedeLC = true;
+                }
+            }
+
+            if (PossedeLC == false)
+            {
+                context.Client.Remove(client);
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public Client GetClients(string raisonSociale)
+        {
+           
+            IEnumerable<Client> client_sql = from c
+                                in context.Client
+                                             where c.raison_sociale == raisonSociale
+                                             select c;
+
+            return client_sql.First();
+        }
+
+        public List<Modele> GetModeles()
+        {
+            return context.Modele.ToList();
+        }
+
+
+        public void SaveLC(LC lc)
+        {
+            context.LC.Add(lc);
+            context.SaveChanges();
+        }
+
     }
 }

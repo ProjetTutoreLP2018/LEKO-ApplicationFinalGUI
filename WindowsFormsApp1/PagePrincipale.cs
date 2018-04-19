@@ -1,4 +1,5 @@
 ﻿using lot1;
+using Lot2_PartieLC;
 using System;
 using System.Windows.Forms;
 using WindowsFormsApp1;
@@ -10,13 +11,15 @@ namespace LettreCooperation
     {
 
         private UserControl log = new Login();
-        private UserControl creerLC = new FenFormulaireGenerationLC();
+        private UserControl creerLC = new FenGenerationLC();
+        //private UserControl creerLC = new FenGenerationLC_lot0();
         private UserControl signerLC = new SignerLC();
         private UserControl voir_mod_lc = new Voir_Modif_LC();
         private UserControl creerUtilisateur = new CreerUtilisateur();
         private UserControl manageUtilisateur = new ManagerUtilisateur();
         private UserControl formulaireClient = new UCFenFormClient();
         private UserControl envoieLcAuClient = new EnvoieLcAuClient();
+        private UserControl modifClient = new ModifClient();
         
         public static Utilisateur Utilisateur { get; set; }
 
@@ -62,6 +65,9 @@ namespace LettreCooperation
 
             envoieLcAuClient.Parent = mainPanel;
             envoieLcAuClient.Visible = false;
+
+            modifClient.Parent = mainPanel;
+            modifClient.Visible = false;
 
             log.Parent = this;
             log.Dock = DockStyle.Top;
@@ -276,7 +282,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void VoirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            InitUserContole(modifClient);
         }
 
 

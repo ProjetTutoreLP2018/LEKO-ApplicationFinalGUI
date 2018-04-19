@@ -1,113 +1,169 @@
-﻿using LettreCooperation;
-using System;
-using System.ComponentModel;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using Xceed.Words.NET;
+using WindowsFormsApp1.Model;
+using LettreCooperation.modele;
+using System.IO;
+using LettreCooperation;
 
-namespace lot1
+namespace Lot2_PartieLC
 {
-    public partial class FenGenerationLC : Form
-    {
+	public partial class FenGenerationLC : UserControl
+	{
 
-       
-        /// <summary>
-        /// Contient le chemin vers le modèle sélectionné par l'utilisateur
-        /// </summary>
-        public String ModeleSelectionne;
+        private ModelManager modeleManager = new ModelManager();
+        private List<Client> clients = new List<Client>();
+        private List<Modele> modeles = new List<Modele>();
+        private string _PATH = Program.FINACOOPFolder + @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer";
 
-        /// <summary>
-        /// Contient le chemin vers le fichier de destination sélectionné par l'utilisateur
-        /// </summary>
-        public String DestinationSelectionnee = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer\";
 
-        /// <summary>
-        /// Initialise les composants graphiques et active ou désactive le bouton Générer
-        /// </summary>
-        public FenGenerationLC()
-        {
-            InitializeComponent();
-            ActiverBoutonGenerer();
+		public FenGenerationLC()
+		{
+			InitializeComponent();
+		}
+
+
+		private void FenGenerationLC_Load(object sender, EventArgs e)
+		{
+            clients = modeleManager.GetListClient();
+            modeles = modeleManager.GetModeles();
+
+            foreach (Modele modele in modeles)
+                comboBoxModel.Items.Add(modele.id_modele);
+
+            foreach (Client client in clients)
+                ListeDeroulanteChoixClient.Items.Add(client.raison_sociale);
+            
+			ListeDeroulanteChoixClient.SelectedIndex = 0;
+            comboBoxModel.SelectedIndex = 0;
+
         }
 
-        /// <summary>
-        /// Affiche une boîte de dialogue pour sélectionner un modèle
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ParcourirModele_Click(object sender, EventArgs e)
-        {
-            //OuvrirModele.InitialDirectory = Properties.Settings.Default.dossierLC;
-            if (OuvrirModele.ShowDialog() == DialogResult.OK)
+
+		private void BoutonParcourirFichierValoHonoraires_Click(object sender, EventArgs e)
+		{
+			if (ouvrirFichierValoHonoraires.ShowDialog(this) == DialogResult.OK)
+			{
+				FichierValoHonoraires.Text = ouvrirFichierValoHonoraires.FileName;
+			}
+		}
+
+
+        
+		private void BoutonGenerer_Click(object sender, EventArgs e)
+		{
+			string raisonSociale = ListeDeroulanteChoixClient.SelectedItem.ToString();
+
+            Client client = new Client();
+            client = clients[ListeDeroulanteChoixClient.SelectedIndex];
+
+
+            Dictionary<string, string> donnees = new Dictionary<string, string>()
+			{
+				{ "RaisonSociale", client.raison_sociale },
+				{ "FormeJuridique", client.forme_juridique },
+				{
+					"Adresse",
+					String.Format("{0} {1}", client.Adresse.numero,
+														client.Adresse.voie)
+				},
+				{ "CP", client.Adresse.code_postal },
+				{ "Ville", client.Adresse.ville },
+				//{ "Activite", client.Activite.libelle_activite },
+				{ "DateCourante", DateTime.Today.ToShortDateString() },
+				{ "Millesime", DateTime.Today.Year.ToString() },
+				{ "Prenom", client.prenom_referent },
+				{ "Nom", client.nom_referent },
+				{ "Fonction", client.fonction_referent },
+				{ "Civilite",
+					(client.sexe_referent == "M" ? "Monsieur" : "Madame")
+				},
+				{ "CherGenre", (client.sexe_referent == "M" ? "Cher" : "Chère") },
+				{ "CA", client.CA.ToString() },
+				{ "Effectif", client.effectifs.ToString() },
+				{ "OrganisationComptable", client.organisation_comptable },
+				{ "VolumesAnnuels", client.volume_annuel.ToString() },
+				{ "DateImmatriculation", client.date_immatriculation.ToString() },
+				{ "LieuImmatriculation", client.lieu_immatriculation },
+			};
+
+
+			DocX documentModele = DocX.Load(Program.FINACOOPFolder + modeles[comboBoxModel.SelectedIndex].chemin_modele + ".docx");
+
+			foreach (var item in donnees)
+			{
+				documentModele.ReplaceText("{{" + item.Key + "}}", item.Value);
+			}
+
+            string pathFolder = _PATH + "\\" + client.raison_sociale;
+
+            if (!Directory.Exists(pathFolder))
             {
-                SelectionModele.Text = OuvrirModele.FileName;
+                Directory.CreateDirectory(pathFolder);
+                File.SetAttributes(pathFolder, FileAttributes.Normal);
+
             }
-        }
+
+            LC lc = new LC();
+
+            lc.chemin_lc = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer" + "\\" + client.raison_sociale + @"\test.docx";
+            lc.date_debut = DateTime.Today;
+            lc.id_client = client.id_client;
+            lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;
+            lc.nom_lc = "test.docx";
+            lc.id_etat = 1;
+            lc.id_utilisateur = 13;
+
+            
 
 
-        /// <summary>
-        /// Place les chemins des deux fichiers modèle et destination dans les variables ModeleSelectionne et DestinationSelectionnee
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BoutonGenerer_Click(object sender, EventArgs e)
+            documentModele.SaveAs(pathFolder + @"\test.docx");
+
+            AfficherLC(pathFolder + @"\test.docx");
+
+            saveLC(lc);
+
+            MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"Test.docx" + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
+
+
+        private void saveLC(LC lc)
         {
-            ModeleSelectionne = SelectionModele.Text;
-            //DestinationSelectionnee = SelectionDestination.Text;
+            modeleManager.SaveLC(lc);
         }
 
-        /// <summary>
-        /// Désactive ou active le bouton Générer en fonction du contenu des champs
-        /// </summary>
-        private void ActiverBoutonGenerer()
+
+        private void AfficherLC(string pathOrigine)
         {
-            BoutonGenerer.Enabled = (SelectionModele.Text != "" && File.Exists(@SelectionModele.Text) ? true : false);
+
+            Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
+            //  this.refFichier = fichier;
+
+            // permet de visualisé les opérations
+            fichier.Visible = true;
+
+            // objet vide pour les parémétres inutilisés
+            Object missing = System.Reflection.Missing.Value;
+
+            // chemin du doc a ouvrir
+            String path = pathOrigine;
+
+            // ouvrir le doc word 
+            fichier.Documents.Open(path, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing,
+                    ref missing);
+
+
+
+            // désactiver le bouton ouvrir et activé le bouton fermer
+            // close.Enabled = true;
+            // open.Enabled = false;
+
         }
 
-        /// <summary>
-        /// Vérifie si le champ Modèle est rempli et que le chemin renseigné pointe vers un fichier qui existe, affiche une erreur le cas échéant et désactive le bouton Générer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SelectionModele_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(@SelectionModele.Text))
-            {
-                AffichageErreurs.SetIconPadding(SelectionModele, 2);
-                AffichageErreurs.SetError(SelectionModele, "Le champ doit être renseigné");
-            }
-            else
-            {
-                if (File.Exists(@SelectionModele.Text))
-                {
-                    AffichageErreurs.SetError(SelectionModele, "");
-                }
-                else
-                {
-                    AffichageErreurs.SetIconPadding(SelectionModele, 2);
-                    AffichageErreurs.SetError(SelectionModele, "Le fichier n'existe pas");
-                }
-            }
-            ActiverBoutonGenerer();
-        }
- 
-
-        /// <summary>
-        /// Permet de valider l'existence du fichier modèle à la perte du focus du champ Modèle, affiche une erreur le cas échéant et désactive le bouton Générer
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SelectionModele_Validating(object sender, CancelEventArgs e)
-        {
-            if (File.Exists(@SelectionModele.Text))
-            {
-                AffichageErreurs.SetError(SelectionModele, "");
-            }
-            else
-            {
-                AffichageErreurs.SetIconPadding(SelectionModele, 2);
-                AffichageErreurs.SetError(SelectionModele, "Le fichier n'existe pas");
-            }
-            ActiverBoutonGenerer();
-        }
     }
 }

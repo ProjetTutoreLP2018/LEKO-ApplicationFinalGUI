@@ -228,6 +228,12 @@
     <Compile Include="EnvoieLcAuClient.Designer.cs">
       <DependentUpon>EnvoieLcAuClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="FenGenerationLC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FenGenerationLC.designer.cs">
+      <DependentUpon>FenGenerationLC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FenPreRemplissageAutomatique.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,12 @@
     <Compile Include="Model\Utilisateur.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModifClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModifClient.designer.cs">
+      <DependentUpon>ModifClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCFenFormClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,18 +322,6 @@
     </Compile>
     <Compile Include="CreerUtilisateur.Designer.cs">
       <DependentUpon>CreerUtilisateur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FenFormulaireGenerationLC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FenFormulaireGenerationLC.designer.cs">
-      <DependentUpon>FenFormulaireGenerationLC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FenGenerationLC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FenGenerationLC.designer.cs">
-      <DependentUpon>FenGenerationLC.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUtilisateur.cs">
       <SubType>UserControl</SubType>
@@ -359,8 +359,14 @@
     <EmbeddedResource Include="EnvoieLcAuClient.resx">
       <DependentUpon>EnvoieLcAuClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FenGenerationLC.resx">
+      <DependentUpon>FenGenerationLC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FenPreRemplissageAutomatique.resx">
       <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifClient.resx">
+      <DependentUpon>ModifClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCFenFormClient.resx">
       <DependentUpon>UCFenFormClient.cs</DependentUpon>
@@ -373,12 +379,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreerUtilisateur.resx">
       <DependentUpon>CreerUtilisateur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FenFormulaireGenerationLC.resx">
-      <DependentUpon>FenFormulaireGenerationLC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FenGenerationLC.resx">
-      <DependentUpon>FenGenerationLC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUtilisateur.resx">
       <DependentUpon>ManagerUtilisateur.cs</DependentUpon>
