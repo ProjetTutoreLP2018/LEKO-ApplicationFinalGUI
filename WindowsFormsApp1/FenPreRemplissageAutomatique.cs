@@ -63,6 +63,7 @@ namespace lot1
 
         private async void BoutonRechercher_ClickAsync(object sender, EventArgs e)
         {
+            ListeChoixEntreprises.Items.Clear();
             HttpClient client = new HttpClient();
             HttpResponseMessage reponse = await client.GetAsync("https://data.opendatasoft.com/api/records/1.0/search/?dataset=sirene%40public&q=" + MotsCles.Text.ToUpper() + "&facet=depet&facet=libcom&facet=siege&facet=libapet&facet=libnj&facet=libapen&facet=ess&facet=libtefen&facet=categorie&facet=nom_dept&facet=section");
             string json = await reponse.Content.ReadAsStringAsync();

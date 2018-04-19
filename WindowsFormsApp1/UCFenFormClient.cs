@@ -25,13 +25,74 @@ namespace lot1
 			if (fenPreRemplissageAutomatique.ShowDialog(this) == DialogResult.OK)
 			{
 				Record enregistrement = fenPreRemplissageAutomatique.entrepriseSelectionnee;
-				NomOrganisation.Text = enregistrement.fields.l1_normalisee;
-				FormeJuridique.Text = enregistrement.fields.libnj.Split(',')[0];
-				Adresse.Text = String.Format("{0} {1} {2}", enregistrement.fields.numvoie, enregistrement.fields.typvoie, enregistrement.fields.libvoie);
-				CodePostal.Text = enregistrement.fields.codpos;
-				Ville.Text = enregistrement.fields.libcom;
-				//Activite.Text = enregistrement.fields.libapet;
-			}
+                if (enregistrement.fields.l1_normalisee != null)
+                    NomOrganisation.Text = enregistrement.fields.l1_normalisee;
+                else
+                    NomOrganisation.Text = "";
+
+                if (enregistrement.fields.libnj != null)
+                    FormeJuridique.Text = enregistrement.fields.libnj.Split(',')[0];
+                else
+                    FormeJuridique.Text = "";
+
+                if (enregistrement.fields.numvoie != null && enregistrement.fields.typvoie != null && enregistrement.fields.libvoie != null)
+                    Adresse.Text = String.Format("{0} {1} {2}", enregistrement.fields.numvoie, enregistrement.fields.typvoie, enregistrement.fields.libvoie);
+                else
+                    Adresse.Text = "";
+
+                if (enregistrement.fields.codpos != null)
+                    CodePostal.Text = enregistrement.fields.codpos;
+                else
+                    CodePostal.Text = "";
+
+                if (enregistrement.fields.libcom != null)
+                    Ville.Text = enregistrement.fields.libcom;
+                else
+                    Ville.Text = "";
+
+                if (enregistrement.fields.siret != null)
+                    NumeroSiret.Text = enregistrement.fields.siret;
+                else
+                    NumeroSiret.Text = "";
+
+                if (enregistrement.fields.libapet != null)
+                    textBoxActivite.Text = enregistrement.fields.libapet;
+                else
+                    textBoxActivite.Text = "";
+
+                if (enregistrement.fields.numvoie != null)
+                    NumeroVoie.Value = Int32.Parse(enregistrement.fields.numvoie);
+                else
+                    NumeroVoie.Value = 0;
+
+                if (enregistrement.fields.dcren != null)
+                    DateImmatriculation.Text = enregistrement.fields.dcren;
+                else
+                    DateImmatriculation.Text = "";
+
+                if (enregistrement.fields.efetcent.Equals("NN"))
+                    Effectif.Value = 0;
+                else
+                    Effectif.Value = Int32.Parse(enregistrement.fields.efetcent);
+
+                if (enregistrement.fields.indrep != null)
+                {
+                    if (enregistrement.fields.indrep.Equals("T"))
+                        IndiceRepetition.Text = "ter";
+                    if (enregistrement.fields.indrep.Equals("B"))
+                        IndiceRepetition.Text = "bis";
+                    if (enregistrement.fields.indrep.Equals("Q"))
+                        IndiceRepetition.Text = "quater";
+                    if (enregistrement.fields.indrep.Equals("C"))
+                        IndiceRepetition.Text = "quinquies";
+
+                } else
+                {
+                    enregistrement.fields.indrep = "";
+                }
+
+
+            }
 		}
 
 		private void préremplirAvecUnFichierClientToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -75,8 +136,8 @@ namespace lot1
 
 				Adresse adresse = new Adresse();
 				adresse.numero = NumeroVoie.Text;
-
-				adresse.indice = IndiceRepetition.SelectedItem.ToString();
+                if(!String.IsNullOrWhiteSpace(IndiceRepetition.Text))
+				    adresse.indice = IndiceRepetition.Text;
 				adresse.voie = Adresse.Text;
 				adresse.complements = Complement.Text;
 				adresse.code_postal = CodePostal.Text;

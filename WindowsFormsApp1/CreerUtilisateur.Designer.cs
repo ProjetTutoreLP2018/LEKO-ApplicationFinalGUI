@@ -169,6 +169,7 @@
             // 
             // comboDroit
             // 
+            this.comboDroit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboDroit.FormattingEnabled = true;
             this.comboDroit.Location = new System.Drawing.Point(123, 180);
             this.comboDroit.Name = "comboDroit";

@@ -135,7 +135,7 @@ namespace LettreCooperation
             utilisateurs[index].prenom_utilisateur = textPrenom.Text;
             utilisateurs[index].email_utilisateur = textEmail.Text;
 
-            if(String.IsNullOrWhiteSpace(textPass.Text))
+            if(!String.IsNullOrWhiteSpace(textPass.Text))
                 utilisateurs[index].mdp_utilisateur = textPass.Text;
 
             int indexDroit = 0;
