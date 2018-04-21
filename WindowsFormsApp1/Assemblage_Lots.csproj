@@ -299,6 +299,12 @@
     <Compile Include="ModifClient.designer.cs">
       <DependentUpon>ModifClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignatureExp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SignatureExp.Designer.cs">
+      <DependentUpon>SignatureExp.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCFenFormClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,12 +316,6 @@
     </Compile>
     <Compile Include="Voir_Modif_LC.Designer.cs">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CreerUneLC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CreerUneLC.Designer.cs">
-      <DependentUpon>CreerUneLC.cs</DependentUpon>
     </Compile>
     <Compile Include="CreerUtilisateur.cs">
       <SubType>UserControl</SubType>
@@ -343,12 +343,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignerLC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SignerLC.Designer.cs">
-      <DependentUpon>SignerLC.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Ville.cs" />
     <EmbeddedResource Include="ChangePath.resx">
       <DependentUpon>ChangePath.cs</DependentUpon>
@@ -368,14 +362,14 @@
     <EmbeddedResource Include="ModifClient.resx">
       <DependentUpon>ModifClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SignatureExp.resx">
+      <DependentUpon>SignatureExp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCFenFormClient.resx">
       <DependentUpon>UCFenFormClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Voir_Modif_LC.resx">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreerUneLC.resx">
-      <DependentUpon>CreerUneLC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreerUtilisateur.resx">
       <DependentUpon>CreerUtilisateur.cs</DependentUpon>
@@ -401,9 +395,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SignerLC.resx">
-      <DependentUpon>SignerLC.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="Model\ADOModele.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ADOModele.Designer.cs</LastGenOutput>
@@ -427,6 +418,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\finacoop.png" />
+    <Content Include="Images\if_Refresh_58683.png" />
+    <Content Include="Images\if_sync_126579.png" />
     <Content Include="Images\logo %281%29.ico" />
     <Content Include="logo %281%29.ico" />
     <Content Include="Model\ADOModele.Context.tt">

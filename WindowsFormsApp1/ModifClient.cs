@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
 using LettreCooperation.modele;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
@@ -145,6 +146,31 @@ namespace WindowsFormsApp1
 
         private void BoutonValider_Click(object sender, EventArgs e)
         {
+
+            messageErr.Text = string.Empty;
+            adresseMailMess.Text = string.Empty;
+
+            string email = CourrielRepresentant.Text;
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+
+            if (!match.Success)
+            {
+                adresseMailMess.Text = "L'adresse email n'est pas valide.";
+                return;
+            }
+
+            if (NomOrganisation.Text.Equals("") || FormeJuridique.Text.Equals("") || Effectif.Text.Equals("") ||
+                NumeroSiret.Text.Equals("") || OrganisationComptable.Text.Equals("") || NumeroVoie.Text.Equals("") ||
+                Adresse.Text.Equals("") || CodePostal.Text.Equals("") || Ville.Text.Equals("") ||
+                NomRepresentant.Text.Equals("") || PrenomRepresentant.Text.Equals("") || CourrielRepresentant.Text.Equals("") ||
+                SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals(""))
+            {
+                messageErr.Text = "Veuillez renseigner tous les champs.";
+                return;
+            }
+
+
             clients[index].raison_sociale = NomOrganisation.Text;
             
             clients[index].forme_juridique = FormeJuridique.Text;

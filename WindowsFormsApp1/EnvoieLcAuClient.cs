@@ -32,6 +32,10 @@ namespace WindowsFormsApp1
         /// </summary>
         private void Init()
         {
+
+            dataGridView.Rows.Clear();
+            dataGridView.Refresh();
+
             this.textBoxPass.Text = "";
             buttonEnvoyer.Enabled = false;
             listLc = modelManager.GetListLCWaitingSend();
@@ -41,6 +45,7 @@ namespace WindowsFormsApp1
 
 
                 string[] row = {
+
                     listLc[i].nom_lc,
                     modelManager.FindClient(listLc[i].id_client).raison_sociale,
                     listLc[i].date_debut.ToString(),
@@ -97,8 +102,7 @@ namespace WindowsFormsApp1
                 }
             }
 
-            dataGridView.Rows.Clear();
-            dataGridView.Refresh();
+            
 
             Init();
         }
@@ -243,5 +247,9 @@ namespace WindowsFormsApp1
             pathPDF = _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Init();
+        }
     }
 }

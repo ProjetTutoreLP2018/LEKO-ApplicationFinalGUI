@@ -20,7 +20,7 @@
           <Property Name="numero" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="indice" Type="varchar" MaxLength="25" />
           <Property Name="voie" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="code_postal" Type="varchar" MaxLength="10" />
+          <Property Name="code_postal" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="ville" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="complements" Type="varchar" MaxLength="200" />
         </EntityType>
@@ -89,6 +89,7 @@
           <Property Name="chemin_modele" Type="varchar" MaxLength="300" />
           <Property Name="nom_fichier" Type="varchar" MaxLength="150" />
           <Property Name="nom_mission" Type="varchar" MaxLength="200" />
+          <Property Name="type_lettre" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Statut">
           <Key>
@@ -321,7 +322,7 @@
           <Property Name="numero" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="indice" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="voie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="code_postal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="code_postal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="complements" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Client" Relationship="Self.FK_Client_Adresse" FromRole="Adresse" ToRole="Client" />
@@ -403,6 +404,7 @@
           <Property Name="nom_fichier" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="nom_mission" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_modele" FromRole="Modele" ToRole="LC" />
+          <Property Name="type_lettre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Statut">
           <Key>
@@ -712,6 +714,7 @@
           <EntitySetMapping Name="Modele">
             <EntityTypeMapping TypeName="LCBDModel.Modele">
               <MappingFragment StoreEntitySet="Modele">
+                <ScalarProperty Name="type_lettre" ColumnName="type_lettre" />
                 <ScalarProperty Name="id_modele" ColumnName="id_modele" />
                 <ScalarProperty Name="chemin_modele" ColumnName="chemin_modele" />
                 <ScalarProperty Name="nom_fichier" ColumnName="nom_fichier" />

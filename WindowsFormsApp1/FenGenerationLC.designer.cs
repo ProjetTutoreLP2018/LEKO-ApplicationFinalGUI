@@ -39,15 +39,17 @@
             this.sauvegarderFichier = new System.Windows.Forms.SaveFileDialog();
             this.ouvrirFichierModele = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonGenerer = new System.Windows.Forms.Button();
             this.comboBoxModel = new System.Windows.Forms.ComboBox();
+            this.buttonGenerer = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxMission = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BoutonParcourirFichierValoHonoraires
             // 
             this.BoutonParcourirFichierValoHonoraires.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoutonParcourirFichierValoHonoraires.BackgroundImage")));
-            this.BoutonParcourirFichierValoHonoraires.Location = new System.Drawing.Point(526, 116);
+            this.BoutonParcourirFichierValoHonoraires.Location = new System.Drawing.Point(526, 77);
             this.BoutonParcourirFichierValoHonoraires.Name = "BoutonParcourirFichierValoHonoraires";
             this.BoutonParcourirFichierValoHonoraires.Size = new System.Drawing.Size(86, 23);
             this.BoutonParcourirFichierValoHonoraires.TabIndex = 22;
@@ -57,13 +59,15 @@
             // 
             // FichierValoHonoraires
             // 
-            this.FichierValoHonoraires.Location = new System.Drawing.Point(239, 118);
+            this.FichierValoHonoraires.Enabled = false;
+            this.FichierValoHonoraires.Location = new System.Drawing.Point(239, 79);
             this.FichierValoHonoraires.Name = "FichierValoHonoraires";
             this.FichierValoHonoraires.Size = new System.Drawing.Size(264, 20);
             this.FichierValoHonoraires.TabIndex = 20;
             // 
             // ListeDeroulanteChoixClient
             // 
+            this.ListeDeroulanteChoixClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ListeDeroulanteChoixClient.FormattingEnabled = true;
             this.ListeDeroulanteChoixClient.Location = new System.Drawing.Point(239, 30);
             this.ListeDeroulanteChoixClient.Name = "ListeDeroulanteChoixClient";
@@ -73,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 172);
+            this.label3.Location = new System.Drawing.Point(51, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 17;
@@ -82,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 121);
+            this.label2.Location = new System.Drawing.Point(51, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 13);
             this.label2.TabIndex = 16;
@@ -111,6 +115,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxMission);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBoxModel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ListeDeroulanteChoixClient);
@@ -120,9 +126,19 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(76, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(661, 232);
+            this.groupBox1.Size = new System.Drawing.Size(661, 256);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBoxModel
+            // 
+            this.comboBoxModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxModel.FormattingEnabled = true;
+            this.comboBoxModel.Location = new System.Drawing.Point(239, 130);
+            this.comboBoxModel.Name = "comboBoxModel";
+            this.comboBoxModel.Size = new System.Drawing.Size(373, 21);
+            this.comboBoxModel.TabIndex = 23;
+            this.comboBoxModel.SelectedIndexChanged += new System.EventHandler(this.comboBoxModel_SelectedIndexChanged);
             // 
             // buttonGenerer
             // 
@@ -135,13 +151,21 @@
             this.buttonGenerer.UseVisualStyleBackColor = true;
             this.buttonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);
             // 
-            // comboBoxModel
+            // label4
             // 
-            this.comboBoxModel.FormattingEnabled = true;
-            this.comboBoxModel.Location = new System.Drawing.Point(239, 172);
-            this.comboBoxModel.Name = "comboBoxModel";
-            this.comboBoxModel.Size = new System.Drawing.Size(373, 21);
-            this.comboBoxModel.TabIndex = 23;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(54, 184);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Mission : ";
+            // 
+            // textBoxMission
+            // 
+            this.textBoxMission.Location = new System.Drawing.Point(239, 184);
+            this.textBoxMission.Name = "textBoxMission";
+            this.textBoxMission.Size = new System.Drawing.Size(373, 20);
+            this.textBoxMission.TabIndex = 25;
             // 
             // FenGenerationLC
             // 
@@ -172,5 +196,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonGenerer;
         private System.Windows.Forms.ComboBox comboBoxModel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxMission;
     }
 }

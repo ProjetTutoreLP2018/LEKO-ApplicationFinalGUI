@@ -68,6 +68,7 @@
             // 
             // comboNomUtilisateur
             // 
+            this.comboNomUtilisateur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNomUtilisateur.FormattingEnabled = true;
             this.comboNomUtilisateur.Location = new System.Drawing.Point(146, 37);
             this.comboNomUtilisateur.Name = "comboNomUtilisateur";

@@ -50,6 +50,7 @@
             // 
             // textBoxPath
             // 
+            this.textBoxPath.Enabled = false;
             this.textBoxPath.Location = new System.Drawing.Point(110, 97);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.ReadOnly = true;

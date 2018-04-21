@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using WindowsFormsApp1.Model;
 
 namespace LettreCooperation.modele
@@ -78,6 +79,47 @@ namespace LettreCooperation.modele
 
 
         /// <summary>
+        /// Méthode qui permet de récupèrer la liste de LC
+        /// a signer
+        /// </summary>
+        /// <returns></returns>
+        public List<LC> GetListLcASigner()
+        {
+            return (from lc in context.LC
+                    join etat in context.Etat
+                    on lc.id_etat equals etat.id_etat
+                    where etat.libelle_etat == "C"
+                    select lc).ToList();
+        }
+
+
+        /// <summary>
+        /// Méthode qui renvoie une LC en fonction de son nom
+        /// </summary>
+        /// <param name="etat"></param>
+        /// <returns></returns>
+        public LC GetListLCByName(string nom)
+        {
+            List<LC> lcs = (from lc in context.LC
+                    where lc.nom_lc == nom
+                    select lc).ToList();
+
+            return lcs.First();
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de suppirmer une LC
+        /// </summary>
+        /// <param name="lc"></param>
+        public void DeleteLC(LC lc)
+        {
+            context.LC.Remove(lc);
+            context.SaveChanges();
+        }
+
+
+        /// <summary>
         /// Méthode qui permet de récupérer la liste des clients
         /// </summary>
         /// <returns></returns>
@@ -121,6 +163,7 @@ namespace LettreCooperation.modele
 
             foreach(var result in users)
             {
+                utilisateur.id_utilisateur = result.id_utilisateur;
                 utilisateur.nom_utilisateur = result.nom_utilisateur;
                 utilisateur.prenom_utilisateur = result.prenom_utilisateur;
                 utilisateur.email_utilisateur = result.email_utilisateur;
@@ -214,7 +257,13 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Utilisateur FindUtilisateur(int? id)
         {
-            return context.Utilisateur.Find(id);
+          
+            Utilisateur u = context.Utilisateur.Find(id);
+
+            if (u == null)
+                return new Utilisateur();
+
+            return u;
         }
 
 
@@ -280,6 +329,12 @@ namespace LettreCooperation.modele
         }
 
 
+        /// <summary>
+        /// Méthode qui permet de récupérer un client
+        /// en fonction de sa raison sociale
+        /// </summary>
+        /// <param name="raisonSociale"></param>
+        /// <returns></returns>
         public Client GetClients(string raisonSociale)
         {
            
@@ -291,15 +346,68 @@ namespace LettreCooperation.modele
             return client_sql.First();
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de récupèrer la liste
+        /// des modèles présent dans la base de données
+        /// </summary>
+        /// <returns></returns>
         public List<Modele> GetModeles()
         {
             return context.Modele.ToList();
         }
 
 
+        /// <summary>
+        /// Méthode qui permet d'ajouter une nouvelle LC dans
+        /// la base de données
+        /// </summary>
+        /// <param name="lc"></param>
         public void SaveLC(LC lc)
         {
             context.LC.Add(lc);
+            context.SaveChanges();
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de récupèrer un état en fonction
+        /// de son clés primaire
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public Etat GetEtatById(int i)
+        {
+            return context.Etat.Find(i);
+        }
+
+
+        /// <summary>
+        /// Méthode qui eprmet de changer l'état d'une LC
+        /// en 'LC_Signer'
+        /// </summary>
+        /// <param name="i"></param>
+        public void ChangerEtatLC_Signer(int i)
+        {
+            LC lc = context.LC.Find(i);
+            lc.id_etat = 7;
+            context.SaveChanges();
+        }
+
+        /// <summary>
+        /// Méthode qui permet d'ajouter le signataire
+        /// de la LC dans la base de données
+        /// </summary>
+        /// <param name="lc"></param>
+        /// <param name="utilisateur"></param>
+        public void AjoutSignataire(LC lc, Utilisateur utilisateur)
+        {
+            LC lcFromDB = context.LC.Find(lc.id_lc);
+
+            MessageBox.Show("Utilisateur signataire id : " + utilisateur.id_utilisateur
+                + " Nom :" + utilisateur.nom_utilisateur);
+
+            lcFromDB.id_signataire = utilisateur.id_utilisateur;
             context.SaveChanges();
         }
 

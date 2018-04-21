@@ -5,21 +5,21 @@ using System.Windows.Forms;
 using WindowsFormsApp1;
 using WindowsFormsApp1.Model;
 
+
 namespace LettreCooperation
 {
     public partial class PagePrincipale : Form
     {
 
         private UserControl log = new Login();
-        private UserControl creerLC = new FenGenerationLC();
-        //private UserControl creerLC = new FenGenerationLC_lot0();
-        private UserControl signerLC = new SignerLC();
-        private UserControl voir_mod_lc = new Voir_Modif_LC();
-        private UserControl creerUtilisateur = new CreerUtilisateur();
-        private UserControl manageUtilisateur = new ManagerUtilisateur();
-        private UserControl formulaireClient = new UCFenFormClient();
-        private UserControl envoieLcAuClient = new EnvoieLcAuClient();
-        private UserControl modifClient = new ModifClient();
+        //private UserControl creerLC = new FenGenerationLC();
+        //private UserControl signerLC = new SignatureExp();
+        //private UserControl voir_mod_lc = new Voir_Modif_LC();
+        //private UserControl creerUtilisateur = new CreerUtilisateur();
+        //private UserControl manageUtilisateur = new ManagerUtilisateur();
+        //private UserControl formulaireClient = new UCFenFormClient();
+        //private UserControl envoieLcAuClient = new EnvoieLcAuClient();
+        //private UserControl modifClient = new ModifClient();
         
         public static Utilisateur Utilisateur { get; set; }
 
@@ -41,33 +41,12 @@ namespace LettreCooperation
         /// </summary>
         private void Init()
         {
+            mainPanel.Controls.Clear();
             mainPanel.Visible = false;
             pictureLogout.Visible = false;
             labelUser.Visible = false;
 
-            creerLC.Parent = mainPanel;
-            creerLC.Visible = false;
-
-            voir_mod_lc.Parent = mainPanel;
-            voir_mod_lc.Visible = false;
-
-            creerUtilisateur.Parent = mainPanel;
-            creerUtilisateur.Visible = false;
-
-            signerLC.Parent = mainPanel;
-            signerLC.Visible = false;
-
-            manageUtilisateur.Parent = mainPanel;
-            manageUtilisateur.Visible = false;
-
-            formulaireClient.Parent = mainPanel;
-            formulaireClient.Visible = false;
-
-            envoieLcAuClient.Parent = mainPanel;
-            envoieLcAuClient.Visible = false;
-
-            modifClient.Parent = mainPanel;
-            modifClient.Visible = false;
+          
 
             log.Parent = this;
             log.Dock = DockStyle.Top;
@@ -97,7 +76,7 @@ namespace LettreCooperation
         private void CréerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
    
-            InitUserContole(creerLC);
+            InitUserContole(new FenGenerationLC());
         }
 
 
@@ -109,7 +88,7 @@ namespace LettreCooperation
         private void VoirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            InitUserContole(voir_mod_lc);
+            InitUserContole(new Voir_Modif_LC());
 
         }
 
@@ -122,7 +101,7 @@ namespace LettreCooperation
         private void SignerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (PagePrincipale.Utilisateur.id_droit == 2)
-                InitUserContole(signerLC);
+                InitUserContole(new SignatureExp());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
 
@@ -138,7 +117,7 @@ namespace LettreCooperation
         {
 
             if (PagePrincipale.Utilisateur.isAdmin)
-                InitUserContole(creerUtilisateur);
+                InitUserContole(new CreerUtilisateur());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
 
@@ -154,7 +133,7 @@ namespace LettreCooperation
         {
 
             if (PagePrincipale.Utilisateur.isAdmin)
-                InitUserContole(manageUtilisateur);
+                InitUserContole(new ManagerUtilisateur());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
@@ -205,7 +184,7 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.id_droit == 2)
             {
-                InitUserContole(envoieLcAuClient);
+                InitUserContole(new EnvoieLcAuClient());
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -270,7 +249,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void CréerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitUserContole(formulaireClient);
+            InitUserContole(new UCFenFormClient());
         }
 
 
@@ -282,7 +261,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void VoirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitUserContole(modifClient);
+            InitUserContole(new ModifClient());
         }
 
 

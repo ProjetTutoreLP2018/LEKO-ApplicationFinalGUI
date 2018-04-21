@@ -24,6 +24,7 @@ namespace WindowsFormsApp1.Model
         public string chemin_modele { get; set; }
         public string nom_fichier { get; set; }
         public string nom_mission { get; set; }
+        public string type_lettre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LC> LC { get; set; }

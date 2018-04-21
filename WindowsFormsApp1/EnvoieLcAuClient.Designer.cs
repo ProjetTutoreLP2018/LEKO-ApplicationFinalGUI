@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnvoieLcAuClient));
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.buttonEnvoyer = new System.Windows.Forms.Button();
             this.LC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCree = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +38,10 @@
             this.envoyer = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.buttonEnvoyer = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -57,17 +59,6 @@
             this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView.Size = new System.Drawing.Size(644, 364);
             this.dataGridView.TabIndex = 0;
-            // 
-            // buttonEnvoyer
-            // 
-            this.buttonEnvoyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnvoyer.BackgroundImage")));
-            this.buttonEnvoyer.Location = new System.Drawing.Point(644, 395);
-            this.buttonEnvoyer.Name = "buttonEnvoyer";
-            this.buttonEnvoyer.Size = new System.Drawing.Size(75, 23);
-            this.buttonEnvoyer.TabIndex = 1;
-            this.buttonEnvoyer.Text = "Envoyer";
-            this.buttonEnvoyer.UseVisualStyleBackColor = true;
-            this.buttonEnvoyer.Click += new System.EventHandler(this.ButtonEnvoyer_Click);
             // 
             // LC
             // 
@@ -121,11 +112,35 @@
             this.textBoxPass.TabIndex = 3;
             this.textBoxPass.TextChanged += new System.EventHandler(this.TextBoxPass_TextChanged);
             // 
+            // buttonEnvoyer
+            // 
+            this.buttonEnvoyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnvoyer.BackgroundImage")));
+            this.buttonEnvoyer.Location = new System.Drawing.Point(661, 395);
+            this.buttonEnvoyer.Name = "buttonEnvoyer";
+            this.buttonEnvoyer.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnvoyer.TabIndex = 1;
+            this.buttonEnvoyer.Text = "Envoyer";
+            this.buttonEnvoyer.UseVisualStyleBackColor = true;
+            this.buttonEnvoyer.Click += new System.EventHandler(this.ButtonEnvoyer_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(742, 73);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // EnvoieLcAuClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxPass);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonEnvoyer);
@@ -133,6 +148,7 @@
             this.Name = "EnvoieLcAuClient";
             this.Size = new System.Drawing.Size(829, 514);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +166,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn envoyer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPass;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

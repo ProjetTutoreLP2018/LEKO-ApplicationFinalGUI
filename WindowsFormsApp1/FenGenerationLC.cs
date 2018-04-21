@@ -55,6 +55,8 @@ namespace Lot2_PartieLC
 		{
 			string raisonSociale = ListeDeroulanteChoixClient.SelectedItem.ToString();
 
+            String nomFichier = DateTime.Today.ToString("yyyy_MM_dd") + "_" + ListeDeroulanteChoixClient.SelectedItem.ToString() + "_" + "FINACOOP_" + textBoxMission.Text + ".docx";
+
             Client client = new Client();
             client = clients[ListeDeroulanteChoixClient.SelectedIndex];
 
@@ -107,24 +109,24 @@ namespace Lot2_PartieLC
 
             LC lc = new LC();
 
-            lc.chemin_lc = _PATH + "\\" + client.raison_sociale + @"\test2.docx";
+            lc.chemin_lc = _PATH + "\\" + client.raison_sociale + @"\" + nomFichier;
             lc.date_debut = DateTime.Today;
             lc.id_client = client.id_client;
             lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;
-            lc.nom_lc = "test.docx";
+            lc.nom_lc = nomFichier;
             lc.id_etat = 1;
-            lc.id_utilisateur = 13;
+            lc.id_utilisateur = PagePrincipale.Utilisateur.id_utilisateur;
 
             
 
 
-            documentModele.SaveAs(pathFolder + @"\test.docx");
+            documentModele.SaveAs(pathFolder + @"\" + nomFichier);
 
-            AfficherLC(pathFolder + @"\test.docx");
+            AfficherLC(pathFolder + @"\" + nomFichier);
 
             saveLC(lc);
 
-            MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"Test.docx" + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"\" + nomFichier + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 
@@ -165,5 +167,9 @@ namespace Lot2_PartieLC
 
         }
 
+        private void comboBoxModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxMission.Text = modeles[comboBoxModel.SelectedIndex].nom_mission;
+        }
     }
 }

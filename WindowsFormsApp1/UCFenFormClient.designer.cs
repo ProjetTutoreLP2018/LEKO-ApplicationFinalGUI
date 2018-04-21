@@ -38,6 +38,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxActivite = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -108,7 +109,6 @@
             this.CodePostal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.messageErr = new System.Windows.Forms.Label();
-            this.textBoxActivite = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -243,6 +243,13 @@
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             // 
+            // textBoxActivite
+            // 
+            this.textBoxActivite.Location = new System.Drawing.Point(483, 92);
+            this.textBoxActivite.Name = "textBoxActivite";
+            this.textBoxActivite.Size = new System.Drawing.Size(265, 20);
+            this.textBoxActivite.TabIndex = 57;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -342,7 +349,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(352, 92);
+            this.label3.Location = new System.Drawing.Point(352, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 3;
@@ -825,7 +832,7 @@
             this.IndiceRepetition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.IndiceRepetition.FormattingEnabled = true;
             this.IndiceRepetition.Items.AddRange(new object[] {
-                "",
+            "",
             "bis",
             "ter",
             "quater",
@@ -932,13 +939,6 @@
             this.messageErr.Name = "messageErr";
             this.messageErr.Size = new System.Drawing.Size(0, 13);
             this.messageErr.TabIndex = 60;
-            // 
-            // textBoxActivite
-            // 
-            this.textBoxActivite.Location = new System.Drawing.Point(483, 92);
-            this.textBoxActivite.Name = "textBoxActivite";
-            this.textBoxActivite.Size = new System.Drawing.Size(265, 20);
-            this.textBoxActivite.TabIndex = 57;
             // 
             // UCFenFormClient
             // 
