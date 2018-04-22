@@ -216,6 +216,12 @@
     <Compile Include="ChangePath.Designer.cs">
       <DependentUpon>ChangePath.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeSMTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeSMTP.Designer.cs">
+      <DependentUpon>ChangeSMTP.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChoosePath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     <Compile Include="Model\Ville.cs" />
     <EmbeddedResource Include="ChangePath.resx">
       <DependentUpon>ChangePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeSMTP.resx">
+      <DependentUpon>ChangeSMTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChoosePath.resx">
       <DependentUpon>ChoosePath.cs</DependentUpon>

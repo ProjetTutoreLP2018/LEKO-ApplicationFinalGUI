@@ -18,6 +18,7 @@ namespace LettreCooperation
         private int indexLc;
         private int etat;
         private LC lcVisible;
+        private Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
 
         public Voir_Modif_LC()
         {
@@ -155,8 +156,7 @@ namespace LettreCooperation
 
         private void AfficherLC(string pathOrigine)
         {
-
-            Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
+  
           //  this.refFichier = fichier;
 
             // permet de visualisé les opérations
@@ -176,7 +176,7 @@ namespace LettreCooperation
                     ref missing, ref missing, ref missing,
                     ref missing);
 
-
+           // fichier.Documents.Close();
         }
 
 

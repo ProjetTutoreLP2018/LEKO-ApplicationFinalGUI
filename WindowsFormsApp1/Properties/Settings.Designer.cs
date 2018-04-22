@@ -239,5 +239,17 @@ namespace WindowsFormsApp1.Properties {
                 this["PathFINACOOP"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
+        public string SMTP {
+            get {
+                return ((string)(this["SMTP"]));
+            }
+            set {
+                this["SMTP"] = value;
+            }
+        }
     }
 }

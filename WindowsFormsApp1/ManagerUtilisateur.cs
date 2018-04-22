@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.modele;
@@ -46,6 +48,7 @@ namespace LettreCooperation
             textEmail.Text = string.Empty;
             textPass.Text = string.Empty;
             textPassConfirm.Text = string.Empty;
+            labelPathImage.Text = string.Empty;
 
 
             utilisateurs = model.GetListUtilisateurs();
@@ -94,6 +97,23 @@ namespace LettreCooperation
             else
                 checkBoxAdmin.Checked = false;
 
+            if(utilisateurs[index].image_Blob_Signature != null)
+                pictureBoxSignature.Image = ByteArrayToImage(utilisateurs[index].image_Blob_Signature);
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de transformer un tableau de Byte
+        /// en Image
+        /// </summary>
+        /// <param name="byteArrayIn"></param>
+        /// <returns></returns>
+        public Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
 
@@ -151,9 +171,30 @@ namespace LettreCooperation
             else
                 utilisateurs[index].isAdmin = false;
 
+            if (!String.IsNullOrEmpty(labelPathImage.Text))
+            {
+                Image imageSignature = Image.FromFile(labelPathImage.Text);
+                utilisateurs[index].image_Blob_Signature = ImageToByteArray(imageSignature);
+            }
+
             model.ModifUtilisateur();
             MessageBox.Show("Votre utilisateur a bien été modifié");
             Init();
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de convertir une image en 
+        /// tableau de byte
+        /// </summary>
+        /// <param name="imageIn"></param>
+        /// <returns></returns>
+        public byte[] ImageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
         }
 
 
@@ -172,6 +213,15 @@ namespace LettreCooperation
             MessageBox.Show("Votre utilisateur a bien été supprimé");
             Init();
 
+        }
+
+        private void ButtonSearchImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile2 = new OpenFileDialog();
+            openFile2.Filter = "Image Files|*.png;*.jpg;*.gif;";
+            openFile2.DefaultExt = "png";
+            openFile2.ShowDialog();
+            labelPathImage.Text = openFile2.FileName;
         }
     }
 }

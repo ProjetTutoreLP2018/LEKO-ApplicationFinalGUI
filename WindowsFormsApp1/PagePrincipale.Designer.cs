@@ -57,6 +57,7 @@
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureLogout = new System.Windows.Forms.PictureBox();
+            this.changerSMTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageHome)).BeginInit();
@@ -143,7 +144,8 @@
             this.créerUnUtilisateurToolStripMenuItem,
             this.ManagerUtilisateurToolStripMenuItem,
             this.ajouterUnModèleDeLCToolStripMenuItem,
-            this.changerCheminDossierFINACOOPToolStripMenuItem});
+            this.changerCheminDossierFINACOOPToolStripMenuItem,
+            this.changerSMTPToolStripMenuItem});
             this.gestionDesUtilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gestionDesUtilisateursToolStripMenuItem.Name = "gestionDesUtilisateursToolStripMenuItem";
             resources.ApplyResources(this.gestionDesUtilisateursToolStripMenuItem, "gestionDesUtilisateursToolStripMenuItem");
@@ -251,6 +253,12 @@
             this.pictureLogout.TabStop = false;
             this.pictureLogout.Click += new System.EventHandler(this.PictureLogout_Click);
             // 
+            // changerSMTPToolStripMenuItem
+            // 
+            this.changerSMTPToolStripMenuItem.Name = "changerSMTPToolStripMenuItem";
+            resources.ApplyResources(this.changerSMTPToolStripMenuItem, "changerSMTPToolStripMenuItem");
+            this.changerSMTPToolStripMenuItem.Click += new System.EventHandler(this.changerSMTPToolStripMenuItem_Click);
+            // 
             // PagePrincipale
             // 
             resources.ApplyResources(this, "$this");
@@ -308,6 +316,7 @@
         private System.Windows.Forms.ToolStripMenuItem archiveLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnModèleDeLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerCheminDossierFINACOOPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changerSMTPToolStripMenuItem;
     }
 }
 

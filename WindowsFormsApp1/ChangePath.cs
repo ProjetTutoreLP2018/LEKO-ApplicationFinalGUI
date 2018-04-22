@@ -1,12 +1,5 @@
 ﻿using LettreCooperation;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -36,6 +29,8 @@ namespace WindowsFormsApp1
             if (!String.IsNullOrEmpty(textBoxPath.Text))
             {
                 Program.FINACOOPFolder = textBoxPath.Text;
+                Properties.Settings.Default.PathFINACOOP = textBoxPath.Text;
+                Properties.Settings.Default.Save();
                 this.Close();
 
             }

@@ -117,6 +117,7 @@
           <Property Name="id_droit" Type="int" Nullable="false" />
           <Property Name="mdp_utilisateur" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="isAdmin" Type="bit" Nullable="false" />
+          <Property Name="image_Blob_Signature" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Client_Activite">
           <End Role="Activite" Type="Self.Activite" Multiplicity="0..1">
@@ -438,6 +439,7 @@
           <NavigationProperty Name="Droit" Relationship="Self.FK_Utilisateur_id_droit" FromRole="Utilisateur" ToRole="Droit" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_UTILISATEUR" FromRole="Utilisateur" ToRole="LC" />
           <NavigationProperty Name="LC1" Relationship="LCBDModel.FK_SignerLC" FromRole="Utilisateur" ToRole="LC" />
+          <Property Name="image_Blob_Signature" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Client_Activite">
           <End Role="Activite" Type="Self.Activite" Multiplicity="0..1">
@@ -742,6 +744,7 @@
           <EntitySetMapping Name="Utilisateur">
             <EntityTypeMapping TypeName="LCBDModel.Utilisateur">
               <MappingFragment StoreEntitySet="Utilisateur">
+                <ScalarProperty Name="image_Blob_Signature" ColumnName="image_Blob_Signature" />
                 <ScalarProperty Name="id_utilisateur" ColumnName="id_utilisateur" />
                 <ScalarProperty Name="nom_utilisateur" ColumnName="nom_utilisateur" />
                 <ScalarProperty Name="prenom_utilisateur" ColumnName="prenom_utilisateur" />

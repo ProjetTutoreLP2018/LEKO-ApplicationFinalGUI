@@ -33,10 +33,16 @@
             this.comboNomUtilisateur = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.labelPathImage = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.messageErr = new System.Windows.Forms.Label();
+            this.adresseMailMess = new System.Windows.Forms.Label();
             this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.mdpConfMess = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textPass = new System.Windows.Forms.TextBox();
             this.textPassConfirm = new System.Windows.Forms.TextBox();
@@ -49,12 +55,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.adresseMailMess = new System.Windows.Forms.Label();
-            this.mdpConfMess = new System.Windows.Forms.Label();
-            this.messageErr = new System.Windows.Forms.Label();
+            this.pictureBoxSignature = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignature)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNomUtilisateur
@@ -89,6 +94,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.labelPathImage);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.messageErr);
             this.groupBox2.Controls.Add(this.adresseMailMess);
             this.groupBox2.Controls.Add(this.checkBoxAdmin);
@@ -109,6 +117,52 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Détail utilisateur";
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.Location = new System.Drawing.Point(124, 167);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(33, 21);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.ButtonSearchImage_Click);
+            // 
+            // labelPathImage
+            // 
+            this.labelPathImage.AutoSize = true;
+            this.labelPathImage.Location = new System.Drawing.Point(58, 197);
+            this.labelPathImage.Name = "labelPathImage";
+            this.labelPathImage.Size = new System.Drawing.Size(0, 13);
+            this.labelPathImage.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(57, 171);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Signature : ";
+            // 
+            // messageErr
+            // 
+            this.messageErr.AutoSize = true;
+            this.messageErr.ForeColor = System.Drawing.Color.Red;
+            this.messageErr.Location = new System.Drawing.Point(285, 228);
+            this.messageErr.Name = "messageErr";
+            this.messageErr.Size = new System.Drawing.Size(0, 13);
+            this.messageErr.TabIndex = 17;
+            // 
+            // adresseMailMess
+            // 
+            this.adresseMailMess.AutoSize = true;
+            this.adresseMailMess.ForeColor = System.Drawing.Color.Red;
+            this.adresseMailMess.Location = new System.Drawing.Point(234, 82);
+            this.adresseMailMess.Name = "adresseMailMess";
+            this.adresseMailMess.Size = new System.Drawing.Size(0, 13);
+            this.adresseMailMess.TabIndex = 16;
             // 
             // checkBoxAdmin
             // 
@@ -158,6 +212,15 @@
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mot de passe";
+            // 
+            // mdpConfMess
+            // 
+            this.mdpConfMess.AutoSize = true;
+            this.mdpConfMess.ForeColor = System.Drawing.Color.Red;
+            this.mdpConfMess.Location = new System.Drawing.Point(120, 95);
+            this.mdpConfMess.Name = "mdpConfMess";
+            this.mdpConfMess.Size = new System.Drawing.Size(0, 13);
+            this.mdpConfMess.TabIndex = 11;
             // 
             // label5
             // 
@@ -257,38 +320,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
             // 
-            // adresseMailMess
+            // pictureBoxSignature
             // 
-            this.adresseMailMess.AutoSize = true;
-            this.adresseMailMess.ForeColor = System.Drawing.Color.Red;
-            this.adresseMailMess.Location = new System.Drawing.Point(234, 82);
-            this.adresseMailMess.Name = "adresseMailMess";
-            this.adresseMailMess.Size = new System.Drawing.Size(0, 13);
-            this.adresseMailMess.TabIndex = 16;
-            // 
-            // mdpConfMess
-            // 
-            this.mdpConfMess.AutoSize = true;
-            this.mdpConfMess.ForeColor = System.Drawing.Color.Red;
-            this.mdpConfMess.Location = new System.Drawing.Point(120, 95);
-            this.mdpConfMess.Name = "mdpConfMess";
-            this.mdpConfMess.Size = new System.Drawing.Size(0, 13);
-            this.mdpConfMess.TabIndex = 11;
-            // 
-            // messageErr
-            // 
-            this.messageErr.AutoSize = true;
-            this.messageErr.ForeColor = System.Drawing.Color.Red;
-            this.messageErr.Location = new System.Drawing.Point(285, 228);
-            this.messageErr.Name = "messageErr";
-            this.messageErr.Size = new System.Drawing.Size(0, 13);
-            this.messageErr.TabIndex = 17;
+            this.pictureBoxSignature.Location = new System.Drawing.Point(480, 57);
+            this.pictureBoxSignature.Name = "pictureBoxSignature";
+            this.pictureBoxSignature.Size = new System.Drawing.Size(216, 100);
+            this.pictureBoxSignature.TabIndex = 4;
+            this.pictureBoxSignature.TabStop = false;
             // 
             // ManagerUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBoxSignature);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManagerUtilisateur";
@@ -299,6 +344,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignature)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -328,5 +374,9 @@
         private System.Windows.Forms.Label adresseMailMess;
         private System.Windows.Forms.Label mdpConfMess;
         private System.Windows.Forms.Label messageErr;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label labelPathImage;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBoxSignature;
     }
 }

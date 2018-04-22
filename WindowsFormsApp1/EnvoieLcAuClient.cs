@@ -148,7 +148,7 @@ namespace WindowsFormsApp1
             // PROPERTIES /!\
             //
             string smtp;
-            smtp = "smtp.gmail.com";
+            smtp = Properties.Settings.Default.SMTP;
             SmtpServer oServer = new SmtpServer(smtp);
 
             // Set 587 port, if you want to use 25 port, please change 587 5o 25

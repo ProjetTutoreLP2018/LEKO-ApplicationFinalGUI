@@ -72,5 +72,8 @@
     <Setting Name="PathFINACOOP" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="SMTP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

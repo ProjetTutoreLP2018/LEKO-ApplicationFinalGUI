@@ -274,5 +274,16 @@ namespace LettreCooperation
         {
 
         }
+
+        private void changerSMTPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (PagePrincipale.Utilisateur.isAdmin)
+            {
+                ChangeSMTP changeSMTP = new ChangeSMTP();
+                changeSMTP.Show();
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
     }
 }

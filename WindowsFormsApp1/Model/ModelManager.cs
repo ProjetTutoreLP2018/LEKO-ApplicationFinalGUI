@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using WindowsFormsApp1.Model;
@@ -170,6 +172,7 @@ namespace LettreCooperation.modele
                 utilisateur.mdp_utilisateur = result.mdp_utilisateur;
                 utilisateur.id_droit = result.id_droit;
                 utilisateur.isAdmin = result.isAdmin;
+                utilisateur.image_Blob_Signature = result.image_Blob_Signature;
 
             }
 
@@ -409,6 +412,14 @@ namespace LettreCooperation.modele
 
             lcFromDB.id_signataire = utilisateur.id_utilisateur;
             context.SaveChanges();
+        }
+
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
     }

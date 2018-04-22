@@ -1,6 +1,8 @@
 ﻿using LettreCooperation.modele;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
@@ -147,6 +149,26 @@ namespace WindowsFormsApp1
             MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
                 " " + utilisateur.prenom_utilisateur + " a bien était créer");
 
+            if (!String.IsNullOrEmpty(labelPathImage.Text))
+            {
+                Image imageSignature = new Bitmap(labelPathImage.Text);
+                utilisateur.image_Blob_Signature = ImageToByteArray(imageSignature);
+            }
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de convertir une image en 
+        /// tableau de byte
+        /// </summary>
+        /// <param name="imageIn"></param>
+        /// <returns></returns>
+        public byte[] ImageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
 
 
@@ -159,6 +181,15 @@ namespace WindowsFormsApp1
         private void ButtonAnnuler_Click(object sender, EventArgs e)
         {
             Init();
+        }
+
+        private void ButtonShearchImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile2 = new OpenFileDialog();
+            openFile2.Filter = "Image Files|*.png;*.jpg;*.gif;";
+            openFile2.DefaultExt = "png";
+            openFile2.ShowDialog();
+            labelPathImage.Text = openFile2.FileName;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using LettreCooperation;
@@ -59,16 +60,8 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            OpenFileDialog openFile2 = new OpenFileDialog();
-            openFile2.Filter = "Image Files|*.png;*.jpg;*.gif;";
-            openFile2.DefaultExt = "png";
-            openFile2.ShowDialog();
-            this.file2 = openFile2.FileName;
 
 
-
-            //throw new NotImplementedException();
-            string txt = "";
             for (int i = 0; i < LCDataGridView.RowCount; ++i)
             {
                 DataGridViewCheckBoxCell chkchecking = LCDataGridView.Rows[i].Cells[4] as DataGridViewCheckBoxCell;
@@ -82,51 +75,56 @@ namespace WindowsFormsApp1
 
 
                     var app = new Microsoft.Office.Interop.Word.Application();
-                    /*
+                    
                      try
-                     {*/
-                    //ouverture du document
+                     {
+                        //ouverture du document
 
-                    MessageBox.Show(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                        // MessageBox.Show(Program.FINACOOPFolder + listLc[i].chemin_lc);
 
-                    var doc = app.Documents.Add(
-                        Program.FINACOOPFolder + listLc[i].chemin_lc,
-                        Visible: false);
+                        var doc = app.Documents.Add(
+                            Program.FINACOOPFolder + listLc[i].chemin_lc,
+                            Visible: false);
 
-                    doc.Activate();
+                        doc.Activate();
 
-                    //récuperation du mot a remplacer
-                    //************************************************
-                    var motcle = "signature";
-                    MessageBox.Show("Remplacement du mot: " + motcle + " ...");
-                    var sel = app.Selection;
-                    sel.Find.Text = string.Format("[" + motcle + "]");
-                    sel.Find.Execute(Replace: WdReplace.wdReplaceNone);
-                    sel.Range.Select();
+                        //récuperation du mot a remplacer
+                        //************************************************
+                        var motcle = "signature";
+                        // MessageBox.Show("Remplacement du mot: " + motcle + " ...");
+                        var sel = app.Selection;
+                        sel.Find.Text = string.Format("[" + motcle + "]");
+                        sel.Find.Execute(Replace: WdReplace.wdReplaceNone);
+                        sel.Range.Select();
 
-                    //Insertion de l'image 
-                    var imgPath = Path.GetFullPath(string.Format(file2));
+                        //Insertion de l'image 
+                        // var imgPath = Path.GetFullPath(string.Format(file2));
+                        System.Drawing.Image imgPath = ByteArrayToImage(PagePrincipale.Utilisateur.image_Blob_Signature);
+                        imgPath.Save(Program.FINACOOPFolder + @"\signature.png");
 
-                    sel.InlineShapes.AddPicture(
-                        FileName: imgPath,
-                        LinkToFile: false,
-                        SaveWithDocument: true);
-                    //************************************************
+                        sel.InlineShapes.AddPicture(
+                            FileName: Program.FINACOOPFolder + @"\signature.png",
+                            LinkToFile: false,
+                            SaveWithDocument: true);
 
-                    //sauvegarde du doc.
-                    modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
-                    modelManager.AjoutSignataire(listLc[i], PagePrincipale.Utilisateur);
-                    doc.SaveAs(Program.FINACOOPFolder + listLc[i].chemin_lc);
-                    doc.Close();
+                        File.Delete(Program.FINACOOPFolder + @"\signature.png");
 
-                    AjoutNomSignataire(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                        //************************************************
 
-                        /*}
+                        //sauvegarde du doc.
+                        modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
+                        modelManager.AjoutSignataire(listLc[i], PagePrincipale.Utilisateur);
+                        doc.SaveAs(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                        doc.Close();
+
+                        AjoutNomSignataire(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                        MessageBox.Show("Votre fichier a bien était signée");
+
+                    }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(Program.FINACOOPFolder + fileName);
                             MessageBox.Show(ex.Message);
-                        }*/
+                        }
                         
                     }
 
@@ -144,6 +142,7 @@ namespace WindowsFormsApp1
             documentModele.SaveAs(path);
         }
 
+
         private void TextBoxPass_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(this.textBoxPass.Text))
@@ -151,6 +150,15 @@ namespace WindowsFormsApp1
             else
                 this.button1.Enabled = false;
         }
+
+
+        public System.Drawing.Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
+            return returnImage;
+        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

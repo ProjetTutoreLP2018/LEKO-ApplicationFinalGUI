@@ -28,6 +28,7 @@ namespace WindowsFormsApp1.Model
         public int id_droit { get; set; }
         public string mdp_utilisateur { get; set; }
         public bool isAdmin { get; set; }
+        public byte[] image_Blob_Signature { get; set; }
     
         public virtual Droit Droit { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
