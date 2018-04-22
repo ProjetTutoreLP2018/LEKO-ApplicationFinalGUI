@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Xceed.Words.NET;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 using LettreCooperation.modele;
 using System.IO;
-using LettreCooperation;
 
-namespace Lot2_PartieLC
+namespace LettreCooperation
 {
 	public partial class FenGenerationLC : UserControl
 	{

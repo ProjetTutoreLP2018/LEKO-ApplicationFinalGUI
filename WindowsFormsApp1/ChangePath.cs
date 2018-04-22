@@ -1,8 +1,7 @@
-﻿using LettreCooperation;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class ChangePath : Form
     {

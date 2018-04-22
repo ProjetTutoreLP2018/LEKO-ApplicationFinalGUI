@@ -1,4 +1,4 @@
-﻿namespace Lot2_PartieLC
+﻿namespace LettreCooperation
 {
 	partial class FenGenerationLC
 	{

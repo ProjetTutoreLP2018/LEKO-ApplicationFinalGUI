@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using LettreCooperation;
 using LettreCooperation.modele;
 using Microsoft.Office.Interop.Word;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 using Xceed.Words.NET;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class SignatureExp : UserControl
     {
@@ -27,6 +25,10 @@ namespace WindowsFormsApp1
             this.textBoxPass.PasswordChar = '•';
         }
 
+
+        /// <summary>
+        /// Initialisation de la page de signature
+        /// </summary>
         private void Init()
         {
 
@@ -50,6 +52,12 @@ namespace WindowsFormsApp1
 
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de gérer la signature
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSigner_Click(object sender, EventArgs e)
         {
 
@@ -60,6 +68,11 @@ namespace WindowsFormsApp1
                 return;
             }
 
+            if (PagePrincipale.Utilisateur.image_Blob_Signature == null)
+            {
+                MessageBox.Show("Vous ne disposez pas de signature dans la base. Veuillez contacter l'Administrateur.");
+                return;
+            }
 
 
             for (int i = 0; i < LCDataGridView.RowCount; ++i)
@@ -134,6 +147,11 @@ namespace WindowsFormsApp1
         }
 
 
+        /// <summary>
+        /// Ajout le nom du signataire sur
+        /// le document
+        /// </summary>
+        /// <param name="path"></param>
         private void AjoutNomSignataire(String path)
         {
             DocX documentModele = DocX.Load(path);
@@ -143,6 +161,11 @@ namespace WindowsFormsApp1
         }
 
 
+        /// <summary>
+        /// Gère le mot de passe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBoxPass_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(this.textBoxPass.Text))
@@ -152,6 +175,12 @@ namespace WindowsFormsApp1
         }
 
 
+        /// <summary>
+        /// Méthodeu qui permet de transformer un tableau
+        /// de Byte en image
+        /// </summary>
+        /// <param name="byteArrayIn"></param>
+        /// <returns></returns>
         public System.Drawing.Image ByteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
@@ -160,7 +189,7 @@ namespace WindowsFormsApp1
         }
 
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             Init();
         }

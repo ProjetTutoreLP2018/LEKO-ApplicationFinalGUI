@@ -1,9 +1,9 @@
-﻿using lot1;
-using Lot2_PartieLC;
+﻿using LettreCooperation;
+using LettreCooperation;
 using System;
 using System.Windows.Forms;
-using WindowsFormsApp1;
-using WindowsFormsApp1.Model;
+using LettreCooperation;
+using LettreCooperation.Model;
 
 
 namespace LettreCooperation

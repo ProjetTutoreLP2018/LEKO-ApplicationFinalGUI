@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 
 namespace LettreCooperation.modele
 {

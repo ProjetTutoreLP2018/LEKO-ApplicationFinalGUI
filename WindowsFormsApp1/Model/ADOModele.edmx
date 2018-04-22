@@ -30,7 +30,7 @@
           </Key>
           <Property Name="id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="siret" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="forme_juridique" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="forme_juridique" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="raison_sociale" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CA" Type="float" />
           <Property Name="effectifs" Type="int" Nullable="false" />
@@ -334,7 +334,7 @@
           </Key>
           <Property Name="id_client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="siret" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="forme_juridique" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="forme_juridique" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="raison_sociale" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CA" Type="Double" />
           <Property Name="effectifs" Type="Int32" Nullable="false" />

@@ -5,10 +5,10 @@ using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class CreerUtilisateur : UserControl
     {

@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 using LettreCooperation.modele;
 using System.Text.RegularExpressions;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class ModifClient : UserControl
     {
@@ -164,7 +158,7 @@ namespace WindowsFormsApp1
                 NumeroSiret.Text.Equals("") || OrganisationComptable.Text.Equals("") || NumeroVoie.Text.Equals("") ||
                 Adresse.Text.Equals("") || CodePostal.Text.Equals("") || Ville.Text.Equals("") ||
                 NomRepresentant.Text.Equals("") || PrenomRepresentant.Text.Equals("") || CourrielRepresentant.Text.Equals("") ||
-                SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals(""))
+                SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals("") || LieuImmatriculation.Text.Equals(""))
             {
                 messageErr.Text = "Veuillez renseigner tous les champs.";
                 return;
@@ -176,7 +170,14 @@ namespace WindowsFormsApp1
             clients[index].forme_juridique = FormeJuridique.Text;
             clients[index].effectifs = (int) Effectif.Value;
             clients[index].CA = (double) CA.Value;
-            clients[index].site_web = SiteInternet.Text;
+
+            if (String.IsNullOrEmpty(SiteInternet.Text))
+                clients[index].site_web = " ";
+            else
+                clients[index].site_web = SiteInternet.Text;
+
+
+
             if (ESSOui.Checked)
             {
                 clients[index].ESS = true;
@@ -194,9 +195,19 @@ namespace WindowsFormsApp1
 
             //Adresse
             clients[index].Adresse.numero = NumeroVoie.Text;
-            clients[index].Adresse.indice = IndiceRepetition.Text;
+
+            if (!String.IsNullOrWhiteSpace(IndiceRepetition.Text))
+                clients[index].Adresse.indice = IndiceRepetition.Text;
+            else
+                clients[index].Adresse.indice = " ";
+            
             clients[index].Adresse.voie = Adresse.Text;
-            clients[index].Adresse.complements = Complement.Text;
+
+            if (!String.IsNullOrEmpty(Complement.Text))
+                clients[index].Adresse.complements = Complement.Text;
+            else
+                clients[index].Adresse.complements = " ";
+
             clients[index].Adresse.code_postal = CodePostal.Text;
             clients[index].Adresse.ville = Ville.Text;
 
@@ -206,14 +217,16 @@ namespace WindowsFormsApp1
             clients[index].sexe_referent = SexeRepresentant.Text;
             clients[index].mail_referent = CourrielRepresentant.Text;
             clients[index].fonction_referent = FonctionRepresentant.Text;
-            clients[index].tel_portable = TelephonePortableRepresentant.Text;
-            clients[index].tel_fix = TelephoneRepresentant.Text;
 
+            if (String.IsNullOrEmpty(TelephonePortableRepresentant.Text))
+                clients[index].tel_portable = " ";
+            else
+                clients[index].tel_portable = TelephonePortableRepresentant.Text;
 
-
-
-
-
+            if (String.IsNullOrEmpty(TelephoneRepresentant.Text))
+                clients[index].tel_fix = " ";
+            else
+                clients[index].tel_fix = TelephoneRepresentant.Text;
 
             try
             {

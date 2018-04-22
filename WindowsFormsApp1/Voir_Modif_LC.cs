@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using LettreCooperation.modele;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 
 namespace LettreCooperation
 {

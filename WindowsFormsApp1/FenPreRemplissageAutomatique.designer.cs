@@ -1,4 +1,4 @@
-﻿namespace lot1
+﻿namespace LettreCooperation
 {
     partial class FenPreRemplissageAutomatique
     {

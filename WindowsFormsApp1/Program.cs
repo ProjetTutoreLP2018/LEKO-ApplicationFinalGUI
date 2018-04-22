@@ -30,18 +30,18 @@ namespace LettreCooperation
 
                 
 
-                if (String.IsNullOrEmpty(WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP))
+                if (String.IsNullOrEmpty(LettreCooperation.Properties.Settings.Default.PathFINACOOP))
                 {
                     
-                    while (String.IsNullOrEmpty(WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP) && !QuitApp)
+                    while (String.IsNullOrEmpty(LettreCooperation.Properties.Settings.Default.PathFINACOOP) && !QuitApp)
                     {
                         ChoosePath choosePath = new ChoosePath();
                         Application.Run(choosePath);
 
                         if (!String.IsNullOrEmpty(FINACOOPFolder))
                         {
-                            WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
-                            WindowsFormsApp1.Properties.Settings.Default.Save();
+                            LettreCooperation.Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
+                            LettreCooperation.Properties.Settings.Default.Save();
                         } else
                         {
                             MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
@@ -51,7 +51,7 @@ namespace LettreCooperation
 
                 } else
                 {
-                    FINACOOPFolder = WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP;
+                    FINACOOPFolder = LettreCooperation.Properties.Settings.Default.PathFINACOOP;
                 }
 
                 if(!QuitApp)

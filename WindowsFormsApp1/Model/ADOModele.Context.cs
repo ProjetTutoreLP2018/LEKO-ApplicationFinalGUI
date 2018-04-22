@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.Model
+namespace LettreCooperation.Model
 {
     using System;
     using System.Data.Entity;

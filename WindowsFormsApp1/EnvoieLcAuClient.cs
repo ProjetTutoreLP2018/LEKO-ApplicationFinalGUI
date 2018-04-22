@@ -4,11 +4,11 @@ using LettreCooperation.modele;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 using WordToPDF;
 using System.IO;
 
-namespace WindowsFormsApp1
+namespace LettreCooperation
 {
     public partial class EnvoieLcAuClient : UserControl
     {

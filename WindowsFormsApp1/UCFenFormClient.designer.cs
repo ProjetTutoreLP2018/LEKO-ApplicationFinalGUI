@@ -1,4 +1,4 @@
-﻿namespace lot1
+﻿namespace LettreCooperation
 {
 	partial class UCFenFormClient
 	{
@@ -109,6 +109,7 @@
             this.CodePostal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.messageErr = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -206,6 +207,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label41);
             this.groupBox1.Controls.Add(this.textBoxActivite);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label14);
@@ -940,6 +942,16 @@
             this.messageErr.Size = new System.Drawing.Size(0, 13);
             this.messageErr.TabIndex = 60;
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.ForeColor = System.Drawing.Color.Red;
+            this.label41.Location = new System.Drawing.Point(462, 163);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(11, 13);
+            this.label41.TabIndex = 58;
+            this.label41.Text = "*";
+            // 
             // UCFenFormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1053,5 +1065,6 @@
         private System.Windows.Forms.Label messageErr;
         private System.Windows.Forms.Label adresseMailMess;
         private System.Windows.Forms.TextBox textBoxActivite;
+        private System.Windows.Forms.Label label41;
     }
 }

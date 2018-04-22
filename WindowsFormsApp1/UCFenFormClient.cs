@@ -2,9 +2,9 @@
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.modele;
-using WindowsFormsApp1.Model;
+using LettreCooperation.Model;
 
-namespace lot1
+namespace LettreCooperation
 {
 	public partial class UCFenFormClient : UserControl
 	{
@@ -122,7 +122,7 @@ namespace lot1
                 NumeroSiret.Text.Equals("") || OrganisationComptable.Text.Equals("") || NumeroVoie.Text.Equals("") ||
                 Adresse.Text.Equals("") || CodePostal.Text.Equals("") || Ville.Text.Equals("") ||
                 NomRepresentant.Text.Equals("") || PrenomRepresentant.Text.Equals("") || CourrielRepresentant.Text.Equals("") ||
-                SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals(""))
+                SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals("") || LieuImmatriculation.Text.Equals(""))
             {
                 messageErr.Text = "Veuillez renseigner tous les champs.";
                 return;
@@ -136,10 +136,18 @@ namespace lot1
 
 				Adresse adresse = new Adresse();
 				adresse.numero = NumeroVoie.Text;
-                if(!String.IsNullOrWhiteSpace(IndiceRepetition.Text))
-				    adresse.indice = IndiceRepetition.Text;
-				adresse.voie = Adresse.Text;
-				adresse.complements = Complement.Text;
+                if (!String.IsNullOrWhiteSpace(IndiceRepetition.Text))
+                    adresse.indice = IndiceRepetition.Text;
+                else
+                    adresse.indice = " ";
+
+                adresse.voie = Adresse.Text;
+
+                if (!String.IsNullOrEmpty(Complement.Text))
+                    adresse.complements = Complement.Text;
+                else
+                    adresse.complements = " ";
+
 				adresse.code_postal = CodePostal.Text;
 				adresse.ville = Ville.Text;
 
@@ -159,9 +167,25 @@ namespace lot1
 				client.raison_sociale = NomOrganisation.Text;
 				client.sexe_referent = SexeRepresentant.Text;
 				client.siret = NumeroSiret.Text;
-				client.site_web = SiteInternet.Text;
-				client.tel_fix = TelephoneRepresentant.Text;
-				client.tel_portable = TelephonePortableRepresentant.Text;
+     
+
+                if (String.IsNullOrEmpty(SiteInternet.Text))
+                    client.site_web = " ";
+                else
+                    client.site_web = SiteInternet.Text;
+
+                if (String.IsNullOrEmpty(TelephoneRepresentant.Text))
+                    client.tel_fix = " ";
+                else
+                    client.tel_fix = TelephoneRepresentant.Text;
+
+
+                if (String.IsNullOrEmpty(TelephonePortableRepresentant.Text))
+                    client.tel_portable = " ";
+                else
+                    client.tel_portable = TelephonePortableRepresentant.Text;
+
+
 				client.volume_annuel = Double.Parse(VolumesAnnuels.Text);
 				client.id_adresse = adresse.id_adresse;
                 client.mail_referent = CourrielRepresentant.Text;
