@@ -18,7 +18,7 @@ namespace LettreCooperation
         private int indexLc;
         private int etat;
         private LC lcVisible;
-        private Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
+        // private Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
 
         public Voir_Modif_LC()
         {
@@ -65,6 +65,39 @@ namespace LettreCooperation
         }
 
 
+        private void UpdateNbr(List<LC> listLc)
+        {
+
+            int NbrAttenteSigne = 0;
+            int nbrValidExp = 0;
+            int nbrEnvoiCli = 0;
+            int nbrArchive = 0;
+            int nbrRefus = 0;
+
+            foreach(LC lc in listLc)
+            {
+                if (lc.id_etat == 1)
+                    NbrAttenteSigne++;
+                if (lc.id_etat == 7)
+                    nbrValidExp++;
+                if (lc.id_etat == 9)
+                    nbrEnvoiCli++;
+                if (lc.id_etat == 10)
+                    nbrArchive++;
+                if (lc.id_etat == 11)
+                    nbrRefus++;
+
+            }
+
+            labelNbrAttenteSigne.Text = "( " + NbrAttenteSigne + " )";
+            labelNbrSigneExp.Text = "( " + nbrValidExp + " )";
+            labelNbrEnvoieCli.Text = "( " + nbrEnvoiCli + " )";
+            labelNbrArchive.Text = "( " + nbrArchive + " )";
+            labelNbrRefus.Text = "( " + nbrRefus + " )";
+
+        }
+
+
 
         private void UpdateListLC()
         {
@@ -77,6 +110,7 @@ namespace LettreCooperation
                 return;
 
             this.listLc = model.GestLcFromClient(listClient[indexClient].id_client);
+            UpdateNbr(this.listLc);
 
             if (radioButtonAttSignExp.Checked)
             {
@@ -156,11 +190,26 @@ namespace LettreCooperation
 
         private void AfficherLC(string pathOrigine)
         {
-  
-          //  this.refFichier = fichier;
+
+            try
+
+            {
+
+                PagePrincipale.FichierWord.Documents.Close(Microsoft.Office.Interop.Word.WdSaveOptions.wdDoNotSaveChanges);
+                PagePrincipale.FichierWord.Quit(false);
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(PagePrincipale.FichierWord);
+                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
+            }
+            catch
+            {
+                //MessageBox.Show("Word fermé");
+                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
+            }
+
+            //  this.refFichier = fichier;
 
             // permet de visualisé les opérations
-            fichier.Visible = true;
+            PagePrincipale.FichierWord.Visible = true;
 
             // objet vide pour les parémétres inutilisés
             Object missing = System.Reflection.Missing.Value;
@@ -169,7 +218,7 @@ namespace LettreCooperation
             String path = pathOrigine;
 
             // ouvrir le doc word 
-            fichier.Documents.Open(path, ref missing, ref missing,
+            PagePrincipale.FichierWord.Documents.Open(path, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,

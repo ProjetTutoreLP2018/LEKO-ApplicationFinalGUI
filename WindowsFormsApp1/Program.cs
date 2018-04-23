@@ -25,15 +25,15 @@ namespace LettreCooperation
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 // =================================================
-              //  WindowsFormsApp1.Properties.Settings.Default.PathFINACOOP = String.Empty;
+                //Properties.Settings.Default.PathFINACOOP = String.Empty;
                 //==================================================
 
                 
 
-                if (String.IsNullOrEmpty(LettreCooperation.Properties.Settings.Default.PathFINACOOP))
+                if (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP))
                 {
                     
-                    while (String.IsNullOrEmpty(LettreCooperation.Properties.Settings.Default.PathFINACOOP) && !QuitApp)
+                    while (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP) && !QuitApp)
                     {
                         ChoosePath choosePath = new ChoosePath();
                         Application.Run(choosePath);

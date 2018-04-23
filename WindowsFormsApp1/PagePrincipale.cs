@@ -1,8 +1,5 @@
-﻿using LettreCooperation;
-using LettreCooperation;
-using System;
+﻿using System;
 using System.Windows.Forms;
-using LettreCooperation;
 using LettreCooperation.Model;
 
 
@@ -12,16 +9,10 @@ namespace LettreCooperation
     {
 
         private UserControl log = new Login();
-        //private UserControl creerLC = new FenGenerationLC();
-        //private UserControl signerLC = new SignatureExp();
-        //private UserControl voir_mod_lc = new Voir_Modif_LC();
-        //private UserControl creerUtilisateur = new CreerUtilisateur();
-        //private UserControl manageUtilisateur = new ManagerUtilisateur();
-        //private UserControl formulaireClient = new UCFenFormClient();
-        //private UserControl envoieLcAuClient = new EnvoieLcAuClient();
-        //private UserControl modifClient = new ModifClient();
         
         public static Utilisateur Utilisateur { get; set; }
+
+        public static Microsoft.Office.Interop.Word.Application FichierWord { get; set; }
 
 
         public PagePrincipale()
@@ -31,6 +22,8 @@ namespace LettreCooperation
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
+            FichierWord = new Microsoft.Office.Interop.Word.Application();
         }
 
 
@@ -59,6 +52,43 @@ namespace LettreCooperation
         private void Form1_Load(object sender, EventArgs e)
         {
             Init();      
+        }
+
+        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            CloseAllWordFile();
+        }
+
+
+        private void CloseAllWordFile()
+        {
+           
+            Microsoft.Office.Interop.Word.Application app = (Microsoft.Office.Interop.Word.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Word.Application");
+            if (app == null)
+                return;
+
+            foreach (Microsoft.Office.Interop.Word.Document d in app.Documents)
+            {
+                // MessageBox.Show("Fermeture de document");
+                object saveOption = Microsoft.Office.Interop.Word.WdSaveOptions.wdDoNotSaveChanges;
+                object originalFormat = Microsoft.Office.Interop.Word.WdOriginalFormat.wdOriginalDocumentFormat;
+                object routeDocument = false;
+                d.Close(ref saveOption, ref originalFormat, ref routeDocument);
+                
+            }
+
+            try
+
+            {
+
+                FichierWord.Documents.Close(Microsoft.Office.Interop.Word.WdSaveOptions.wdDoNotSaveChanges);
+                FichierWord.Quit(false);
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(FichierWord);
+            }
+            catch
+            {
+                //MessageBox.Show("Word fermé");
+            }
         }
 
 

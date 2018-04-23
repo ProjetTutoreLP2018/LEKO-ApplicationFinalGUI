@@ -20,6 +20,8 @@
             base.Dispose(disposing);
         }
 
+
+
         #region Code généré par le Concepteur Windows Form
 
         /// <summary>
@@ -275,6 +277,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Name = "PagePrincipale";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();

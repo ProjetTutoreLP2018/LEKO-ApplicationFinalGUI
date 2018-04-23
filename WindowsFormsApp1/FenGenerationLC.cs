@@ -138,11 +138,23 @@ namespace LettreCooperation
         private void AfficherLC(string pathOrigine)
         {
 
-            Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
-            //  this.refFichier = fichier;
+            try
+
+            {
+
+                PagePrincipale.FichierWord.Documents.Close(Microsoft.Office.Interop.Word.WdSaveOptions.wdDoNotSaveChanges);
+                PagePrincipale.FichierWord.Quit(false);
+                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(PagePrincipale.FichierWord);
+                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
+            }
+            catch
+            {
+                //MessageBox.Show("Word fermé");
+                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
+            }
 
             // permet de visualisé les opérations
-            fichier.Visible = true;
+            PagePrincipale.FichierWord.Visible = true;
 
             // objet vide pour les parémétres inutilisés
             Object missing = System.Reflection.Missing.Value;
@@ -151,7 +163,7 @@ namespace LettreCooperation
             String path = pathOrigine;
 
             // ouvrir le doc word 
-            fichier.Documents.Open(path, ref missing, ref missing,
+            PagePrincipale.FichierWord.Documents.Open(path, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
