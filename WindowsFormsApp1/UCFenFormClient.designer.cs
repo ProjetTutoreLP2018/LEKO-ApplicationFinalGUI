@@ -38,6 +38,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.textBoxActivite = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@
             this.CodePostal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.messageErr = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -244,6 +244,16 @@
             this.groupBox1.Size = new System.Drawing.Size(803, 338);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.ForeColor = System.Drawing.Color.Red;
+            this.label41.Location = new System.Drawing.Point(462, 163);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(11, 13);
+            this.label41.TabIndex = 58;
+            this.label41.Text = "*";
             // 
             // textBoxActivite
             // 
@@ -854,6 +864,11 @@
             // NumeroVoie
             // 
             this.NumeroVoie.Location = new System.Drawing.Point(131, 41);
+            this.NumeroVoie.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.NumeroVoie.Name = "NumeroVoie";
             this.NumeroVoie.Size = new System.Drawing.Size(73, 20);
             this.NumeroVoie.TabIndex = 4;
@@ -941,16 +956,6 @@
             this.messageErr.Name = "messageErr";
             this.messageErr.Size = new System.Drawing.Size(0, 13);
             this.messageErr.TabIndex = 60;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.ForeColor = System.Drawing.Color.Red;
-            this.label41.Location = new System.Drawing.Point(462, 163);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(11, 13);
-            this.label41.TabIndex = 58;
-            this.label41.Text = "*";
             // 
             // UCFenFormClient
             // 

@@ -60,7 +60,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonSigner_Click(object sender, EventArgs e)
         {
-
+           
 
             if (!textBoxPass.Text.Equals(PagePrincipale.Utilisateur.mdp_utilisateur))
             {
@@ -74,6 +74,8 @@ namespace LettreCooperation
                 return;
             }
 
+            WaitForm waitForm = new WaitForm();
+            waitForm.Show();
 
             for (int i = 0; i < LCDataGridView.RowCount; ++i)
             {
@@ -144,6 +146,7 @@ namespace LettreCooperation
             }
 
             Init();
+            waitForm.Close();
         }
 
 

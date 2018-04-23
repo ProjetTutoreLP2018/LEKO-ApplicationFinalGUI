@@ -97,9 +97,10 @@ namespace LettreCooperation
             else
                 checkBoxAdmin.Checked = false;
 
-            if(utilisateurs[index].image_Blob_Signature != null)
+            if (utilisateurs[index].image_Blob_Signature != null)
                 pictureBoxSignature.Image = ByteArrayToImage(utilisateurs[index].image_Blob_Signature);
-
+            else
+                pictureBoxSignature.Image = null;
         }
 
 

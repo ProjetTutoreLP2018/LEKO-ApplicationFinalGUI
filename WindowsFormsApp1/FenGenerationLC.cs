@@ -52,7 +52,10 @@ namespace LettreCooperation
         
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
-			string raisonSociale = ListeDeroulanteChoixClient.SelectedItem.ToString();
+            WaitForm waitForm = new WaitForm();
+            waitForm.Show();
+
+            string raisonSociale = ListeDeroulanteChoixClient.SelectedItem.ToString();
 
             String nomFichier = DateTime.Today.ToString("yyyy_MM_dd") + "_" + ListeDeroulanteChoixClient.SelectedItem.ToString() + "_" + "FINACOOP_" + textBoxMission.Text + ".docx";
 
@@ -124,7 +127,7 @@ namespace LettreCooperation
             AfficherLC(pathFolder + @"\" + nomFichier);
 
             saveLC(lc);
-
+            waitForm.Close();
             MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"\" + nomFichier + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 

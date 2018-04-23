@@ -83,6 +83,10 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonEnvoyer_Click(object sender, System.EventArgs e)
         {
+
+            WaitForm waitForm = new WaitForm();
+            waitForm.Show();
+
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
             {
                 DataGridViewCheckBoxCell chkchecking = dataGridView.Rows[i].Cells[5] as DataGridViewCheckBoxCell;
@@ -102,9 +106,9 @@ namespace LettreCooperation
                 }
             }
 
-            
-
             Init();
+
+            waitForm.Close();
         }
 
 
@@ -115,6 +119,9 @@ namespace LettreCooperation
         /// <param name="password"></param>
         private void SendMailClient(LC lc, string password)
         {
+
+            
+
             SmtpMail oMail = new SmtpMail("TryIt");
             SmtpClient oSmtp = new SmtpClient();
 

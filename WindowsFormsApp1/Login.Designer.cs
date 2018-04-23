@@ -120,6 +120,7 @@
             // pictureLogo
             // 
             this.pictureLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureLogo.BackgroundImage")));
+            this.pictureLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureLogo.InitialImage")));
             this.pictureLogo.Location = new System.Drawing.Point(256, 3);

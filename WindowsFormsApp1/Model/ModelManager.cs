@@ -407,8 +407,8 @@ namespace LettreCooperation.modele
         {
             LC lcFromDB = context.LC.Find(lc.id_lc);
 
-            MessageBox.Show("Utilisateur signataire id : " + utilisateur.id_utilisateur
-                + " Nom :" + utilisateur.nom_utilisateur);
+            //MessageBox.Show("Utilisateur signataire id : " + utilisateur.id_utilisateur
+              //  + " Nom :" + utilisateur.nom_utilisateur);
 
             lcFromDB.id_signataire = utilisateur.id_utilisateur;
             context.SaveChanges();

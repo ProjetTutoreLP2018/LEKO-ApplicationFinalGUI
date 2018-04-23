@@ -80,7 +80,7 @@ namespace LettreCooperation
                     NbrAttenteSigne++;
                 if (lc.id_etat == 7)
                     nbrValidExp++;
-                if (lc.id_etat == 9)
+                if (lc.id_etat == 8)
                     nbrEnvoiCli++;
                 if (lc.id_etat == 10)
                     nbrArchive++;
@@ -110,7 +110,7 @@ namespace LettreCooperation
                 return;
 
             this.listLc = model.GestLcFromClient(listClient[indexClient].id_client);
-            UpdateNbr(this.listLc);
+            
 
             if (radioButtonAttSignExp.Checked)
             {
@@ -177,14 +177,17 @@ namespace LettreCooperation
                 if (lc.id_etat == etat)
                     comboLC.Items.Add(lc.nom_lc);
             }
+
+            UpdateNbr(this.listLc);
         }
 
 
         private void ButtonAfficher_Click(object sender, EventArgs e)
         {
-
+            WaitForm waitForm = new WaitForm();
             //MessageBox.Show(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
             AfficherLC(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
+            waitForm.Close();
         }
 
 
