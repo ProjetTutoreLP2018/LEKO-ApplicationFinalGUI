@@ -254,7 +254,13 @@ namespace LettreCooperation
             pathPDF = _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui permet de raffraichir le tableau
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             Init();
         }

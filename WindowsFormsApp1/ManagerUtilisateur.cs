@@ -218,6 +218,12 @@ namespace LettreCooperation
 
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de récupèrer l'image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSearchImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile2 = new OpenFileDialog();

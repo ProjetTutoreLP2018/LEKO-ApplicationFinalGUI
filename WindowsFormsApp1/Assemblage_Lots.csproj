@@ -356,6 +356,7 @@
     <Compile Include="WaitForm.Designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WordTools.cs" />
     <EmbeddedResource Include="ChangePath.resx">
       <DependentUpon>ChangePath.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,7 +443,6 @@
     <Content Include="Images\logo %281%29.ico" />
     <Content Include="Images\wait.gif" />
     <Content Include="Images\wait.png" />
-    <Content Include="logo %281%29.ico" />
     <Content Include="Model\ADOModele.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ADOModele.edmx</DependentUpon>

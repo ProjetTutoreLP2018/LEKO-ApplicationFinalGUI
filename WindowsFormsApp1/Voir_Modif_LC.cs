@@ -110,14 +110,27 @@ namespace LettreCooperation
                 return;
 
             this.listLc = model.GestLcFromClient(listClient[indexClient].id_client);
-            
 
+            RadioButtonManager();
+
+            foreach (LC lc in listLc)
+            {
+                if (lc.id_etat == etat)
+                    comboLC.Items.Add(lc.nom_lc);
+            }
+
+            UpdateNbr(this.listLc);
+        }
+
+
+        private void RadioButtonManager()
+        {
             if (radioButtonAttSignExp.Checked)
             {
                 this.etat = 1;
                 buttonSupprimer.Enabled = true;
                 buttonSupprimer.BackColor = Color.Red;
-            }                
+            }
             else if (radioButtonSignerExp.Checked)
             {
                 this.etat = 7;
@@ -128,57 +141,51 @@ namespace LettreCooperation
                 {
                     buttonSupprimer.Enabled = true;
                     buttonSupprimer.BackColor = Color.Red;
-                } else
+                }
+                else
                 {
                     buttonSupprimer.Enabled = false;
                     buttonSupprimer.BackColor = Color.Silver;
                 }
             }
-                
+
             else if (radioButtonEnvoieCli.Checked)
             {
                 this.etat = 8;
-                
+
                 if (PagePrincipale.Utilisateur.isAdmin)
                 {
                     buttonSupprimer.Enabled = true;
                     buttonSupprimer.BackColor = Color.Red;
-                } else
+                }
+                else
                 {
                     buttonSupprimer.Enabled = false;
                     buttonSupprimer.BackColor = Color.Silver;
                 }
             }
-                
+
             else if (radioButtonArchive.Checked)
             {
                 this.etat = 10;
-                
+
                 if (PagePrincipale.Utilisateur.isAdmin)
                 {
                     buttonSupprimer.Enabled = true;
                     buttonSupprimer.BackColor = Color.Red;
-                } else
+                }
+                else
                 {
                     buttonSupprimer.Enabled = false;
                     buttonSupprimer.BackColor = Color.Silver;
                 }
             }
-                
+
             else
             {
                 this.etat = 11;
                 buttonSupprimer.Enabled = true;
             }
-                
-
-            foreach (LC lc in listLc)
-            {
-                if (lc.id_etat == etat)
-                    comboLC.Items.Add(lc.nom_lc);
-            }
-
-            UpdateNbr(this.listLc);
         }
 
 
@@ -194,41 +201,9 @@ namespace LettreCooperation
         private void AfficherLC(string pathOrigine)
         {
 
-            try
+            WordTools.Path = pathOrigine;
+            WordTools.OpenWord();
 
-            {
-
-                PagePrincipale.FichierWord.Documents.Close(Microsoft.Office.Interop.Word.WdSaveOptions.wdDoNotSaveChanges);
-                PagePrincipale.FichierWord.Quit(false);
-                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(PagePrincipale.FichierWord);
-                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
-            }
-            catch
-            {
-                //MessageBox.Show("Word fermé");
-                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
-            }
-
-            //  this.refFichier = fichier;
-
-            // permet de visualisé les opérations
-            PagePrincipale.FichierWord.Visible = true;
-
-            // objet vide pour les parémétres inutilisés
-            Object missing = System.Reflection.Missing.Value;
-
-            // chemin du doc a ouvrir
-            String path = pathOrigine;
-
-            // ouvrir le doc word 
-            PagePrincipale.FichierWord.Documents.Open(path, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing);
-
-           // fichier.Documents.Close();
         }
 
 
@@ -251,11 +226,9 @@ namespace LettreCooperation
 
             Utilisateur dechiffreuse = model.GetUser(lcVisible.id_utilisateur);
 
-            MessageBox.Show("Dechiffreuse : " + lcVisible.id_utilisateur);
-
+           
             if (lcVisible.id_signataire != null)
             {
-                MessageBox.Show("Signataire : " + lcVisible.id_signataire);
                 Utilisateur signataire = model.GetUser(lcVisible.id_signataire);
                 labelSignataire.Text = signataire.nom_utilisateur + " " +
                     signataire.prenom_utilisateur;

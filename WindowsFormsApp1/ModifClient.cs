@@ -20,21 +20,28 @@ namespace LettreCooperation
 
             
         }
+
+
+        /// <summary>
+        /// Méthode permet de recharger 
+        /// la comboBox Client
+        /// </summary>
         private void ReloadComboBox()
         {
             clients = model.GetListClient();
 
             comboBox2.Items.Clear();
 
-            foreach (Client c in clients)
-            {
-                
+            foreach (Client c in clients) 
                 comboBox2.Items.Add(c.raison_sociale);
 
-
-            }
+            
         }
 
+
+        /// <summary>
+        /// Méthode d'initialisation de la page
+        /// </summary>
         private void Init()
         {
             index = 0;
@@ -69,13 +76,7 @@ namespace LettreCooperation
             VolumesAnnuels.Text = string.Empty;
             CourrielRepresentant.Text = string.Empty;
 
-
-
             ReloadComboBox();
-
-
-
-
         }
 
 

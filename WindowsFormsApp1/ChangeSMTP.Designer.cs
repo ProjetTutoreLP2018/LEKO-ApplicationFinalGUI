@@ -45,7 +45,7 @@
             this.buttonAnnuler.TabIndex = 14;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = false;
-            this.buttonAnnuler.Click += new System.EventHandler(this.buttonAnnuler_Click);
+            this.buttonAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
             // 
             // labelMessage
             // 
@@ -64,7 +64,7 @@
             this.buttonValider.TabIndex = 13;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
-            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
+            this.buttonValider.Click += new System.EventHandler(this.ButtonValider_Click);
             // 
             // textBoxSMTP
             // 

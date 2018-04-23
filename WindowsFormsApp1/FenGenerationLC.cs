@@ -141,43 +141,8 @@ namespace LettreCooperation
         private void AfficherLC(string pathOrigine)
         {
 
-            try
-
-            {
-
-                PagePrincipale.FichierWord.Documents.Close(Microsoft.Office.Interop.Word.WdSaveOptions.wdDoNotSaveChanges);
-                PagePrincipale.FichierWord.Quit(false);
-                System.Runtime.InteropServices.Marshal.FinalReleaseComObject(PagePrincipale.FichierWord);
-                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
-            }
-            catch
-            {
-                //MessageBox.Show("Word fermé");
-                PagePrincipale.FichierWord = new Microsoft.Office.Interop.Word.Application();
-            }
-
-            // permet de visualisé les opérations
-            PagePrincipale.FichierWord.Visible = true;
-
-            // objet vide pour les parémétres inutilisés
-            Object missing = System.Reflection.Missing.Value;
-
-            // chemin du doc a ouvrir
-            String path = pathOrigine;
-
-            // ouvrir le doc word 
-            PagePrincipale.FichierWord.Documents.Open(path, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing, ref missing, ref missing,
-                    ref missing);
-
-
-
-            // désactiver le bouton ouvrir et activé le bouton fermer
-            // close.Enabled = true;
-            // open.Enabled = false;
+            WordTools.Path = pathOrigine;
+            WordTools.OpenWord();
 
         }
 

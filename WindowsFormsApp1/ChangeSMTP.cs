@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LettreCooperation
@@ -29,13 +24,26 @@ namespace LettreCooperation
             labelMessage.Text = "Vous pouvez ici changer votre SMTP.";
         }
 
-        private void buttonValider_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui permet d'enregistrer dans la 
+        /// base de données le nouveau SMTP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonValider_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.SMTP = textBoxSMTP.Text;
             Properties.Settings.Default.Save();
         }
 
-        private void buttonAnnuler_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Méthode qui ferme la page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
         }

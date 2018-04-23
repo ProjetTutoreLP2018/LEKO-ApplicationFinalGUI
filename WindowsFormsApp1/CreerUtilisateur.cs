@@ -183,6 +183,12 @@ namespace LettreCooperation
             Init();
         }
 
+
+        /// <summary>
+        /// Méthode qui permet de récupèrer l'image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonShearchImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile2 = new OpenFileDialog();
