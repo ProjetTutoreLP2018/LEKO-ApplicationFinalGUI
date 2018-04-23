@@ -7,10 +7,11 @@ namespace LettreCooperation
 {
     public partial class Login : UserControl
     {
+        private WaitForm wait;
 
-       
         public Login()
         {
+            wait = new WaitForm();
             InitializeComponent();
             this.textBoxPass.PasswordChar = '•';
 
@@ -25,9 +26,11 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonConnexion_Click(object sender, EventArgs e)
         {
-
+            
+            wait.Show();
             if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
             {
+                
                 ModelManager connexion = new ModelManager();
                 Utilisateur connecte = connexion.SeConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
 
@@ -43,15 +46,18 @@ namespace LettreCooperation
                     this.textBoxPass.Text = string.Empty;
 
                     this.labelErrorConnect.Text = string.Empty;
+                    wait.Close();
 
                 } else
                 {
+                    wait.Close();
                     this.labelErrorConnect.Text = "Identifiants incorrects";
                 }
 
             }
             else
             {
+                wait.Close();
                 this.labelErrorConnect.Text = "Merci de renseigner les champs vides.";
             }
            

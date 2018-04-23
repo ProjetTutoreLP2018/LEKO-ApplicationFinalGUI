@@ -8,7 +8,7 @@ namespace LettreCooperation
     public partial class PagePrincipale : Form
     {
 
-        private UserControl log = new Login();
+        private UserControl log;
         
         public static Utilisateur Utilisateur { get; set; }
 
@@ -39,10 +39,13 @@ namespace LettreCooperation
             pictureLogout.Visible = false;
             labelUser.Visible = false;
 
-          
 
-            log.Parent = this;
-            log.Dock = DockStyle.Top;
+            log = new Login
+            {
+                Parent = this,
+                Dock = DockStyle.Top
+            };
+
             log.Show(); 
 
             imageHome.Visible = false;

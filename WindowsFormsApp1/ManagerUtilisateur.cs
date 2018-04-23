@@ -35,6 +35,8 @@ namespace LettreCooperation
             this.textPass.PasswordChar = '•';
             this.textPassConfirm.PasswordChar = '•';
 
+            pictureBoxSignature.Image = null;
+
             utilisateurs = new List<Utilisateur>();
             droits = new List<Droit>();
             model = new ModelManager();

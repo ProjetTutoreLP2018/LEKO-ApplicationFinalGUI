@@ -52,6 +52,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(367, 174);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WaitForm";
             this.Text = "WaitForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

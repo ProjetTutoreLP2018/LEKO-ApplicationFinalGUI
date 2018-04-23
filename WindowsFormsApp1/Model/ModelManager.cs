@@ -157,9 +157,20 @@ namespace LettreCooperation.modele
                         && user.mdp_utilisateur == mdp
                         select user;
 
+            try
+            {
+                if (users.ToList().Count() == 0)
+                    return null;
 
-            if (users.ToList().Count() == 0)
+            }
+            catch(System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("La connextion n'a pas pu être établie avec la base de données." +
+                    " Merci de vérifier votre connexion internet.");
+
                 return null;
+            }
+           
 
             Utilisateur utilisateur = new Utilisateur();
 

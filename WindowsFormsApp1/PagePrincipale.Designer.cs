@@ -46,6 +46,7 @@
             this.ManagerUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnModèleDeLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerCheminDossierFINACOOPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerSMTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelUtilisateur = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
@@ -59,7 +60,6 @@
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureLogout = new System.Windows.Forms.PictureBox();
-            this.changerSMTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageHome)).BeginInit();
@@ -176,6 +176,12 @@
             resources.ApplyResources(this.changerCheminDossierFINACOOPToolStripMenuItem, "changerCheminDossierFINACOOPToolStripMenuItem");
             this.changerCheminDossierFINACOOPToolStripMenuItem.Click += new System.EventHandler(this.ChangerCheminDossierFINACOOPToolStripMenuItem_Click);
             // 
+            // changerSMTPToolStripMenuItem
+            // 
+            this.changerSMTPToolStripMenuItem.Name = "changerSMTPToolStripMenuItem";
+            resources.ApplyResources(this.changerSMTPToolStripMenuItem, "changerSMTPToolStripMenuItem");
+            this.changerSMTPToolStripMenuItem.Click += new System.EventHandler(this.changerSMTPToolStripMenuItem_Click);
+            // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -255,12 +261,6 @@
             this.pictureLogout.TabStop = false;
             this.pictureLogout.Click += new System.EventHandler(this.PictureLogout_Click);
             // 
-            // changerSMTPToolStripMenuItem
-            // 
-            this.changerSMTPToolStripMenuItem.Name = "changerSMTPToolStripMenuItem";
-            resources.ApplyResources(this.changerSMTPToolStripMenuItem, "changerSMTPToolStripMenuItem");
-            this.changerSMTPToolStripMenuItem.Click += new System.EventHandler(this.changerSMTPToolStripMenuItem_Click);
-            // 
             // PagePrincipale
             // 
             resources.ApplyResources(this, "$this");
@@ -276,8 +276,8 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "PagePrincipale";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();

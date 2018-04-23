@@ -251,8 +251,11 @@ namespace LettreCooperation
 
             Utilisateur dechiffreuse = model.GetUser(lcVisible.id_utilisateur);
 
+            MessageBox.Show("Dechiffreuse : " + lcVisible.id_utilisateur);
+
             if (lcVisible.id_signataire != null)
             {
+                MessageBox.Show("Signataire : " + lcVisible.id_signataire);
                 Utilisateur signataire = model.GetUser(lcVisible.id_signataire);
                 labelSignataire.Text = signataire.nom_utilisateur + " " +
                     signataire.prenom_utilisateur;
