@@ -192,8 +192,17 @@ namespace LettreCooperation
         private void ButtonAfficher_Click(object sender, EventArgs e)
         {
             WaitForm waitForm = new WaitForm();
-            //MessageBox.Show(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
-            AfficherLC(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
+
+            try{
+                AfficherLC(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
+            } catch (Exception)
+            {
+                MessageBox.Show("Le fichier est introuvable. Il a peut-être été supprimé" +
+                    " ou déplacé.");
+
+                WordTools.CloseWord();
+            }
+            
             waitForm.Close();
         }
 

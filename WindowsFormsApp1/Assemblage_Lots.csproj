@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Images\logo %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>logo %282%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Carbon.Data.Protection, Version=0.18.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -443,6 +443,8 @@
     <Content Include="Images\logo %281%29.ico" />
     <Content Include="Images\wait.gif" />
     <Content Include="Images\wait.png" />
+    <Content Include="logo %281%29.ico" />
+    <Content Include="logo %282%29.ico" />
     <Content Include="Model\ADOModele.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ADOModele.edmx</DependentUpon>

@@ -91,18 +91,23 @@ namespace LettreCooperation
             {
                 DataGridViewCheckBoxCell chkchecking = dataGridView.Rows[i].Cells[5] as DataGridViewCheckBoxCell;
 
-                //MessageBox.Show(chkchecking.Value.ToString());
-
                 if (chkchecking.Value != null && (bool)chkchecking.Value)
                 {
+                    try
+                    {
+                        CopyLc(listLc[i]);
+                        CreatePDF(listLc[i]);
+                        
+                    } catch (Exception)
+                    {
+                        MessageBox.Show("Le fichier est introuvable. Il a peut-être été supprimé" +
+                            "ou déplacé.");
+                    }
 
-                    CopyLc(listLc[i]);
-                    CreatePDF(listLc[i]);
                     SendMailClient(listLc[i], this.textBoxPass.Text);
-                    
-                    if(envoieMail)
-                        ChangeEtat(listLc[i]);
 
+                    if (envoieMail)
+                        ChangeEtat(listLc[i]);
                 }
             }
 
