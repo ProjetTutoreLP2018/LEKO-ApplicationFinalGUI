@@ -87,7 +87,7 @@ namespace LettreCooperation
             WaitForm waitForm = new WaitForm();
             waitForm.Show();
 
-            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 DataGridViewCheckBoxCell chkchecking = dataGridView.Rows[i].Cells[5] as DataGridViewCheckBoxCell;
 
@@ -97,8 +97,9 @@ namespace LettreCooperation
                     {
                         CopyLc(listLc[i]);
                         CreatePDF(listLc[i]);
-                        
-                    } catch (Exception)
+
+                    }
+                    catch (Exception)
                     {
                         MessageBox.Show("Le fichier est introuvable. Il a peut-être été supprimé" +
                             "ou déplacé.");
@@ -125,8 +126,6 @@ namespace LettreCooperation
         private void SendMailClient(LC lc, string password)
         {
 
-            
-
             SmtpMail oMail = new SmtpMail("TryIt");
             SmtpClient oSmtp = new SmtpClient();
 
@@ -151,31 +150,40 @@ namespace LettreCooperation
             string content = "Bonjour Voici votre LC !";
             oMail.TextBody = content;
 
-            //Test PJ
-            string pj = Program.FINACOOPFolder + pathPDF;
-            if (!pj.Equals(""))
-                oMail.AddAttachment(pj);
+            try
+            {
+                //Test PJ
+                string pj = Program.FINACOOPFolder + pathPDF;
+                if (!pj.Equals(""))
+                    oMail.AddAttachment(pj);
+            } catch (System.UnauthorizedAccessException)
+            {
+                MessageBox.Show("Vous n'avez pas l'autorisation d'ouvrir ce fichier. L' Email n'est pas envoyé");
+                throw;
+            }
 
             //
             // PROPERTIES /!\
             //
             string smtp;
             smtp = Properties.Settings.Default.SMTP;
-            SmtpServer oServer = new SmtpServer(smtp);
+            SmtpServer oServer = new SmtpServer(smtp)
+            {
 
-            // Set 587 port, if you want to use 25 port, please change 587 5o 25
-            //
-            // On peut éventuellement le mettre en properties aussi plutôt qu'en brut afin de s'adapter aux changements sur leur SMTP /!\
-            //
-            oServer.Port = 587;
+                // Set 587 port, if you want to use 25 port, please change 587 5o 25
+                //
+                // On peut éventuellement le mettre en properties aussi plutôt qu'en brut afin de s'adapter aux changements sur leur SMTP /!\
+                //
+                Port = 587,
 
-            // detect SSL/TLS automatically
-            oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+                // detect SSL/TLS automatically
+                ConnectType = SmtpConnectType.ConnectSSLAuto,
 
-            // Gmail user authentication
-            // For example: your email is "gmailid@gmail.com", then the user should be the same
-            oServer.User = from;
-            oServer.Password = pass;
+                // Gmail user authentication
+                // For example: your email is "gmailid@gmail.com", then the user should be the same
+                User = from,
+                Password = pass
+            };
             //Console.WriteLine("start to send email over SSL ...");
             try
             {
@@ -219,7 +227,7 @@ namespace LettreCooperation
 
             File.Copy(
                 Program.FINACOOPFolder + lc.chemin_lc,
-                dossier + "\\" + lc.nom_lc + ".docx",
+                dossier + "\\" + lc.nom_lc,
                 true
                 );
         }
@@ -243,7 +251,7 @@ namespace LettreCooperation
             }
 
 
-            string nomDuFichierAConvertir = lc.nom_lc + ".docx";
+            string nomDuFichierAConvertir = lc.nom_lc;
             object CheminDuFichier = Program.FINACOOPFolder + lc.chemin_lc;
             string ExtensionDuFichier = Path.GetExtension(nomDuFichierAConvertir);
             string ExtensionCible = nomDuFichierAConvertir.Replace(ExtensionDuFichier, ".pdf");
@@ -255,7 +263,7 @@ namespace LettreCooperation
                 ObjetWord.Word2PdfCOnversion();
             }
 
-            modelManager.UpdatePathLc(lc, _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc + ".docx");
+            modelManager.UpdatePathLc(lc, _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc);
             pathPDF = _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
         }
 

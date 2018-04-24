@@ -65,6 +65,11 @@ namespace LettreCooperation
         }
 
 
+        /// <summary>
+        /// Permet de mettre à jour les compteurs
+        /// pour le différents status
+        /// </summary>
+        /// <param name="listLc"></param>
         private void UpdateNbr(List<LC> listLc)
         {
 
@@ -99,6 +104,10 @@ namespace LettreCooperation
 
 
 
+        /// <summary>
+        /// Méthode qui permet de mettre à jour la liste
+        /// de LC en fonction du client séléctionné
+        /// </summary>
         private void UpdateListLC()
         {
             this.indexClient = comboClient.SelectedIndex;
@@ -123,6 +132,10 @@ namespace LettreCooperation
         }
 
 
+        /// <summary>
+        /// Méthode qui permet de manager les radio
+        /// bouttons de filtre de status de LC
+        /// </summary>
         private void RadioButtonManager()
         {
             if (radioButtonAttSignExp.Checked)
@@ -189,6 +202,11 @@ namespace LettreCooperation
         }
 
 
+        /// <summary>
+        /// Méthode qui permet d'affichier la LC séléctionnée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAfficher_Click(object sender, EventArgs e)
         {
             WaitForm waitForm = new WaitForm();
@@ -207,6 +225,10 @@ namespace LettreCooperation
         }
 
 
+        /// <summary>
+        /// Méthode qui permet de gérer le fichier Word
+        /// </summary>
+        /// <param name="pathOrigine"></param>
         private void AfficherLC(string pathOrigine)
         {
 
@@ -295,6 +317,11 @@ namespace LettreCooperation
         }
 
 
+        /// <summary>
+        /// Méthode qui permet de suprimer une LC
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSupprimer_Click(object sender, EventArgs e)
         {
 

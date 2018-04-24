@@ -87,8 +87,6 @@ namespace LettreCooperation
                 if (chkchecking.Value != null && (bool)chkchecking.Value)
                 {
 
-
-
                     var app = new Microsoft.Office.Interop.Word.Application();
                     
                      try
@@ -133,6 +131,7 @@ namespace LettreCooperation
                         doc.Close();
 
                         AjoutNomSignataire(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                        AfficherLC(Program.FINACOOPFolder + listLc[i].chemin_lc);
                         MessageBox.Show("Votre fichier a bien était signée");
 
                     }
@@ -147,6 +146,19 @@ namespace LettreCooperation
 
             Init();
             waitForm.Close();
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de gérer les fichier Word
+        /// </summary>
+        /// <param name="pathOrigine"></param>
+        private void AfficherLC(string pathOrigine)
+        {
+
+            WordTools.Path = pathOrigine;
+            WordTools.OpenWord();
+
         }
 
 
@@ -192,6 +204,11 @@ namespace LettreCooperation
         }
 
 
+        /// <summary>
+        /// Méthode de raffraichissement de la page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             Init();

@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignatureExp));
             this.LCDataGridView = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nom_LC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_Création = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dechiffreuse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectionner = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPass = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LCDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LCDataGridView
             // 
+            this.LCDataGridView.AllowUserToAddRows = false;
             this.LCDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LCDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nom_LC,
@@ -52,41 +53,10 @@
             this.date_Création,
             this.dechiffreuse,
             this.selectionner});
-            this.LCDataGridView.Location = new System.Drawing.Point(127, 9);
+            this.LCDataGridView.Location = new System.Drawing.Point(48, 9);
             this.LCDataGridView.Name = "LCDataGridView";
-            this.LCDataGridView.Size = new System.Drawing.Size(544, 364);
+            this.LCDataGridView.Size = new System.Drawing.Size(721, 364);
             this.LCDataGridView.TabIndex = 0;
-            // 
-            // nom_LC
-            // 
-            this.nom_LC.HeaderText = "Lettres de Coopérations validée en attente d\'envoie";
-            this.nom_LC.Name = "nom_LC";
-            this.nom_LC.ReadOnly = true;
-            // 
-            // nom_client
-            // 
-            this.nom_client.HeaderText = "Raison social du client";
-            this.nom_client.Name = "nom_client";
-            this.nom_client.ReadOnly = true;
-            // 
-            // date_Création
-            // 
-            this.date_Création.HeaderText = "Date Création";
-            this.date_Création.Name = "date_Création";
-            this.date_Création.ReadOnly = true;
-            // 
-            // dechiffreuse
-            // 
-            this.dechiffreuse.HeaderText = "Déchiffreuse";
-            this.dechiffreuse.Name = "dechiffreuse";
-            this.dechiffreuse.ReadOnly = true;
-            // 
-            // selectionner
-            // 
-            this.selectionner.HeaderText = "Selectionner pour signer et valider la Lettre de coopération";
-            this.selectionner.Name = "selectionner";
-            this.selectionner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.selectionner.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // button1
             // 
@@ -121,12 +91,48 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(677, 78);
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(775, 69);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 31);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
+            // nom_LC
+            // 
+            this.nom_LC.HeaderText = "Lettres de Coopérations validée en attente d\'envoie";
+            this.nom_LC.Name = "nom_LC";
+            this.nom_LC.ReadOnly = true;
+            this.nom_LC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nom_LC.Width = 280;
+            // 
+            // nom_client
+            // 
+            this.nom_client.HeaderText = "Raison social du client";
+            this.nom_client.Name = "nom_client";
+            this.nom_client.ReadOnly = true;
+            this.nom_client.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // date_Création
+            // 
+            this.date_Création.HeaderText = "Date Création";
+            this.date_Création.Name = "date_Création";
+            this.date_Création.ReadOnly = true;
+            this.date_Création.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dechiffreuse
+            // 
+            this.dechiffreuse.HeaderText = "Déchiffreuse";
+            this.dechiffreuse.Name = "dechiffreuse";
+            this.dechiffreuse.ReadOnly = true;
+            this.dechiffreuse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // selectionner
+            // 
+            this.selectionner.HeaderText = "Selectionner pour signer et valider la Lettre de coopération";
+            this.selectionner.Name = "selectionner";
+            this.selectionner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // SignatureExp
             // 
@@ -151,13 +157,13 @@
 
         private System.Windows.Forms.DataGridView LCDataGridView;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPass;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_LC;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_client;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_Création;
         private System.Windows.Forms.DataGridViewTextBoxColumn dechiffreuse;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectionner;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxPass;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
