@@ -119,20 +119,33 @@ namespace LettreCooperation
             lc.id_etat = 1;
             lc.id_utilisateur = PagePrincipale.Utilisateur.id_utilisateur;
 
-            
 
+            if(File.Exists(pathFolder + @"\" + nomFichier))
+            {
+                string message = "Cette LC existe déjà, voulez-vous l'écraser ?";
+                string caption = "Lettre de coopération existant";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult  result = MessageBox.Show(message, caption, buttons);
+
+                if (result == DialogResult.No)
+                {
+                    waitForm.Close();
+                    return;
+                }
+                
+            }
 
             documentModele.SaveAs(pathFolder + @"\" + nomFichier);
 
             AfficherLC(pathFolder + @"\" + nomFichier);
 
-            saveLC(lc);
+            SaveLC(lc);
             waitForm.Close();
             MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"\" + nomFichier + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 
-        private void saveLC(LC lc)
+        private void SaveLC(LC lc)
         {
             modeleManager.SaveLC(lc);
         }

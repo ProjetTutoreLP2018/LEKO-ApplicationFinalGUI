@@ -25,7 +25,7 @@ namespace LettreCooperation
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 // =================================================
-               // Properties.Settings.Default.PathFINACOOP = String.Empty;
+                Properties.Settings.Default.PathFINACOOP = String.Empty;
                 //==================================================
 
                 
@@ -40,8 +40,8 @@ namespace LettreCooperation
 
                         if (!String.IsNullOrEmpty(FINACOOPFolder))
                         {
-                            LettreCooperation.Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
-                            LettreCooperation.Properties.Settings.Default.Save();
+                            Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
+                            Properties.Settings.Default.Save();
                         } else
                         {
                             MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
@@ -51,7 +51,7 @@ namespace LettreCooperation
 
                 } else
                 {
-                    FINACOOPFolder = LettreCooperation.Properties.Settings.Default.PathFINACOOP;
+                    FINACOOPFolder = Properties.Settings.Default.PathFINACOOP;
                 }
 
                 if(!QuitApp)
