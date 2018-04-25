@@ -1,12 +1,11 @@
 ﻿using EASendMail;
-using LettreCooperation;
+using LettreCooperation.Model;
 using LettreCooperation.modele;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using LettreCooperation.Model;
-using WordToPDF;
 using System.IO;
+using System.Windows.Forms;
+using WordToPDF;
 
 namespace LettreCooperation
 {
@@ -276,6 +275,34 @@ namespace LettreCooperation
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             Init();
+        }
+
+        
+        /// <summary>
+        /// Méthode qui permet d'ouvrir un LC avant de la signer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dataGridView.CurrentCell.ColumnIndex == 0)
+                AfficherLC(Program.FINACOOPFolder + listLc[dataGridView.CurrentCell.RowIndex].chemin_lc);
+
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de gérer les fichier Word
+        /// </summary>
+        /// <param name="pathOrigine"></param>
+        private void AfficherLC(string pathOrigine)
+        {
+
+            WordTools.Path = pathOrigine;
+            WordTools.OpenWord();
+
         }
     }
 }

@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignatureExp));
             this.LCDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPass = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nom_LC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_Création = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dechiffreuse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectionner = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LCDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,42 @@
             this.LCDataGridView.Name = "LCDataGridView";
             this.LCDataGridView.Size = new System.Drawing.Size(721, 364);
             this.LCDataGridView.TabIndex = 0;
+            this.LCDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LCDataGridView_CellContentClick);
+            // 
+            // nom_LC
+            // 
+            this.nom_LC.HeaderText = "Lettres de Coopérations validée en attente d\'envoie";
+            this.nom_LC.Name = "nom_LC";
+            this.nom_LC.ReadOnly = true;
+            this.nom_LC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nom_LC.Width = 280;
+            // 
+            // nom_client
+            // 
+            this.nom_client.HeaderText = "Raison social du client";
+            this.nom_client.Name = "nom_client";
+            this.nom_client.ReadOnly = true;
+            this.nom_client.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // date_Création
+            // 
+            this.date_Création.HeaderText = "Date Création";
+            this.date_Création.Name = "date_Création";
+            this.date_Création.ReadOnly = true;
+            this.date_Création.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dechiffreuse
+            // 
+            this.dechiffreuse.HeaderText = "Déchiffreuse";
+            this.dechiffreuse.Name = "dechiffreuse";
+            this.dechiffreuse.ReadOnly = true;
+            this.dechiffreuse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // selectionner
+            // 
+            this.selectionner.HeaderText = "Selectionner pour signer et valider la Lettre de coopération";
+            this.selectionner.Name = "selectionner";
+            this.selectionner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // button1
             // 
@@ -98,41 +134,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
-            // 
-            // nom_LC
-            // 
-            this.nom_LC.HeaderText = "Lettres de Coopérations validée en attente d\'envoie";
-            this.nom_LC.Name = "nom_LC";
-            this.nom_LC.ReadOnly = true;
-            this.nom_LC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nom_LC.Width = 280;
-            // 
-            // nom_client
-            // 
-            this.nom_client.HeaderText = "Raison social du client";
-            this.nom_client.Name = "nom_client";
-            this.nom_client.ReadOnly = true;
-            this.nom_client.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // date_Création
-            // 
-            this.date_Création.HeaderText = "Date Création";
-            this.date_Création.Name = "date_Création";
-            this.date_Création.ReadOnly = true;
-            this.date_Création.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dechiffreuse
-            // 
-            this.dechiffreuse.HeaderText = "Déchiffreuse";
-            this.dechiffreuse.Name = "dechiffreuse";
-            this.dechiffreuse.ReadOnly = true;
-            this.dechiffreuse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // selectionner
-            // 
-            this.selectionner.HeaderText = "Selectionner pour signer et valider la Lettre de coopération";
-            this.selectionner.Name = "selectionner";
-            this.selectionner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // SignatureExp
             // 

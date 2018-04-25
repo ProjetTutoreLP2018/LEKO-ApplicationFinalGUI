@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnvoieLcAuClient));
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPass = new System.Windows.Forms.TextBox();
-            this.buttonEnvoyer = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomCreateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomSign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.envoyer = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPass = new System.Windows.Forms.TextBox();
+            this.buttonEnvoyer = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,46 +60,7 @@
             this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView.Size = new System.Drawing.Size(733, 364);
             this.dataGridView.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 400);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Merci de renseigner le Mot de Passe de votre adresse Email";
-            // 
-            // textBoxPass
-            // 
-            this.textBoxPass.Location = new System.Drawing.Point(389, 398);
-            this.textBoxPass.Name = "textBoxPass";
-            this.textBoxPass.Size = new System.Drawing.Size(237, 20);
-            this.textBoxPass.TabIndex = 3;
-            this.textBoxPass.TextChanged += new System.EventHandler(this.TextBoxPass_TextChanged);
-            // 
-            // buttonEnvoyer
-            // 
-            this.buttonEnvoyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnvoyer.BackgroundImage")));
-            this.buttonEnvoyer.Location = new System.Drawing.Point(661, 395);
-            this.buttonEnvoyer.Name = "buttonEnvoyer";
-            this.buttonEnvoyer.Size = new System.Drawing.Size(75, 23);
-            this.buttonEnvoyer.TabIndex = 1;
-            this.buttonEnvoyer.Text = "Envoyer";
-            this.buttonEnvoyer.UseVisualStyleBackColor = true;
-            this.buttonEnvoyer.Click += new System.EventHandler(this.ButtonEnvoyer_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(782, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
             // LC
             // 
@@ -141,6 +102,46 @@
             // 
             this.envoyer.HeaderText = "Selectionner pour envoie par Email au client";
             this.envoyer.Name = "envoyer";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(89, 400);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Merci de renseigner le Mot de Passe de votre adresse Email";
+            // 
+            // textBoxPass
+            // 
+            this.textBoxPass.Location = new System.Drawing.Point(389, 398);
+            this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.Size = new System.Drawing.Size(237, 20);
+            this.textBoxPass.TabIndex = 3;
+            this.textBoxPass.TextChanged += new System.EventHandler(this.TextBoxPass_TextChanged);
+            // 
+            // buttonEnvoyer
+            // 
+            this.buttonEnvoyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnvoyer.BackgroundImage")));
+            this.buttonEnvoyer.Location = new System.Drawing.Point(661, 395);
+            this.buttonEnvoyer.Name = "buttonEnvoyer";
+            this.buttonEnvoyer.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnvoyer.TabIndex = 1;
+            this.buttonEnvoyer.Text = "Envoyer";
+            this.buttonEnvoyer.UseVisualStyleBackColor = true;
+            this.buttonEnvoyer.Click += new System.EventHandler(this.ButtonEnvoyer_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(782, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // EnvoieLcAuClient
             // 

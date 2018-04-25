@@ -213,5 +213,20 @@ namespace LettreCooperation
         {
             Init();
         }
+
+
+        /// <summary>
+        /// Méthode qui permet d'ouvrir un LC avant de la signer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LCDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (LCDataGridView.CurrentCell.ColumnIndex == 0)
+                AfficherLC(Program.FINACOOPFolder + listLc[LCDataGridView.CurrentCell.RowIndex].chemin_lc);
+
+
+        }
     }
 }
