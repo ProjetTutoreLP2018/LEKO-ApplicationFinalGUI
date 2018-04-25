@@ -137,8 +137,13 @@ namespace LettreCooperation
             int index = 0;
 
             foreach (Droit d in droits)
+            {
                 if (d.permission.Equals(comboDroit.SelectedItem))
+                {
                     index = d.id_droit;
+                    break;
+                }
+            }
 
 
             utilisateur.id_droit = index;

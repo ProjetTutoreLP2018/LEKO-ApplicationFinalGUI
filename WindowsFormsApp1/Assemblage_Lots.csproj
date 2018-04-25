@@ -317,6 +317,12 @@
     <Compile Include="UCFenFormClient.designer.cs">
       <DependentUpon>UCFenFormClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCTableauBord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTableauBord.designer.cs">
+      <DependentUpon>UCTableauBord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Voir_Modif_LC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCFenFormClient.resx">
       <DependentUpon>UCFenFormClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTableauBord.resx">
+      <DependentUpon>UCTableauBord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Voir_Modif_LC.resx">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>

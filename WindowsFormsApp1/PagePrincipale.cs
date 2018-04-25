@@ -162,7 +162,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void PictureHome_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
+            InitUserContole(new UCTableauBord());
         }
 
 

@@ -7,11 +7,10 @@ namespace LettreCooperation
 {
     public partial class Login : UserControl
     {
-        private WaitForm wait;
+        private WaitForm wait = new WaitForm();
 
         public Login()
         {
-            wait = new WaitForm();
             InitializeComponent();
             this.textBoxPass.PasswordChar = '•';
 
@@ -46,18 +45,18 @@ namespace LettreCooperation
                     this.textBoxPass.Text = string.Empty;
 
                     this.labelErrorConnect.Text = string.Empty;
-                    wait.Close();
+                    this.wait.Close();
 
                 } else
                 {
-                    wait.Close();
+                    this.wait.Close();
                     this.labelErrorConnect.Text = "Identifiants incorrects";
                 }
 
             }
             else
             {
-                wait.Close();
+                this.wait.Close();
                 this.labelErrorConnect.Text = "Merci de renseigner les champs vides.";
             }
            
@@ -82,11 +81,11 @@ namespace LettreCooperation
             Label labelUser = (Label)this.Parent.Controls.Find("labelUser", false)[0];
             labelUser.Visible = true;
 
-
-
             Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
             labelWelcome.Text = PagePrincipale.Utilisateur.nom_utilisateur
         + " " + PagePrincipale.Utilisateur.prenom_utilisateur;
+
+            panel.Controls.Add(new UCTableauBord());
 
         }
     }

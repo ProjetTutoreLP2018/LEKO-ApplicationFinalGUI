@@ -41,13 +41,12 @@ namespace LettreCooperation
             // nous pouvons ouvrir l'application
             if (!String.IsNullOrEmpty(textBoxPath.Text))
             {
-                Program.FINACOOPFolder = textBoxPath.Text;
-                this.Close();
-
-            } else
-            {
                 MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
+                return;
             }
+
+            Program.FINACOOPFolder = textBoxPath.Text;
+            this.Close();
         }
 
 

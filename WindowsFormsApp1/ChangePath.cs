@@ -34,18 +34,17 @@ namespace LettreCooperation
         {
             // Si le chemin du dossier est renseigné,
             // nous pouvons ouvrir l'application
-            if (!String.IsNullOrEmpty(textBoxPath.Text))
-            {
-                Program.FINACOOPFolder = textBoxPath.Text;
-                Properties.Settings.Default.PathFINACOOP = textBoxPath.Text;
-                Properties.Settings.Default.Save();
-                this.Close();
-
-            }
-            else
+            if (String.IsNullOrEmpty(textBoxPath.Text))
             {
                 MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
+                return;
             }
+
+            Program.FINACOOPFolder = textBoxPath.Text;
+            Properties.Settings.Default.PathFINACOOP = textBoxPath.Text;
+            Properties.Settings.Default.Save();
+            this.Close();
+
         }
 
 
