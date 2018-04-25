@@ -34,18 +34,15 @@ namespace LettreCooperation.Model
         public string prenom_referent { get; set; }
         public string fonction_referent { get; set; }
         public string sexe_referent { get; set; }
-        public Nullable<int> id_activite { get; set; }
         public int id_adresse { get; set; }
         public string site_web { get; set; }
         public Nullable<bool> ESS { get; set; }
         public string tel_fix { get; set; }
         public string tel_portable { get; set; }
-        public Nullable<int> id_statut { get; set; }
         public string mail_referent { get; set; }
+        public string activite { get; set; }
     
-        public virtual Activite Activite { get; set; }
         public virtual Adresse Adresse { get; set; }
-        public virtual Statut Statut { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LC> LC { get; set; }
     }

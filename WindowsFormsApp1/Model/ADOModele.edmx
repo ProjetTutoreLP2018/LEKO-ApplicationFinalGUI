@@ -5,13 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LCBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Activite">
-          <Key>
-            <PropertyRef Name="id_activite" />
-          </Key>
-          <Property Name="id_activite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="libelle_activite" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Adresse">
           <Key>
             <PropertyRef Name="id_adresse" />
@@ -42,14 +35,13 @@
           <Property Name="prenom_referent" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fonction_referent" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="sexe_referent" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="id_activite" Type="int" />
           <Property Name="id_adresse" Type="int" Nullable="false" />
           <Property Name="site_web" Type="varchar" MaxLength="50" />
           <Property Name="ESS" Type="bit" />
           <Property Name="tel_fix" Type="varchar" MaxLength="20" />
           <Property Name="tel_portable" Type="varchar" MaxLength="20" />
-          <Property Name="id_statut" Type="int" />
           <Property Name="mail_referent" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="activite" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -91,21 +83,6 @@
           <Property Name="nom_mission" Type="varchar" MaxLength="200" />
           <Property Name="type_lettre" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Statut">
-          <Key>
-            <PropertyRef Name="id_statut" />
-          </Key>
-          <Property Name="id_statut" Type="int" Nullable="false" />
-          <Property Name="libelle" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="id_typestatut" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TypeStatut">
-          <Key>
-            <PropertyRef Name="id_typeStatut" />
-          </Key>
-          <Property Name="id_typeStatut" Type="int" Nullable="false" />
-          <Property Name="libelle" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Utilisateur">
           <Key>
             <PropertyRef Name="id_utilisateur" />
@@ -119,20 +96,6 @@
           <Property Name="isAdmin" Type="bit" Nullable="false" />
           <Property Name="image_Blob_Signature" Type="varbinary(max)" />
         </EntityType>
-        <Association Name="FK_Client_Activite">
-          <End Role="Activite" Type="Self.Activite" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Activite">
-              <PropertyRef Name="id_activite" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="id_activite" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Client_Adresse">
           <End Role="Adresse" Type="Self.Adresse" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -144,20 +107,6 @@
             </Principal>
             <Dependent Role="Client">
               <PropertyRef Name="id_adresse" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Client_Statut">
-          <End Role="Statut" Type="Self.Statut" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Statut">
-              <PropertyRef Name="id_statut" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="id_statut" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -225,20 +174,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Statut_TypeStatut">
-          <End Role="TypeStatut" Type="Self.TypeStatut" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Statut" Type="Self.Statut" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeStatut">
-              <PropertyRef Name="id_typeStatut" />
-            </Principal>
-            <Dependent Role="Statut">
-              <PropertyRef Name="id_typestatut" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Utilisateur_id_droit">
           <End Role="Droit" Type="Self.Droit" Multiplicity="1" />
           <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="*" />
@@ -252,26 +187,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LCBDModelStoreContainer">
-          <EntitySet Name="Activite" EntityType="Self.Activite" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Adresse" EntityType="Self.Adresse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Droit" EntityType="Self.Droit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Etat" EntityType="Self.Etat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LC" EntityType="Self.LC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Modele" EntityType="Self.Modele" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Statut" EntityType="Self.Statut" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TypeStatut" EntityType="Self.TypeStatut" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Client_Activite" Association="Self.FK_Client_Activite">
-            <End Role="Activite" EntitySet="Activite" />
-            <End Role="Client" EntitySet="Client" />
-          </AssociationSet>
           <AssociationSet Name="FK_Client_Adresse" Association="Self.FK_Client_Adresse">
             <End Role="Adresse" EntitySet="Adresse" />
-            <End Role="Client" EntitySet="Client" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Client_Statut" Association="Self.FK_Client_Statut">
-            <End Role="Statut" EntitySet="Statut" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
           <AssociationSet Name="FK_LC_client" Association="Self.FK_LC_client">
@@ -294,10 +218,6 @@
             <End Role="Utilisateur" EntitySet="Utilisateur" />
             <End Role="LC" EntitySet="LC" />
           </AssociationSet>
-          <AssociationSet Name="FK_Statut_TypeStatut" Association="Self.FK_Statut_TypeStatut">
-            <End Role="TypeStatut" EntitySet="TypeStatut" />
-            <End Role="Statut" EntitySet="Statut" />
-          </AssociationSet>
           <AssociationSet Name="FK_Utilisateur_id_droit" Association="Self.FK_Utilisateur_id_droit">
             <End Role="Droit" EntitySet="Droit" />
             <End Role="Utilisateur" EntitySet="Utilisateur" />
@@ -307,14 +227,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LCBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Activite">
-          <Key>
-            <PropertyRef Name="id_activite" />
-          </Key>
-          <Property Name="id_activite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="libelle_activite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK_Client_Activite" FromRole="Activite" ToRole="Client" />
-        </EntityType>
         <EntityType Name="Adresse">
           <Key>
             <PropertyRef Name="id_adresse" />
@@ -346,18 +258,15 @@
           <Property Name="prenom_referent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fonction_referent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="sexe_referent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="id_activite" Type="Int32" />
           <Property Name="id_adresse" Type="Int32" Nullable="false" />
           <Property Name="site_web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ESS" Type="Boolean" />
           <Property Name="tel_fix" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="tel_portable" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="id_statut" Type="Int32" />
-          <NavigationProperty Name="Activite" Relationship="Self.FK_Client_Activite" FromRole="Client" ToRole="Activite" />
           <NavigationProperty Name="Adresse" Relationship="Self.FK_Client_Adresse" FromRole="Client" ToRole="Adresse" />
-          <NavigationProperty Name="Statut" Relationship="Self.FK_Client_Statut" FromRole="Client" ToRole="Statut" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_client" FromRole="Client" ToRole="LC" />
           <Property Name="mail_referent" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="activite" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -407,24 +316,6 @@
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_modele" FromRole="Modele" ToRole="LC" />
           <Property Name="type_lettre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Statut">
-          <Key>
-            <PropertyRef Name="id_statut" />
-          </Key>
-          <Property Name="id_statut" Type="Int32" Nullable="false" />
-          <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="id_typestatut" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK_Client_Statut" FromRole="Statut" ToRole="Client" />
-          <NavigationProperty Name="TypeStatut" Relationship="Self.FK_Statut_TypeStatut" FromRole="Statut" ToRole="TypeStatut" />
-        </EntityType>
-        <EntityType Name="TypeStatut">
-          <Key>
-            <PropertyRef Name="id_typeStatut" />
-          </Key>
-          <Property Name="id_typeStatut" Type="Int32" Nullable="false" />
-          <Property Name="libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Statut" Relationship="Self.FK_Statut_TypeStatut" FromRole="TypeStatut" ToRole="Statut" />
-        </EntityType>
         <EntityType Name="Utilisateur">
           <Key>
             <PropertyRef Name="id_utilisateur" />
@@ -441,20 +332,6 @@
           <NavigationProperty Name="LC1" Relationship="LCBDModel.FK_SignerLC" FromRole="Utilisateur" ToRole="LC" />
           <Property Name="image_Blob_Signature" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Client_Activite">
-          <End Role="Activite" Type="Self.Activite" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Activite">
-              <PropertyRef Name="id_activite" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="id_activite" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Client_Adresse">
           <End Role="Adresse" Type="Self.Adresse" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -466,20 +343,6 @@
             </Principal>
             <Dependent Role="Client">
               <PropertyRef Name="id_adresse" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Client_Statut">
-          <End Role="Statut" Type="Self.Statut" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Statut">
-              <PropertyRef Name="id_statut" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="id_statut" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -547,41 +410,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Statut_TypeStatut">
-          <End Role="TypeStatut" Type="Self.TypeStatut" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Statut" Type="Self.Statut" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TypeStatut">
-              <PropertyRef Name="id_typeStatut" />
-            </Principal>
-            <Dependent Role="Statut">
-              <PropertyRef Name="id_typestatut" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="LCBDEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Activite" EntityType="Self.Activite" />
           <EntitySet Name="Adresse" EntityType="Self.Adresse" />
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Droit" EntityType="Self.Droit" />
           <EntitySet Name="Etat" EntityType="Self.Etat" />
           <EntitySet Name="LC" EntityType="Self.LC" />
           <EntitySet Name="Modele" EntityType="Self.Modele" />
-          <EntitySet Name="Statut" EntityType="Self.Statut" />
-          <EntitySet Name="TypeStatut" EntityType="Self.TypeStatut" />
           <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" />
-          <AssociationSet Name="FK_Client_Activite" Association="Self.FK_Client_Activite">
-            <End Role="Activite" EntitySet="Activite" />
-            <End Role="Client" EntitySet="Client" />
-          </AssociationSet>
           <AssociationSet Name="FK_Client_Adresse" Association="Self.FK_Client_Adresse">
             <End Role="Adresse" EntitySet="Adresse" />
-            <End Role="Client" EntitySet="Client" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Client_Statut" Association="Self.FK_Client_Statut">
-            <End Role="Statut" EntitySet="Statut" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
           <AssociationSet Name="FK_LC_client" Association="Self.FK_LC_client">
@@ -603,10 +441,6 @@
           <AssociationSet Name="FK_LC_UTILISATEUR" Association="Self.FK_LC_UTILISATEUR">
             <End Role="Utilisateur" EntitySet="Utilisateur" />
             <End Role="LC" EntitySet="LC" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Statut_TypeStatut" Association="Self.FK_Statut_TypeStatut">
-            <End Role="TypeStatut" EntitySet="TypeStatut" />
-            <End Role="Statut" EntitySet="Statut" />
           </AssociationSet>
           <AssociationSet Name="FK_SignerLC" Association="LCBDModel.FK_SignerLC">
             <End Role="Utilisateur" EntitySet="Utilisateur" />
@@ -631,14 +465,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LCBDModelStoreContainer" CdmEntityContainer="LCBDEntities2">
-          <EntitySetMapping Name="Activite">
-            <EntityTypeMapping TypeName="LCBDModel.Activite">
-              <MappingFragment StoreEntitySet="Activite">
-                <ScalarProperty Name="id_activite" ColumnName="id_activite" />
-                <ScalarProperty Name="libelle_activite" ColumnName="libelle_activite" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Adresse">
             <EntityTypeMapping TypeName="LCBDModel.Adresse">
               <MappingFragment StoreEntitySet="Adresse">
@@ -655,6 +481,7 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="LCBDModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="activite" ColumnName="activite" />
                 <ScalarProperty Name="mail_referent" ColumnName="mail_referent" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />
                 <ScalarProperty Name="siret" ColumnName="siret" />
@@ -670,13 +497,11 @@
                 <ScalarProperty Name="prenom_referent" ColumnName="prenom_referent" />
                 <ScalarProperty Name="fonction_referent" ColumnName="fonction_referent" />
                 <ScalarProperty Name="sexe_referent" ColumnName="sexe_referent" />
-                <ScalarProperty Name="id_activite" ColumnName="id_activite" />
                 <ScalarProperty Name="id_adresse" ColumnName="id_adresse" />
                 <ScalarProperty Name="site_web" ColumnName="site_web" />
                 <ScalarProperty Name="ESS" ColumnName="ESS" />
                 <ScalarProperty Name="tel_fix" ColumnName="tel_fix" />
                 <ScalarProperty Name="tel_portable" ColumnName="tel_portable" />
-                <ScalarProperty Name="id_statut" ColumnName="id_statut" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -721,23 +546,6 @@
                 <ScalarProperty Name="chemin_modele" ColumnName="chemin_modele" />
                 <ScalarProperty Name="nom_fichier" ColumnName="nom_fichier" />
                 <ScalarProperty Name="nom_mission" ColumnName="nom_mission" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Statut">
-            <EntityTypeMapping TypeName="LCBDModel.Statut">
-              <MappingFragment StoreEntitySet="Statut">
-                <ScalarProperty Name="id_statut" ColumnName="id_statut" />
-                <ScalarProperty Name="libelle" ColumnName="libelle" />
-                <ScalarProperty Name="id_typestatut" ColumnName="id_typestatut" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TypeStatut">
-            <EntityTypeMapping TypeName="LCBDModel.TypeStatut">
-              <MappingFragment StoreEntitySet="TypeStatut">
-                <ScalarProperty Name="id_typeStatut" ColumnName="id_typeStatut" />
-                <ScalarProperty Name="libelle" ColumnName="libelle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

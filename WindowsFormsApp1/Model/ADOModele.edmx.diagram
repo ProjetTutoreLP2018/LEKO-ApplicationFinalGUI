@@ -5,25 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c4dda5d0bb414ef98c8692356684dfe0" Name="Diagram1">
-        <EntityTypeShape EntityType="LCBDModel.Activite" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.Adresse" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.Client" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.Droit" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.Etat" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.LC" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.Modele" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LCBDModel.Statut" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LCBDModel.TypeStatut" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LCBDModel.Utilisateur" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
-        <AssociationConnector Association="LCBDModel.FK_Client_Activite" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_Client_Adresse" ManuallyRouted="false" />
-        <AssociationConnector Association="LCBDModel.FK_Client_Statut" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_LC_client" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_Utilisateur_id_droit" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_LC_Etat" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_LC_modele" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_LC_UTILISATEUR" ManuallyRouted="false" />
-        <AssociationConnector Association="LCBDModel.FK_Statut_TypeStatut" ManuallyRouted="false" />
         <AssociationConnector Association="LCBDModel.FK_SignerLC" />
       </Diagram>
     </edmx:Diagrams>
