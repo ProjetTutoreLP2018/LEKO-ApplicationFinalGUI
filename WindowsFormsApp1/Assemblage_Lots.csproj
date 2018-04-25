@@ -246,6 +246,12 @@
     <Compile Include="FenPreRemplissageAutomatique.designer.cs">
       <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
     </Compile>
+    <Compile Include="AjoutModele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutModele.designer.cs">
+      <DependentUpon>AjoutModele.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ADOModele.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FenPreRemplissageAutomatique.resx">
       <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutModele.resx">
+      <DependentUpon>AjoutModele.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifClient.resx">
       <DependentUpon>ModifClient.cs</DependentUpon>

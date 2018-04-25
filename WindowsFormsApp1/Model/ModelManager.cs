@@ -426,12 +426,27 @@ namespace LettreCooperation.modele
         }
 
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
+        public Image ByteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
             Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
 
+
+        public void AjouterModel(string pathDestination, string nomFichier, string nomMission, string typeLettre)
+        {
+            try
+            {
+                context.Modele.Add(new Modele { chemin_modele = pathDestination, nom_fichier = nomFichier, nom_mission = nomMission, type_lettre = typeLettre });
+                context.SaveChanges();
+                MessageBox.Show("Le modéle de LC " + nomFichier + " a était ajoutée");
+            }
+            catch
+            {
+                MessageBox.Show("Erreur, le modéle n'as pas était ajouté");
+            }
+
+        }
     }
 }

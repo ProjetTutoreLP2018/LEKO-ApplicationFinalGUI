@@ -219,7 +219,8 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.isAdmin)
             {
-                ///TODO: Page d'ajout/suppression d'un modele
+                AjoutModele ajoutModele = new AjoutModele();
+                ajoutModele.Show();
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");

@@ -149,8 +149,7 @@ namespace LettreCooperation
             utilisateur.id_droit = index;
             utilisateur.mdp_utilisateur = textPass.Text;
 
-            model.CreerUtilisateur(utilisateur);
-            Init();
+           
             MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
                 " " + utilisateur.prenom_utilisateur + " a bien était créer");
 
@@ -160,6 +159,9 @@ namespace LettreCooperation
                 utilisateur.image_Blob_Signature = ImageToByteArray(imageSignature);
             }
 
+
+            model.CreerUtilisateur(utilisateur);
+            Init();
         }
 
 
