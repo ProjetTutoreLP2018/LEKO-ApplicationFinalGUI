@@ -39,10 +39,10 @@
             this.sauvegarderFichier = new System.Windows.Forms.SaveFileDialog();
             this.ouvrirFichierModele = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxMission = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.comboBoxModel = new System.Windows.Forms.ComboBox();
             this.buttonGenerer = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxMission = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,11 +124,27 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.BoutonParcourirFichierValoHonoraires);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(76, 66);
+            this.groupBox1.Location = new System.Drawing.Point(186, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(661, 256);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            // 
+            // textBoxMission
+            // 
+            this.textBoxMission.Location = new System.Drawing.Point(239, 184);
+            this.textBoxMission.Name = "textBoxMission";
+            this.textBoxMission.Size = new System.Drawing.Size(373, 20);
+            this.textBoxMission.TabIndex = 25;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(54, 184);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Mission : ";
             // 
             // comboBoxModel
             // 
@@ -143,7 +159,7 @@
             // buttonGenerer
             // 
             this.buttonGenerer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGenerer.BackgroundImage")));
-            this.buttonGenerer.Location = new System.Drawing.Point(661, 328);
+            this.buttonGenerer.Location = new System.Drawing.Point(772, 454);
             this.buttonGenerer.Name = "buttonGenerer";
             this.buttonGenerer.Size = new System.Drawing.Size(75, 23);
             this.buttonGenerer.TabIndex = 28;
@@ -151,31 +167,15 @@
             this.buttonGenerer.UseVisualStyleBackColor = true;
             this.buttonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Mission : ";
-            // 
-            // textBoxMission
-            // 
-            this.textBoxMission.Location = new System.Drawing.Point(239, 184);
-            this.textBoxMission.Name = "textBoxMission";
-            this.textBoxMission.Size = new System.Drawing.Size(373, 20);
-            this.textBoxMission.TabIndex = 25;
-            // 
-            // FenGenerationLC
+            // Page_CreationDeLc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonGenerer);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FenGenerationLC";
-            this.Size = new System.Drawing.Size(829, 461);
+            this.Name = "Page_CreationDeLc";
+            this.Size = new System.Drawing.Size(1030, 581);
             this.Load += new System.EventHandler(this.FenGenerationLC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

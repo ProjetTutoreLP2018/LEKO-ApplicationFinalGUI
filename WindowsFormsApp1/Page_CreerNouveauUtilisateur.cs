@@ -30,7 +30,7 @@ namespace LettreCooperation
         private void Init()
         {
 
-
+            labelPathImage.Text = String.Empty;
             textNom.Text = string.Empty;
             textPrenom.Text = string.Empty;
             textEmail.Text = string.Empty;

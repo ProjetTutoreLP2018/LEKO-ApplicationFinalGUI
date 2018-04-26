@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace LettreCooperation
 {
-    public partial class Page_AjoutNouveauModele : Form
+    public partial class PopUp_AjoutNouveauModele : Form
     {
         private string pathSource;
         private string pathDestination = Program.FINACOOPFolder + Properties.Settings.Default.PathModeles;
@@ -14,7 +14,7 @@ namespace LettreCooperation
         private string typeLettre;
         private ModelManager modeleManager = new ModelManager();
 
-        public Page_AjoutNouveauModele()
+        public PopUp_AjoutNouveauModele()
         {
             InitializeComponent();
 

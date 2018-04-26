@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class Page_AjoutNouveauModele
+    partial class PopUp_AjoutNouveauModele
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_AjoutNouveauModele));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp_AjoutNouveauModele));
             this.Ajouter = new System.Windows.Forms.Button();
             this.Selectionner = new System.Windows.Forms.Button();
             this.adresseFichier = new System.Windows.Forms.TextBox();

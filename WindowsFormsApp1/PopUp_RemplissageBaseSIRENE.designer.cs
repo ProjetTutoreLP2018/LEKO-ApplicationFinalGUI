@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class Page_RemplissageBaseSIRENE
+    partial class PopUp_RemplissageBaseSIRENE
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_RemplissageBaseSIRENE));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp_RemplissageBaseSIRENE));
             this.label2 = new System.Windows.Forms.Label();
             this.ListeChoixEntreprises = new System.Windows.Forms.ListBox();
             this.MotsCles = new System.Windows.Forms.TextBox();

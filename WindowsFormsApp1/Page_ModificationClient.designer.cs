@@ -34,6 +34,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.textBoxActivite = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.SupprimerClient = new System.Windows.Forms.Button();
             this.messageErr = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -124,7 +124,7 @@
             // BoutonValider
             // 
             this.BoutonValider.BackColor = System.Drawing.Color.YellowGreen;
-            this.BoutonValider.Location = new System.Drawing.Point(724, 421);
+            this.BoutonValider.Location = new System.Drawing.Point(819, 471);
             this.BoutonValider.Name = "BoutonValider";
             this.BoutonValider.Size = new System.Drawing.Size(75, 23);
             this.BoutonValider.TabIndex = 59;
@@ -136,7 +136,7 @@
             // 
             this.BoutonAnnuler.BackColor = System.Drawing.Color.White;
             this.BoutonAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.BoutonAnnuler.Location = new System.Drawing.Point(629, 421);
+            this.BoutonAnnuler.Location = new System.Drawing.Point(724, 471);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.BoutonAnnuler.TabIndex = 58;
@@ -148,7 +148,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 39);
+            this.tabControl1.Location = new System.Drawing.Point(98, 89);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(826, 376);
@@ -206,6 +206,16 @@
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.Red;
+            this.label43.Location = new System.Drawing.Point(460, 177);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(11, 13);
+            this.label43.TabIndex = 61;
+            this.label43.Text = "*";
             // 
             // label33
             // 
@@ -921,7 +931,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(131, 6);
+            this.comboBox2.Location = new System.Drawing.Point(226, 56);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
@@ -931,7 +941,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 6);
+            this.label7.Location = new System.Drawing.Point(98, 56);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 13);
@@ -942,7 +952,7 @@
             // 
             this.SupprimerClient.BackColor = System.Drawing.Color.Red;
             this.SupprimerClient.ForeColor = System.Drawing.Color.Black;
-            this.SupprimerClient.Location = new System.Drawing.Point(11, 421);
+            this.SupprimerClient.Location = new System.Drawing.Point(106, 471);
             this.SupprimerClient.Name = "SupprimerClient";
             this.SupprimerClient.Size = new System.Drawing.Size(75, 23);
             this.SupprimerClient.TabIndex = 5000001;
@@ -954,22 +964,12 @@
             // 
             this.messageErr.AutoSize = true;
             this.messageErr.ForeColor = System.Drawing.Color.Red;
-            this.messageErr.Location = new System.Drawing.Point(439, 422);
+            this.messageErr.Location = new System.Drawing.Point(534, 472);
             this.messageErr.Name = "messageErr";
             this.messageErr.Size = new System.Drawing.Size(0, 13);
             this.messageErr.TabIndex = 5000002;
             // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Location = new System.Drawing.Point(460, 177);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(11, 13);
-            this.label43.TabIndex = 61;
-            this.label43.Text = "*";
-            // 
-            // ModifClient
+            // Page_ModificationClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -981,8 +981,8 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.BoutonValider);
             this.Controls.Add(this.BoutonAnnuler);
-            this.Name = "ModifClient";
-            this.Size = new System.Drawing.Size(829, 461);
+            this.Name = "Page_ModificationClient";
+            this.Size = new System.Drawing.Size(1030, 581);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

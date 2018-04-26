@@ -50,12 +50,12 @@
             this.radioButtonArchive = new System.Windows.Forms.RadioButton();
             this.radioButtonRefus = new System.Windows.Forms.RadioButton();
             this.groupBoxEtat = new System.Windows.Forms.GroupBox();
-            this.buttonSupprimer = new System.Windows.Forms.Button();
-            this.labelNbrAttenteSigne = new System.Windows.Forms.Label();
-            this.labelNbrSigneExp = new System.Windows.Forms.Label();
-            this.labelNbrEnvoieCli = new System.Windows.Forms.Label();
-            this.labelNbrArchive = new System.Windows.Forms.Label();
             this.labelNbrRefus = new System.Windows.Forms.Label();
+            this.labelNbrArchive = new System.Windows.Forms.Label();
+            this.labelNbrEnvoieCli = new System.Windows.Forms.Label();
+            this.labelNbrSigneExp = new System.Windows.Forms.Label();
+            this.labelNbrAttenteSigne = new System.Windows.Forms.Label();
+            this.buttonSupprimer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxEtat.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             this.groupBox1.Controls.Add(this.comboClient);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(59, 47);
+            this.groupBox1.Location = new System.Drawing.Point(137, 111);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(478, 88);
             this.groupBox1.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.comboLC);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(59, 160);
+            this.groupBox2.Location = new System.Drawing.Point(137, 224);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(478, 185);
             this.groupBox2.TabIndex = 1;
@@ -204,7 +204,7 @@
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(555, 351);
+            this.button1.Location = new System.Drawing.Point(633, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -284,60 +284,12 @@
             this.groupBoxEtat.Controls.Add(this.radioButtonArchive);
             this.groupBoxEtat.Controls.Add(this.radioButtonSignerExp);
             this.groupBoxEtat.Controls.Add(this.radioButtonEnvoieCli);
-            this.groupBoxEtat.Location = new System.Drawing.Point(552, 160);
+            this.groupBoxEtat.Location = new System.Drawing.Point(630, 224);
             this.groupBoxEtat.Name = "groupBoxEtat";
             this.groupBoxEtat.Size = new System.Drawing.Size(262, 185);
             this.groupBoxEtat.TabIndex = 9;
             this.groupBoxEtat.TabStop = false;
             this.groupBoxEtat.Text = "Filtre Etats";
-            // 
-            // buttonSupprimer
-            // 
-            this.buttonSupprimer.BackColor = System.Drawing.Color.Silver;
-            this.buttonSupprimer.Enabled = false;
-            this.buttonSupprimer.Location = new System.Drawing.Point(462, 351);
-            this.buttonSupprimer.Name = "buttonSupprimer";
-            this.buttonSupprimer.Size = new System.Drawing.Size(75, 23);
-            this.buttonSupprimer.TabIndex = 10;
-            this.buttonSupprimer.Text = "Supprimer";
-            this.buttonSupprimer.UseVisualStyleBackColor = false;
-            this.buttonSupprimer.Click += new System.EventHandler(this.ButtonSupprimer_Click);
-            // 
-            // labelNbrAttenteSigne
-            // 
-            this.labelNbrAttenteSigne.AutoSize = true;
-            this.labelNbrAttenteSigne.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrAttenteSigne.Location = new System.Drawing.Point(194, 26);
-            this.labelNbrAttenteSigne.Name = "labelNbrAttenteSigne";
-            this.labelNbrAttenteSigne.Size = new System.Drawing.Size(0, 13);
-            this.labelNbrAttenteSigne.TabIndex = 9;
-            // 
-            // labelNbrSigneExp
-            // 
-            this.labelNbrSigneExp.AutoSize = true;
-            this.labelNbrSigneExp.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrSigneExp.Location = new System.Drawing.Point(194, 54);
-            this.labelNbrSigneExp.Name = "labelNbrSigneExp";
-            this.labelNbrSigneExp.Size = new System.Drawing.Size(0, 13);
-            this.labelNbrSigneExp.TabIndex = 10;
-            // 
-            // labelNbrEnvoieCli
-            // 
-            this.labelNbrEnvoieCli.AutoSize = true;
-            this.labelNbrEnvoieCli.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrEnvoieCli.Location = new System.Drawing.Point(194, 80);
-            this.labelNbrEnvoieCli.Name = "labelNbrEnvoieCli";
-            this.labelNbrEnvoieCli.Size = new System.Drawing.Size(0, 13);
-            this.labelNbrEnvoieCli.TabIndex = 11;
-            // 
-            // labelNbrArchive
-            // 
-            this.labelNbrArchive.AutoSize = true;
-            this.labelNbrArchive.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrArchive.Location = new System.Drawing.Point(194, 108);
-            this.labelNbrArchive.Name = "labelNbrArchive";
-            this.labelNbrArchive.Size = new System.Drawing.Size(0, 13);
-            this.labelNbrArchive.TabIndex = 12;
             // 
             // labelNbrRefus
             // 
@@ -348,7 +300,55 @@
             this.labelNbrRefus.Size = new System.Drawing.Size(0, 13);
             this.labelNbrRefus.TabIndex = 13;
             // 
-            // Voir_Modif_LC
+            // labelNbrArchive
+            // 
+            this.labelNbrArchive.AutoSize = true;
+            this.labelNbrArchive.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelNbrArchive.Location = new System.Drawing.Point(194, 108);
+            this.labelNbrArchive.Name = "labelNbrArchive";
+            this.labelNbrArchive.Size = new System.Drawing.Size(0, 13);
+            this.labelNbrArchive.TabIndex = 12;
+            // 
+            // labelNbrEnvoieCli
+            // 
+            this.labelNbrEnvoieCli.AutoSize = true;
+            this.labelNbrEnvoieCli.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelNbrEnvoieCli.Location = new System.Drawing.Point(194, 80);
+            this.labelNbrEnvoieCli.Name = "labelNbrEnvoieCli";
+            this.labelNbrEnvoieCli.Size = new System.Drawing.Size(0, 13);
+            this.labelNbrEnvoieCli.TabIndex = 11;
+            // 
+            // labelNbrSigneExp
+            // 
+            this.labelNbrSigneExp.AutoSize = true;
+            this.labelNbrSigneExp.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelNbrSigneExp.Location = new System.Drawing.Point(194, 54);
+            this.labelNbrSigneExp.Name = "labelNbrSigneExp";
+            this.labelNbrSigneExp.Size = new System.Drawing.Size(0, 13);
+            this.labelNbrSigneExp.TabIndex = 10;
+            // 
+            // labelNbrAttenteSigne
+            // 
+            this.labelNbrAttenteSigne.AutoSize = true;
+            this.labelNbrAttenteSigne.ForeColor = System.Drawing.Color.YellowGreen;
+            this.labelNbrAttenteSigne.Location = new System.Drawing.Point(194, 26);
+            this.labelNbrAttenteSigne.Name = "labelNbrAttenteSigne";
+            this.labelNbrAttenteSigne.Size = new System.Drawing.Size(0, 13);
+            this.labelNbrAttenteSigne.TabIndex = 9;
+            // 
+            // buttonSupprimer
+            // 
+            this.buttonSupprimer.BackColor = System.Drawing.Color.Silver;
+            this.buttonSupprimer.Enabled = false;
+            this.buttonSupprimer.Location = new System.Drawing.Point(540, 415);
+            this.buttonSupprimer.Name = "buttonSupprimer";
+            this.buttonSupprimer.Size = new System.Drawing.Size(75, 23);
+            this.buttonSupprimer.TabIndex = 10;
+            this.buttonSupprimer.Text = "Supprimer";
+            this.buttonSupprimer.UseVisualStyleBackColor = false;
+            this.buttonSupprimer.Click += new System.EventHandler(this.ButtonSupprimer_Click);
+            // 
+            // Page_ManagerLc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -360,8 +360,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
-            this.Name = "Voir_Modif_LC";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Name = "Page_ManagerLc";
+            this.Size = new System.Drawing.Size(1030, 581);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

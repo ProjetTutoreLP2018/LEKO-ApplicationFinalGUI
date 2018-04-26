@@ -8,7 +8,7 @@ namespace LettreCooperation
     public partial class Page_Principale : Form
     {
 
-        private UserControl log;
+       
         
         public static Utilisateur Utilisateur { get; set; }
 
@@ -20,6 +20,8 @@ namespace LettreCooperation
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
+           // this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
 
@@ -35,15 +37,17 @@ namespace LettreCooperation
             pictureLogout.Visible = false;
             labelUser.Visible = false;
 
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+        
 
-            log = new Page_Connexion
+            UserControl log = new Page_Connexion(this)
             {
                 Parent = this,
-                Dock = DockStyle.Top
+                
             };
 
-            log.Show(); 
+            log.Show();
+
+            this.mainMenu.Visible = false;
 
             imageHome.Visible = false;
 
@@ -221,7 +225,7 @@ namespace LettreCooperation
         {
             if (Page_Principale.Utilisateur.isAdmin)
             {
-                Page_AjoutNouveauModele ajoutModele = new Page_AjoutNouveauModele();
+                PopUp_AjoutNouveauModele ajoutModele = new PopUp_AjoutNouveauModele();
                 ajoutModele.Show();
             }
             else

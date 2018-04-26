@@ -81,7 +81,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(154, 31);
+            this.groupBox1.Location = new System.Drawing.Point(239, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(531, 389);
             this.groupBox1.TabIndex = 0;
@@ -324,14 +324,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom : ";
             // 
-            // CreerUtilisateur
+            // Page_CreerNouveauUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
-            this.Name = "CreerUtilisateur";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Name = "Page_CreerNouveauUtilisateur";
+            this.Size = new System.Drawing.Size(1030, 581);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -344,15 +344,32 @@ namespace LettreCooperation
                 return;
 
 
-            if (File.Exists(Program.FINACOOPFolder + lcVisible.chemin_lc))
-            File.Delete(Program.FINACOOPFolder + lcVisible.chemin_lc);
-            else
-                MessageBox.Show("Le Fichier n'existe pas");
+            if(comboLC.Text.Length == 0)
+            {
+                MessageBox.Show("Merci de séléctionner une Lettre de coopération.");
+                return;
+            }
 
-            model.DeleteLC(lcVisible);
+            try
+            {
+                if (File.Exists(Program.FINACOOPFolder + lcVisible.chemin_lc))
+                    File.Delete(Program.FINACOOPFolder + lcVisible.chemin_lc);
+                else
+                    MessageBox.Show("Le Fichier n'existe pas");
 
-            MessageBox.Show("Votre LC a bien était supprimer");
+                model.DeleteLC(lcVisible);
+
+                MessageBox.Show("Votre LC a bien était supprimer");
+                
+
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Merci de fermer le fichier Word avant la suppression");
+            }
+
             Init();
+
         }
     }
 }

@@ -85,7 +85,7 @@
             // 
             this.groupBox1.Controls.Add(this.comboNomUtilisateur);
             this.groupBox1.Controls.Add(this.labelNomUtilisateur);
-            this.groupBox1.Location = new System.Drawing.Point(56, 30);
+            this.groupBox1.Location = new System.Drawing.Point(143, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(321, 100);
             this.groupBox1.TabIndex = 2;
@@ -111,7 +111,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(56, 166);
+            this.groupBox2.Location = new System.Drawing.Point(143, 218);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(697, 261);
             this.groupBox2.TabIndex = 3;
@@ -322,13 +322,13 @@
             // 
             // pictureBoxSignature
             // 
-            this.pictureBoxSignature.Location = new System.Drawing.Point(480, 57);
+            this.pictureBoxSignature.Location = new System.Drawing.Point(567, 109);
             this.pictureBoxSignature.Name = "pictureBoxSignature";
             this.pictureBoxSignature.Size = new System.Drawing.Size(216, 100);
             this.pictureBoxSignature.TabIndex = 4;
             this.pictureBoxSignature.TabStop = false;
             // 
-            // ManagerUtilisateur
+            // Page_ManagerUtilisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,8 +336,8 @@
             this.Controls.Add(this.pictureBoxSignature);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ManagerUtilisateur";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Name = "Page_ManagerUtilisateur";
+            this.Size = new System.Drawing.Size(1030, 581);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

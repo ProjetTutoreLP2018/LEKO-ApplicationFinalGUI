@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RetourClientLC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_EnvoieLcAuClient));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.LC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.client = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +55,10 @@
             this.NomCreateur,
             this.NomSign,
             this.envoyer});
-            this.dataGridView.Location = new System.Drawing.Point(43, 10);
+            this.dataGridView.Location = new System.Drawing.Point(142, 30);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView.Size = new System.Drawing.Size(733, 364);
+            this.dataGridView.Size = new System.Drawing.Size(733, 413);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
@@ -106,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 400);
+            this.label1.Location = new System.Drawing.Point(188, 469);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 13);
             this.label1.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(389, 398);
+            this.textBoxPass.Location = new System.Drawing.Point(488, 467);
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(237, 20);
             this.textBoxPass.TabIndex = 3;
@@ -123,7 +123,7 @@
             // buttonEnvoyer
             // 
             this.buttonEnvoyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnvoyer.BackgroundImage")));
-            this.buttonEnvoyer.Location = new System.Drawing.Point(661, 395);
+            this.buttonEnvoyer.Location = new System.Drawing.Point(760, 464);
             this.buttonEnvoyer.Name = "buttonEnvoyer";
             this.buttonEnvoyer.Size = new System.Drawing.Size(75, 23);
             this.buttonEnvoyer.TabIndex = 1;
@@ -136,14 +136,14 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(782, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(881, 77);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 31);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
-            // EnvoieLcAuClient
+            // Page_EnvoieLcAuClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,8 +154,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonEnvoyer);
             this.Controls.Add(this.dataGridView);
-            this.Name = "EnvoieLcAuClient";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Name = "Page_EnvoieLcAuClient";
+            this.Size = new System.Drawing.Size(1030, 581);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

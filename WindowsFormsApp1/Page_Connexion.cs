@@ -8,10 +8,13 @@ namespace LettreCooperation
     public partial class Page_Connexion : UserControl
     {
 
-        public Page_Connexion()
+        private Form mainForm;
+
+        public Page_Connexion(Form mainForm)
         {
             InitializeComponent();
             this.textBoxPass.PasswordChar = '•';
+            this.mainForm = mainForm;
 
         }
 
@@ -45,7 +48,10 @@ namespace LettreCooperation
 
                     this.labelErrorConnect.Text = string.Empty;
                     Cursor.Current = Cursors.Default;
-      
+                    mainForm.MainMenuStrip.Visible = true;
+
+
+
 
                 } else
                 {
@@ -88,5 +94,7 @@ namespace LettreCooperation
             panel.Controls.Add(new Page_TableauDeBord());
 
         }
+
+    
     }
 }
