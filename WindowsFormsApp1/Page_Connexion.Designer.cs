@@ -52,9 +52,9 @@
             this.panelConnexion.Controls.Add(this.textBoxUtilisateur);
             this.panelConnexion.Controls.Add(this.labelUtilisateur);
             this.panelConnexion.Controls.Add(this.pictureLogo);
-            this.panelConnexion.Location = new System.Drawing.Point(0, 0);
+            this.panelConnexion.Location = new System.Drawing.Point(4, 0);
             this.panelConnexion.Name = "panelConnexion";
-            this.panelConnexion.Size = new System.Drawing.Size(1030, 514);
+            this.panelConnexion.Size = new System.Drawing.Size(829, 514);
             this.panelConnexion.TabIndex = 2;
             // 
             // labelErrorConnect
@@ -63,7 +63,7 @@
             this.labelErrorConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelErrorConnect.ForeColor = System.Drawing.Color.Red;
             this.labelErrorConnect.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelErrorConnect.Location = new System.Drawing.Point(422, 289);
+            this.labelErrorConnect.Location = new System.Drawing.Point(312, 282);
             this.labelErrorConnect.Name = "labelErrorConnect";
             this.labelErrorConnect.Size = new System.Drawing.Size(0, 17);
             this.labelErrorConnect.TabIndex = 6;
@@ -73,7 +73,7 @@
             this.buttonConnexion.BackColor = System.Drawing.Color.YellowGreen;
             this.buttonConnexion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonConnexion.BackgroundImage")));
             this.buttonConnexion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonConnexion.Location = new System.Drawing.Point(487, 443);
+            this.buttonConnexion.Location = new System.Drawing.Point(374, 436);
             this.buttonConnexion.Name = "buttonConnexion";
             this.buttonConnexion.Size = new System.Drawing.Size(75, 23);
             this.buttonConnexion.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(430, 391);
+            this.textBoxPass.Location = new System.Drawing.Point(320, 384);
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(188, 20);
             this.textBoxPass.TabIndex = 4;
@@ -93,7 +93,7 @@
             // 
             this.labelPass.AutoSize = true;
             this.labelPass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelPass.Location = new System.Drawing.Point(427, 375);
+            this.labelPass.Location = new System.Drawing.Point(317, 368);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(71, 13);
             this.labelPass.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             // textBoxUtilisateur
             // 
-            this.textBoxUtilisateur.Location = new System.Drawing.Point(430, 334);
+            this.textBoxUtilisateur.Location = new System.Drawing.Point(320, 327);
             this.textBoxUtilisateur.Name = "textBoxUtilisateur";
             this.textBoxUtilisateur.Size = new System.Drawing.Size(188, 20);
             this.textBoxUtilisateur.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.labelUtilisateur.AutoSize = true;
             this.labelUtilisateur.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelUtilisateur.Location = new System.Drawing.Point(427, 318);
+            this.labelUtilisateur.Location = new System.Drawing.Point(317, 311);
             this.labelUtilisateur.Name = "labelUtilisateur";
             this.labelUtilisateur.Size = new System.Drawing.Size(86, 13);
             this.labelUtilisateur.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.pictureLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureLogo.InitialImage")));
-            this.pictureLogo.Location = new System.Drawing.Point(381, 46);
+            this.pictureLogo.Location = new System.Drawing.Point(271, 39);
             this.pictureLogo.Name = "pictureLogo";
             this.pictureLogo.Size = new System.Drawing.Size(282, 238);
             this.pictureLogo.TabIndex = 0;

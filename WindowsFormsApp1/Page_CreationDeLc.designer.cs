@@ -124,7 +124,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.BoutonParcourirFichierValoHonoraires);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(186, 132);
+            this.groupBox1.Location = new System.Drawing.Point(79, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(661, 256);
             this.groupBox1.TabIndex = 27;
@@ -159,7 +159,7 @@
             // buttonGenerer
             // 
             this.buttonGenerer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGenerer.BackgroundImage")));
-            this.buttonGenerer.Location = new System.Drawing.Point(772, 454);
+            this.buttonGenerer.Location = new System.Drawing.Point(665, 356);
             this.buttonGenerer.Name = "buttonGenerer";
             this.buttonGenerer.Size = new System.Drawing.Size(75, 23);
             this.buttonGenerer.TabIndex = 28;
@@ -175,7 +175,7 @@
             this.Controls.Add(this.buttonGenerer);
             this.Controls.Add(this.groupBox1);
             this.Name = "Page_CreationDeLc";
-            this.Size = new System.Drawing.Size(1030, 581);
+            this.Size = new System.Drawing.Size(829, 514);
             this.Load += new System.EventHandler(this.FenGenerationLC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

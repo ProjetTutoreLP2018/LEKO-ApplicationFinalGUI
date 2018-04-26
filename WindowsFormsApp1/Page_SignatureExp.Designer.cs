@@ -53,7 +53,7 @@
             this.date_Création,
             this.dechiffreuse,
             this.selectionner});
-            this.LCDataGridView.Location = new System.Drawing.Point(157, 41);
+            this.LCDataGridView.Location = new System.Drawing.Point(52, 29);
             this.LCDataGridView.Name = "LCDataGridView";
             this.LCDataGridView.Size = new System.Drawing.Size(721, 419);
             this.LCDataGridView.TabIndex = 0;
@@ -98,7 +98,7 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(705, 474);
+            this.button1.Location = new System.Drawing.Point(698, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -109,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(240, 479);
+            this.label1.Location = new System.Drawing.Point(135, 467);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(277, 13);
             this.label1.TabIndex = 3;
@@ -117,7 +117,7 @@
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(523, 476);
+            this.textBoxPass.Location = new System.Drawing.Point(418, 464);
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(176, 20);
             this.textBoxPass.TabIndex = 4;
@@ -128,7 +128,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(884, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(779, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 31);
             this.pictureBox1.TabIndex = 5;
@@ -146,7 +146,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LCDataGridView);
             this.Name = "Page_SignatureExp";
-            this.Size = new System.Drawing.Size(1030, 581);
+            this.Size = new System.Drawing.Size(829, 514);
             ((System.ComponentModel.ISupportInitialize)(this.LCDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -55,7 +55,7 @@
             this.NomCreateur,
             this.NomSign,
             this.envoyer});
-            this.dataGridView.Location = new System.Drawing.Point(142, 30);
+            this.dataGridView.Location = new System.Drawing.Point(46, 29);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView.Size = new System.Drawing.Size(733, 413);
@@ -106,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 469);
+            this.label1.Location = new System.Drawing.Point(92, 468);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 13);
             this.label1.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(488, 467);
+            this.textBoxPass.Location = new System.Drawing.Point(392, 466);
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(237, 20);
             this.textBoxPass.TabIndex = 3;
@@ -123,7 +123,7 @@
             // buttonEnvoyer
             // 
             this.buttonEnvoyer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEnvoyer.BackgroundImage")));
-            this.buttonEnvoyer.Location = new System.Drawing.Point(760, 464);
+            this.buttonEnvoyer.Location = new System.Drawing.Point(704, 463);
             this.buttonEnvoyer.Name = "buttonEnvoyer";
             this.buttonEnvoyer.Size = new System.Drawing.Size(75, 23);
             this.buttonEnvoyer.TabIndex = 1;
@@ -136,7 +136,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(881, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(785, 76);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 31);
             this.pictureBox1.TabIndex = 6;
@@ -155,7 +155,7 @@
             this.Controls.Add(this.buttonEnvoyer);
             this.Controls.Add(this.dataGridView);
             this.Name = "Page_EnvoieLcAuClient";
-            this.Size = new System.Drawing.Size(1030, 581);
+            this.Size = new System.Drawing.Size(829, 514);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
