@@ -24,7 +24,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Droit> GetListDroit()
         {
-            return context.Droit.ToList();
+            try { 
+                return context.Droit.ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -34,8 +43,17 @@ namespace LettreCooperation.modele
         /// <param name="utilisateur"></param>
         public void CreerUtilisateur(Utilisateur utilisateur)
         {
-            context.Utilisateur.Add(utilisateur);
-            context.SaveChanges();
+            try { 
+                context.Utilisateur.Add(utilisateur);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -45,8 +63,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Utilisateur> GetListUtilisateurs()
         {
+            try { 
+                return context.Utilisateur.ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
-            return context.Utilisateur.ToList();
+                return null;
+            }
         }
 
 
@@ -55,7 +81,16 @@ namespace LettreCooperation.modele
         /// </summary>
         public void SaveBDD()
         {
-            context.SaveChanges();
+            try { 
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -65,8 +100,17 @@ namespace LettreCooperation.modele
         /// <param name="utilisateur"></param>
         public void SupprimerUtilisateur(Utilisateur utilisateur)
         {
-            context.Utilisateur.Remove(utilisateur);
-            context.SaveChanges();
+            try { 
+                context.Utilisateur.Remove(utilisateur);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -76,7 +120,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GetListLc()
         {
-            return context.LC.ToList();
+            try { 
+                return context.LC.ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -87,12 +140,21 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GetListLcASigner()
         {
-            return (from lc in context.LC
-                    join etat in context.Etat
-                    on lc.id_etat equals etat.id_etat
-                    where etat.libelle_etat == "C"
-                    || etat.libelle_etat == "R"
-                    select lc).ToList();
+            try { 
+                return (from lc in context.LC
+                        join etat in context.Etat
+                        on lc.id_etat equals etat.id_etat
+                        where etat.libelle_etat == "C"
+                        || etat.libelle_etat == "R"
+                        select lc).ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -103,11 +165,20 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public LC GetListLCByName(string nom)
         {
-            List<LC> lcs = (from lc in context.LC
-                    where lc.nom_lc == nom
-                    select lc).ToList();
+            try { 
+                List<LC> lcs = (from lc in context.LC
+                        where lc.nom_lc == nom
+                        select lc).ToList();
 
-            return lcs.First();
+                return lcs.First();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -117,9 +188,18 @@ namespace LettreCooperation.modele
         /// <param name="lc"></param>
         public void DeleteLC(LC lc)
         {
-            LC lcASupp = context.LC.Find(lc.id_lc);
-            context.LC.Remove(lcASupp);
-            context.SaveChanges();
+            try { 
+                LC lcASupp = context.LC.Find(lc.id_lc);
+                context.LC.Remove(lcASupp);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -129,7 +209,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Client> GetListClient()
         {
-            return context.Client.ToList();
+            try { 
+                return context.Client.ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -141,7 +230,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GestLcFromClient(int indexClient)
         {
-            return context.LC.Where(a => a.id_client == indexClient).ToList();
+            try { 
+                return context.LC.Where(a => a.id_client == indexClient).ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -167,8 +265,8 @@ namespace LettreCooperation.modele
             }
             catch(System.Data.Entity.Core.EntityException e)
             {
-                MessageBox.Show("La connextion n'a pas pu être établie avec la base de données." +
-                    " Merci de vérifier votre connexion internet.");
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
                 return null;
             }
@@ -201,7 +299,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Etat GetEtat(int? index)
         {
-            return context.Etat.Find(index);
+            try { 
+                return context.Etat.Find(index);
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -212,7 +319,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Utilisateur GetUser(int? index)
         {
-            return context.Utilisateur.Find(index);
+            try { 
+                return context.Utilisateur.Find(index);
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -222,8 +338,17 @@ namespace LettreCooperation.modele
         /// <param name="client"></param>
         public void CreerClient(Client client)
         {
-            context.Client.Add(client);
-            context.SaveChanges();
+            try { 
+                context.Client.Add(client);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -233,8 +358,17 @@ namespace LettreCooperation.modele
         /// <param name="adresse"></param>
         public void CreerAdresse(Adresse adresse)
         {
-            context.Adresse.Add(adresse);
-            context.SaveChanges();
+            try { 
+                context.Adresse.Add(adresse);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -245,12 +379,21 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GetListLCWaitingSend()
         {
-     
-            return (from lc in context.LC
-                   join etat in context.Etat
-                   on lc.id_etat equals etat.id_etat
-                   where etat.libelle_etat == "SE" 
-                   select lc).ToList();
+
+            try { 
+                return (from lc in context.LC
+                       join etat in context.Etat
+                       on lc.id_etat equals etat.id_etat
+                       where etat.libelle_etat == "SE" 
+                       select lc).ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
         
@@ -261,7 +404,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Client FindClient(int id)
         {
-            return context.Client.Find(id);
+            try { 
+                return context.Client.Find(id);
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -273,13 +425,22 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Utilisateur FindUtilisateur(int? id)
         {
-          
-            Utilisateur u = context.Utilisateur.Find(id);
 
-            if (u == null)
-                return new Utilisateur();
+            try { 
+                Utilisateur u = context.Utilisateur.Find(id);
 
-            return u;
+                if (u == null)
+                    return new Utilisateur();
+
+                return u;
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -290,8 +451,17 @@ namespace LettreCooperation.modele
         /// <param name="etat"></param>
         public void UpdateEtatLc(LC lc, int etat)
         {
-            lc.id_etat = etat;
-            context.SaveChanges();
+            try { 
+                lc.id_etat = etat;
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -303,19 +473,20 @@ namespace LettreCooperation.modele
         /// <param name="path"></param>
         public void UpdatePathLc(LC lc, string path)
         {
-            lc.chemin_lc = path;
-            context.SaveChanges();
+            try { 
+                lc.chemin_lc = path;
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
-        /// <summary>
-        /// Méthode de modification d'un client
-        /// </summary>
-        public void ModifClient()
-        {
-            context.SaveChanges();
-        }
-
-
+ 
         /// <summary>
         /// Méthode de suppression d'un clinet
         /// </summary>
@@ -334,9 +505,18 @@ namespace LettreCooperation.modele
 
             if (PossedeLC == false)
             {
-                context.Client.Remove(client);
-                context.SaveChanges();
-                return true;
+                try { 
+                    context.Client.Remove(client);
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (System.Data.Entity.Core.EntityException e)
+                {
+                    MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                        "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                    return false;
+                }
             }
             else
             {
@@ -353,13 +533,22 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Client GetClients(string raisonSociale)
         {
-           
-            IEnumerable<Client> client_sql = from c
-                                in context.Client
-                                             where c.raison_sociale == raisonSociale
-                                             select c;
 
-            return client_sql.First();
+            try { 
+                IEnumerable<Client> client_sql = from c
+                                    in context.Client
+                                                 where c.raison_sociale == raisonSociale
+                                                 select c;
+
+                return client_sql.First();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -370,7 +559,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Modele> GetModeles()
         {
-            return context.Modele.ToList();
+            try {
+                return context.Modele.ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -381,8 +579,17 @@ namespace LettreCooperation.modele
         /// <param name="lc"></param>
         public void SaveLC(LC lc)
         {
-            context.LC.Add(lc);
-            context.SaveChanges();
+            try { 
+                context.LC.Add(lc);
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -394,7 +601,16 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Etat GetEtatById(int? i)
         {
-            return context.Etat.Find(i);
+            try { 
+                return context.Etat.Find(i);
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -405,9 +621,18 @@ namespace LettreCooperation.modele
         /// <param name="i"></param>
         public void ChangerEtatLC_Signer(int i)
         {
-            LC lc = context.LC.Find(i);
-            lc.id_etat = 7;
-            context.SaveChanges();
+            try { 
+                LC lc = context.LC.Find(i);
+                lc.id_etat = 7;
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
         /// <summary>
@@ -418,13 +643,22 @@ namespace LettreCooperation.modele
         /// <param name="utilisateur"></param>
         public void AjoutSignataire(LC lc, Utilisateur utilisateur)
         {
-            LC lcFromDB = context.LC.Find(lc.id_lc);
+            try { 
+                LC lcFromDB = context.LC.Find(lc.id_lc);
 
-            //MessageBox.Show("Utilisateur signataire id : " + utilisateur.id_utilisateur
-              //  + " Nom :" + utilisateur.nom_utilisateur);
+                //MessageBox.Show("Utilisateur signataire id : " + utilisateur.id_utilisateur
+                  //  + " Nom :" + utilisateur.nom_utilisateur);
 
-            lcFromDB.id_signataire = utilisateur.id_utilisateur;
-            context.SaveChanges();
+                lcFromDB.id_signataire = utilisateur.id_utilisateur;
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
         }
 
 
@@ -436,9 +670,18 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            try { 
+                MemoryStream ms = new MemoryStream(byteArrayIn);
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -458,9 +701,12 @@ namespace LettreCooperation.modele
                 context.SaveChanges();
                 MessageBox.Show("Le modéle de LC " + nomFichier + " a était ajoutée");
             }
-            catch
+            catch (System.Data.Entity.Core.EntityException e)
             {
-                MessageBox.Show("Erreur, le modéle n'as pas était ajouté");
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
             }
 
         }
@@ -473,8 +719,17 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Etat> GetLesEtatsLC()
         {
-            return (from Etat in context.Etat
-                   select Etat).ToList();
+            try { 
+                return (from Etat in context.Etat
+                       select Etat).ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
@@ -484,12 +739,20 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public int GetIdEtatArchiver()
         {
-            
-            var idEtatArchiver =  from etat in context.Etat
-                    where etat.libelle_etat == "A"
-                    select etat.id_etat;
+            try { 
+                var idEtatArchiver =  from etat in context.Etat
+                        where etat.libelle_etat == "A"
+                        select etat.id_etat;
 
-            return idEtatArchiver.First();
+                return idEtatArchiver.First();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return -1;
+            }
 
         }
 
@@ -501,23 +764,40 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public int GetIdEtatRefuser()
         {
-            var idEtatArchiver = from etat in context.Etat
-                                 where etat.libelle_etat == "R"
-                                 select etat.id_etat;
+            try { 
+                var idEtatArchiver = from etat in context.Etat
+                                     where etat.libelle_etat == "R"
+                                     select etat.id_etat;
 
-            return idEtatArchiver.First();
+                return idEtatArchiver.First();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return -1;
+            }
         }
 
 
         public List<Client> GetListClientRetour()
         {
-            return (from client in context.Client
-                    join lc in context.LC
-                    on client.id_client equals lc.id_client
-                    where lc.id_etat == 8
-                    select client).Distinct().ToList();
+            try { 
+                return (from client in context.Client
+                        join lc in context.LC
+                        on client.id_client equals lc.id_client
+                        where lc.id_etat == 8
+                        select client).Distinct().ToList();
 
-          
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
 
         }
 
@@ -525,36 +805,62 @@ namespace LettreCooperation.modele
 
         public List<Client> GetListClientArchive()
         {
-            return (from client in context.Client
-                    join lc in context.LC
-                    on client.id_client equals lc.id_client
-                    where lc.id_etat == 10
-                    select client).Distinct().ToList();
+            try { 
+                return (from client in context.Client
+                        join lc in context.LC
+                        on client.id_client equals lc.id_client
+                        where lc.id_etat == 10
+                        select client).Distinct().ToList();
 
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
+                return null;
+            }
 
         }
 
 
         public List<LC> GetListLCFromClienteRetour(int id)
         {
-            return (from client in context.Client
-                    join lc in context.LC
-                    on client.id_client equals lc.id_client
-                    join e in context.Etat
-                    on lc.id_etat equals e.id_etat
-                    where e.libelle_etat == "AC"
-                    && client.id_client == id
-                    select lc).ToList();
+            try { 
+                return (from client in context.Client
+                        join lc in context.LC
+                        on client.id_client equals lc.id_client
+                        join e in context.Etat
+                        on lc.id_etat equals e.id_etat
+                        where e.libelle_etat == "AC"
+                        && client.id_client == id
+                        select lc).ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
 
 
         public List<LC> GetListLCFromClienteArchive(int id)
         {
-            return (from lc in context.LC
-                    where lc.id_client == id
-                    && lc.id_etat == 10
-                    select lc).ToList();
+            try { 
+                return (from lc in context.LC
+                        where lc.id_client == id
+                        && lc.id_etat == 10
+                        select lc).ToList();
+            }
+            catch (System.Data.Entity.Core.EntityException e)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return null;
+            }
         }
     }
 }
