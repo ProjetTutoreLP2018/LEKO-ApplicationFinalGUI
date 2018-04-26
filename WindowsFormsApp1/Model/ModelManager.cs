@@ -613,7 +613,7 @@ namespace LettreCooperation.modele
             } 
         }
 
-
+         
         /// <summary>
         /// Méthode qui eprmet de changer l'état d'une LC
         /// en 'LC_Signer'
