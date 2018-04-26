@@ -231,7 +231,7 @@ namespace LettreCooperation
 
             try
             {
-                model.ModifClient();
+                model.SaveBDD();
                 MessageBox.Show("Le client "+ clients[index].raison_sociale + " a bien été modifié.");
                 Init();
             }
