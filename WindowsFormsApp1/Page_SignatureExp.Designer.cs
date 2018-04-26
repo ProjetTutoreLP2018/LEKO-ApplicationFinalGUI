@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class SignatureExp
+    partial class Page_SignatureExp
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignatureExp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_SignatureExp));
             this.LCDataGridView = new System.Windows.Forms.DataGridView();
             this.nom_LC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_client = new System.Windows.Forms.DataGridViewTextBoxColumn();

@@ -8,7 +8,7 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-    public partial class Voir_Modif_LC : UserControl
+    public partial class Page_ManagerLc : UserControl
     {
 
         private ModelManager model;
@@ -20,7 +20,7 @@ namespace LettreCooperation
         private LC lcVisible;
     
 
-        public Voir_Modif_LC()
+        public Page_ManagerLc()
         {
             InitializeComponent();
             Init();
@@ -149,7 +149,7 @@ namespace LettreCooperation
                 buttonSupprimer.Enabled = false;
                 buttonSupprimer.BackColor = Color.Silver;
 
-                if (PagePrincipale.Utilisateur.id_droit == 2 || PagePrincipale.Utilisateur.isAdmin)
+                if (Page_Principale.Utilisateur.id_droit == 2 || Page_Principale.Utilisateur.isAdmin)
                 {
                     buttonSupprimer.Enabled = true;
                     buttonSupprimer.BackColor = Color.Red;
@@ -165,7 +165,7 @@ namespace LettreCooperation
             {
                 this.etat = 8;
 
-                if (PagePrincipale.Utilisateur.isAdmin)
+                if (Page_Principale.Utilisateur.isAdmin)
                 {
                     buttonSupprimer.Enabled = true;
                     buttonSupprimer.BackColor = Color.Red;
@@ -181,7 +181,7 @@ namespace LettreCooperation
             {
                 this.etat = 10;
 
-                if (PagePrincipale.Utilisateur.isAdmin)
+                if (Page_Principale.Utilisateur.isAdmin)
                 {
                     buttonSupprimer.Enabled = true;
                     buttonSupprimer.BackColor = Color.Red;
@@ -211,12 +211,12 @@ namespace LettreCooperation
 
             if (radioButtonArchive.Checked)
             {
-                Page_AfficherPDF afficherPDF = new Page_AfficherPDF();
+                PopUp_AfficherPDF afficherPDF = new PopUp_AfficherPDF();
                 afficherPDF.Initialiser(Program.FINACOOPFolder + lcVisible.chemin_lc);
                 afficherPDF.Show();
             } else
             {
-                WaitForm waitForm = new WaitForm();
+                PopUp_Patienter waitForm = new PopUp_Patienter();
 
                 try
                 {

@@ -36,7 +36,7 @@ namespace LettreCooperation
                 if (connecte != null)
                 {
                     this.Visible = false;
-                    PagePrincipale.Utilisateur = connecte;
+                    Page_Principale.Utilisateur = connecte;
 
                     this.InitMainPage();
 
@@ -82,10 +82,10 @@ namespace LettreCooperation
             labelUser.Visible = true;
 
             Label labelWelcome = (Label)this.Parent.Controls.Find("labelUser", false)[0];
-            labelWelcome.Text = PagePrincipale.Utilisateur.nom_utilisateur
-        + " " + PagePrincipale.Utilisateur.prenom_utilisateur;
+            labelWelcome.Text = Page_Principale.Utilisateur.nom_utilisateur
+        + " " + Page_Principale.Utilisateur.prenom_utilisateur;
 
-            panel.Controls.Add(new UCTableauBord());
+            panel.Controls.Add(new Page_TableauDeBord());
 
         }
     }

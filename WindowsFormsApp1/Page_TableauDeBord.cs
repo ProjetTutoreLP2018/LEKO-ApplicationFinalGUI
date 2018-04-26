@@ -12,9 +12,9 @@ using LettreCooperation.modele;
 
 namespace LettreCooperation
 {
-	public partial class UCTableauBord : UserControl
+	public partial class Page_TableauDeBord : UserControl
 	{
-		public UCTableauBord()
+		public Page_TableauDeBord()
 		{
 			InitializeComponent();
 		}

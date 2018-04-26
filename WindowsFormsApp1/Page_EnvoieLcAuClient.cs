@@ -83,7 +83,7 @@ namespace LettreCooperation
         private void ButtonEnvoyer_Click(object sender, System.EventArgs e)
         {
 
-            WaitForm waitForm = new WaitForm();
+            PopUp_Patienter waitForm = new PopUp_Patienter();
             waitForm.Show();
 
             for (int i = 0; i < dataGridView.Rows.Count; i++)
@@ -135,7 +135,7 @@ namespace LettreCooperation
             MailMessage mail = new MailMessage();
 
             // Your gmail email address
-            string from = PagePrincipale.Utilisateur.email_utilisateur;
+            string from = Page_Principale.Utilisateur.email_utilisateur;
             mail.From = new MailAddress(from);
 
             //Password du type
@@ -154,7 +154,7 @@ namespace LettreCooperation
 
             SmtpClient oSmtp = new SmtpClient(Properties.Settings.Default.SMTP, 587)
             {
-                Credentials = new NetworkCredential(PagePrincipale.Utilisateur.email_utilisateur, password),
+                Credentials = new NetworkCredential(Page_Principale.Utilisateur.email_utilisateur, password),
                 EnableSsl = true
             };
 

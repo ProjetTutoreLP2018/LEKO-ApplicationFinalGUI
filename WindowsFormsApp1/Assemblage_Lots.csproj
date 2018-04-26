@@ -210,11 +210,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Page_AfficherPDF.cs">
+    <Compile Include="PopUp_AfficherPDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Page_AfficherPDF.Designer.cs">
-      <DependentUpon>Page_AfficherPDF.cs</DependentUpon>
+    <Compile Include="PopUp_AfficherPDF.Designer.cs">
+      <DependentUpon>PopUp_AfficherPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page_VoirArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page_VoirArchives.Designer.cs">
+      <DependentUpon>Page_VoirArchives.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp_ChangeCheminDossierFINACOOP.cs">
       <SubType>Form</SubType>
@@ -308,35 +314,35 @@
     <Compile Include="Page_ModificationClient.designer.cs">
       <DependentUpon>Page_ModificationClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="RetourClient.cs">
+    <Compile Include="Page_GestionRetourClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RetourClient.Designer.cs">
-      <DependentUpon>RetourClient.cs</DependentUpon>
+    <Compile Include="Page_GestionRetourClient.Designer.cs">
+      <DependentUpon>Page_GestionRetourClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignatureExp.cs">
+    <Compile Include="Page_SignatureExp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SignatureExp.Designer.cs">
-      <DependentUpon>SignatureExp.cs</DependentUpon>
+    <Compile Include="Page_SignatureExp.Designer.cs">
+      <DependentUpon>Page_SignatureExp.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCFenFormClient.cs">
+    <Compile Include="Page_CreationNouveauClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCFenFormClient.designer.cs">
-      <DependentUpon>UCFenFormClient.cs</DependentUpon>
+    <Compile Include="Page_CreationNouveauClient.designer.cs">
+      <DependentUpon>Page_CreationNouveauClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCTableauBord.cs">
+    <Compile Include="Page_TableauDeBord.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCTableauBord.designer.cs">
-      <DependentUpon>UCTableauBord.cs</DependentUpon>
+    <Compile Include="Page_TableauDeBord.designer.cs">
+      <DependentUpon>Page_TableauDeBord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Voir_Modif_LC.cs">
+    <Compile Include="Page_ManagerLc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Voir_Modif_LC.Designer.cs">
-      <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
+    <Compile Include="Page_ManagerLc.Designer.cs">
+      <DependentUpon>Page_ManagerLc.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_CreerNouveauUtilisateur.cs">
       <SubType>UserControl</SubType>
@@ -350,11 +356,11 @@
     <Compile Include="Page_ManagerUtilisateur.Designer.cs">
       <DependentUpon>Page_ManagerUtilisateur.cs</DependentUpon>
     </Compile>
-    <Compile Include="PagePrincipale.cs">
+    <Compile Include="Page_Principale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PagePrincipale.Designer.cs">
-      <DependentUpon>PagePrincipale.cs</DependentUpon>
+    <Compile Include="Page_Principale.Designer.cs">
+      <DependentUpon>Page_Principale.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_Connexion.cs">
       <SubType>UserControl</SubType>
@@ -365,15 +371,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Ville.cs" />
-    <Compile Include="WaitForm.cs">
+    <Compile Include="PopUp_Patienter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WaitForm.Designer.cs">
-      <DependentUpon>WaitForm.cs</DependentUpon>
+    <Compile Include="PopUp_Patienter.Designer.cs">
+      <DependentUpon>PopUp_Patienter.cs</DependentUpon>
     </Compile>
     <Compile Include="WordTools.cs" />
-    <EmbeddedResource Include="Page_AfficherPDF.resx">
-      <DependentUpon>Page_AfficherPDF.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp_AfficherPDF.resx">
+      <DependentUpon>PopUp_AfficherPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page_VoirArchives.resx">
+      <DependentUpon>Page_VoirArchives.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp_ChangeCheminDossierFINACOOP.resx">
       <DependentUpon>PopUp_ChangeCheminDossierFINACOOP.cs</DependentUpon>
@@ -399,20 +408,20 @@
     <EmbeddedResource Include="Page_ModificationClient.resx">
       <DependentUpon>Page_ModificationClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RetourClient.resx">
-      <DependentUpon>RetourClient.cs</DependentUpon>
+    <EmbeddedResource Include="Page_GestionRetourClient.resx">
+      <DependentUpon>Page_GestionRetourClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignatureExp.resx">
-      <DependentUpon>SignatureExp.cs</DependentUpon>
+    <EmbeddedResource Include="Page_SignatureExp.resx">
+      <DependentUpon>Page_SignatureExp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCFenFormClient.resx">
-      <DependentUpon>UCFenFormClient.cs</DependentUpon>
+    <EmbeddedResource Include="Page_CreationNouveauClient.resx">
+      <DependentUpon>Page_CreationNouveauClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCTableauBord.resx">
-      <DependentUpon>UCTableauBord.cs</DependentUpon>
+    <EmbeddedResource Include="Page_TableauDeBord.resx">
+      <DependentUpon>Page_TableauDeBord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Voir_Modif_LC.resx">
-      <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
+    <EmbeddedResource Include="Page_ManagerLc.resx">
+      <DependentUpon>Page_ManagerLc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_CreerNouveauUtilisateur.resx">
       <DependentUpon>Page_CreerNouveauUtilisateur.cs</DependentUpon>
@@ -420,11 +429,11 @@
     <EmbeddedResource Include="Page_ManagerUtilisateur.resx">
       <DependentUpon>Page_ManagerUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PagePrincipale.fr.resx">
-      <DependentUpon>PagePrincipale.cs</DependentUpon>
+    <EmbeddedResource Include="Page_Principale.fr.resx">
+      <DependentUpon>Page_Principale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PagePrincipale.resx">
-      <DependentUpon>PagePrincipale.cs</DependentUpon>
+    <EmbeddedResource Include="Page_Principale.resx">
+      <DependentUpon>Page_Principale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_Connexion.resx">
       <DependentUpon>Page_Connexion.cs</DependentUpon>
@@ -439,8 +448,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WaitForm.resx">
-      <DependentUpon>WaitForm.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp_Patienter.resx">
+      <DependentUpon>PopUp_Patienter.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\ADOModele.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

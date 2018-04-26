@@ -10,14 +10,14 @@ using System.Drawing;
 
 namespace LettreCooperation
 {
-    public partial class SignatureExp : UserControl
+    public partial class Page_SignatureExp : UserControl
     {
 
         private ModelManager modelManager = new ModelManager();
         private List<LC> listLc = new List<LC>();
        
 
-        public SignatureExp()
+        public Page_SignatureExp()
         {
             InitializeComponent();
             Init();
@@ -61,19 +61,19 @@ namespace LettreCooperation
         {
            
 
-            if (!textBoxPass.Text.Equals(PagePrincipale.Utilisateur.mdp_utilisateur))
+            if (!textBoxPass.Text.Equals(Page_Principale.Utilisateur.mdp_utilisateur))
             {
                 MessageBox.Show("Votre mot de passe est incorrecte");
                 return;
             }
 
-            if (PagePrincipale.Utilisateur.image_Blob_Signature == null)
+            if (Page_Principale.Utilisateur.image_Blob_Signature == null)
             {
                 MessageBox.Show("Vous ne disposez pas de signature dans la base. Veuillez contacter l'Administrateur.");
                 return;
             }
 
-            WaitForm waitForm = new WaitForm();
+            PopUp_Patienter waitForm = new PopUp_Patienter();
             waitForm.Show();
 
             for (int i = 0; i < LCDataGridView.RowCount; ++i)
@@ -96,7 +96,7 @@ namespace LettreCooperation
 
                         if(listLc[i].id_etat.ToString().Equals(modelManager.GetIdEtatRefuser().ToString()))
                         {
-                            if(listLc[i].id_signataire != PagePrincipale.Utilisateur.id_utilisateur)
+                            if(listLc[i].id_signataire != Page_Principale.Utilisateur.id_utilisateur)
                             {
                                 MessageBox.Show("Seul le signataire originale de cette LC ou l'administrateur peut la revalider");
                             } else
@@ -126,7 +126,7 @@ namespace LettreCooperation
 
                             //Insertion de l'image 
                             // var imgPath = Path.GetFullPath(string.Format(file2));
-                            System.Drawing.Image imgPath = ByteArrayToImage(PagePrincipale.Utilisateur.image_Blob_Signature);
+                            System.Drawing.Image imgPath = ByteArrayToImage(Page_Principale.Utilisateur.image_Blob_Signature);
                             imgPath.Save(Program.FINACOOPFolder + @"\signature.png");
 
                             sel.InlineShapes.AddPicture(
@@ -140,7 +140,7 @@ namespace LettreCooperation
 
                             //sauvegarde du doc.
                             modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
-                            modelManager.AjoutSignataire(listLc[i], PagePrincipale.Utilisateur);
+                            modelManager.AjoutSignataire(listLc[i], Page_Principale.Utilisateur);
                             doc.SaveAs(Program.FINACOOPFolder + listLc[i].chemin_lc);
                             doc.Close();
 
@@ -186,8 +186,8 @@ namespace LettreCooperation
         private void AjoutNomSignataire(String path)
         {
             DocX documentModele = DocX.Load(path);
-            documentModele.ReplaceText("{{PrenomEComptable}}", PagePrincipale.Utilisateur.prenom_utilisateur);
-            documentModele.ReplaceText("{{NomEComptable}}", PagePrincipale.Utilisateur.nom_utilisateur);
+            documentModele.ReplaceText("{{PrenomEComptable}}", Page_Principale.Utilisateur.prenom_utilisateur);
+            documentModele.ReplaceText("{{NomEComptable}}", Page_Principale.Utilisateur.nom_utilisateur);
             documentModele.SaveAs(path);
         }
 

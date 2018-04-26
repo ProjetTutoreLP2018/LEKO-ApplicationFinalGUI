@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class Voir_Modif_LC
+    partial class Page_ManagerLc
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Voir_Modif_LC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_ManagerLc));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboClient = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();

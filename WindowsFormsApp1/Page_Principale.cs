@@ -5,7 +5,7 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-    public partial class PagePrincipale : Form
+    public partial class Page_Principale : Form
     {
 
         private UserControl log;
@@ -13,7 +13,7 @@ namespace LettreCooperation
         public static Utilisateur Utilisateur { get; set; }
 
         
-        public PagePrincipale()
+        public Page_Principale()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -91,7 +91,7 @@ namespace LettreCooperation
         private void VoirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            InitUserContole(new Voir_Modif_LC());
+            InitUserContole(new Page_ManagerLc());
 
         }
 
@@ -103,8 +103,8 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void SignerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PagePrincipale.Utilisateur.id_droit == 2)
-                InitUserContole(new SignatureExp());
+            if (Page_Principale.Utilisateur.id_droit == 2)
+                InitUserContole(new Page_SignatureExp());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
 
@@ -119,7 +119,7 @@ namespace LettreCooperation
         private void CréerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (PagePrincipale.Utilisateur.isAdmin)
+            if (Page_Principale.Utilisateur.isAdmin)
                 InitUserContole(new Page_CreerNouveauUtilisateur());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -135,7 +135,7 @@ namespace LettreCooperation
         private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (PagePrincipale.Utilisateur.isAdmin)
+            if (Page_Principale.Utilisateur.isAdmin)
                 InitUserContole(new Page_ManagerUtilisateur());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -162,7 +162,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void PictureHome_Click(object sender, EventArgs e)
         {
-            InitUserContole(new UCTableauBord());
+            InitUserContole(new Page_TableauDeBord());
         }
 
 
@@ -185,7 +185,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void EnvoyerUneLCAuClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PagePrincipale.Utilisateur.id_droit == 2)
+            if (Page_Principale.Utilisateur.id_droit == 2)
             {
                 InitUserContole(new Page_EnvoieLcAuClient());
             }
@@ -201,7 +201,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void RetourLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PagePrincipale.Utilisateur.id_droit == 2)
+            if (Page_Principale.Utilisateur.id_droit == 2)
             {
                 RetourClientLC retourClientLC = new RetourClientLC();
                 retourClientLC.Show();
@@ -218,7 +218,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ManagerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PagePrincipale.Utilisateur.isAdmin)
+            if (Page_Principale.Utilisateur.isAdmin)
             {
                 Page_AjoutNouveauModele ajoutModele = new Page_AjoutNouveauModele();
                 ajoutModele.Show();
@@ -236,7 +236,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ChangerCheminDossierFINACOOPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PagePrincipale.Utilisateur.isAdmin)
+            if (Page_Principale.Utilisateur.isAdmin)
             {
                 PopUp_ChangeCheminDossierFINACOOP changePath = new PopUp_ChangeCheminDossierFINACOOP();
                 changePath.Show();
@@ -254,7 +254,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void CréerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitUserContole(new UCFenFormClient());
+            InitUserContole(new Page_CreationNouveauClient());
         }
 
 
@@ -282,7 +282,7 @@ namespace LettreCooperation
 
         private void ChangerSMTPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PagePrincipale.Utilisateur.isAdmin)
+            if (Page_Principale.Utilisateur.isAdmin)
             {
                 PopUp_ChangeSMTP changeSMTP = new PopUp_ChangeSMTP();
                 changeSMTP.Show();
@@ -293,7 +293,8 @@ namespace LettreCooperation
 
         private void VoireLesArchivesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Page_VoirArchives page_VoirArchives = new Page_VoirArchives();
+            page_VoirArchives.Show();
         }
     }
 }

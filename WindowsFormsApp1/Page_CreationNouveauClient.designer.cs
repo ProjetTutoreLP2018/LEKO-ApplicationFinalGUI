@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-	partial class UCFenFormClient
+	partial class Page_CreationNouveauClient
 	{
 		/// <summary> 
 		/// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCFenFormClient));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_CreationNouveauClient));
             this.BoutonValider = new System.Windows.Forms.Button();
             this.BoutonAnnuler = new System.Windows.Forms.Button();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();

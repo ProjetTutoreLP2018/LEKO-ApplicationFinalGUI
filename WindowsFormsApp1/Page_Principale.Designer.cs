@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class PagePrincipale
+    partial class Page_Principale
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -30,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagePrincipale));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Principale));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.gestionDesLettreDeCoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

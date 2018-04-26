@@ -522,6 +522,20 @@ namespace LettreCooperation.modele
         }
 
 
+
+        public List<Client> GetListClientArchive()
+        {
+            return (from client in context.Client
+                    join lc in context.LC
+                    on client.id_client equals lc.id_client
+                    where lc.id_etat == 10
+                    select client).Distinct().ToList();
+
+
+
+        }
+
+
         public List<LC> GetListLCFromClienteRetour(int id)
         {
             return (from client in context.Client
@@ -531,6 +545,15 @@ namespace LettreCooperation.modele
                     on lc.id_etat equals e.id_etat
                     where e.libelle_etat == "AC"
                     && client.id_client == id
+                    select lc).ToList();
+        }
+
+
+        public List<LC> GetListLCFromClienteArchive(int id)
+        {
+            return (from lc in context.LC
+                    where lc.id_client == id
+                    && lc.id_etat == 10
                     select lc).ToList();
         }
     }

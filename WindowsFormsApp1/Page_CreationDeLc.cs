@@ -51,7 +51,7 @@ namespace LettreCooperation
         
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
-            WaitForm waitForm = new WaitForm();
+            PopUp_Patienter waitForm = new PopUp_Patienter();
             waitForm.Show();
 
             string raisonSociale = ListeDeroulanteChoixClient.SelectedItem.ToString();
@@ -117,7 +117,7 @@ namespace LettreCooperation
                 lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;
                 lc.nom_lc = nomFichier;
                 lc.id_etat = 1;
-                lc.id_utilisateur = PagePrincipale.Utilisateur.id_utilisateur;
+                lc.id_utilisateur = Page_Principale.Utilisateur.id_utilisateur;
 
 
                 if (File.Exists(pathFolder + @"\" + nomFichier))

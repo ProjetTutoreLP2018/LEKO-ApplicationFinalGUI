@@ -6,9 +6,9 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-	public partial class UCFenFormClient : UserControl
+	public partial class Page_CreationNouveauClient : UserControl
 	{
-		public UCFenFormClient()
+		public Page_CreationNouveauClient()
 		{
 			InitializeComponent();
             ESSNon.Checked = true;

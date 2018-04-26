@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LettreCooperation
 {
-    public partial class Page_AfficherPDF : Form
+    public partial class PopUp_AfficherPDF : Form
     {
-        public Page_AfficherPDF()
+        public PopUp_AfficherPDF()
         {
             InitializeComponent();
 

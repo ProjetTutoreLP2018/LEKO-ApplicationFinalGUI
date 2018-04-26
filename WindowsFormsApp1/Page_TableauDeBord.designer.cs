@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-	partial class UCTableauBord
+	partial class Page_TableauDeBord
 	{
 		/// <summary> 
 		/// Variable nécessaire au concepteur.

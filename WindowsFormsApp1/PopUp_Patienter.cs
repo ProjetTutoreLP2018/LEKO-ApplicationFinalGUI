@@ -2,9 +2,9 @@
 
 namespace LettreCooperation
 {
-    public partial class WaitForm : Form
+    public partial class PopUp_Patienter : Form
     {
-        public WaitForm()
+        public PopUp_Patienter()
         {
             InitializeComponent();
 
