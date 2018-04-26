@@ -35,6 +35,7 @@ namespace LettreCooperation
             pictureLogout.Visible = false;
             labelUser.Visible = false;
 
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 
             log = new Page_Connexion
             {
@@ -236,7 +237,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ChangerCheminDossierFINACOOPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Page_Principale.Utilisateur.isAdmin)
+            if (Utilisateur.isAdmin)
             {
                 PopUp_ChangeCheminDossierFINACOOP changePath = new PopUp_ChangeCheminDossierFINACOOP();
                 changePath.Show();
@@ -283,7 +284,7 @@ namespace LettreCooperation
 
         private void ChangerSMTPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Page_Principale.Utilisateur.isAdmin)
+            if (Utilisateur.isAdmin)
             {
                 PopUp_ChangeSMTP changeSMTP = new PopUp_ChangeSMTP();
                 changeSMTP.Show();
