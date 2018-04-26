@@ -269,7 +269,7 @@
             this.pictureLogout.TabStop = false;
             this.pictureLogout.Click += new System.EventHandler(this.PictureLogout_Click);
             // 
-            // PagePrincipale
+            // Page_Principale
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -283,7 +283,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.mainMenu;
-            this.Name = "PagePrincipale";
+            this.Name = "Page_Principale";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenu.ResumeLayout(false);

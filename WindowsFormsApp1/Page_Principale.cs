@@ -277,7 +277,8 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void AProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PopUp_APropos popUp_APropos = new PopUp_APropos();
+            popUp_APropos.Show();
         }
 
         private void ChangerSMTPToolStripMenuItem_Click(object sender, EventArgs e)

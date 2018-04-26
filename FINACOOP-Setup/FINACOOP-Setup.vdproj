@@ -1659,6 +1659,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9FD4927247C5467989F777A77C816D3E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A48A9FED60151087E5C3E0E092E3C8A7"
         "OwnerKey" = "8:_D991746527CF3D767DE2B98D22336C15"
         "MsmSig" = "8:_UNDEFINED"
@@ -1857,6 +1863,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BBE05D6BF5779719DB008CDB82465478"
+        "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BC579381FFE88415624FCFC9EDD4E3C5"
         "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
         "MsmSig" = "8:_UNDEFINED"
@@ -1871,12 +1883,6 @@
         {
         "MsmKey" = "8:_BE40993A020BC0811DE0B64503C148FC"
         "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C124A93E974C4FA9B474BE215394494F"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1911,18 +1917,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CA5BEC396A03AF9863F7B5C58CAE5D3C"
-        "OwnerKey" = "8:_FB2D02CDAE09A2D454AE6CAFCFF8F9F1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CA5BEC396A03AF9863F7B5C58CAE5D3C"
-        "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_CAFDC8D8C291B0919DC73C1F0E847FF0"
         "OwnerKey" = "8:_D991746527CF3D767DE2B98D22336C15"
         "MsmSig" = "8:_UNDEFINED"
@@ -1930,6 +1924,18 @@
         "Entry"
         {
         "MsmKey" = "8:_CAFDC8D8C291B0919DC73C1F0E847FF0"
+        "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CC2A2441968BA7F93630E63B592B3C61"
+        "OwnerKey" = "8:_BBE05D6BF5779719DB008CDB82465478"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CC2A2441968BA7F93630E63B592B3C61"
         "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2218,7 +2224,7 @@
         "Entry"
         {
         "MsmKey" = "8:_FA1E3A38C784E926EF6479664E42AE45"
-        "OwnerKey" = "8:_CA5BEC396A03AF9863F7B5C58CAE5D3C"
+        "OwnerKey" = "8:_CC2A2441968BA7F93630E63B592B3C61"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2236,12 +2242,6 @@
         "Entry"
         {
         "MsmKey" = "8:_FA68A37220746E6273B01F6304CF9F05"
-        "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FB2D02CDAE09A2D454AE6CAFCFF8F9F1"
         "OwnerKey" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2302,13 +2302,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FB2D02CDAE09A2D454AE6CAFCFF8F9F1"
+        "OwnerKey" = "8:_BBE05D6BF5779719DB008CDB82465478"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CA5BEC396A03AF9863F7B5C58CAE5D3C"
+        "OwnerKey" = "8:_CC2A2441968BA7F93630E63B592B3C61"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5727,6 +5727,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9FD4927247C5467989F777A77C816D3E"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Leko.ico"
+            "TargetName" = "8:Leko.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A48A9FED60151087E5C3E0E092E3C8A7"
             {
             "AssemblyRegister" = "3:1"
@@ -6192,6 +6212,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BBE05D6BF5779719DB008CDB82465478"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BBE05D6BF5779719DB008CDB82465478"
+                    {
+                    "Name" = "8:AxInterop.AcroPDFLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AxInterop.AcroPDFLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BC579381FFE88415624FCFC9EDD4E3C5"
             {
             "AssemblyRegister" = "3:1"
@@ -6254,26 +6305,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C124A93E974C4FA9B474BE215394494F"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\logo.ico"
-            "TargetName" = "8:logo.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C51A20CC408750A441D965878E394829"
             {
             "AssemblyRegister" = "3:1"
@@ -6305,20 +6336,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CA5BEC396A03AF9863F7B5C58CAE5D3C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CAFDC8D8C291B0919DC73C1F0E847FF0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.ComponentModel.EventBasedAsync, Version=4.0.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CA5BEC396A03AF9863F7B5C58CAE5D3C"
+                    "_CAFDC8D8C291B0919DC73C1F0E847FF0"
                     {
-                    "Name" = "8:Interop.AcroPDFLib.dll"
+                    "Name" = "8:System.ComponentModel.EventBasedAsync.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Interop.AcroPDFLib.dll"
+            "SourcePath" = "8:System.ComponentModel.EventBasedAsync.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
@@ -6336,20 +6367,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CAFDC8D8C291B0919DC73C1F0E847FF0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CC2A2441968BA7F93630E63B592B3C61"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.ComponentModel.EventBasedAsync, Version=4.0.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CAFDC8D8C291B0919DC73C1F0E847FF0"
+                    "_CC2A2441968BA7F93630E63B592B3C61"
                     {
-                    "Name" = "8:System.ComponentModel.EventBasedAsync.dll"
+                    "Name" = "8:Interop.AcroPDFLib.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.ComponentModel.EventBasedAsync.dll"
+            "SourcePath" = "8:Interop.AcroPDFLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
@@ -7131,37 +7162,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FB2D02CDAE09A2D454AE6CAFCFF8F9F1"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_FB2D02CDAE09A2D454AE6CAFCFF8F9F1"
-                    {
-                    "Name" = "8:AxInterop.AcroPDFLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AxInterop.AcroPDFLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FD5F73E8A07413447174A5F1C7BB5FFC"
             {
             "AssemblyRegister" = "3:1"
@@ -7312,7 +7312,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:FINACOOP-Setup"
         "ProductCode" = "8:{830321BE-B8B8-40D7-9137-83E18B4A4B54}"
-        "PackageCode" = "8:{D5E2D959-7378-4557-B652-3853EE38264A}"
+        "PackageCode" = "8:{0877B561-5B58-472D-BEF2-A24667A793BF}"
         "UpgradeCode" = "8:{86087D60-B1DD-438E-ADDC-60339E003B75}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -7434,7 +7434,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2C7103892EB94938B51E9E3492E46E93"
             {
-            "Name" = "8:FINACOOP-Dechiffreuse"
+            "Name" = "8:Leko"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -7443,12 +7443,12 @@
             "Target" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
             "Folder" = "8:_75F12AB61D974FFDB5F6CFB4E29E16B9"
             "WorkingFolder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
-            "Icon" = "8:_C124A93E974C4FA9B474BE215394494F"
+            "Icon" = "8:_9FD4927247C5467989F777A77C816D3E"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4B822A1FD4624050A5A835C75CE4128C"
             {
-            "Name" = "8:FINACOOP-Dechiffreuse"
+            "Name" = "8:Leko"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -7457,7 +7457,7 @@
             "Target" = "8:_FA2D37D030644D39987F7BC0B8D1E09E"
             "Folder" = "8:_93CFC298CC4444339EC06B126CA82544"
             "WorkingFolder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"
-            "Icon" = "8:_C124A93E974C4FA9B474BE215394494F"
+            "Icon" = "8:_9FD4927247C5467989F777A77C816D3E"
             "Feature" = "8:"
             }
         }
@@ -7861,7 +7861,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FA2D37D030644D39987F7BC0B8D1E09E"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Release\\FINACOOP-Dechiffreuse.exe"
+            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Debug\\FINACOOP-Dechiffreuse.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_175FF0D273F84832BDCDBA98B3FBD80A"

@@ -210,6 +210,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PopUp_APropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp_APropos.Designer.cs">
+      <DependentUpon>PopUp_APropos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp_AfficherPDF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,9 @@
       <DependentUpon>PopUp_Patienter.cs</DependentUpon>
     </Compile>
     <Compile Include="WordTools.cs" />
+    <EmbeddedResource Include="PopUp_APropos.resx">
+      <DependentUpon>PopUp_APropos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp_AfficherPDF.resx">
       <DependentUpon>PopUp_AfficherPDF.cs</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +485,7 @@
     <Content Include="Images\finacoop.png" />
     <Content Include="Images\if_Refresh_58683.png" />
     <Content Include="Images\if_sync_126579.png" />
+    <Content Include="Images\Leko.ico" />
     <Content Include="Images\logo.ico" />
     <Content Include="Images\wait.gif" />
     <Content Include="Images\wait.png" />

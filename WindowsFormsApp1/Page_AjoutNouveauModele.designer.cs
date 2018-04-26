@@ -163,7 +163,7 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Chemin fichier :";
             // 
-            // AjoutModele
+            // Page_AjoutNouveauModele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.Ajouter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AjoutModele";
+            this.Name = "Page_AjoutNouveauModele";
             this.Text = "Ajout d\'un modèle de Lettre de Coopération";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

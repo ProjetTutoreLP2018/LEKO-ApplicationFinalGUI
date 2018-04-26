@@ -169,95 +169,17 @@
         AIAE8QIAACSIFwAAIEG8AAAACeIFAAAIOMw/f5d0mtLs3mQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="créerUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer une LC</value>
-  </data>
-  <data name="voirModifierUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manager une LC</value>
-  </data>
-  <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="signerUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Signer une LC</value>
-  </data>
-  <data name="envoyerUneLCAuClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="envoyerUneLCAuClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Envoyer une LC au client</value>
-  </data>
-  <data name="retourLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="retourLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestion le retour des LC</value>
-  </data>
-  <data name="voireLesArchivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="voireLesArchivesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Les Archives</value>
-  </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestion des LC</value>
   </data>
-  <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
-  </data>
-  <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer un Client</value>
-  </data>
-  <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
-  </data>
-  <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manager  un Client</value>
-  </data>
   <data name="gestionDesClientsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 20</value>
   </data>
   <data name="gestionDesClientsToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestion des Clients</value>
-  </data>
-  <data name="créerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 22</value>
-  </data>
-  <data name="créerUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
-    <value>Créer un Utilisateur</value>
-  </data>
-  <data name="ManagerUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 22</value>
-  </data>
-  <data name="ManagerUtilisateurToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manager un Utilisateur</value>
-  </data>
-  <data name="ajouterUnModèleDeLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 22</value>
-  </data>
-  <data name="ajouterUnModèleDeLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajout Modèle de LC</value>
-  </data>
-  <data name="changerCheminDossierFINACOOPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 22</value>
-  </data>
-  <data name="changerCheminDossierFINACOOPToolStripMenuItem.Text" xml:space="preserve">
-    <value>Changer chemin dossier 'FINACOOP'</value>
-  </data>
-  <data name="changerSMTPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 22</value>
-  </data>
-  <data name="changerSMTPToolStripMenuItem.Text" xml:space="preserve">
-    <value>Changer SMTP</value>
   </data>
   <data name="gestionDesUtilisateursToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 20</value>
@@ -295,6 +217,84 @@
   </data>
   <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="créerUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer une LC</value>
+  </data>
+  <data name="voirModifierUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manager une LC</value>
+  </data>
+  <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="signerUneLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Signer une LC</value>
+  </data>
+  <data name="envoyerUneLCAuClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="envoyerUneLCAuClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Envoyer une LC au client</value>
+  </data>
+  <data name="retourLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="retourLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestion le retour des LC</value>
+  </data>
+  <data name="voireLesArchivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="voireLesArchivesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Les Archives</value>
+  </data>
+  <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer un Client</value>
+  </data>
+  <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manager  un Client</value>
+  </data>
+  <data name="créerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 22</value>
+  </data>
+  <data name="créerUnUtilisateurToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer un Utilisateur</value>
+  </data>
+  <data name="ManagerUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 22</value>
+  </data>
+  <data name="ManagerUtilisateurToolStripMenuItem.Text" xml:space="preserve">
+    <value>Manager un Utilisateur</value>
+  </data>
+  <data name="ajouterUnModèleDeLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 22</value>
+  </data>
+  <data name="ajouterUnModèleDeLCToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ajout Modèle de LC</value>
+  </data>
+  <data name="changerCheminDossierFINACOOPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 22</value>
+  </data>
+  <data name="changerCheminDossierFINACOOPToolStripMenuItem.Text" xml:space="preserve">
+    <value>Changer chemin dossier 'FINACOOP'</value>
+  </data>
+  <data name="changerSMTPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 22</value>
+  </data>
+  <data name="changerSMTPToolStripMenuItem.Text" xml:space="preserve">
+    <value>Changer SMTP</value>
   </data>
   <data name="labelUtilisateur.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -4109,7 +4109,7 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Finacoop</value>
+    <value>Leko</value>
   </data>
   <data name="&gt;&gt;gestionDesLettreDeCoToolStripMenuItem.Name" xml:space="preserve">
     <value>gestionDesLettreDeCoToolStripMenuItem</value>
@@ -4214,7 +4214,7 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>PagePrincipale</value>
+    <value>Page_Principale</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
