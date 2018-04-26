@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo %282%29.ico</ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Carbon.Data.Protection, Version=0.18.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -467,11 +467,10 @@
     <Content Include="Images\finacoop.png" />
     <Content Include="Images\if_Refresh_58683.png" />
     <Content Include="Images\if_sync_126579.png" />
-    <Content Include="Images\logo %281%29.ico" />
+    <Content Include="Images\logo.ico" />
     <Content Include="Images\wait.gif" />
     <Content Include="Images\wait.png" />
-    <Content Include="logo %281%29.ico" />
-    <Content Include="logo %282%29.ico" />
+    <Content Include="logo.ico" />
     <Content Include="Model\ADOModele.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ADOModele.edmx</DependentUpon>

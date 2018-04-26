@@ -38,6 +38,7 @@
             this.signerUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.envoyerUneLCAuClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retourLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voireLesArchivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.voirModifierUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureLogout = new System.Windows.Forms.PictureBox();
-            this.voireLesArchivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageHome)).BeginInit();
@@ -120,6 +120,12 @@
             this.retourLCToolStripMenuItem.Name = "retourLCToolStripMenuItem";
             resources.ApplyResources(this.retourLCToolStripMenuItem, "retourLCToolStripMenuItem");
             this.retourLCToolStripMenuItem.Click += new System.EventHandler(this.RetourLCToolStripMenuItem_Click);
+            // 
+            // voireLesArchivesToolStripMenuItem
+            // 
+            this.voireLesArchivesToolStripMenuItem.Name = "voireLesArchivesToolStripMenuItem";
+            resources.ApplyResources(this.voireLesArchivesToolStripMenuItem, "voireLesArchivesToolStripMenuItem");
+            this.voireLesArchivesToolStripMenuItem.Click += new System.EventHandler(this.VoireLesArchivesToolStripMenuItem_Click);
             // 
             // gestionDesClientsToolStripMenuItem
             // 
@@ -262,12 +268,6 @@
             this.pictureLogout.Name = "pictureLogout";
             this.pictureLogout.TabStop = false;
             this.pictureLogout.Click += new System.EventHandler(this.PictureLogout_Click);
-            // 
-            // voireLesArchivesToolStripMenuItem
-            // 
-            this.voireLesArchivesToolStripMenuItem.Name = "voireLesArchivesToolStripMenuItem";
-            resources.ApplyResources(this.voireLesArchivesToolStripMenuItem, "voireLesArchivesToolStripMenuItem");
-            this.voireLesArchivesToolStripMenuItem.Click += new System.EventHandler(this.VoireLesArchivesToolStripMenuItem_Click);
             // 
             // PagePrincipale
             // 

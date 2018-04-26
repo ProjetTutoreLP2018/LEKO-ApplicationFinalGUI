@@ -39,7 +39,7 @@ namespace LettreCooperation
         {
             // Si le chemin du dossier est renseigné,
             // nous pouvons ouvrir l'application
-            if (!String.IsNullOrEmpty(textBoxPath.Text))
+            if (textBoxPath.Text.Length == 0)
             {
                 MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
                 return;

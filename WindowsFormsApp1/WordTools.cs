@@ -56,7 +56,6 @@ namespace LettreCooperation
             { }
             finally
             {
-                
                 System.Runtime.InteropServices.
                     Marshal.ReleaseComObject(FichierWord);
                 FichierWord = null;

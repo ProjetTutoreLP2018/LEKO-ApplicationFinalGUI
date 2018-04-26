@@ -220,6 +220,7 @@ namespace LettreCooperation
 
                 try
                 {
+                    MessageBox.Show(Program.FINACOOPFolder + lcVisible.chemin_lc);
                     AfficherLC(Program.FINACOOPFolder + lcVisible.chemin_lc);
                 }
                 catch (Exception)
