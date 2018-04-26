@@ -210,6 +210,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfficherPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficherPDF.Designer.cs">
+      <DependentUpon>AfficherPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,12 @@
     <Compile Include="ModifClient.designer.cs">
       <DependentUpon>ModifClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="RetourClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetourClient.Designer.cs">
+      <DependentUpon>RetourClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignatureExp.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -360,6 +372,9 @@
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WordTools.cs" />
+    <EmbeddedResource Include="AfficherPDF.resx">
+      <DependentUpon>AfficherPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePath.resx">
       <DependentUpon>ChangePath.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifClient.resx">
       <DependentUpon>ModifClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetourClient.resx">
+      <DependentUpon>RetourClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignatureExp.resx">
       <DependentUpon>SignatureExp.cs</DependentUpon>
@@ -494,6 +512,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

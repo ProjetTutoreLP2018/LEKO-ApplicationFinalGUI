@@ -203,7 +203,8 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.id_droit == 2)
             {
-                ///TODO: Page de gestion de retour de LC
+                RetourClientLC retourClientLC = new RetourClientLC();
+                retourClientLC.Show();
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -279,7 +280,7 @@ namespace LettreCooperation
 
         }
 
-        private void changerSMTPToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ChangerSMTPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (PagePrincipale.Utilisateur.isAdmin)
             {
@@ -288,6 +289,11 @@ namespace LettreCooperation
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+        private void VoireLesArchivesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

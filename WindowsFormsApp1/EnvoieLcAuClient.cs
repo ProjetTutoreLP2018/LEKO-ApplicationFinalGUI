@@ -1,9 +1,10 @@
-﻿using EASendMail;
-using LettreCooperation.Model;
+﻿using LettreCooperation.Model;
 using LettreCooperation.modele;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
 using System.Windows.Forms;
 using WordToPDF;
 
@@ -101,11 +102,17 @@ namespace LettreCooperation
                     catch (Exception)
                     {
                         MessageBox.Show("Le fichier est introuvable. Il a peut-être été supprimé" +
-                            "ou déplacé.");
+                            " ou déplacé.");
                     }
 
-                    SendMailClient(listLc[i], this.textBoxPass.Text);
-
+                    try
+                    {
+                        SendMailClient(listLc[i], this.textBoxPass.Text);
+                    }catch(Exception)
+                    {
+                        MessageBox.Show("Une erreur est survenue, l'Email n'a pas était envoyé.");
+                    }
+                    
                     if (envoieMail)
                         ChangeEtat(listLc[i]);
                 }
@@ -125,68 +132,55 @@ namespace LettreCooperation
         private void SendMailClient(LC lc, string password)
         {
 
-            SmtpMail oMail = new SmtpMail("TryIt");
-            SmtpClient oSmtp = new SmtpClient();
-
             Client client = modelManager.FindClient(lc.id_client);
+            MailMessage mail = new MailMessage();
 
             // Your gmail email address
             string from = PagePrincipale.Utilisateur.email_utilisateur;
-            oMail.From = from;
+            mail.From = new MailAddress(from);
 
             //Password du type
             string pass = password;
 
             // Set recipient email address
             string to = client.mail_referent;
-            oMail.To = to;
+            mail.To.Add(to);
 
             // Set email subject
             string title = "Voici votre LC";
-            oMail.Subject = title;
+            mail.Subject = title;
 
             // Set email body
-            string content = "Bonjour Voici votre LC !";
-            oMail.TextBody = content;
+
+
+            SmtpClient oSmtp = new SmtpClient(Properties.Settings.Default.SMTP, 587)
+            {
+                Credentials = new NetworkCredential(PagePrincipale.Utilisateur.email_utilisateur, password),
+                EnableSsl = true
+            };
+
+
+            string body = "Voici votre LC";
+
+            mail.Body = body;
 
             try
             {
                 //Test PJ
                 string pj = Program.FINACOOPFolder + pathPDF;
                 if (!pj.Equals(""))
-                    oMail.AddAttachment(pj);
-            } catch (System.UnauthorizedAccessException)
+                    mail.Attachments.Add(new Attachment(pj));
+            }
+            catch (System.UnauthorizedAccessException)
             {
                 MessageBox.Show("Vous n'avez pas l'autorisation d'ouvrir ce fichier. L' Email n'est pas envoyé");
                 throw;
             }
 
-            //
-            // PROPERTIES /!\
-            //
-            string smtp;
-            smtp = Properties.Settings.Default.SMTP;
-            SmtpServer oServer = new SmtpServer(smtp)
-            {
 
-                // Set 587 port, if you want to use 25 port, please change 587 5o 25
-                //
-                // On peut éventuellement le mettre en properties aussi plutôt qu'en brut afin de s'adapter aux changements sur leur SMTP /!\
-                //
-                Port = 587,
-
-                // detect SSL/TLS automatically
-                ConnectType = SmtpConnectType.ConnectSSLAuto,
-
-                // Gmail user authentication
-                // For example: your email is "gmailid@gmail.com", then the user should be the same
-                User = from,
-                Password = pass
-            };
-            //Console.WriteLine("start to send email over SSL ...");
             try
             {
-                oSmtp.SendMail(oServer, oMail);
+                oSmtp.Send(mail);
                 MessageBox.Show("Votre mail a bien été envoyé à l'adresse : " + to, "Message envoyé");
                 envoieMail = true;
             }
@@ -214,6 +208,7 @@ namespace LettreCooperation
         /// <param name="lc"></param>
         private void CopyLc(LC lc)
         {
+           // MessageBox.Show("Copie en cours ...");
 
             string dossier = Program.FINACOOPFolder + _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale;
 
@@ -224,11 +219,15 @@ namespace LettreCooperation
 
             }
 
+            //MessageBox.Show(Program.FINACOOPFolder + lc.chemin_lc);
+
             File.Copy(
                 Program.FINACOOPFolder + lc.chemin_lc,
                 dossier + "\\" + lc.nom_lc,
                 true
                 );
+
+           // MessageBox.Show("La copie a était faite.");
         }
 
 
@@ -264,6 +263,8 @@ namespace LettreCooperation
 
             modelManager.UpdatePathLc(lc, _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc);
             pathPDF = _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
+
+            MessageBox.Show("Le PDF a était créer : " + pathPDF);
         }
 
 

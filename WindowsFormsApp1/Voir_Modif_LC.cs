@@ -43,7 +43,6 @@ namespace LettreCooperation
             listLc = new List<LC>();
             listClient = new List<Client>();
 
-
             listClient = model.GetListClient();
 
 
@@ -209,19 +208,31 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonAfficher_Click(object sender, EventArgs e)
         {
-            WaitForm waitForm = new WaitForm();
 
-            try{
-                AfficherLC(Program.FINACOOPFolder + listLc[indexLc].chemin_lc);
-            } catch (Exception)
+            if (radioButtonArchive.Checked)
             {
-                MessageBox.Show("Le fichier est introuvable. Il a peut-être été supprimé" +
-                    " ou déplacé.");
+                AfficherPDF afficherPDF = new AfficherPDF();
+                afficherPDF.Initialiser(Program.FINACOOPFolder + lcVisible.chemin_lc);
+                afficherPDF.Show();
+            } else
+            {
+                WaitForm waitForm = new WaitForm();
 
-                WordTools.CloseWord();
+                try
+                {
+                    AfficherLC(Program.FINACOOPFolder + lcVisible.chemin_lc);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Le fichier est introuvable. Il a peut-être été supprimé" +
+                        " ou déplacé.");
+
+                    WordTools.CloseWord();
+                }
+
+                waitForm.Close();
             }
-            
-            waitForm.Close();
+
         }
 
 
@@ -325,8 +336,15 @@ namespace LettreCooperation
         private void ButtonSupprimer_Click(object sender, EventArgs e)
         {
 
+            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer definitivement cette Lettre de coopération ?",
+                "Êtes vous sûr?", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.No)
+                return;
+
+
             if (File.Exists(Program.FINACOOPFolder + lcVisible.chemin_lc))
-                File.Delete(Program.FINACOOPFolder + lcVisible.chemin_lc);
+            File.Delete(Program.FINACOOPFolder + lcVisible.chemin_lc);
             else
                 MessageBox.Show("Le Fichier n'existe pas");
 

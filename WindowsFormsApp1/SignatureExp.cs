@@ -6,6 +6,7 @@ using LettreCooperation.modele;
 using Microsoft.Office.Interop.Word;
 using LettreCooperation.Model;
 using Xceed.Words.NET;
+using System.Drawing;
 
 namespace LettreCooperation
 {
@@ -38,18 +39,18 @@ namespace LettreCooperation
             listLc = modelManager.GetListLcASigner();
             foreach (var item in listLc)
             {
-                if (item.id_etat == 1)
-                {
-                    String[] row = {
-                        item.nom_lc ,
-                        modelManager.FindClient(item.id_client).raison_sociale,
-                        item.date_debut + "",
-                        modelManager.FindUtilisateur(item.id_utilisateur).nom_utilisateur + " " + modelManager.FindUtilisateur(item.id_utilisateur).prenom_utilisateur};
-                    LCDataGridView.Rows.Add(row);
-                }
+                String[] row = {
+                    item.nom_lc ,
+                    modelManager.FindClient(item.id_client).raison_sociale,
+                    item.date_debut + "",
+                    modelManager.FindUtilisateur(item.id_utilisateur).nom_utilisateur + " " + modelManager.FindUtilisateur(item.id_utilisateur).prenom_utilisateur};
+                LCDataGridView.Rows.Add(row);
 
+                if (item.id_etat == modelManager.GetIdEtatRefuser())
+                    LCDataGridView.Rows[LCDataGridView.Rows.Count - 1].DefaultCellStyle.BackColor = Color.LightSalmon;
+                
             }
-
+  
         }
 
 
@@ -95,52 +96,69 @@ namespace LettreCooperation
 
                         // MessageBox.Show(Program.FINACOOPFolder + listLc[i].chemin_lc);
 
-                        var doc = app.Documents.Add(
+                        if(listLc[i].id_etat.ToString().Equals(modelManager.GetIdEtatRefuser().ToString()))
+                        {
+                            if(listLc[i].id_signataire != PagePrincipale.Utilisateur.id_utilisateur)
+                            {
+                                MessageBox.Show("Seul le signataire originale de cette LC ou l'administrateur peut la revalider");
+                            } else
+                            {
+                                modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
+                                AfficherLC(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                                MessageBox.Show("Votre fichier a revalider");
+
+                            }
+
+                        } else
+                        {
+                            var doc = app.Documents.Add(
                             Program.FINACOOPFolder + listLc[i].chemin_lc,
                             Visible: false);
 
-                        doc.Activate();
+                            doc.Activate();
 
-                        //récuperation du mot a remplacer
-                        //************************************************
-                        var motcle = "signature";
-                        // MessageBox.Show("Remplacement du mot: " + motcle + " ...");
-                        var sel = app.Selection;
-                        sel.Find.Text = string.Format("[" + motcle + "]");
-                        sel.Find.Execute(Replace: WdReplace.wdReplaceNone);
-                        sel.Range.Select();
+                            //récuperation du mot a remplacer
+                            //************************************************
+                            var motcle = "signature";
+                            // MessageBox.Show("Remplacement du mot: " + motcle + " ...");
+                            var sel = app.Selection;
+                            sel.Find.Text = string.Format("[" + motcle + "]");
+                            sel.Find.Execute(Replace: WdReplace.wdReplaceNone);
+                            sel.Range.Select();
 
-                        //Insertion de l'image 
-                        // var imgPath = Path.GetFullPath(string.Format(file2));
-                        System.Drawing.Image imgPath = ByteArrayToImage(PagePrincipale.Utilisateur.image_Blob_Signature);
-                        imgPath.Save(Program.FINACOOPFolder + @"\signature.png");
+                            //Insertion de l'image 
+                            // var imgPath = Path.GetFullPath(string.Format(file2));
+                            System.Drawing.Image imgPath = ByteArrayToImage(PagePrincipale.Utilisateur.image_Blob_Signature);
+                            imgPath.Save(Program.FINACOOPFolder + @"\signature.png");
 
-                        sel.InlineShapes.AddPicture(
-                            FileName: Program.FINACOOPFolder + @"\signature.png",
-                            LinkToFile: false,
-                            SaveWithDocument: true);
+                            sel.InlineShapes.AddPicture(
+                                FileName: Program.FINACOOPFolder + @"\signature.png",
+                                LinkToFile: false,
+                                SaveWithDocument: true);
 
-                        File.Delete(Program.FINACOOPFolder + @"\signature.png");
+                            File.Delete(Program.FINACOOPFolder + @"\signature.png");
 
-                        //************************************************
+                            //************************************************
 
-                        //sauvegarde du doc.
-                        modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
-                        modelManager.AjoutSignataire(listLc[i], PagePrincipale.Utilisateur);
-                        doc.SaveAs(Program.FINACOOPFolder + listLc[i].chemin_lc);
-                        doc.Close();
+                            //sauvegarde du doc.
+                            modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
+                            modelManager.AjoutSignataire(listLc[i], PagePrincipale.Utilisateur);
+                            doc.SaveAs(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                            doc.Close();
 
-                        AjoutNomSignataire(Program.FINACOOPFolder + listLc[i].chemin_lc);
-                        AfficherLC(Program.FINACOOPFolder + listLc[i].chemin_lc);
-                        MessageBox.Show("Votre fichier a bien était signée");
+                            AjoutNomSignataire(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                            AfficherLC(Program.FINACOOPFolder + listLc[i].chemin_lc);
+                            MessageBox.Show("Votre fichier a bien était signée");
 
-                    }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
                         }
-                        
+
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                        
+                }
 
             }
 

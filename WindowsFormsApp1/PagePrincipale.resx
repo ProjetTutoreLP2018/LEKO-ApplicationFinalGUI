@@ -179,7 +179,7 @@
     <value>204, 22</value>
   </data>
   <data name="voirModifierUneLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Voir/Modifier une LC</value>
+    <value>Manager une LC</value>
   </data>
   <data name="signerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -199,6 +199,12 @@
   <data name="retourLCToolStripMenuItem.Text" xml:space="preserve">
     <value>Gestion le retour des LC</value>
   </data>
+  <data name="voireLesArchivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="voireLesArchivesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Les Archives</value>
+  </data>
   <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 20</value>
   </data>
@@ -206,13 +212,13 @@
     <value>Gestion des LC</value>
   </data>
   <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer un Client</value>
   </data>
   <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
     <value>Manager  un Client</value>
@@ -4386,6 +4392,12 @@
     <value>aProposToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;aProposToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;voireLesArchivesToolStripMenuItem.Name" xml:space="preserve">
+    <value>voireLesArchivesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;voireLesArchivesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

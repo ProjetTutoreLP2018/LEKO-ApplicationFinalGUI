@@ -57,6 +57,7 @@
             // 
             // Selectionner
             // 
+            this.Selectionner.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Selectionner.BackgroundImage")));
             this.Selectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Selectionner.Location = new System.Drawing.Point(448, 13);
             this.Selectionner.Margin = new System.Windows.Forms.Padding(2);
@@ -162,7 +163,7 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Chemin fichier :";
             // 
-            // Form1
+            // AjoutModele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +173,7 @@
             this.Controls.Add(this.Ajouter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "AjoutModele";
             this.Text = "Ajout d\'un modèle de Lettre de Coopération";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

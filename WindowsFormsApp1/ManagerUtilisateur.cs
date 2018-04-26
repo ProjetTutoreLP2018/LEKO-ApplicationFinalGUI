@@ -180,7 +180,7 @@ namespace LettreCooperation
                 utilisateurs[index].image_Blob_Signature = ImageToByteArray(imageSignature);
             }
 
-            model.ModifUtilisateur();
+            model.SaveBDD();
             MessageBox.Show("Votre utilisateur a bien été modifié");
             Init();
 

@@ -53,7 +53,7 @@ namespace LettreCooperation.modele
         /// <summary>
         /// Méthode qui permet d'enregister la modification d'un utilisateur
         /// </summary>
-        public void ModifUtilisateur()
+        public void SaveBDD()
         {
             context.SaveChanges();
         }
@@ -91,6 +91,7 @@ namespace LettreCooperation.modele
                     join etat in context.Etat
                     on lc.id_etat equals etat.id_etat
                     where etat.libelle_etat == "C"
+                    || etat.libelle_etat == "R"
                     select lc).ToList();
         }
 
@@ -116,7 +117,8 @@ namespace LettreCooperation.modele
         /// <param name="lc"></param>
         public void DeleteLC(LC lc)
         {
-            context.LC.Remove(lc);
+            LC lcASupp = context.LC.Find(lc.id_lc);
+            context.LC.Remove(lcASupp);
             context.SaveChanges();
         }
 
@@ -390,7 +392,7 @@ namespace LettreCooperation.modele
         /// </summary>
         /// <param name="i"></param>
         /// <returns></returns>
-        public Etat GetEtatById(int i)
+        public Etat GetEtatById(int? i)
         {
             return context.Etat.Find(i);
         }
@@ -426,6 +428,12 @@ namespace LettreCooperation.modele
         }
 
 
+        /// <summary>
+        /// Méthode qui permet de convertir une image en tableau
+        /// de Byte
+        /// </summary>
+        /// <param name="byteArrayIn"></param>
+        /// <returns></returns>
         public Image ByteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
@@ -434,6 +442,14 @@ namespace LettreCooperation.modele
         }
 
 
+        /// <summary>
+        /// Méthode qui permet l'ajout d'un modele
+        /// dans la base de donnée
+        /// </summary>
+        /// <param name="pathDestination"></param>
+        /// <param name="nomFichier"></param>
+        /// <param name="nomMission"></param>
+        /// <param name="typeLettre"></param>
         public void AjouterModel(string pathDestination, string nomFichier, string nomMission, string typeLettre)
         {
             try
@@ -447,6 +463,75 @@ namespace LettreCooperation.modele
                 MessageBox.Show("Erreur, le modéle n'as pas était ajouté");
             }
 
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de retourner la liste des
+        /// etat des LC
+        /// </summary>
+        /// <returns></returns>
+        public List<Etat> GetLesEtatsLC()
+        {
+            return (from Etat in context.Etat
+                   select Etat).ToList();
+        }
+
+
+        /// <summary>
+        /// Retourner l'id de l'état 'Archive'
+        /// </summary>
+        /// <returns></returns>
+        public int GetIdEtatArchiver()
+        {
+            
+            var idEtatArchiver =  from etat in context.Etat
+                    where etat.libelle_etat == "A"
+                    select etat.id_etat;
+
+            return idEtatArchiver.First();
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de retourner l'Id
+        /// de l'état 'Refuser'
+        /// </summary>
+        /// <returns></returns>
+        public int GetIdEtatRefuser()
+        {
+            var idEtatArchiver = from etat in context.Etat
+                                 where etat.libelle_etat == "R"
+                                 select etat.id_etat;
+
+            return idEtatArchiver.First();
+        }
+
+
+        public List<Client> GetListClientRetour()
+        {
+            return (from client in context.Client
+                    join lc in context.LC
+                    on client.id_client equals lc.id_client
+                    where lc.id_etat == 8
+                    select client).Distinct().ToList();
+
+          
+
+        }
+
+
+        public List<LC> GetListLCFromClienteRetour(int id)
+        {
+            return (from client in context.Client
+                    join lc in context.LC
+                    on client.id_client equals lc.id_client
+                    join e in context.Etat
+                    on lc.id_etat equals e.id_etat
+                    where e.libelle_etat == "AC"
+                    && client.id_client == id
+                    select lc).ToList();
         }
     }
 }
