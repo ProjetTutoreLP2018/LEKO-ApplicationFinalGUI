@@ -1,7 +1,7 @@
-Application créée durant le Projet Tutoré de la 
+Application crÃ©Ã©e durant le Projet TutorÃ© de la 
 Licence Professionnelle Informatique de l'IUT de Paris Descartes.
 
-Voici les membres de L'équipe :
+Voici les membres de L'Ã©quipe :
 
 			- Amine Goual
 			- Boris Rosaz
@@ -18,9 +18,7 @@ Voici les membres de L'équipe :
 			- Illmmin Abdouradjack
 
 
-Cette application a était commander par la société FINACOOP, 
-cabinet d'expertise comptable coopérative.
+Cette application a Ã©tÃ© commandÃ©e par la sociÃ©tÃ© FINACOOP, cabinet d'expertise comptable coopÃ©rative.
 
-Elle permet de crééer, gérer, archiver et assurer le suivi de Lettre
-de Coopération Comptable (Contract passé avec leur clients)
+Elle permet de crÃ©er, gÃ©rer, archiver et assurer le suivi de Lettre de CoopÃ©ration Comptable (contrats passÃ©s avec leurs clients)
 			
