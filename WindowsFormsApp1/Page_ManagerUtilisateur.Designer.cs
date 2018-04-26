@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class ManagerUtilisateur
+    partial class Page_ManagerUtilisateur
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerUtilisateur));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_ManagerUtilisateur));
             this.labelNomUtilisateur = new System.Windows.Forms.Label();
             this.comboNomUtilisateur = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();

@@ -36,7 +36,7 @@ namespace LettreCooperation
             labelUser.Visible = false;
 
 
-            log = new Login
+            log = new Page_Connexion
             {
                 Parent = this,
                 Dock = DockStyle.Top
@@ -79,7 +79,7 @@ namespace LettreCooperation
         private void CréerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
    
-            InitUserContole(new FenGenerationLC());
+            InitUserContole(new Page_CreationDeLc());
         }
 
 
@@ -120,7 +120,7 @@ namespace LettreCooperation
         {
 
             if (PagePrincipale.Utilisateur.isAdmin)
-                InitUserContole(new CreerUtilisateur());
+                InitUserContole(new Page_CreerNouveauUtilisateur());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
 
@@ -136,7 +136,7 @@ namespace LettreCooperation
         {
 
             if (PagePrincipale.Utilisateur.isAdmin)
-                InitUserContole(new ManagerUtilisateur());
+                InitUserContole(new Page_ManagerUtilisateur());
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
@@ -187,7 +187,7 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.id_droit == 2)
             {
-                InitUserContole(new EnvoieLcAuClient());
+                InitUserContole(new Page_EnvoieLcAuClient());
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -220,7 +220,7 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.isAdmin)
             {
-                AjoutModele ajoutModele = new AjoutModele();
+                Page_AjoutNouveauModele ajoutModele = new Page_AjoutNouveauModele();
                 ajoutModele.Show();
             }
             else
@@ -238,7 +238,7 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.isAdmin)
             {
-                ChangePath changePath = new ChangePath();
+                PopUp_ChangeCheminDossierFINACOOP changePath = new PopUp_ChangeCheminDossierFINACOOP();
                 changePath.Show();
             }
             else
@@ -266,7 +266,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void VoirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitUserContole(new ModifClient());
+            InitUserContole(new Page_ModificationClient());
         }
 
 
@@ -284,7 +284,7 @@ namespace LettreCooperation
         {
             if (PagePrincipale.Utilisateur.isAdmin)
             {
-                ChangeSMTP changeSMTP = new ChangeSMTP();
+                PopUp_ChangeSMTP changeSMTP = new PopUp_ChangeSMTP();
                 changeSMTP.Show();
             }
             else

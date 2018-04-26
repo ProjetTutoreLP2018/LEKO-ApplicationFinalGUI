@@ -5,10 +5,10 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-    public partial class Login : UserControl
+    public partial class Page_Connexion : UserControl
     {
 
-        public Login()
+        public Page_Connexion()
         {
             InitializeComponent();
             this.textBoxPass.PasswordChar = '•';

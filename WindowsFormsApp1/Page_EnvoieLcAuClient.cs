@@ -10,7 +10,7 @@ using WordToPDF;
 
 namespace LettreCooperation
 {
-    public partial class EnvoieLcAuClient : UserControl
+    public partial class Page_EnvoieLcAuClient : UserControl
     {
 
         private ModelManager modelManager = new ModelManager();
@@ -18,7 +18,7 @@ namespace LettreCooperation
         private string pathPDF;
         private bool envoieMail = false;
 
-        public EnvoieLcAuClient()
+        public Page_EnvoieLcAuClient()
         {
             InitializeComponent();
             this.textBoxPass.PasswordChar = '•';

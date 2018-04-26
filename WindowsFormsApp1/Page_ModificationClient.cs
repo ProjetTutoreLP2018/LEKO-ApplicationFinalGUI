@@ -7,14 +7,14 @@ using System.Text.RegularExpressions;
 
 namespace LettreCooperation
 {
-    public partial class ModifClient : UserControl
+    public partial class Page_ModificationClient : UserControl
     {
 
         private List<Client> clients;
         private ModelManager model;
         private int index;
 
-        public ModifClient()
+        public Page_ModificationClient()
         {
             InitializeComponent();
 

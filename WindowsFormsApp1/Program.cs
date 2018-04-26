@@ -35,7 +35,7 @@ namespace LettreCooperation
                     
                     while (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP) && !QuitApp)
                     {
-                        ChoosePath choosePath = new ChoosePath();
+                        PopUp_ChoixDossierFINACOOP choosePath = new PopUp_ChoixDossierFINACOOP();
                         Application.Run(choosePath);
 
                         if (!String.IsNullOrEmpty(FINACOOPFolder))

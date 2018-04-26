@@ -10,7 +10,7 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-    public partial class CreerUtilisateur : UserControl
+    public partial class Page_CreerNouveauUtilisateur : UserControl
     {
 
 
@@ -18,7 +18,7 @@ namespace LettreCooperation
         private ModelManager model = new ModelManager();
 
 
-        public CreerUtilisateur()
+        public Page_CreerNouveauUtilisateur()
         {
             InitializeComponent();
 

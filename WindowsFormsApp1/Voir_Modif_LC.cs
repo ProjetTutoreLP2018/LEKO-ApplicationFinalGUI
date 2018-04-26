@@ -211,7 +211,7 @@ namespace LettreCooperation
 
             if (radioButtonArchive.Checked)
             {
-                AfficherPDF afficherPDF = new AfficherPDF();
+                Page_AfficherPDF afficherPDF = new Page_AfficherPDF();
                 afficherPDF.Initialiser(Program.FINACOOPFolder + lcVisible.chemin_lc);
                 afficherPDF.Show();
             } else

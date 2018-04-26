@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class Login
+    partial class Page_Connexion
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_Connexion));
             this.panelConnexion = new System.Windows.Forms.Panel();
             this.labelErrorConnect = new System.Windows.Forms.Label();
             this.buttonConnexion = new System.Windows.Forms.Button();

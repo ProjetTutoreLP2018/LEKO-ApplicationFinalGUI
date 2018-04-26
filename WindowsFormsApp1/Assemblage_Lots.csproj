@@ -210,53 +210,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfficherPDF.cs">
+    <Compile Include="Page_AfficherPDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AfficherPDF.Designer.cs">
-      <DependentUpon>AfficherPDF.cs</DependentUpon>
+    <Compile Include="Page_AfficherPDF.Designer.cs">
+      <DependentUpon>Page_AfficherPDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangePath.cs">
+    <Compile Include="PopUp_ChangeCheminDossierFINACOOP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangePath.Designer.cs">
-      <DependentUpon>ChangePath.cs</DependentUpon>
+    <Compile Include="PopUp_ChangeCheminDossierFINACOOP.Designer.cs">
+      <DependentUpon>PopUp_ChangeCheminDossierFINACOOP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChangeSMTP.cs">
+    <Compile Include="PopUp_ChangeSMTP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeSMTP.Designer.cs">
-      <DependentUpon>ChangeSMTP.cs</DependentUpon>
+    <Compile Include="PopUp_ChangeSMTP.Designer.cs">
+      <DependentUpon>PopUp_ChangeSMTP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChoosePath.cs">
+    <Compile Include="PopUp_ChoixDossierFINACOOP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChoosePath.Designer.cs">
-      <DependentUpon>ChoosePath.cs</DependentUpon>
+    <Compile Include="PopUp_ChoixDossierFINACOOP.Designer.cs">
+      <DependentUpon>PopUp_ChoixDossierFINACOOP.cs</DependentUpon>
     </Compile>
-    <Compile Include="EnvoieLcAuClient.cs">
+    <Compile Include="Page_EnvoieLcAuClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EnvoieLcAuClient.Designer.cs">
-      <DependentUpon>EnvoieLcAuClient.cs</DependentUpon>
+    <Compile Include="Page_EnvoieLcAuClient.Designer.cs">
+      <DependentUpon>Page_EnvoieLcAuClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FenGenerationLC.cs">
+    <Compile Include="Page_CreationDeLc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FenGenerationLC.designer.cs">
-      <DependentUpon>FenGenerationLC.cs</DependentUpon>
+    <Compile Include="Page_CreationDeLc.designer.cs">
+      <DependentUpon>Page_CreationDeLc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FenPreRemplissageAutomatique.cs">
+    <Compile Include="Page_RemplissageBaseSIRENE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FenPreRemplissageAutomatique.designer.cs">
-      <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
+    <Compile Include="Page_RemplissageBaseSIRENE.designer.cs">
+      <DependentUpon>Page_RemplissageBaseSIRENE.cs</DependentUpon>
     </Compile>
-    <Compile Include="AjoutModele.cs">
+    <Compile Include="Page_AjoutNouveauModele.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AjoutModele.designer.cs">
-      <DependentUpon>AjoutModele.cs</DependentUpon>
+    <Compile Include="Page_AjoutNouveauModele.designer.cs">
+      <DependentUpon>Page_AjoutNouveauModele.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ADOModele.Context.cs">
       <AutoGen>True</AutoGen>
@@ -302,11 +302,11 @@
     <Compile Include="Model\Utilisateur.cs">
       <DependentUpon>ADOModele.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModifClient.cs">
+    <Compile Include="Page_ModificationClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ModifClient.designer.cs">
-      <DependentUpon>ModifClient.cs</DependentUpon>
+    <Compile Include="Page_ModificationClient.designer.cs">
+      <DependentUpon>Page_ModificationClient.cs</DependentUpon>
     </Compile>
     <Compile Include="RetourClient.cs">
       <SubType>Form</SubType>
@@ -338,17 +338,17 @@
     <Compile Include="Voir_Modif_LC.Designer.cs">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreerUtilisateur.cs">
+    <Compile Include="Page_CreerNouveauUtilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CreerUtilisateur.Designer.cs">
-      <DependentUpon>CreerUtilisateur.cs</DependentUpon>
+    <Compile Include="Page_CreerNouveauUtilisateur.Designer.cs">
+      <DependentUpon>Page_CreerNouveauUtilisateur.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerUtilisateur.cs">
+    <Compile Include="Page_ManagerUtilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerUtilisateur.Designer.cs">
-      <DependentUpon>ManagerUtilisateur.cs</DependentUpon>
+    <Compile Include="Page_ManagerUtilisateur.Designer.cs">
+      <DependentUpon>Page_ManagerUtilisateur.cs</DependentUpon>
     </Compile>
     <Compile Include="PagePrincipale.cs">
       <SubType>Form</SubType>
@@ -356,11 +356,11 @@
     <Compile Include="PagePrincipale.Designer.cs">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Page_Connexion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Page_Connexion.Designer.cs">
+      <DependentUpon>Page_Connexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -372,32 +372,32 @@
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WordTools.cs" />
-    <EmbeddedResource Include="AfficherPDF.resx">
-      <DependentUpon>AfficherPDF.cs</DependentUpon>
+    <EmbeddedResource Include="Page_AfficherPDF.resx">
+      <DependentUpon>Page_AfficherPDF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangePath.resx">
-      <DependentUpon>ChangePath.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp_ChangeCheminDossierFINACOOP.resx">
+      <DependentUpon>PopUp_ChangeCheminDossierFINACOOP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeSMTP.resx">
-      <DependentUpon>ChangeSMTP.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp_ChangeSMTP.resx">
+      <DependentUpon>PopUp_ChangeSMTP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChoosePath.resx">
-      <DependentUpon>ChoosePath.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp_ChoixDossierFINACOOP.resx">
+      <DependentUpon>PopUp_ChoixDossierFINACOOP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EnvoieLcAuClient.resx">
-      <DependentUpon>EnvoieLcAuClient.cs</DependentUpon>
+    <EmbeddedResource Include="Page_EnvoieLcAuClient.resx">
+      <DependentUpon>Page_EnvoieLcAuClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FenGenerationLC.resx">
-      <DependentUpon>FenGenerationLC.cs</DependentUpon>
+    <EmbeddedResource Include="Page_CreationDeLc.resx">
+      <DependentUpon>Page_CreationDeLc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FenPreRemplissageAutomatique.resx">
-      <DependentUpon>FenPreRemplissageAutomatique.cs</DependentUpon>
+    <EmbeddedResource Include="Page_RemplissageBaseSIRENE.resx">
+      <DependentUpon>Page_RemplissageBaseSIRENE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjoutModele.resx">
-      <DependentUpon>AjoutModele.cs</DependentUpon>
+    <EmbeddedResource Include="Page_AjoutNouveauModele.resx">
+      <DependentUpon>Page_AjoutNouveauModele.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifClient.resx">
-      <DependentUpon>ModifClient.cs</DependentUpon>
+    <EmbeddedResource Include="Page_ModificationClient.resx">
+      <DependentUpon>Page_ModificationClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RetourClient.resx">
       <DependentUpon>RetourClient.cs</DependentUpon>
@@ -414,11 +414,11 @@
     <EmbeddedResource Include="Voir_Modif_LC.resx">
       <DependentUpon>Voir_Modif_LC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreerUtilisateur.resx">
-      <DependentUpon>CreerUtilisateur.cs</DependentUpon>
+    <EmbeddedResource Include="Page_CreerNouveauUtilisateur.resx">
+      <DependentUpon>Page_CreerNouveauUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUtilisateur.resx">
-      <DependentUpon>ManagerUtilisateur.cs</DependentUpon>
+    <EmbeddedResource Include="Page_ManagerUtilisateur.resx">
+      <DependentUpon>Page_ManagerUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagePrincipale.fr.resx">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
@@ -426,8 +426,8 @@
     <EmbeddedResource Include="PagePrincipale.resx">
       <DependentUpon>PagePrincipale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Page_Connexion.resx">
+      <DependentUpon>Page_Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace LettreCooperation
 {
-    public partial class FenPreRemplissageAutomatique : Form
+    public partial class Page_RemplissageBaseSIRENE : Form
     {
         private SIRENE entreprises;
         public Record entrepriseSelectionnee;
-        public FenPreRemplissageAutomatique()
+        public Page_RemplissageBaseSIRENE()
         {
             InitializeComponent();
         }

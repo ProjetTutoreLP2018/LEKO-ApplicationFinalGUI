@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace LettreCooperation
 {
-    public partial class ChangeSMTP : Form
+    public partial class PopUp_ChangeSMTP : Form
     {
-        public ChangeSMTP()
+        public PopUp_ChangeSMTP()
         {
             InitializeComponent();
 

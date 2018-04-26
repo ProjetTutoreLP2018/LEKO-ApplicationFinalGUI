@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class ChoosePath
+    partial class PopUp_ChoixDossierFINACOOP
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoosePath));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp_ChoixDossierFINACOOP));
             this.labelMessage = new System.Windows.Forms.Label();
             this.butonParcour = new System.Windows.Forms.Button();
             this.textBoxPath = new System.Windows.Forms.TextBox();

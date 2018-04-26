@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class CreerUtilisateur
+    partial class Page_CreerNouveauUtilisateur
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreerUtilisateur));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_CreerNouveauUtilisateur));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.labelPathImage = new System.Windows.Forms.Label();

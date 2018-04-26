@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace LettreCooperation
 {
-    public partial class ChangePath : Form
+    public partial class PopUp_ChangeCheminDossierFINACOOP : Form
     {
 
 
-        public ChangePath()
+        public PopUp_ChangeCheminDossierFINACOOP()
         {
             InitializeComponent();
 

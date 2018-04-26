@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class FenPreRemplissageAutomatique
+    partial class Page_RemplissageBaseSIRENE
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenPreRemplissageAutomatique));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_RemplissageBaseSIRENE));
             this.label2 = new System.Windows.Forms.Label();
             this.ListeChoixEntreprises = new System.Windows.Forms.ListBox();
             this.MotsCles = new System.Windows.Forms.TextBox();

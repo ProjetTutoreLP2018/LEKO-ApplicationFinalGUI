@@ -8,7 +8,7 @@ using System.IO;
 
 namespace LettreCooperation
 {
-	public partial class FenGenerationLC : UserControl
+	public partial class Page_CreationDeLc : UserControl
 	{
 
         private ModelManager modeleManager = new ModelManager();
@@ -16,7 +16,7 @@ namespace LettreCooperation
         private List<Modele> modeles = new List<Modele>();
 
 
-		public FenGenerationLC()
+		public Page_CreationDeLc()
 		{
 			InitializeComponent();
 		}

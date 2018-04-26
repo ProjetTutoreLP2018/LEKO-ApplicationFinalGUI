@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class EnvoieLcAuClient
+    partial class Page_EnvoieLcAuClient
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

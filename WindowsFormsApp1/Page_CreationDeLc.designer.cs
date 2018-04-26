@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-	partial class FenGenerationLC
+	partial class Page_CreationDeLc
 	{
 		/// <summary> 
 		/// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenGenerationLC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_CreationDeLc));
             this.BoutonParcourirFichierValoHonoraires = new System.Windows.Forms.Button();
             this.FichierValoHonoraires = new System.Windows.Forms.TextBox();
             this.ListeDeroulanteChoixClient = new System.Windows.Forms.ComboBox();

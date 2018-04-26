@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace LettreCooperation
 {
-    public partial class ChoosePath : Form
+    public partial class PopUp_ChoixDossierFINACOOP : Form
     {
 
         /// <summary>
         /// Constructeur de class qui permet
         /// de l'initialiser
         /// </summary>
-        public ChoosePath()
+        public PopUp_ChoixDossierFINACOOP()
         {
             InitializeComponent();
 

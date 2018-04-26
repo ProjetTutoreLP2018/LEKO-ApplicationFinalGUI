@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class ChangeSMTP
+    partial class PopUp_ChangeSMTP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeSMTP));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp_ChangeSMTP));
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.labelMessage = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();

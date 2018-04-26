@@ -21,7 +21,7 @@ namespace LettreCooperation
 
 		private void PreremplirAutomatiquement()
 		{
-			FenPreRemplissageAutomatique fenPreRemplissageAutomatique = new FenPreRemplissageAutomatique();
+			Page_RemplissageBaseSIRENE fenPreRemplissageAutomatique = new Page_RemplissageBaseSIRENE();
 			if (fenPreRemplissageAutomatique.ShowDialog(this) == DialogResult.OK)
 			{
 				Record enregistrement = fenPreRemplissageAutomatique.entrepriseSelectionnee;

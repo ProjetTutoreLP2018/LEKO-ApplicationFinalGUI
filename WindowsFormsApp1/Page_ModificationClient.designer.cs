@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class ModifClient
+    partial class Page_ModificationClient
     {
       
             /// <summary> 

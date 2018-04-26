@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class ChangePath
+    partial class PopUp_ChangeCheminDossierFINACOOP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePath));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp_ChangeCheminDossierFINACOOP));
             this.buttonAnnuler = new System.Windows.Forms.Button();
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.labelMessage = new System.Windows.Forms.Label();

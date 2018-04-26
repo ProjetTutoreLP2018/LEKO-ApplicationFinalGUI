@@ -9,7 +9,7 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-    public partial class ManagerUtilisateur : UserControl
+    public partial class Page_ManagerUtilisateur : UserControl
     {
 
 
@@ -19,7 +19,7 @@ namespace LettreCooperation
         private int index;
 
 
-        public ManagerUtilisateur()
+        public Page_ManagerUtilisateur()
         {
             InitializeComponent();
             
