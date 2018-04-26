@@ -610,7 +610,7 @@ namespace LettreCooperation.modele
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
                 return null;
-            }
+            } 
         }
 
 
