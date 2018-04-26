@@ -27,7 +27,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Droit.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -47,7 +47,7 @@ namespace LettreCooperation.modele
                 context.Utilisateur.Add(utilisateur);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -66,7 +66,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Utilisateur.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -84,7 +84,7 @@ namespace LettreCooperation.modele
             try { 
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -104,7 +104,7 @@ namespace LettreCooperation.modele
                 context.Utilisateur.Remove(utilisateur);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -123,7 +123,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.LC.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -148,7 +148,7 @@ namespace LettreCooperation.modele
                         || etat.libelle_etat == "R"
                         select lc).ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -172,7 +172,7 @@ namespace LettreCooperation.modele
 
                 return lcs.First();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -193,7 +193,7 @@ namespace LettreCooperation.modele
                 context.LC.Remove(lcASupp);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -212,7 +212,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Client.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -233,7 +233,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.LC.Where(a => a.id_client == indexClient).ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -263,7 +263,7 @@ namespace LettreCooperation.modele
                     return null;
 
             }
-            catch(System.Data.Entity.Core.EntityException e)
+            catch(System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -302,7 +302,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Etat.Find(index);
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -322,7 +322,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Utilisateur.Find(index);
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -342,7 +342,7 @@ namespace LettreCooperation.modele
                 context.Client.Add(client);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -362,7 +362,7 @@ namespace LettreCooperation.modele
                 context.Adresse.Add(adresse);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -387,7 +387,7 @@ namespace LettreCooperation.modele
                        where etat.libelle_etat == "SE" 
                        select lc).ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -407,7 +407,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Client.Find(id);
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -434,7 +434,7 @@ namespace LettreCooperation.modele
 
                 return u;
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -455,7 +455,7 @@ namespace LettreCooperation.modele
                 lc.id_etat = etat;
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -477,7 +477,7 @@ namespace LettreCooperation.modele
                 lc.chemin_lc = path;
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -510,7 +510,7 @@ namespace LettreCooperation.modele
                     context.SaveChanges();
                     return true;
                 }
-                catch (System.Data.Entity.Core.EntityException e)
+                catch (System.Data.Entity.Core.EntityException)
                 {
                     MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                         "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -542,7 +542,7 @@ namespace LettreCooperation.modele
 
                 return client_sql.First();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -562,7 +562,7 @@ namespace LettreCooperation.modele
             try {
                 return context.Modele.ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -583,7 +583,7 @@ namespace LettreCooperation.modele
                 context.LC.Add(lc);
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -604,7 +604,7 @@ namespace LettreCooperation.modele
             try { 
                 return context.Etat.Find(i);
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -626,7 +626,7 @@ namespace LettreCooperation.modele
                 lc.id_etat = 7;
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -652,7 +652,7 @@ namespace LettreCooperation.modele
                 lcFromDB.id_signataire = utilisateur.id_utilisateur;
                 context.SaveChanges();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -675,7 +675,7 @@ namespace LettreCooperation.modele
                 Image returnImage = Image.FromStream(ms);
                 return returnImage;
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -701,7 +701,7 @@ namespace LettreCooperation.modele
                 context.SaveChanges();
                 MessageBox.Show("Le modéle de LC " + nomFichier + " a était ajoutée");
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -723,7 +723,7 @@ namespace LettreCooperation.modele
                 return (from Etat in context.Etat
                        select Etat).ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -746,7 +746,7 @@ namespace LettreCooperation.modele
 
                 return idEtatArchiver.First();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -771,7 +771,7 @@ namespace LettreCooperation.modele
 
                 return idEtatArchiver.First();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -791,7 +791,7 @@ namespace LettreCooperation.modele
                         select client).Distinct().ToList();
 
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -813,7 +813,7 @@ namespace LettreCooperation.modele
                         select client).Distinct().ToList();
 
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -836,7 +836,7 @@ namespace LettreCooperation.modele
                         && client.id_client == id
                         select lc).ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
@@ -854,7 +854,7 @@ namespace LettreCooperation.modele
                         && lc.id_etat == 10
                         select lc).ToList();
             }
-            catch (System.Data.Entity.Core.EntityException e)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");

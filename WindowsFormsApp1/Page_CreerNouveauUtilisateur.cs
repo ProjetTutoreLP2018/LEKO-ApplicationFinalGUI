@@ -6,7 +6,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.Model;
-
+using System.Drawing.Drawing2D;
 
 namespace LettreCooperation
 {
@@ -147,7 +147,7 @@ namespace LettreCooperation
 
 
             utilisateur.id_droit = index;
-            utilisateur.mdp_utilisateur = textPass.Text;
+            utilisateur.mdp_utilisateur = EncryptePass(textPass.Text);
 
            
             MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
@@ -155,13 +155,51 @@ namespace LettreCooperation
 
             if (!String.IsNullOrEmpty(labelPathImage.Text))
             {
-                Image imageSignature = new Bitmap(labelPathImage.Text);
-                utilisateur.image_Blob_Signature = ImageToByteArray(imageSignature);
+                string image = ResizeImage(labelPathImage.Text);
+                using (Image imageSignature = Image.FromFile(image))
+                {
+                    utilisateur.image_Blob_Signature = ImageToByteArray(imageSignature);
+                }
+                File.Delete(image);
             }
 
 
             model.CreerUtilisateur(utilisateur);
             Init();
+        }
+
+
+        private String ResizeImage(string path)
+        {
+
+            using (var srcImage = Image.FromFile(path))
+            {
+                var newWidth = (int)(210);
+                var newHeight = (int)(53);
+                using (var newImage = new Bitmap(newWidth, newHeight))
+                using (var graphics = Graphics.FromImage(newImage))
+                {
+                    graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    graphics.DrawImage(srcImage, new Rectangle(0, 0, newWidth, newHeight));
+                    newImage.Save(Program.FINACOOPFolder + "tmp.png");
+                }
+            }
+
+            return Program.FINACOOPFolder + "tmp.png";
+
+        }
+
+
+        private string EncryptePass(string pass)
+        {
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(pass);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+
+            return hash;
         }
 
 

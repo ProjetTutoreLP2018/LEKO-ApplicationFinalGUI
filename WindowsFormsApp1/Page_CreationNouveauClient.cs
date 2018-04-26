@@ -100,7 +100,7 @@ namespace LettreCooperation
 			//TODO : à implémenter
 		}
 
-		private  void BoutonValider_ClickAsync(object sender, EventArgs e)
+		private void BoutonValider_ClickAsync(object sender, EventArgs e)
 		{
 
 

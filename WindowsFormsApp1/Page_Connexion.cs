@@ -33,7 +33,7 @@ namespace LettreCooperation
             {
                 
                 ModelManager connexion = new ModelManager();
-                Utilisateur connecte = connexion.SeConnecter(this.textBoxUtilisateur.Text, this.textBoxPass.Text);
+                Utilisateur connecte = connexion.SeConnecter(this.textBoxUtilisateur.Text, EncryptePass(this.textBoxPass.Text));
 
                
                 if (connecte != null)
@@ -66,6 +66,18 @@ namespace LettreCooperation
                 this.labelErrorConnect.Text = "Merci de renseigner les champs vides.";
             }
            
+        }
+
+
+
+        private string EncryptePass(string pass)
+        {
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(pass);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+
+            return hash;
         }
 
 

@@ -44,7 +44,8 @@ namespace LettreCooperation
             listClient = new List<Client>();
 
             listClient = model.GetListClient();
-
+            comboClient.Items.Clear();
+            comboClient.Text = String.Empty;
 
             foreach (Client client in listClient)
                 comboClient.Items.Add(client.raison_sociale);

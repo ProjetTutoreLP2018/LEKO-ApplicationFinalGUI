@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.modele;
 using LettreCooperation.Model;
+using System.Drawing.Drawing2D;
 
 namespace LettreCooperation
 {
@@ -104,6 +105,12 @@ namespace LettreCooperation
                 pictureBoxSignature.Image = ByteArrayToImage(utilisateurs[index].image_Blob_Signature);
             else
                 pictureBoxSignature.Image = null;
+
+
+            if (utilisateurs[index].id_utilisateur == Page_Principale.Utilisateur.id_utilisateur)
+                checkBoxAdmin.Enabled = false;
+            else
+                checkBoxAdmin.Enabled = true;
         }
 
 
@@ -160,7 +167,7 @@ namespace LettreCooperation
             utilisateurs[index].email_utilisateur = textEmail.Text;
 
             if(!String.IsNullOrWhiteSpace(textPass.Text))
-                utilisateurs[index].mdp_utilisateur = textPass.Text;
+                utilisateurs[index].mdp_utilisateur = EncryptePass(textPass.Text);
 
             int indexDroit = 0;
 
@@ -177,14 +184,56 @@ namespace LettreCooperation
 
             if (!String.IsNullOrEmpty(labelPathImage.Text))
             {
-                Image imageSignature = Image.FromFile(labelPathImage.Text);
-                utilisateurs[index].image_Blob_Signature = ImageToByteArray(imageSignature);
+                string image = ResizeImage(labelPathImage.Text);
+                using(Image imageSignature = Image.FromFile(image))
+                {
+                    utilisateurs[index].image_Blob_Signature = ImageToByteArray(imageSignature);
+
+                }
+
+                File.Delete(image);
             }
 
             model.SaveBDD();
             MessageBox.Show("Votre utilisateur a bien été modifié");
             Init();
 
+        }
+
+
+        private String ResizeImage(string path)
+        {
+
+            using (var srcImage = Image.FromFile(path))
+            {
+                var newWidth = (int)(210);
+                var newHeight = (int)(53);
+                using (var newImage = new Bitmap(newWidth, newHeight))
+                {
+                    using (var graphics = Graphics.FromImage(newImage))
+                    {
+                        graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        graphics.DrawImage(srcImage, new Rectangle(0, 0, newWidth, newHeight));
+                        newImage.Save(Program.FINACOOPFolder + "tmp.png");
+                    }
+                }
+            }
+
+            return Program.FINACOOPFolder + "tmp.png";
+
+        }
+
+
+        private string EncryptePass(string pass)
+        {
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(pass);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+
+            return hash;
         }
 
 
