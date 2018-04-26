@@ -8,7 +8,7 @@ namespace LettreCooperation
     public partial class AjoutModele : Form
     {
         private string pathSource;
-        private string pathDestination = Program.FINACOOPFolder + @"\Interne\5.LC & Prospection\5.Lettres de coopération\Modèles LC\";
+        private string pathDestination = Program.FINACOOPFolder + Properties.Settings.Default.PathModeles;
         private string nomFichier;
         private string nomMission;
         private string typeLettre;
@@ -122,7 +122,7 @@ namespace LettreCooperation
         {
             OpenFileDialog fdlg = new OpenFileDialog();
            
-            fdlg.InitialDirectory = @"c:\";
+            //fdlg.InitialDirectory = @"c:\";
             fdlg.Filter = "Word|*.docx";
             fdlg.FilterIndex = 2;
             fdlg.RestoreDirectory = true;

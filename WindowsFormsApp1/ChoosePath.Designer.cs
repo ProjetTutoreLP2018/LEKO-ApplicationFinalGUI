@@ -62,7 +62,6 @@
             this.textBoxPath.Enabled = false;
             this.textBoxPath.Location = new System.Drawing.Point(110, 97);
             this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.ReadOnly = true;
             this.textBoxPath.Size = new System.Drawing.Size(217, 20);
             this.textBoxPath.TabIndex = 2;
             // 

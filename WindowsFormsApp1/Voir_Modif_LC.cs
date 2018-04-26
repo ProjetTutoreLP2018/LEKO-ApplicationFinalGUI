@@ -18,7 +18,7 @@ namespace LettreCooperation
         private int indexLc;
         private int etat;
         private LC lcVisible;
-        // private Microsoft.Office.Interop.Word.Application fichier = new Microsoft.Office.Interop.Word.Application();
+    
 
         public Voir_Modif_LC()
         {

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WindowsFormsApp1.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LettreCooperation.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="MillesimeADateCourante" Type="System.Boolean" Scope="User">
@@ -74,6 +74,18 @@
     </Setting>
     <Setting Name="SMTP" Type="System.String" Scope="User">
       <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="PathRealiser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Interne\5.LC &amp; Prospection\5.Lettres de coopération\LC à réaliser et envoyer\</Value>
+    </Setting>
+    <Setting Name="PathEnvoyer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Interne\5.LC &amp; Prospection\5.Lettres de coopération\LC envoyées\</Value>
+    </Setting>
+    <Setting Name="PathArchiver" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Interne\5.LC &amp; Prospection\5.Lettres de coopération\zzz_old\</Value>
+    </Setting>
+    <Setting Name="PathModeles" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Interne\5.LC &amp; Prospection\5.Lettres de coopération\Modèles LC\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

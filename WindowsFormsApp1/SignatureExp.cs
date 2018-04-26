@@ -15,9 +15,7 @@ namespace LettreCooperation
 
         private ModelManager modelManager = new ModelManager();
         private List<LC> listLc = new List<LC>();
-        private string file2 = "";
-      //  private const string _PATHLCENVOYE = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC envoyées\";
-
+       
 
         public SignatureExp()
         {

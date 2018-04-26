@@ -251,5 +251,53 @@ namespace LettreCooperation.Properties {
                 this["SMTP"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Interne\\5.LC & Prospection\\5.Lettres de coopération\\LC à réaliser et envoyer\\")]
+        public string PathRealiser {
+            get {
+                return ((string)(this["PathRealiser"]));
+            }
+            set {
+                this["PathRealiser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Interne\\5.LC & Prospection\\5.Lettres de coopération\\LC envoyées\\")]
+        public string PathEnvoyer {
+            get {
+                return ((string)(this["PathEnvoyer"]));
+            }
+            set {
+                this["PathEnvoyer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Interne\\5.LC & Prospection\\5.Lettres de coopération\\zzz_old\\")]
+        public string PathArchiver {
+            get {
+                return ((string)(this["PathArchiver"]));
+            }
+            set {
+                this["PathArchiver"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Interne\\5.LC & Prospection\\5.Lettres de coopération\\Modèles LC\\")]
+        public string PathModeles {
+            get {
+                return ((string)(this["PathModeles"]));
+            }
+            set {
+                this["PathModeles"] = value;
+            }
+        }
     }
 }

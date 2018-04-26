@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using LettreCooperation.modele;
 using LettreCooperation.Model;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace LettreCooperation
 {
@@ -27,9 +26,7 @@ namespace LettreCooperation
         private List<int> lesIdDesLcDuClient = new List<int>();
         // ToDo | Changer le chemin général "@pathGeneral"
         /* Initialisation du chemin général pour toutes les LC */
-        private string pathGeneral = Program.FINACOOPFolder + @"\Interne\5.LC & Prospection\5.Lettres de coopération";
-        private string dossierCibleRefus = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC à réaliser et envoyer";
-
+       
 
         ModelManager manager = new ModelManager();
 
@@ -175,8 +172,8 @@ namespace LettreCooperation
            /* try
             {*/
                 /* fichierDest = correspond "chemin du fichier" + "Raison Sociale du Client = dossier du client" + "Nom final du fichier à déplacer" */
-                string dossierCibleArchive = @"\Interne\5.LC & Prospection\5.Lettres de coopération\zzz_old\";
-                string pathDest = Program.FINACOOPFolder +  dossierCibleArchive + clientChoisi + @"\";
+             //   string dossierCibleArchive = @"\Interne\5.LC & Prospection\5.Lettres de coopération\zzz_old\";
+                string pathDest = Program.FINACOOPFolder + Properties.Settings.Default.PathArchiver + clientChoisi + @"\";
                 string fichierDest = "";
 
                 /* Vérifie si le dossier des archives du client existe dans le repertoire  */
@@ -191,7 +188,7 @@ namespace LettreCooperation
                 /* Changement de l'état de la LC qui passe en "Archiver" (libelle de l'Etat d'une LC archivé = "A") dans le programme */
                 lcDuClient.id_etat = manager.GetIdEtatArchiver();
                 /* La LC a été archiver, son chemin change donc d'adresse */
-                lcDuClient.chemin_lc = @"\" + dossierCibleArchive + clientChoisi + @"\" + nomDeLaLcAarchier;
+                lcDuClient.chemin_lc = Properties.Settings.Default.PathArchiver + clientChoisi + @"\" + nomDeLaLcAarchier;
                 /* Sauvegarde du changement de l'état de la LC qui passe en "Archiver" dans la Base De Données */
                 manager.SaveBDD();
                 /* Message qui indique à l'utilisateur que la LC a bien été archiver */
@@ -241,7 +238,7 @@ namespace LettreCooperation
              }*/
 
             
-            string pathDest =  dossierCibleRefus + @"\" + clientChoisi;
+            string pathDest = Properties.Settings.Default.PathRealiser + clientChoisi;
             lcDuClient.chemin_lc = pathDest + @"\" + lcDuClient.nom_lc;
             lcDuClient.id_etat = manager.GetIdEtatRefuser();
             manager.SaveBDD();

@@ -16,7 +16,6 @@ namespace LettreCooperation
         private ModelManager modelManager = new ModelManager();
         private List<LC> listLc;
         private string pathPDF;
-        private const string _PATHLCENVOYE = @"\Interne\5.LC & Prospection\5.Lettres de coopération\LC envoyées\";
         private bool envoieMail = false;
 
         public EnvoieLcAuClient()
@@ -184,7 +183,7 @@ namespace LettreCooperation
                 MessageBox.Show("Votre mail a bien été envoyé à l'adresse : " + to, "Message envoyé");
                 envoieMail = true;
             }
-            catch (Exception ep)
+            catch (Exception)
             {
                 MessageBox.Show("Problème lors de l'envoi du message : Merci de vérifier votre Adresse Mail", "Erreur : Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -210,7 +209,7 @@ namespace LettreCooperation
         {
            // MessageBox.Show("Copie en cours ...");
 
-            string dossier = Program.FINACOOPFolder + _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale;
+            string dossier = Program.FINACOOPFolder + Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale;
 
             if (!Directory.Exists(dossier))
             {
@@ -239,7 +238,7 @@ namespace LettreCooperation
         {
 
             Word2Pdf ObjetWord = new Word2Pdf();
-            string dossier = Program.FINACOOPFolder + _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale;
+            string dossier = Program.FINACOOPFolder + Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale;
 
             if (!Directory.Exists(dossier))
             {
@@ -261,8 +260,8 @@ namespace LettreCooperation
                 ObjetWord.Word2PdfCOnversion();
             }
 
-            modelManager.UpdatePathLc(lc, _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc);
-            pathPDF = _PATHLCENVOYE + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
+            modelManager.UpdatePathLc(lc, Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc);
+            pathPDF = Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
 
             MessageBox.Show("Le PDF a était créer : " + pathPDF);
         }
