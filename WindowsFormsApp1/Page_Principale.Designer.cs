@@ -61,6 +61,7 @@
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.pictureLogout = new System.Windows.Forms.PictureBox();
+            this.supprimerUnModèleDeLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageHome)).BeginInit();
@@ -154,6 +155,7 @@
             this.créerUnUtilisateurToolStripMenuItem,
             this.ManagerUtilisateurToolStripMenuItem,
             this.ajouterUnModèleDeLCToolStripMenuItem,
+            this.supprimerUnModèleDeLCToolStripMenuItem,
             this.changerCheminDossierFINACOOPToolStripMenuItem,
             this.changerSMTPToolStripMenuItem});
             this.gestionDesUtilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -269,6 +271,12 @@
             this.pictureLogout.TabStop = false;
             this.pictureLogout.Click += new System.EventHandler(this.PictureLogout_Click);
             // 
+            // supprimerUnModèleDeLCToolStripMenuItem
+            // 
+            this.supprimerUnModèleDeLCToolStripMenuItem.Name = "supprimerUnModèleDeLCToolStripMenuItem";
+            resources.ApplyResources(this.supprimerUnModèleDeLCToolStripMenuItem, "supprimerUnModèleDeLCToolStripMenuItem");
+            this.supprimerUnModèleDeLCToolStripMenuItem.Click += new System.EventHandler(this.supprimerUnModèleDeLCToolStripMenuItem_Click);
+            // 
             // Page_Principale
             // 
             resources.ApplyResources(this, "$this");
@@ -329,6 +337,7 @@
         private System.Windows.Forms.ToolStripMenuItem changerCheminDossierFINACOOPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerSMTPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem voireLesArchivesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerUnModèleDeLCToolStripMenuItem;
     }
 }
 

@@ -35,6 +35,10 @@ namespace LettreCooperation
             LCDataGridView.Rows.Clear();
             LCDataGridView.Refresh();
             listLc = modelManager.GetListLcASigner();
+
+            if (listLc == null)
+                return;
+
             foreach (var item in listLc)
             {
                 String[] row = {

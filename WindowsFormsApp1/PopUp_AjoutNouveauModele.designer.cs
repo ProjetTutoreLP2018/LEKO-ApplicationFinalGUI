@@ -35,11 +35,11 @@
             this.labelNomFichier = new System.Windows.Forms.Label();
             this.labelNomMission = new System.Windows.Forms.Label();
             this.labelTypeLettre = new System.Windows.Forms.Label();
-            this.textBoxNomFichier = new System.Windows.Forms.TextBox();
             this.textBoxNomMision = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,14 +107,6 @@
             this.labelTypeLettre.TabIndex = 6;
             this.labelTypeLettre.Text = "Type lettre :";
             // 
-            // textBoxNomFichier
-            // 
-            this.textBoxNomFichier.Location = new System.Drawing.Point(122, 55);
-            this.textBoxNomFichier.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNomFichier.Name = "textBoxNomFichier";
-            this.textBoxNomFichier.Size = new System.Drawing.Size(308, 20);
-            this.textBoxNomFichier.TabIndex = 7;
-            // 
             // textBoxNomMision
             // 
             this.textBoxNomMision.Location = new System.Drawing.Point(122, 95);
@@ -146,7 +138,7 @@
             this.groupBox1.Controls.Add(this.adresseFichier);
             this.groupBox1.Controls.Add(this.labelNomFichier);
             this.groupBox1.Controls.Add(this.textBoxNomMision);
-            this.groupBox1.Controls.Add(this.textBoxNomFichier);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(37, 17);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(594, 187);
@@ -163,7 +155,15 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Chemin fichier :";
             // 
-            // Page_AjoutNouveauModele
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(122, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(308, 20);
+            this.label2.TabIndex = 7;
+            // 
+            // PopUp_AjoutNouveauModele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.Ajouter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Page_AjoutNouveauModele";
+            this.Name = "PopUp_AjoutNouveauModele";
             this.Text = "Ajout d\'un modèle de Lettre de Coopération";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -189,11 +189,11 @@
         private System.Windows.Forms.Label labelNomFichier;
         private System.Windows.Forms.Label labelNomMission;
         private System.Windows.Forms.Label labelTypeLettre;
-        private System.Windows.Forms.TextBox textBoxNomFichier;
         private System.Windows.Forms.TextBox textBoxNomMision;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox label2;
     }
 }
 

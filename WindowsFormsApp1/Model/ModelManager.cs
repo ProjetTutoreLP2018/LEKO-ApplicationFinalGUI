@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -861,6 +862,23 @@ namespace LettreCooperation.modele
 
                 return null;
             }
+        }
+
+
+        /// <summary>
+        /// Méthode qui permet de supprimer un modèle de la base de données.
+        /// </summary>
+        /// <param name="idModele"></param>
+        public void SupprimerModele(int idModele)
+        {
+            Modele modeleTrouve = context.Modele.FirstOrDefault(modele => modele.id_modele == idModele);
+            if (modeleTrouve != null)
+            {
+                context.Modele.Remove(modeleTrouve);
+                //context.Entry(modeleTrouve).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+            else MessageBox.Show("Modéle introuvable");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace LettreCooperation
     public partial class PopUp_AjoutNouveauModele : Form
     {
         private string pathSource;
-        private string pathDestination = Program.FINACOOPFolder + Properties.Settings.Default.PathModeles;
+        private string pathDestination = Properties.Settings.Default.PathModeles;
         private string nomFichier;
         private string nomMission;
         private string typeLettre;
@@ -28,7 +28,7 @@ namespace LettreCooperation
 
             this.adresseFichier.Enabled = false;
             this.Ajouter.Enabled = false;
-            this.textBoxNomFichier.Enabled = false;
+            this.label2.Enabled = false;
             this.textBoxNomMision.Enabled = false;
             this.comboBox1.Enabled = false;
            
@@ -38,12 +38,12 @@ namespace LettreCooperation
         private void Ajouter_Click(object sender, EventArgs e) {
 
 
-            if (textBoxNomFichier.TextLength == 0)
+            if (label2.TextLength == 0)
             {
                 MessageBox.Show("Vous devez saisir un nom de fichier");
                 return;
             }
-            else this.nomFichier = this.textBoxNomFichier.Text;
+            else this.nomFichier = this.label2.Text;
 
             if (textBoxNomMision.TextLength == 0)
             {
@@ -52,21 +52,27 @@ namespace LettreCooperation
             }
             else this.nomMission = this.textBoxNomMision.Text;
 
+            if (this.comboBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("Merci de séléctionner un type de Modèle.");
+                return;
+            }
+
             this.typeLettre = this.comboBox1.SelectedItem.ToString();
 
 
-            string[] files = Directory.GetFiles(this.pathDestination);
+          //  string[] files = Directory.GetFiles(this.pathDestination);
             bool nomUtilise = false;
             
 
-            foreach (string file in files)
+            /*foreach (string file in files)
             {
                 if (Path.GetFileName(file).Equals(this.nomFichier))
                 {
                     nomUtilise = true;
                     break;
                 }
-            }
+            }*/
 
             if (nomUtilise)
             {
@@ -84,7 +90,7 @@ namespace LettreCooperation
                 {
                     this.pathDestination += this.nomFichier + ".docx";
                     //Copier et coller le fichier
-                    File.Copy(pathSource, pathDestination);
+                    File.Copy(pathSource, Program.FINACOOPFolder +  pathDestination);
                 }
 
                 else
@@ -107,7 +113,7 @@ namespace LettreCooperation
 
  
             this.adresseFichier.Clear();
-            this.textBoxNomFichier.Clear();
+            this.label2.Clear();
             this.textBoxNomMision.Clear();
 
 
@@ -134,11 +140,11 @@ namespace LettreCooperation
                 this.pathSource = fdlg.FileName;
                 
                 this.nomFichier = Path.GetFileNameWithoutExtension(this.pathSource);
-                this.textBoxNomFichier.Text = this.nomFichier;
+                this.label2.Text = this.nomFichier;
 
                 this.Ajouter.Enabled = true;
                 this.comboBox1.Enabled = true;
-                this.textBoxNomFichier.Enabled = true;
+                this.label2.Enabled = true;
                 this.textBoxNomMision.Enabled = true;
                
             }

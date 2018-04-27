@@ -302,5 +302,14 @@ namespace LettreCooperation
             Page_VoirArchives page_VoirArchives = new Page_VoirArchives();
             page_VoirArchives.Show();
         }
+
+        private void supprimerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Utilisateur.isAdmin)
+            {
+                PopUp_SupprimerUnModeleDeLc popUp_SupprimerUnModeleDeLc = new PopUp_SupprimerUnModeleDeLc();
+                popUp_SupprimerUnModeleDeLc.Show();
+            }
+        }
     }
 }

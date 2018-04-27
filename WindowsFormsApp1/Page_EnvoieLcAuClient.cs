@@ -40,7 +40,11 @@ namespace LettreCooperation
             buttonEnvoyer.Enabled = false;
             listLc = modelManager.GetListLCWaitingSend();
 
-            for(int i = 0; i < listLc.Count; i++)
+            if (listLc == null)
+                return;
+
+
+            for (int i = 0; i < listLc.Count; i++)
             {
 
 
@@ -87,6 +91,7 @@ namespace LettreCooperation
             PopUp_Patienter waitForm = new PopUp_Patienter();
             waitForm.Show();
 
+            
             for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 DataGridViewCheckBoxCell chkchecking = dataGridView.Rows[i].Cells[5] as DataGridViewCheckBoxCell;
@@ -149,10 +154,6 @@ namespace LettreCooperation
             string to = client.mail_referent;
             mail.To.Add(to);
 
-            // Set email subject
-            string title = "Voici votre LC";
-            mail.Subject = title;
-
             // Set email body
 
 
@@ -188,6 +189,11 @@ namespace LettreCooperation
 
             mail.Body = text;
 
+            // Set email subject            
+            string ligneZero = lines[0];
+            mail.Subject = ligneZero;
+
+
             try
             {
                 //Test PJ
@@ -202,16 +208,16 @@ namespace LettreCooperation
             }
 
 
-           /* try
-            {*/
+            try
+            {
                 oSmtp.Send(mail);
                 MessageBox.Show("Votre mail a bien été envoyé à l'adresse : " + to, "Message envoyé");
                 envoieMail = true;
-            /*}
-            catch (Exception)
+            }
+            catch (SmtpException)
             {
-                MessageBox.Show("Problème lors de l'envoi du message : Merci de vérifier votre Adresse Mail", "Erreur : Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+                MessageBox.Show("Mot de passe ou adresse Email incorrecte", "Erreur : Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
