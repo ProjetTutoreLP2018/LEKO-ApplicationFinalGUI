@@ -171,6 +171,9 @@ namespace LettreCooperation
             clients[index].forme_juridique = FormeJuridique.Text;
             clients[index].effectifs = (int) Effectif.Value;
             clients[index].CA = (double) CA.Value;
+            clients[index].exercice_debut = dateTimeExercice_debut.Value;
+            clients[index].exercice_fin = dateTimeExercice_fin.Value;
+            clients[index].activite = textBoxActivite.Text;
 
             if (String.IsNullOrEmpty(SiteInternet.Text))
                 clients[index].site_web = " ";

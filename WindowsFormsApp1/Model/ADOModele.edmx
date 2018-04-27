@@ -42,6 +42,8 @@
           <Property Name="tel_portable" Type="varchar" MaxLength="20" />
           <Property Name="mail_referent" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="activite" Type="varchar" MaxLength="200" />
+          <Property Name="exercice_debut" Type="date" />
+          <Property Name="exercice_fin" Type="date" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -267,6 +269,8 @@
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_client" FromRole="Client" ToRole="LC" />
           <Property Name="mail_referent" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="activite" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="exercice_debut" Type="DateTime" Precision="0" />
+          <Property Name="exercice_fin" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -481,6 +485,8 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="LCBDModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="exercice_fin" ColumnName="exercice_fin" />
+                <ScalarProperty Name="exercice_debut" ColumnName="exercice_debut" />
                 <ScalarProperty Name="activite" ColumnName="activite" />
                 <ScalarProperty Name="mail_referent" ColumnName="mail_referent" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />

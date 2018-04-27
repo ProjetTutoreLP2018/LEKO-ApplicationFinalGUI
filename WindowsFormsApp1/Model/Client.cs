@@ -41,6 +41,8 @@ namespace LettreCooperation.Model
         public string tel_portable { get; set; }
         public string mail_referent { get; set; }
         public string activite { get; set; }
+        public Nullable<System.DateTime> exercice_debut { get; set; }
+        public Nullable<System.DateTime> exercice_fin { get; set; }
     
         public virtual Adresse Adresse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

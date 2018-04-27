@@ -167,7 +167,10 @@ namespace LettreCooperation
 				client.raison_sociale = NomOrganisation.Text;
 				client.sexe_referent = SexeRepresentant.Text;
 				client.siret = NumeroSiret.Text;
-     
+                client.exercice_debut = dateTimeExercice_debut.Value;
+                client.exercice_fin = dateTimeExercice_fin.Value;
+                client.activite = textBoxActivite.Text;
+
 
                 if (String.IsNullOrEmpty(SiteInternet.Text))
                     client.site_web = " ";
@@ -242,6 +245,6 @@ namespace LettreCooperation
             
         }
 
-   
+      
     }
 }
