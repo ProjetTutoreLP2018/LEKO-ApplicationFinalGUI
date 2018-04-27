@@ -102,7 +102,7 @@ namespace LettreCooperation
 
 		private void BoutonValider_ClickAsync(object sender, EventArgs e)
 		{
-
+            Cursor.Current = Cursors.WaitCursor;
 
             messageErr.Text = string.Empty;
             adresseMailMess.Text = string.Empty;
@@ -115,6 +115,7 @@ namespace LettreCooperation
             if (!match.Success)
             {
                 adresseMailMess.Text = "L'adresse email n'est pas valide.";
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
@@ -125,6 +126,7 @@ namespace LettreCooperation
                 SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals("") || LieuImmatriculation.Text.Equals(""))
             {
                 messageErr.Text = "Veuillez renseigner tous les champs.";
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
@@ -153,23 +155,25 @@ namespace LettreCooperation
 
 				modele.CreerAdresse(adresse);
 
-				Client client = new Client();
-				client.CA = (double)CA.Value;
-				client.date_immatriculation = DateImmatriculation.Value;
-				client.effectifs = (int)Effectif.Value;
-				client.ESS = ESSOui.Checked;
-				client.fonction_referent = FonctionRepresentant.Text;
-				client.forme_juridique = FormeJuridique.Text;
-				client.lieu_immatriculation = LieuImmatriculation.Text;
-				client.nom_referent = NomRepresentant.Text;
-				client.organisation_comptable = OrganisationComptable.Text;
-				client.prenom_referent = PrenomRepresentant.Text;
-				client.raison_sociale = NomOrganisation.Text;
-				client.sexe_referent = SexeRepresentant.Text;
-				client.siret = NumeroSiret.Text;
-                client.exercice_debut = dateTimeExercice_debut.Value;
-                client.exercice_fin = dateTimeExercice_fin.Value;
-                client.activite = textBoxActivite.Text;
+                Client client = new Client
+                {
+                    CA = (double)CA.Value,
+                    date_immatriculation = DateImmatriculation.Value,
+                    effectifs = (int)Effectif.Value,
+                    ESS = ESSOui.Checked,
+                    fonction_referent = FonctionRepresentant.Text,
+                    forme_juridique = FormeJuridique.Text,
+                    lieu_immatriculation = LieuImmatriculation.Text,
+                    nom_referent = NomRepresentant.Text,
+                    organisation_comptable = OrganisationComptable.Text,
+                    prenom_referent = PrenomRepresentant.Text,
+                    raison_sociale = NomOrganisation.Text,
+                    sexe_referent = SexeRepresentant.Text,
+                    siret = NumeroSiret.Text,
+                    exercice_debut = dateTimeExercice_debut.Value,
+                    exercice_fin = dateTimeExercice_fin.Value,
+                    activite = textBoxActivite.Text
+                };
 
 
                 if (String.IsNullOrEmpty(SiteInternet.Text))
@@ -202,7 +206,8 @@ namespace LettreCooperation
             }
 			catch (Exception ex)
 			{
-				MessageBox.Show("Une erreur est survenue. Veuillez réessayer.\nSi cette erreur se reproduit à l'avenir, contactez le développeur du logiciel en lui indiquant le message d'erreur.\nMessage d'erreur : " + ex.StackTrace, "Erreur");
+                Cursor.Current = Cursors.Default;
+                MessageBox.Show("Une erreur est survenue. Veuillez réessayer.\nSi cette erreur se reproduit à l'avenir, contactez le développeur du logiciel en lui indiquant le message d'erreur.\nMessage d'erreur : " + ex.StackTrace, "Erreur");
 			}
 		
 		}

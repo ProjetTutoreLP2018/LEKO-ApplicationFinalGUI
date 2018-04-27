@@ -50,7 +50,7 @@
             this.Ajouter.Margin = new System.Windows.Forms.Padding(2);
             this.Ajouter.Name = "Ajouter";
             this.Ajouter.Size = new System.Drawing.Size(81, 23);
-            this.Ajouter.TabIndex = 0;
+            this.Ajouter.TabIndex = 6;
             this.Ajouter.Text = "Ajouter";
             this.Ajouter.UseVisualStyleBackColor = true;
             this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
@@ -75,7 +75,7 @@
             this.adresseFichier.Name = "adresseFichier";
             this.adresseFichier.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.adresseFichier.Size = new System.Drawing.Size(308, 20);
-            this.adresseFichier.TabIndex = 3;
+            this.adresseFichier.TabIndex = 1;
             // 
             // labelNomFichier
             // 
@@ -113,7 +113,7 @@
             this.textBoxNomMision.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNomMision.Name = "textBoxNomMision";
             this.textBoxNomMision.Size = new System.Drawing.Size(308, 20);
-            this.textBoxNomMision.TabIndex = 8;
+            this.textBoxNomMision.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -126,7 +126,7 @@
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 21);
-            this.comboBox1.TabIndex = 10;
+            this.comboBox1.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -161,7 +161,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(308, 20);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 3;
             // 
             // PopUp_AjoutNouveauModele
             // 

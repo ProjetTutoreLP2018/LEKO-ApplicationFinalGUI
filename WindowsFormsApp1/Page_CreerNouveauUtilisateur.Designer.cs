@@ -94,7 +94,7 @@
             this.button1.Location = new System.Drawing.Point(370, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 21);
-            this.button1.TabIndex = 22;
+            this.button1.TabIndex = 9;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ButtonShearchImage_Click);
@@ -158,7 +158,7 @@
             this.checkBoxAdmin.Location = new System.Drawing.Point(331, 184);
             this.checkBoxAdmin.Name = "checkBoxAdmin";
             this.checkBoxAdmin.Size = new System.Drawing.Size(92, 17);
-            this.checkBoxAdmin.TabIndex = 16;
+            this.checkBoxAdmin.TabIndex = 6;
             this.checkBoxAdmin.Text = "Administrateur";
             this.checkBoxAdmin.UseVisualStyleBackColor = false;
             // 
@@ -167,7 +167,7 @@
             this.textConfirmEmail.Location = new System.Drawing.Point(123, 149);
             this.textConfirmEmail.Name = "textConfirmEmail";
             this.textConfirmEmail.Size = new System.Drawing.Size(152, 20);
-            this.textConfirmEmail.TabIndex = 14;
+            this.textConfirmEmail.TabIndex = 4;
             // 
             // label7
             // 
@@ -184,7 +184,7 @@
             this.bAnnuler.Location = new System.Drawing.Point(300, 341);
             this.bAnnuler.Name = "bAnnuler";
             this.bAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.bAnnuler.TabIndex = 12;
+            this.bAnnuler.TabIndex = 11;
             this.bAnnuler.Text = "Annuler";
             this.bAnnuler.UseVisualStyleBackColor = false;
             this.bAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
@@ -196,7 +196,7 @@
             this.bValider.Location = new System.Drawing.Point(403, 341);
             this.bValider.Name = "bValider";
             this.bValider.Size = new System.Drawing.Size(75, 23);
-            this.bValider.TabIndex = 11;
+            this.bValider.TabIndex = 10;
             this.bValider.Text = "Valider";
             this.bValider.UseVisualStyleBackColor = false;
             this.bValider.Click += new System.EventHandler(this.ButtonValider_Click);
@@ -208,28 +208,28 @@
             this.comboDroit.Location = new System.Drawing.Point(123, 180);
             this.comboDroit.Name = "comboDroit";
             this.comboDroit.Size = new System.Drawing.Size(152, 21);
-            this.comboDroit.TabIndex = 10;
+            this.comboDroit.TabIndex = 5;
             // 
             // textEmail
             // 
             this.textEmail.Location = new System.Drawing.Point(123, 114);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(152, 20);
-            this.textEmail.TabIndex = 9;
+            this.textEmail.TabIndex = 3;
             // 
             // textPrenom
             // 
             this.textPrenom.Location = new System.Drawing.Point(123, 79);
             this.textPrenom.Name = "textPrenom";
             this.textPrenom.Size = new System.Drawing.Size(152, 20);
-            this.textPrenom.TabIndex = 8;
+            this.textPrenom.TabIndex = 2;
             // 
             // textNom
             // 
             this.textNom.Location = new System.Drawing.Point(123, 46);
             this.textNom.Name = "textNom";
             this.textNom.Size = new System.Drawing.Size(152, 20);
-            this.textNom.TabIndex = 7;
+            this.textNom.TabIndex = 1;
             // 
             // groupBox2
             // 
@@ -260,14 +260,14 @@
             this.textConfPass.Location = new System.Drawing.Point(160, 56);
             this.textConfPass.Name = "textConfPass";
             this.textConfPass.Size = new System.Drawing.Size(152, 20);
-            this.textConfPass.TabIndex = 11;
+            this.textConfPass.TabIndex = 8;
             // 
             // textPass
             // 
             this.textPass.Location = new System.Drawing.Point(160, 25);
             this.textPass.Name = "textPass";
             this.textPass.Size = new System.Drawing.Size(152, 20);
-            this.textPass.TabIndex = 10;
+            this.textPass.TabIndex = 7;
             // 
             // label5
             // 

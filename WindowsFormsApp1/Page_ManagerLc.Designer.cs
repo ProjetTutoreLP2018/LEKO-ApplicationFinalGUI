@@ -189,7 +189,7 @@
             this.comboLC.Location = new System.Drawing.Point(42, 36);
             this.comboLC.Name = "comboLC";
             this.comboLC.Size = new System.Drawing.Size(426, 21);
-            this.comboLC.TabIndex = 1;
+            this.comboLC.TabIndex = 2;
             this.comboLC.SelectedIndexChanged += new System.EventHandler(this.ComboLC_SelectedIndexChanged);
             // 
             // label2
@@ -207,7 +207,7 @@
             this.button1.Location = new System.Drawing.Point(549, 397);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Afficher";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ButtonAfficher_Click);
@@ -218,7 +218,7 @@
             this.radioButtonAttSignExp.Location = new System.Drawing.Point(16, 26);
             this.radioButtonAttSignExp.Name = "radioButtonAttSignExp";
             this.radioButtonAttSignExp.Size = new System.Drawing.Size(168, 17);
-            this.radioButtonAttSignExp.TabIndex = 4;
+            this.radioButtonAttSignExp.TabIndex = 3;
             this.radioButtonAttSignExp.TabStop = true;
             this.radioButtonAttSignExp.Text = "En attente de signature Expert";
             this.radioButtonAttSignExp.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             this.radioButtonSignerExp.Location = new System.Drawing.Point(16, 52);
             this.radioButtonSignerExp.Name = "radioButtonSignerExp";
             this.radioButtonSignerExp.Size = new System.Drawing.Size(168, 17);
-            this.radioButtonSignerExp.TabIndex = 5;
+            this.radioButtonSignerExp.TabIndex = 4;
             this.radioButtonSignerExp.TabStop = true;
             this.radioButtonSignerExp.Text = "Signées et validées par Expert";
             this.radioButtonSignerExp.UseVisualStyleBackColor = true;
@@ -242,7 +242,7 @@
             this.radioButtonEnvoieCli.Location = new System.Drawing.Point(16, 79);
             this.radioButtonEnvoieCli.Name = "radioButtonEnvoieCli";
             this.radioButtonEnvoieCli.Size = new System.Drawing.Size(115, 17);
-            this.radioButtonEnvoieCli.TabIndex = 6;
+            this.radioButtonEnvoieCli.TabIndex = 5;
             this.radioButtonEnvoieCli.TabStop = true;
             this.radioButtonEnvoieCli.Text = "Envoyées au client";
             this.radioButtonEnvoieCli.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.radioButtonArchive.Location = new System.Drawing.Point(16, 106);
             this.radioButtonArchive.Name = "radioButtonArchive";
             this.radioButtonArchive.Size = new System.Drawing.Size(72, 17);
-            this.radioButtonArchive.TabIndex = 7;
+            this.radioButtonArchive.TabIndex = 6;
             this.radioButtonArchive.TabStop = true;
             this.radioButtonArchive.Text = "Archivées";
             this.radioButtonArchive.UseVisualStyleBackColor = true;
@@ -266,7 +266,7 @@
             this.radioButtonRefus.Location = new System.Drawing.Point(16, 134);
             this.radioButtonRefus.Name = "radioButtonRefus";
             this.radioButtonRefus.Size = new System.Drawing.Size(117, 17);
-            this.radioButtonRefus.TabIndex = 8;
+            this.radioButtonRefus.TabIndex = 7;
             this.radioButtonRefus.TabStop = true;
             this.radioButtonRefus.Text = "Refusées par Client";
             this.radioButtonRefus.UseVisualStyleBackColor = true;
@@ -343,7 +343,7 @@
             this.buttonSupprimer.Location = new System.Drawing.Point(456, 397);
             this.buttonSupprimer.Name = "buttonSupprimer";
             this.buttonSupprimer.Size = new System.Drawing.Size(75, 23);
-            this.buttonSupprimer.TabIndex = 10;
+            this.buttonSupprimer.TabIndex = 9;
             this.buttonSupprimer.Text = "Supprimer";
             this.buttonSupprimer.UseVisualStyleBackColor = false;
             this.buttonSupprimer.Click += new System.EventHandler(this.ButtonSupprimer_Click);

@@ -45,7 +45,7 @@
             this.cbChoixClient.Location = new System.Drawing.Point(212, 19);
             this.cbChoixClient.Name = "cbChoixClient";
             this.cbChoixClient.Size = new System.Drawing.Size(161, 21);
-            this.cbChoixClient.TabIndex = 0;
+            this.cbChoixClient.TabIndex = 1;
             this.cbChoixClient.SelectedIndexChanged += new System.EventHandler(this.CbChoixClient_SelectedIndexChanged);
             // 
             // cbChoixLcDuClient
@@ -54,7 +54,7 @@
             this.cbChoixLcDuClient.Location = new System.Drawing.Point(212, 71);
             this.cbChoixLcDuClient.Name = "cbChoixLcDuClient";
             this.cbChoixLcDuClient.Size = new System.Drawing.Size(300, 21);
-            this.cbChoixLcDuClient.TabIndex = 1;
+            this.cbChoixLcDuClient.TabIndex = 2;
             this.cbChoixLcDuClient.SelectedIndexChanged += new System.EventHandler(this.CbChoixLcDuClient_SelectedIndexChanged);
             // 
             // lblChoixClient
@@ -92,7 +92,7 @@
             this.btnRefuserLC.Location = new System.Drawing.Point(391, 182);
             this.btnRefuserLC.Name = "btnRefuserLC";
             this.btnRefuserLC.Size = new System.Drawing.Size(75, 23);
-            this.btnRefuserLC.TabIndex = 8;
+            this.btnRefuserLC.TabIndex = 3;
             this.btnRefuserLC.Text = "Refuser";
             this.btnRefuserLC.UseVisualStyleBackColor = false;
             this.btnRefuserLC.Click += new System.EventHandler(this.btnRefuserLC_Click);

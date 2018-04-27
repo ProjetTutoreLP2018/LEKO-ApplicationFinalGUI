@@ -34,6 +34,9 @@ namespace LettreCooperation
         {
             clients = modelManager.GetListClientArchive();
 
+            if (clients == null)
+                return;
+
             foreach (Client client in clients)
             {
                 comboBoxClient.Items.Add(client.raison_sociale);

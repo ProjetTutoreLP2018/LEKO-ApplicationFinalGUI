@@ -124,7 +124,7 @@
             this.button3.Location = new System.Drawing.Point(124, 167);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 21);
-            this.button3.TabIndex = 25;
+            this.button3.TabIndex = 6;
             this.button3.Text = "...";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.ButtonSearchImage_Click);
@@ -172,7 +172,7 @@
             this.checkBoxAdmin.Location = new System.Drawing.Point(395, 156);
             this.checkBoxAdmin.Name = "checkBoxAdmin";
             this.checkBoxAdmin.Size = new System.Drawing.Size(106, 17);
-            this.checkBoxAdmin.TabIndex = 15;
+            this.checkBoxAdmin.TabIndex = 9;
             this.checkBoxAdmin.Text = "Administrateur";
             this.checkBoxAdmin.UseVisualStyleBackColor = true;
             // 
@@ -182,7 +182,7 @@
             this.button2.Location = new System.Drawing.Point(598, 222);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
+            this.button2.TabIndex = 10;
             this.button2.Text = "Supprimer";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.ButtonDelete_Click);
@@ -194,7 +194,7 @@
             this.button1.Location = new System.Drawing.Point(481, 222);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Modifier";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ButtonModifier_Click);
@@ -236,14 +236,14 @@
             this.textPass.Location = new System.Drawing.Point(120, 26);
             this.textPass.Name = "textPass";
             this.textPass.Size = new System.Drawing.Size(100, 20);
-            this.textPass.TabIndex = 9;
+            this.textPass.TabIndex = 7;
             // 
             // textPassConfirm
             // 
             this.textPassConfirm.Location = new System.Drawing.Point(120, 67);
             this.textPassConfirm.Name = "textPassConfirm";
             this.textPassConfirm.Size = new System.Drawing.Size(100, 20);
-            this.textPassConfirm.TabIndex = 10;
+            this.textPassConfirm.TabIndex = 8;
             // 
             // label6
             // 
@@ -261,28 +261,28 @@
             this.comboDroit.Location = new System.Drawing.Point(115, 134);
             this.comboDroit.Name = "comboDroit";
             this.comboDroit.Size = new System.Drawing.Size(121, 21);
-            this.comboDroit.TabIndex = 11;
+            this.comboDroit.TabIndex = 5;
             // 
             // textEmail
             // 
             this.textEmail.Location = new System.Drawing.Point(115, 101);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(206, 20);
-            this.textEmail.TabIndex = 8;
+            this.textEmail.TabIndex = 4;
             // 
             // textPrenom
             // 
             this.textPrenom.Location = new System.Drawing.Point(115, 67);
             this.textPrenom.Name = "textPrenom";
             this.textPrenom.Size = new System.Drawing.Size(100, 20);
-            this.textPrenom.TabIndex = 7;
+            this.textPrenom.TabIndex = 3;
             // 
             // textNom
             // 
             this.textNom.Location = new System.Drawing.Point(115, 36);
             this.textNom.Name = "textNom";
             this.textNom.Size = new System.Drawing.Size(100, 20);
-            this.textNom.TabIndex = 6;
+            this.textNom.TabIndex = 2;
             // 
             // label4
             // 

@@ -37,9 +37,11 @@ namespace LettreCooperation
         //Fonction pour ajouter un modele de LC
         private void Ajouter_Click(object sender, EventArgs e) {
 
+            Cursor.Current = Cursors.WaitCursor;
 
             if (label2.TextLength == 0)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Vous devez saisir un nom de fichier");
                 return;
             }
@@ -47,6 +49,7 @@ namespace LettreCooperation
 
             if (textBoxNomMision.TextLength == 0)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Vous devez donner un nom de mission");
                 return;
             }
@@ -54,6 +57,7 @@ namespace LettreCooperation
 
             if (this.comboBox1.SelectedIndex < 0)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Merci de séléctionner un type de Modèle.");
                 return;
             }
@@ -76,6 +80,7 @@ namespace LettreCooperation
 
             if (nomUtilise)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Nom déjà utilisé !\nVeuillez changer le nom du fichier svp");
                 return;
             }
@@ -105,6 +110,7 @@ namespace LettreCooperation
             }
             catch (Exception var)
             {
+                Cursor.Current = Cursors.Default;
                 Console.WriteLine("The process failed: {0}", var.ToString());
             }
             
@@ -120,6 +126,7 @@ namespace LettreCooperation
             /* Accée BDD pour sauvegarder les élements */
             modeleManager.AjouterModel(this.pathDestination, this.nomFichier, this.nomMission, this.typeLettre);
 
+            Cursor.Current = Cursors.Default;
         }
 
        

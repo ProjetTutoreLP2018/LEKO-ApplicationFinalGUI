@@ -63,16 +63,20 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonSigner_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             string pass = EncryptePass(textBoxPass.Text);
 
             if (!pass.Equals(Page_Principale.Utilisateur.mdp_utilisateur))
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Votre mot de passe est incorrecte");
                 return;
             }
 
             if (Page_Principale.Utilisateur.image_Blob_Signature == null)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Vous ne disposez pas de signature dans la base. Veuillez contacter l'Administrateur.");
                 return;
             }
@@ -158,6 +162,7 @@ namespace LettreCooperation
                     }
                     catch (Exception ex)
                     {
+                        Cursor.Current = Cursors.Default;
                         MessageBox.Show(ex.Message);
                     }
                         
@@ -166,6 +171,7 @@ namespace LettreCooperation
             }
 
             Init();
+            Cursor.Current = Cursors.Default;
             waitForm.Close();
         }
 
@@ -243,7 +249,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Init();
+            Cursor.Current = Cursors.Default;
         }
 
 

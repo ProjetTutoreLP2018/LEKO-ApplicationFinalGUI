@@ -131,7 +131,7 @@
             this.BoutonValider.Location = new System.Drawing.Point(740, 433);
             this.BoutonValider.Name = "BoutonValider";
             this.BoutonValider.Size = new System.Drawing.Size(75, 23);
-            this.BoutonValider.TabIndex = 59;
+            this.BoutonValider.TabIndex = 29;
             this.BoutonValider.Text = "Valider";
             this.BoutonValider.UseVisualStyleBackColor = true;
             this.BoutonValider.Click += new System.EventHandler(this.BoutonValider_ClickAsync);
@@ -143,7 +143,7 @@
             this.BoutonAnnuler.Location = new System.Drawing.Point(645, 433);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.BoutonAnnuler.TabIndex = 58;
+            this.BoutonAnnuler.TabIndex = 30;
             this.BoutonAnnuler.Text = "Annuler";
             this.BoutonAnnuler.UseVisualStyleBackColor = false;
             this.BoutonAnnuler.Click += new System.EventHandler(this.BoutonAnnuler_Click);
@@ -254,14 +254,14 @@
             this.dateTimeExercice_fin.Location = new System.Drawing.Point(513, 280);
             this.dateTimeExercice_fin.Name = "dateTimeExercice_fin";
             this.dateTimeExercice_fin.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeExercice_fin.TabIndex = 61;
+            this.dateTimeExercice_fin.TabIndex = 15;
             // 
             // dateTimeExercice_debut
             // 
             this.dateTimeExercice_debut.Location = new System.Drawing.Point(513, 254);
             this.dateTimeExercice_debut.Name = "dateTimeExercice_debut";
             this.dateTimeExercice_debut.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeExercice_debut.TabIndex = 60;
+            this.dateTimeExercice_debut.TabIndex = 14;
             // 
             // label15
             // 
@@ -287,7 +287,7 @@
             this.textBoxActivite.Location = new System.Drawing.Point(511, 67);
             this.textBoxActivite.Name = "textBoxActivite";
             this.textBoxActivite.Size = new System.Drawing.Size(265, 20);
-            this.textBoxActivite.TabIndex = 57;
+            this.textBoxActivite.TabIndex = 9;
             // 
             // label16
             // 
@@ -353,14 +353,14 @@
             this.VolumesAnnuels.Location = new System.Drawing.Point(513, 216);
             this.VolumesAnnuels.Name = "VolumesAnnuels";
             this.VolumesAnnuels.Size = new System.Drawing.Size(194, 20);
-            this.VolumesAnnuels.TabIndex = 50;
+            this.VolumesAnnuels.TabIndex = 13;
             // 
             // NumeroSiret
             // 
             this.NumeroSiret.Location = new System.Drawing.Point(511, 23);
             this.NumeroSiret.Name = "NumeroSiret";
             this.NumeroSiret.Size = new System.Drawing.Size(265, 20);
-            this.NumeroSiret.TabIndex = 44;
+            this.NumeroSiret.TabIndex = 8;
             // 
             // CA
             // 
@@ -372,14 +372,14 @@
             0});
             this.CA.Name = "CA";
             this.CA.Size = new System.Drawing.Size(138, 20);
-            this.CA.TabIndex = 46;
+            this.CA.TabIndex = 4;
             // 
             // OrganisationComptable
             // 
             this.OrganisationComptable.Location = new System.Drawing.Point(513, 179);
             this.OrganisationComptable.Name = "OrganisationComptable";
             this.OrganisationComptable.Size = new System.Drawing.Size(263, 20);
-            this.OrganisationComptable.TabIndex = 49;
+            this.OrganisationComptable.TabIndex = 12;
             // 
             // label20
             // 
@@ -404,7 +404,7 @@
             this.SiteInternet.Location = new System.Drawing.Point(146, 222);
             this.SiteInternet.Name = "SiteInternet";
             this.SiteInternet.Size = new System.Drawing.Size(171, 20);
-            this.SiteInternet.TabIndex = 40;
+            this.SiteInternet.TabIndex = 5;
             // 
             // label22
             // 
@@ -444,7 +444,7 @@
             this.FormeJuridique.Location = new System.Drawing.Point(148, 112);
             this.FormeJuridique.Name = "FormeJuridique";
             this.FormeJuridique.Size = new System.Drawing.Size(163, 21);
-            this.FormeJuridique.TabIndex = 21;
+            this.FormeJuridique.TabIndex = 2;
             // 
             // label21
             // 
@@ -460,7 +460,7 @@
             this.NomOrganisation.Location = new System.Drawing.Point(148, 70);
             this.NomOrganisation.Name = "NomOrganisation";
             this.NomOrganisation.Size = new System.Drawing.Size(208, 20);
-            this.NomOrganisation.TabIndex = 8;
+            this.NomOrganisation.TabIndex = 1;
             // 
             // label18
             // 
@@ -476,7 +476,7 @@
             this.DateImmatriculation.Location = new System.Drawing.Point(511, 104);
             this.DateImmatriculation.Name = "DateImmatriculation";
             this.DateImmatriculation.Size = new System.Drawing.Size(200, 20);
-            this.DateImmatriculation.TabIndex = 28;
+            this.DateImmatriculation.TabIndex = 10;
             // 
             // label2
             // 
@@ -511,7 +511,7 @@
             this.LieuImmatriculation.Location = new System.Drawing.Point(513, 140);
             this.LieuImmatriculation.Name = "LieuImmatriculation";
             this.LieuImmatriculation.Size = new System.Drawing.Size(263, 20);
-            this.LieuImmatriculation.TabIndex = 42;
+            this.LieuImmatriculation.TabIndex = 11;
             // 
             // label5
             // 
@@ -532,7 +532,7 @@
             0});
             this.Effectif.Name = "Effectif";
             this.Effectif.Size = new System.Drawing.Size(120, 20);
-            this.Effectif.TabIndex = 17;
+            this.Effectif.TabIndex = 3;
             // 
             // label1
             // 
@@ -549,7 +549,7 @@
             this.ESSOui.Location = new System.Drawing.Point(146, 259);
             this.ESSOui.Name = "ESSOui";
             this.ESSOui.Size = new System.Drawing.Size(41, 17);
-            this.ESSOui.TabIndex = 12;
+            this.ESSOui.TabIndex = 6;
             this.ESSOui.TabStop = true;
             this.ESSOui.Text = "Oui";
             this.ESSOui.UseVisualStyleBackColor = true;
@@ -560,7 +560,7 @@
             this.ESSNon.Location = new System.Drawing.Point(209, 257);
             this.ESSNon.Name = "ESSNon";
             this.ESSNon.Size = new System.Drawing.Size(45, 17);
-            this.ESSNon.TabIndex = 13;
+            this.ESSNon.TabIndex = 7;
             this.ESSNon.TabStop = true;
             this.ESSNon.Text = "Non";
             this.ESSNon.UseVisualStyleBackColor = true;
@@ -685,7 +685,7 @@
             this.FonctionRepresentant.Location = new System.Drawing.Point(122, 186);
             this.FonctionRepresentant.Name = "FonctionRepresentant";
             this.FonctionRepresentant.Size = new System.Drawing.Size(263, 21);
-            this.FonctionRepresentant.TabIndex = 48;
+            this.FonctionRepresentant.TabIndex = 26;
             // 
             // label10
             // 
@@ -715,14 +715,14 @@
             this.SexeRepresentant.Location = new System.Drawing.Point(122, 146);
             this.SexeRepresentant.Name = "SexeRepresentant";
             this.SexeRepresentant.Size = new System.Drawing.Size(121, 21);
-            this.SexeRepresentant.TabIndex = 42;
+            this.SexeRepresentant.TabIndex = 25;
             // 
             // TelephonePortableRepresentant
             // 
             this.TelephonePortableRepresentant.Location = new System.Drawing.Point(122, 267);
             this.TelephonePortableRepresentant.Name = "TelephonePortableRepresentant";
             this.TelephonePortableRepresentant.Size = new System.Drawing.Size(221, 20);
-            this.TelephonePortableRepresentant.TabIndex = 40;
+            this.TelephonePortableRepresentant.TabIndex = 28;
             // 
             // label28
             // 
@@ -738,21 +738,21 @@
             this.PrenomRepresentant.Location = new System.Drawing.Point(118, 75);
             this.PrenomRepresentant.Name = "PrenomRepresentant";
             this.PrenomRepresentant.Size = new System.Drawing.Size(267, 20);
-            this.PrenomRepresentant.TabIndex = 39;
+            this.PrenomRepresentant.TabIndex = 23;
             // 
             // CourrielRepresentant
             // 
             this.CourrielRepresentant.Location = new System.Drawing.Point(119, 110);
             this.CourrielRepresentant.Name = "CourrielRepresentant";
             this.CourrielRepresentant.Size = new System.Drawing.Size(266, 20);
-            this.CourrielRepresentant.TabIndex = 36;
+            this.CourrielRepresentant.TabIndex = 24;
             // 
             // NomRepresentant
             // 
             this.NomRepresentant.Location = new System.Drawing.Point(118, 40);
             this.NomRepresentant.Name = "NomRepresentant";
             this.NomRepresentant.Size = new System.Drawing.Size(267, 20);
-            this.NomRepresentant.TabIndex = 28;
+            this.NomRepresentant.TabIndex = 22;
             // 
             // label29
             // 
@@ -786,7 +786,7 @@
             this.TelephoneRepresentant.Location = new System.Drawing.Point(122, 226);
             this.TelephoneRepresentant.Name = "TelephoneRepresentant";
             this.TelephoneRepresentant.Size = new System.Drawing.Size(244, 20);
-            this.TelephoneRepresentant.TabIndex = 30;
+            this.TelephoneRepresentant.TabIndex = 27;
             // 
             // label32
             // 
@@ -875,14 +875,14 @@
             this.IndiceRepetition.Location = new System.Drawing.Point(132, 92);
             this.IndiceRepetition.Name = "IndiceRepetition";
             this.IndiceRepetition.Size = new System.Drawing.Size(69, 21);
-            this.IndiceRepetition.TabIndex = 27;
+            this.IndiceRepetition.TabIndex = 17;
             // 
             // Complement
             // 
             this.Complement.Location = new System.Drawing.Point(132, 164);
             this.Complement.Name = "Complement";
             this.Complement.Size = new System.Drawing.Size(234, 20);
-            this.Complement.TabIndex = 6;
+            this.Complement.TabIndex = 19;
             // 
             // NumeroVoie
             // 
@@ -894,7 +894,7 @@
             0});
             this.NumeroVoie.Name = "NumeroVoie";
             this.NumeroVoie.Size = new System.Drawing.Size(73, 20);
-            this.NumeroVoie.TabIndex = 4;
+            this.NumeroVoie.TabIndex = 16;
             // 
             // label26
             // 
@@ -928,7 +928,7 @@
             this.Ville.Location = new System.Drawing.Point(132, 246);
             this.Ville.Name = "Ville";
             this.Ville.Size = new System.Drawing.Size(234, 20);
-            this.Ville.TabIndex = 26;
+            this.Ville.TabIndex = 21;
             // 
             // label23
             // 
@@ -944,7 +944,7 @@
             this.Adresse.Location = new System.Drawing.Point(132, 125);
             this.Adresse.Name = "Adresse";
             this.Adresse.Size = new System.Drawing.Size(234, 20);
-            this.Adresse.TabIndex = 22;
+            this.Adresse.TabIndex = 18;
             // 
             // label11
             // 
@@ -960,7 +960,7 @@
             this.CodePostal.Location = new System.Drawing.Point(132, 204);
             this.CodePostal.Name = "CodePostal";
             this.CodePostal.Size = new System.Drawing.Size(116, 20);
-            this.CodePostal.TabIndex = 24;
+            this.CodePostal.TabIndex = 20;
             // 
             // label12
             // 

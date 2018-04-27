@@ -52,7 +52,7 @@
             this.BoutonParcourirFichierValoHonoraires.Location = new System.Drawing.Point(526, 77);
             this.BoutonParcourirFichierValoHonoraires.Name = "BoutonParcourirFichierValoHonoraires";
             this.BoutonParcourirFichierValoHonoraires.Size = new System.Drawing.Size(86, 23);
-            this.BoutonParcourirFichierValoHonoraires.TabIndex = 22;
+            this.BoutonParcourirFichierValoHonoraires.TabIndex = 2;
             this.BoutonParcourirFichierValoHonoraires.Text = "Parcourir";
             this.BoutonParcourirFichierValoHonoraires.UseVisualStyleBackColor = true;
             this.BoutonParcourirFichierValoHonoraires.Click += new System.EventHandler(this.BoutonParcourirFichierValoHonoraires_Click);
@@ -63,7 +63,7 @@
             this.FichierValoHonoraires.Location = new System.Drawing.Point(239, 79);
             this.FichierValoHonoraires.Name = "FichierValoHonoraires";
             this.FichierValoHonoraires.Size = new System.Drawing.Size(264, 20);
-            this.FichierValoHonoraires.TabIndex = 20;
+            this.FichierValoHonoraires.TabIndex = 3;
             // 
             // ListeDeroulanteChoixClient
             // 
@@ -72,7 +72,7 @@
             this.ListeDeroulanteChoixClient.Location = new System.Drawing.Point(239, 30);
             this.ListeDeroulanteChoixClient.Name = "ListeDeroulanteChoixClient";
             this.ListeDeroulanteChoixClient.Size = new System.Drawing.Size(373, 21);
-            this.ListeDeroulanteChoixClient.TabIndex = 19;
+            this.ListeDeroulanteChoixClient.TabIndex = 1;
             // 
             // label3
             // 
@@ -135,7 +135,7 @@
             this.textBoxMission.Location = new System.Drawing.Point(239, 184);
             this.textBoxMission.Name = "textBoxMission";
             this.textBoxMission.Size = new System.Drawing.Size(373, 20);
-            this.textBoxMission.TabIndex = 25;
+            this.textBoxMission.TabIndex = 5;
             // 
             // label4
             // 
@@ -153,7 +153,7 @@
             this.comboBoxModel.Location = new System.Drawing.Point(239, 130);
             this.comboBoxModel.Name = "comboBoxModel";
             this.comboBoxModel.Size = new System.Drawing.Size(373, 21);
-            this.comboBoxModel.TabIndex = 23;
+            this.comboBoxModel.TabIndex = 4;
             this.comboBoxModel.SelectedIndexChanged += new System.EventHandler(this.comboBoxModel_SelectedIndexChanged);
             // 
             // buttonGenerer
@@ -162,7 +162,7 @@
             this.buttonGenerer.Location = new System.Drawing.Point(679, 356);
             this.buttonGenerer.Name = "buttonGenerer";
             this.buttonGenerer.Size = new System.Drawing.Size(75, 23);
-            this.buttonGenerer.TabIndex = 28;
+            this.buttonGenerer.TabIndex = 6;
             this.buttonGenerer.Text = "Générer";
             this.buttonGenerer.UseVisualStyleBackColor = true;
             this.buttonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);

@@ -32,9 +32,9 @@
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxLC = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,8 +68,17 @@
             this.comboBoxLC.Location = new System.Drawing.Point(366, 13);
             this.comboBoxLC.Name = "comboBoxLC";
             this.comboBoxLC.Size = new System.Drawing.Size(259, 21);
-            this.comboBoxLC.TabIndex = 4;
+            this.comboBoxLC.TabIndex = 2;
             this.comboBoxLC.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Client :";
             // 
             // comboBoxClient
             // 
@@ -77,7 +86,7 @@
             this.comboBoxClient.Location = new System.Drawing.Point(143, 13);
             this.comboBoxClient.Name = "comboBoxClient";
             this.comboBoxClient.Size = new System.Drawing.Size(113, 21);
-            this.comboBoxClient.TabIndex = 3;
+            this.comboBoxClient.TabIndex = 1;
             this.comboBoxClient.SelectedIndexChanged += new System.EventHandler(this.ComboBoxClient_SelectedIndexChanged);
             // 
             // label2
@@ -89,15 +98,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Archive : ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Client :";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
@@ -107,7 +107,7 @@
             this.panel1.Size = new System.Drawing.Size(682, 563);
             this.panel1.TabIndex = 6;
             // 
-            // Page_VoirArchives
+            // PopUp_VoirArchives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +116,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Page_VoirArchives";
+            this.Name = "PopUp_VoirArchives";
             this.Text = "Les Archives";
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             this.groupBox1.ResumeLayout(false);

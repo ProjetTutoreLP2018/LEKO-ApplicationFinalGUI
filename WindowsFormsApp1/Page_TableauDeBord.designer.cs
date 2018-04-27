@@ -47,7 +47,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label7.ForeColor = System.Drawing.Color.Transparent;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(689, 421);
+            this.label7.Location = new System.Drawing.Point(696, 429);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 32);
             this.label7.TabIndex = 37;
@@ -61,11 +61,11 @@
             this.nbLCRefusees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
             this.nbLCRefusees.ForeColor = System.Drawing.Color.White;
             this.nbLCRefusees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nbLCRefusees.Location = new System.Drawing.Point(740, 368);
+            this.nbLCRefusees.Location = new System.Drawing.Point(747, 376);
             this.nbLCRefusees.Name = "nbLCRefusees";
             this.nbLCRefusees.Size = new System.Drawing.Size(39, 42);
             this.nbLCRefusees.TabIndex = 36;
-            this.nbLCRefusees.Text = "4";
+            this.nbLCRefusees.Text = "0";
             // 
             // label5
             // 
@@ -74,7 +74,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label5.ForeColor = System.Drawing.Color.Transparent;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(476, 421);
+            this.label5.Location = new System.Drawing.Point(345, 429);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 32);
             this.label5.TabIndex = 35;
@@ -88,11 +88,11 @@
             this.nbLCEnvoyees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
             this.nbLCEnvoyees.ForeColor = System.Drawing.Color.White;
             this.nbLCEnvoyees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nbLCEnvoyees.Location = new System.Drawing.Point(525, 368);
+            this.nbLCEnvoyees.Location = new System.Drawing.Point(394, 376);
             this.nbLCEnvoyees.Name = "nbLCEnvoyees";
             this.nbLCEnvoyees.Size = new System.Drawing.Size(39, 42);
             this.nbLCEnvoyees.TabIndex = 34;
-            this.nbLCEnvoyees.Text = "1";
+            this.nbLCEnvoyees.Text = "0";
             // 
             // label3
             // 
@@ -101,7 +101,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(248, 421);
+            this.label3.Location = new System.Drawing.Point(9, 413);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 48);
             this.label3.TabIndex = 33;
@@ -115,11 +115,11 @@
             this.nbLCSigneesValidees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
             this.nbLCSigneesValidees.ForeColor = System.Drawing.Color.White;
             this.nbLCSigneesValidees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nbLCSigneesValidees.Location = new System.Drawing.Point(299, 368);
+            this.nbLCSigneesValidees.Location = new System.Drawing.Point(60, 360);
             this.nbLCSigneesValidees.Name = "nbLCSigneesValidees";
             this.nbLCSigneesValidees.Size = new System.Drawing.Size(39, 42);
             this.nbLCSigneesValidees.TabIndex = 32;
-            this.nbLCSigneesValidees.Text = "2";
+            this.nbLCSigneesValidees.Text = "0";
             this.nbLCSigneesValidees.Click += new System.EventHandler(this.nbLCSigneesValidees_Click);
             // 
             // texteLCEnAttenteDeSignature
@@ -129,7 +129,7 @@
             this.texteLCEnAttenteDeSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.texteLCEnAttenteDeSignature.ForeColor = System.Drawing.Color.Transparent;
             this.texteLCEnAttenteDeSignature.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.texteLCEnAttenteDeSignature.Location = new System.Drawing.Point(27, 421);
+            this.texteLCEnAttenteDeSignature.Location = new System.Drawing.Point(9, 71);
             this.texteLCEnAttenteDeSignature.Name = "texteLCEnAttenteDeSignature";
             this.texteLCEnAttenteDeSignature.Size = new System.Drawing.Size(143, 48);
             this.texteLCEnAttenteDeSignature.TabIndex = 31;
@@ -143,29 +143,29 @@
             this.nbLCEnAttenteDeSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
             this.nbLCEnAttenteDeSignature.ForeColor = System.Drawing.Color.White;
             this.nbLCEnAttenteDeSignature.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nbLCEnAttenteDeSignature.Location = new System.Drawing.Point(77, 368);
+            this.nbLCEnAttenteDeSignature.Location = new System.Drawing.Point(59, 18);
             this.nbLCEnAttenteDeSignature.Name = "nbLCEnAttenteDeSignature";
             this.nbLCEnAttenteDeSignature.Size = new System.Drawing.Size(39, 42);
             this.nbLCEnAttenteDeSignature.TabIndex = 30;
-            this.nbLCEnAttenteDeSignature.Text = "6";
+            this.nbLCEnAttenteDeSignature.Text = "0";
             // 
             // lcArchivees
             // 
             this.lcArchivees.AutoSize = true;
             this.lcArchivees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
             this.lcArchivees.ForeColor = System.Drawing.Color.White;
-            this.lcArchivees.Location = new System.Drawing.Point(402, 11);
+            this.lcArchivees.Location = new System.Drawing.Point(744, 19);
             this.lcArchivees.Name = "lcArchivees";
             this.lcArchivees.Size = new System.Drawing.Size(39, 42);
             this.lcArchivees.TabIndex = 38;
-            this.lcArchivees.Text = "2";
+            this.lcArchivees.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(354, 63);
+            this.label2.Location = new System.Drawing.Point(696, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 32);
             this.label2.TabIndex = 39;

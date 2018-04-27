@@ -42,7 +42,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(268, 143);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.buttonAnnuler.TabIndex = 14;
+            this.buttonAnnuler.TabIndex = 3;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = false;
             this.buttonAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
@@ -61,7 +61,7 @@
             this.buttonValider.Location = new System.Drawing.Point(359, 143);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
-            this.buttonValider.TabIndex = 13;
+            this.buttonValider.TabIndex = 2;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.ButtonValider_Click);
@@ -71,9 +71,9 @@
             this.textBoxSMTP.Location = new System.Drawing.Point(133, 79);
             this.textBoxSMTP.Name = "textBoxSMTP";
             this.textBoxSMTP.Size = new System.Drawing.Size(210, 20);
-            this.textBoxSMTP.TabIndex = 15;
+            this.textBoxSMTP.TabIndex = 1;
             // 
-            // ChangeSMTP
+            // PopUp_ChangeSMTP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,7 @@
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.labelMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ChangeSMTP";
+            this.Name = "PopUp_ChangeSMTP";
             this.Text = "ChangeSMTP";
             this.ResumeLayout(false);
             this.PerformLayout();

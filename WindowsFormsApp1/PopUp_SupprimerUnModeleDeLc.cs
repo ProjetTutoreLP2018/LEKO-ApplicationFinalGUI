@@ -51,8 +51,11 @@ namespace LettreCooperation
         private void SupprimerModel_Click(object sender, EventArgs e)
         {
 
+            Cursor.Current = Cursors.WaitCursor;
+
             if (this.comboBox1.SelectedIndex < 0)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Merci de séléctionner un type de Modèle.");
                 return;
             }
@@ -77,6 +80,8 @@ namespace LettreCooperation
             textTypeLettre.Text = String.Empty;
             comboBox1.Items.Clear();
             comboBox1.Text = String.Empty;
+
+            Cursor.Current = Cursors.Default;
 
         }
 

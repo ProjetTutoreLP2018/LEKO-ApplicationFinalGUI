@@ -47,6 +47,9 @@ namespace LettreCooperation
             comboClient.Items.Clear();
             comboClient.Text = String.Empty;
 
+            if (listClient == null)
+                return;
+
             foreach (Client client in listClient)
                 comboClient.Items.Add(client.raison_sociale);
         }
@@ -211,6 +214,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonAfficher_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
 
             if (radioButtonArchive.Checked)
             {
@@ -233,7 +237,7 @@ namespace LettreCooperation
 
                     WordTools.CloseWord();
                 }
-
+                Cursor.Current = Cursors.Default;
                 waitForm.Close();
             }
 
@@ -351,15 +355,20 @@ namespace LettreCooperation
         private void ButtonSupprimer_Click(object sender, EventArgs e)
         {
 
+            Cursor.Current = Cursors.WaitCursor;
             DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer definitivement cette Lettre de coopération ?",
                 "Êtes vous sûr?", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.No)
+            {
+                Cursor.Current = Cursors.Default;
                 return;
+            }
 
 
             if(comboLC.Text.Length == 0)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Merci de séléctionner une Lettre de coopération.");
                 return;
             }
@@ -379,9 +388,11 @@ namespace LettreCooperation
             }
             catch (IOException)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Merci de fermer le fichier Word avant la suppression");
             }
 
+            Cursor.Current = Cursors.Default;
             Init();
 
         }

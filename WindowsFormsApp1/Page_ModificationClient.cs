@@ -30,6 +30,9 @@ namespace LettreCooperation
         {
             clients = model.GetListClient();
 
+            if (clients == null)
+                return;
+
             comboBox2.Items.Clear();
 
             foreach (Client c in clients) 
@@ -159,6 +162,7 @@ namespace LettreCooperation
 
         private void BoutonValider_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
 
             messageErr.Text = string.Empty;
             adresseMailMess.Text = string.Empty;
@@ -169,6 +173,7 @@ namespace LettreCooperation
 
             if (!match.Success)
             {
+                Cursor.Current = Cursors.Default;
                 adresseMailMess.Text = "L'adresse email n'est pas valide.";
                 return;
             }
@@ -179,6 +184,7 @@ namespace LettreCooperation
                 NomRepresentant.Text.Equals("") || PrenomRepresentant.Text.Equals("") || CourrielRepresentant.Text.Equals("") ||
                 SexeRepresentant.Text.Equals("") || FonctionRepresentant.Text.Equals("") || LieuImmatriculation.Text.Equals(""))
             {
+                Cursor.Current = Cursors.Default;
                 messageErr.Text = "Veuillez renseigner tous les champs.";
                 return;
             }
@@ -258,11 +264,12 @@ namespace LettreCooperation
             }
             catch (Exception)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Oops ! Le client "+ clients[index].raison_sociale + " n'a pas été modifié.");
 
             }
-         
 
+            Cursor.Current = Cursors.Default;
         }
 
         private void BoutonAnnuler_Click(object sender, EventArgs e)
@@ -272,7 +279,8 @@ namespace LettreCooperation
 
         private void SupprimerClient_Click(object sender, EventArgs e)
         {
-          
+            Cursor.Current = Cursors.WaitCursor;
+
             bool isDeleted = model.SupprimerClient(clients[index]);
             if (isDeleted)
             {
@@ -282,6 +290,7 @@ namespace LettreCooperation
                 MessageBox.Show("Au moins une Lettre de coopération appartient au client : "+ clients[index].raison_sociale + ". Suppression impossible.");
             }          
             Init();
+            Cursor.Current = Cursors.Default;
 
         }
     }

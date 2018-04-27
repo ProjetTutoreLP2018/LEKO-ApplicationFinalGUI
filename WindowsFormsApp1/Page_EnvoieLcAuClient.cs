@@ -87,7 +87,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonEnvoyer_Click(object sender, System.EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             PopUp_Patienter waitForm = new PopUp_Patienter();
             waitForm.Show();
 
@@ -127,7 +127,7 @@ namespace LettreCooperation
             }
 
             Init();
-
+            Cursor.Current = Cursors.Default;
             waitForm.Close();
         }
 
@@ -307,7 +307,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Init();
+            Cursor.Current = Cursors.Default;
         }
 
         

@@ -137,6 +137,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonModifier_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
 
             adresseMailMess.Text = string.Empty;
             mdpConfMess.Text = string.Empty;
@@ -150,12 +151,14 @@ namespace LettreCooperation
 
             if (!match.Success)
             {
+                Cursor.Current = Cursors.Default;
                 adresseMailMess.Text = "L'adresse email n'est pas valide.";
                 return;
             }
 
             if (!textPass.Text.Equals(textPassConfirm.Text))
             {
+                Cursor.Current = Cursors.Default;
                 mdpConfMess.Text = "Le mot de passe \n ne correspond pas.";
                 return;
             }
@@ -196,6 +199,7 @@ namespace LettreCooperation
 
             model.SaveBDD();
             MessageBox.Show("Votre utilisateur a bien été modifié");
+            Cursor.Current = Cursors.Default;
             Init();
 
         }
@@ -261,11 +265,11 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             model.SupprimerUtilisateur(utilisateurs[index]);
             MessageBox.Show("Votre utilisateur a bien été supprimé");
             Init();
-
+            Cursor.Current = Cursors.Default;
         }
 
 

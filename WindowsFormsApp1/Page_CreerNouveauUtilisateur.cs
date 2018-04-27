@@ -63,12 +63,17 @@ namespace LettreCooperation
         {
             base.OnLoad(e);
 
+            Init();
+
             droits = model.GetListDroit();
+
+            if (droits == null)
+                return;
 
             foreach (Droit d in droits)
                 comboDroit.Items.Add(d.permission);
 
-            Init();
+           
         }
 
 
@@ -80,7 +85,7 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonValider_Click(object sender, EventArgs e)
         {
-
+            Cursor.Current = Cursors.WaitCursor;
             adresseMailMess.Text = string.Empty;
             adresseMailConfMess.Text = string.Empty;
             mdpConfMess.Text = string.Empty;
@@ -94,6 +99,7 @@ namespace LettreCooperation
 
             if (!match.Success) {
                 adresseMailMess.Text = "L'adresse email n'est pas valide.";
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
@@ -101,12 +107,14 @@ namespace LettreCooperation
             if (!textEmail.Text.Equals(textConfirmEmail.Text))
             {
                 adresseMailConfMess.Text = "L'adresse email ne correspond pas.";
+                Cursor.Current = Cursors.Default;
                 return;
 
             }
             if (!textPass.Text.Equals(textConfPass.Text))
             {
                 mdpConfMess.Text = "Le mot de passe \n ne correspond pas.";
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
@@ -116,6 +124,7 @@ namespace LettreCooperation
                 textConfirmEmail.Text.Equals("") ||
                 textPass.Text.Equals("") || textConfPass.Text.Equals(""))
             {
+                Cursor.Current = Cursors.Default;
                 messageErr.Text = "Veuillez renseigner tous les champs.";
                 return;
             }
@@ -135,6 +144,14 @@ namespace LettreCooperation
             }
                     
             int index = 0;
+
+            if(droits == null)
+            {
+                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+
+                return;
+            }
 
             foreach (Droit d in droits)
             {
@@ -163,6 +180,8 @@ namespace LettreCooperation
 
             model.CreerUtilisateur(utilisateur);
             Init();
+
+            Cursor.Current = Cursors.Default;
 
             MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
                 " " + utilisateur.prenom_utilisateur + " a bien était créer");

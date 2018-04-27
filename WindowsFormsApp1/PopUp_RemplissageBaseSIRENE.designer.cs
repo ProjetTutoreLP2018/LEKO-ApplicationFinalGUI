@@ -52,7 +52,7 @@
             this.ListeChoixEntreprises.Location = new System.Drawing.Point(12, 86);
             this.ListeChoixEntreprises.Name = "ListeChoixEntreprises";
             this.ListeChoixEntreprises.Size = new System.Drawing.Size(535, 160);
-            this.ListeChoixEntreprises.TabIndex = 35;
+            this.ListeChoixEntreprises.TabIndex = 3;
             this.ListeChoixEntreprises.DoubleClick += new System.EventHandler(this.ListeChoixEntreprises_DoubleClick);
             // 
             // MotsCles
@@ -60,7 +60,7 @@
             this.MotsCles.Location = new System.Drawing.Point(80, 12);
             this.MotsCles.Name = "MotsCles";
             this.MotsCles.Size = new System.Drawing.Size(370, 22);
-            this.MotsCles.TabIndex = 33;
+            this.MotsCles.TabIndex = 1;
             this.MotsCles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MotsCles_KeyDownAsync);
             // 
             // label1
@@ -77,7 +77,7 @@
             this.BoutonRechercher.Location = new System.Drawing.Point(457, 13);
             this.BoutonRechercher.Name = "BoutonRechercher";
             this.BoutonRechercher.Size = new System.Drawing.Size(90, 23);
-            this.BoutonRechercher.TabIndex = 37;
+            this.BoutonRechercher.TabIndex = 2;
             this.BoutonRechercher.Text = "Rechercher";
             this.BoutonRechercher.UseVisualStyleBackColor = true;
             this.BoutonRechercher.Click += new System.EventHandler(this.BoutonRechercher_ClickAsync);
@@ -91,7 +91,7 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "Par exemple : FINACOOP PARIS";
             // 
-            // FenPreRemplissageAutomatique
+            // PopUp_RemplissageBaseSIRENE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,7 +106,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FenPreRemplissageAutomatique";
+            this.Name = "PopUp_RemplissageBaseSIRENE";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Assistant de pré-remplissage automatique";

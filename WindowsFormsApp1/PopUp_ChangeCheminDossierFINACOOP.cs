@@ -32,10 +32,13 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonValider_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             // Si le chemin du dossier est renseigné,
             // nous pouvons ouvrir l'application
             if (textBoxPath.Text.Length == 0)
             {
+                Cursor.Current = Cursors.Default;
                 MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
                 return;
             }
@@ -44,7 +47,7 @@ namespace LettreCooperation
             Properties.Settings.Default.PathFINACOOP = textBoxPath.Text;
             Properties.Settings.Default.Save();
             this.Close();
-
+            Cursor.Current = Cursors.Default;
         }
 
 

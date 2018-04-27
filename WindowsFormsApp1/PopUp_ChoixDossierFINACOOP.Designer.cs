@@ -52,7 +52,7 @@
             this.butonParcour.Location = new System.Drawing.Point(336, 95);
             this.butonParcour.Name = "butonParcour";
             this.butonParcour.Size = new System.Drawing.Size(75, 23);
-            this.butonParcour.TabIndex = 1;
+            this.butonParcour.TabIndex = 2;
             this.butonParcour.Text = "Parcourir...";
             this.butonParcour.UseVisualStyleBackColor = true;
             this.butonParcour.Click += new System.EventHandler(this.ButonParcour_Click);
@@ -62,7 +62,7 @@
             this.textBoxPath.Location = new System.Drawing.Point(110, 97);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(217, 20);
-            this.textBoxPath.TabIndex = 2;
+            this.textBoxPath.TabIndex = 1;
             // 
             // buttonValider
             // 
@@ -86,7 +86,7 @@
             this.buttonAnnuler.UseVisualStyleBackColor = false;
             this.buttonAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
             // 
-            // ChoosePath
+            // PopUp_ChoixDossierFINACOOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.butonParcour);
             this.Controls.Add(this.labelMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ChoosePath";
+            this.Name = "PopUp_ChoixDossierFINACOOP";
             this.ResumeLayout(false);
             this.PerformLayout();
 

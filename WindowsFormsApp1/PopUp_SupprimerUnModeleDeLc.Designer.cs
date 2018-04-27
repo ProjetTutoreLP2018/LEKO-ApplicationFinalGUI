@@ -35,8 +35,8 @@
             this.labelNomMission = new System.Windows.Forms.Label();
             this.labelTypeLettre = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textNomMission = new System.Windows.Forms.Label();
             this.textTypeLettre = new System.Windows.Forms.Label();
+            this.textNomMission = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(355, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // modeleLc
@@ -59,7 +59,6 @@
             this.modeleLc.Size = new System.Drawing.Size(73, 13);
             this.modeleLc.TabIndex = 1;
             this.modeleLc.Text = "Modéle de LC";
-
             // 
             // supprimerModele
             // 
@@ -108,14 +107,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // textNomMission
-            // 
-            this.textNomMission.AutoSize = true;
-            this.textNomMission.Location = new System.Drawing.Point(125, 88);
-            this.textNomMission.Name = "textNomMission";
-            this.textNomMission.Size = new System.Drawing.Size(0, 13);
-            this.textNomMission.TabIndex = 7;
-            // 
             // textTypeLettre
             // 
             this.textTypeLettre.AutoSize = true;
@@ -124,7 +115,15 @@
             this.textTypeLettre.Size = new System.Drawing.Size(0, 13);
             this.textTypeLettre.TabIndex = 8;
             // 
-            // Form1
+            // textNomMission
+            // 
+            this.textNomMission.AutoSize = true;
+            this.textNomMission.Location = new System.Drawing.Point(125, 88);
+            this.textNomMission.Name = "textNomMission";
+            this.textNomMission.Size = new System.Drawing.Size(0, 13);
+            this.textNomMission.TabIndex = 7;
+            // 
+            // PopUp_SupprimerUnModeleDeLc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,9 +133,8 @@
             this.Controls.Add(this.supprimerModele);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
-            this.Text = "Form1";
-        //    this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "PopUp_SupprimerUnModeleDeLc";
+            this.Text = "Supprimer un modèle de LC";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

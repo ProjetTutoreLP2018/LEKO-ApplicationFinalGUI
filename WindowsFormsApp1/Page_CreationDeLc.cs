@@ -26,7 +26,12 @@ namespace LettreCooperation
 		private void FenGenerationLC_Load(object sender, EventArgs e)
 		{
             clients = modeleManager.GetListClient();
+            
+            if(clients == null)
+                return;
+
             modeles = modeleManager.GetModeles();
+
 
             foreach (Modele modele in modeles)
                 comboBoxModel.Items.Add(modele.nom_fichier);
@@ -60,10 +65,11 @@ namespace LettreCooperation
         
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
-
-            if(FichierValoHonoraires.Text.Length == 0)
+            Cursor.Current = Cursors.WaitCursor;
+            if (FichierValoHonoraires.Text.Length == 0)
             {
                 MessageBox.Show("Merci de choisir un fichier d'honoraire.");
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
@@ -143,6 +149,7 @@ namespace LettreCooperation
             catch (Exception)
             {
                 MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigner le bon fichier FINACOOP");
+                Cursor.Current = Cursors.Default;
             }
 
 
@@ -166,15 +173,16 @@ namespace LettreCooperation
 
                     }
 
-                    LC lc = new LC();
-
-                    lc.chemin_lc = Properties.Settings.Default.PathRealiser + client.raison_sociale + @"\" + nomFichier;
-                    lc.date_debut = DateTime.Today;
-                    lc.id_client = client.id_client;
-                    lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;
-                    lc.nom_lc = nomFichier;
-                    lc.id_etat = 1;
-                    lc.id_utilisateur = Page_Principale.Utilisateur.id_utilisateur;
+                    LC lc = new LC
+                    {
+                        chemin_lc = Properties.Settings.Default.PathRealiser + client.raison_sociale + @"\" + nomFichier,
+                        date_debut = DateTime.Today,
+                        id_client = client.id_client,
+                        id_modele = modeles[comboBoxModel.SelectedIndex].id_modele,
+                        nom_lc = nomFichier,
+                        id_etat = 1,
+                        id_utilisateur = Page_Principale.Utilisateur.id_utilisateur
+                    };
 
 
                     if (File.Exists(pathFolder + @"\" + nomFichier))
@@ -187,6 +195,7 @@ namespace LettreCooperation
                         if (result == DialogResult.No)
                         {
                             waitForm.Close();
+                            Cursor.Current = Cursors.Default;
                             return;
                         }
 
@@ -205,6 +214,7 @@ namespace LettreCooperation
             catch (Exception)
             {
                 MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigner le bon fichier FINACOOP");
+                Cursor.Current = Cursors.Default;
             }
         }
 

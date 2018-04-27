@@ -19,7 +19,7 @@ namespace LettreCooperation
             this.CenterToScreen();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            //this.MinimizeBox = false;
 
            // this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
@@ -75,79 +75,6 @@ namespace LettreCooperation
         ///== Gestion du Menu
         ///======================================================================
 
-
-
-        /// <summary>
-        /// Méthode qui gére l'événement 'Créer Une Lc"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CréerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-   
-            InitUserContole(new Page_CreationDeLc());
-        }
-
-
-        /// <summary>
-        /// Méthode qui gére l'événement 'Voir / Modifier une LC"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void VoirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            InitUserContole(new Page_ManagerLc());
-
-        }
-
-
-        /// <summary>
-        /// Méthode qui gére l'événement 'Signer une LC"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SignerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Page_Principale.Utilisateur.id_droit == 2)
-                InitUserContole(new Page_SignatureExp());
-            else
-                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
-
-        }
-
-
-        /// <summary>
-        /// Méthode qui gére l'événement 'Créer un Utilisateur"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CréerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (Page_Principale.Utilisateur.isAdmin)
-                InitUserContole(new Page_CreerNouveauUtilisateur());
-            else
-                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
-
-        }
-
-
-        /// <summary>
-        /// Méthode qui gére l'événement 'Manager un Utilisateur"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (Page_Principale.Utilisateur.isAdmin)
-                InitUserContole(new Page_ManagerUtilisateur());
-            else
-                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
-        }
-
-
         /// <summary>
         /// Initialisation de l'User Controle avant chaque séléctions
         /// </summary>
@@ -162,13 +89,99 @@ namespace LettreCooperation
 
 
         /// <summary>
+        /// Méthode qui gére l'événement 'Créer Une Lc"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CréerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            InitUserContole(new Page_CreationDeLc());
+            Cursor.Current = Cursors.Default;
+        }
+
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Voir / Modifier une LC"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void VoirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            InitUserContole(new Page_ManagerLc());
+            Cursor.Current = Cursors.Default;
+        }
+
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Signer une LC"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Utilisateur.id_droit == 2)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                InitUserContole(new Page_SignatureExp());
+                Cursor.Current = Cursors.Default;
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Créer un Utilisateur"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CréerUnUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (Utilisateur.isAdmin)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                InitUserContole(new Page_CreerNouveauUtilisateur());
+                Cursor.Current = Cursors.Default;
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+
+        }
+
+
+        /// <summary>
+        /// Méthode qui gére l'événement 'Manager un Utilisateur"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ManagerUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (Utilisateur.isAdmin)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                InitUserContole(new Page_ManagerUtilisateur());
+                Cursor.Current = Cursors.Default;
+            }
+            else
+                MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
+        }
+
+
+        /// <summary>
         /// Méthode qui permet de retourner à la page d'accueil
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void PictureHome_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             InitUserContole(new Page_TableauDeBord());
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -180,7 +193,9 @@ namespace LettreCooperation
         private void PictureLogout_Click(object sender, EventArgs e)
         {
             Init();
+            Cursor.Current = Cursors.WaitCursor;
             MessageBox.Show("Vous avez été déconnecté");
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -191,9 +206,11 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void EnvoyerUneLCAuClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Page_Principale.Utilisateur.id_droit == 2)
+            if (Utilisateur.id_droit == 2)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 InitUserContole(new Page_EnvoieLcAuClient());
+                Cursor.Current = Cursors.Default;
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -207,10 +224,12 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void RetourLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Page_Principale.Utilisateur.id_droit == 2)
+            if (Utilisateur.id_droit == 2)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 RetourClientLC retourClientLC = new RetourClientLC();
                 retourClientLC.Show();
+                Cursor.Current = Cursors.Default;
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -224,10 +243,12 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ManagerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Page_Principale.Utilisateur.isAdmin)
+            if (Utilisateur.isAdmin)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 PopUp_AjoutNouveauModele ajoutModele = new PopUp_AjoutNouveauModele();
                 ajoutModele.Show();
+                Cursor.Current = Cursors.Default;
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -244,8 +265,10 @@ namespace LettreCooperation
         {
             if (Utilisateur.isAdmin)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 PopUp_ChangeCheminDossierFINACOOP changePath = new PopUp_ChangeCheminDossierFINACOOP();
                 changePath.Show();
+                Cursor.Current = Cursors.Default;
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -260,7 +283,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void CréerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             InitUserContole(new Page_CreationNouveauClient());
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -272,7 +297,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void VoirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             InitUserContole(new Page_ModificationClient());
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -283,16 +310,20 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void AProposToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             PopUp_APropos popUp_APropos = new PopUp_APropos();
             popUp_APropos.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void ChangerSMTPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Utilisateur.isAdmin)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 PopUp_ChangeSMTP changeSMTP = new PopUp_ChangeSMTP();
                 changeSMTP.Show();
+                Cursor.Current = Cursors.Default;
             }
             else
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
@@ -300,16 +331,20 @@ namespace LettreCooperation
 
         private void VoireLesArchivesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             PopUp_VoirArchives page_VoirArchives = new PopUp_VoirArchives();
             page_VoirArchives.Show();
+            Cursor.Current = Cursors.Default;
         }
 
         private void supprimerUnModèleDeLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Utilisateur.isAdmin)
             {
+                Cursor.Current = Cursors.WaitCursor;
                 PopUp_SupprimerUnModeleDeLc popUp_SupprimerUnModeleDeLc = new PopUp_SupprimerUnModeleDeLc();
                 popUp_SupprimerUnModeleDeLc.Show();
+                Cursor.Current = Cursors.Default;
             }
         }
     }

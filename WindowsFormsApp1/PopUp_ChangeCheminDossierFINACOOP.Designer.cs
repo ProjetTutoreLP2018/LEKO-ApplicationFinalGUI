@@ -43,7 +43,7 @@
             this.buttonAnnuler.Location = new System.Drawing.Point(314, 143);
             this.buttonAnnuler.Name = "buttonAnnuler";
             this.buttonAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.buttonAnnuler.TabIndex = 9;
+            this.buttonAnnuler.TabIndex = 4;
             this.buttonAnnuler.Text = "Annuler";
             this.buttonAnnuler.UseVisualStyleBackColor = false;
             this.buttonAnnuler.Click += new System.EventHandler(this.ButtonAnnuler_Click);
@@ -53,7 +53,7 @@
             this.textBoxPath.Location = new System.Drawing.Point(110, 97);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(217, 20);
-            this.textBoxPath.TabIndex = 7;
+            this.textBoxPath.TabIndex = 1;
             // 
             // labelMessage
             // 
@@ -70,7 +70,7 @@
             this.buttonValider.Location = new System.Drawing.Point(405, 143);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(75, 23);
-            this.buttonValider.TabIndex = 8;
+            this.buttonValider.TabIndex = 3;
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.ButtonValider_Click);
@@ -81,12 +81,12 @@
             this.butonParcour.Location = new System.Drawing.Point(336, 95);
             this.butonParcour.Name = "butonParcour";
             this.butonParcour.Size = new System.Drawing.Size(75, 23);
-            this.butonParcour.TabIndex = 6;
+            this.butonParcour.TabIndex = 2;
             this.butonParcour.Text = "Parcourir...";
             this.butonParcour.UseVisualStyleBackColor = true;
             this.butonParcour.Click += new System.EventHandler(this.ButonParcour_Click);
             // 
-            // ChangePath
+            // PopUp_ChangeCheminDossierFINACOOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.butonParcour);
             this.Controls.Add(this.labelMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ChangePath";
+            this.Name = "PopUp_ChangeCheminDossierFINACOOP";
             this.Text = "ChangePath";
             this.ResumeLayout(false);
             this.PerformLayout();

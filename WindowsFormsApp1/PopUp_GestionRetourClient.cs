@@ -62,6 +62,14 @@ namespace LettreCooperation
 
             /* Variable contenant tous les Clients */
             lesClients = manager.GetListClientRetour();
+
+            if (lesClients == null)
+            {
+                btnArchiverLC.Enabled = false;
+                btnRefuserLC.Enabled = false;
+                return;
+            }
+               
             
             /* Variable contenant tous les Etats d'une LC */
             lesEtatsLC = manager.GetLesEtatsLC();
@@ -157,6 +165,8 @@ namespace LettreCooperation
 
         private void BtnArchiverLC_Click(object sender, EventArgs e)
         {
+
+            Cursor.Current = Cursors.WaitCursor;
             /* openFile me permet d'obtenir le fichier que je veux 'déplacer|archiver' 
              * Ici j'initialise ma variable openFile qui va contenir le chemin absolue du fichier */
             OpenFileDialog openFile = new OpenFileDialog();
@@ -165,7 +175,10 @@ namespace LettreCooperation
             openFile.ShowDialog();
 
             if (openFile.SafeFileName.Length == 0)
+            {
+                Cursor.Current = Cursors.Default;
                 return;
+            }
 
 
             /* Je sauvegarde le nom du fichier dans une variable à part - nomDeLaLcAarchiver */
@@ -203,13 +216,17 @@ namespace LettreCooperation
             }
             catch (Exception)
             {
+                Cursor.Current = Cursors.Default;
                 /* Message qui indique à l'utilisateur que la LC n'a pas été archiver */
-               // MessageBox.Show("Archivage non réalisé !");
+                 MessageBox.Show("Archivage non réalisé !");
             }
         }
 
         private void btnRefuserLC_Click(object sender, EventArgs e)
         {
+
+            Cursor.Current = Cursors.WaitCursor;
+
             /* string dossierCibleRefus = @"LC à réaliser et envoyer";
              string pathDest = pathGeneral + @"\" + dossierCibleRefus + @"\" + clientChoisi;
 
@@ -242,7 +259,7 @@ namespace LettreCooperation
                  MessageBox.Show("Chemin inexistant ! \n Vérifier l'existance de la LC");
              }*/
 
-            
+
             string pathDest = Properties.Settings.Default.PathRealiser + clientChoisi;
             lcDuClient.chemin_lc = pathDest + @"\" + lcDuClient.nom_lc;
             lcDuClient.id_etat = manager.GetIdEtatRefuser();
@@ -251,6 +268,8 @@ namespace LettreCooperation
             MessageBox.Show("Lettre de Coopération Refusée ! \n" + "LC Refusée : " + lcDuClient.nom_lc + "\n Client concerné : " + clientChoisi);
 
             Init();
+
+            Cursor.Current = Cursors.Default;
         }
 
         private void BtnReinitialiserLaFenetre_Click(object sender, EventArgs e)
