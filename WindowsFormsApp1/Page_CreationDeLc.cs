@@ -5,6 +5,7 @@ using Xceed.Words.NET;
 using LettreCooperation.Model;
 using LettreCooperation.modele;
 using System.IO;
+using ExcelDataReader;
 
 namespace LettreCooperation
 {
@@ -41,16 +42,32 @@ namespace LettreCooperation
 
 		private void BoutonParcourirFichierValoHonoraires_Click(object sender, EventArgs e)
 		{
-			if (ouvrirFichierValoHonoraires.ShowDialog(this) == DialogResult.OK)
-			{
-				FichierValoHonoraires.Text = ouvrirFichierValoHonoraires.FileName;
-			}
-		}
+			
+            ouvrirFichierValoHonoraires.Filter = "Fichiers .xlsx|*.xlsx";
+            ouvrirFichierValoHonoraires.ShowDialog(this);
+
+            if (ouvrirFichierValoHonoraires.SafeFileName.Length == 0)
+            {
+                MessageBox.Show("Vous n'avez pas renseigné de fichier");
+                return;
+            }
+
+            FichierValoHonoraires.Text = ouvrirFichierValoHonoraires.FileName;
+
+        }
 
 
         
 		private void BoutonGenerer_Click(object sender, EventArgs e)
 		{
+
+            if(FichierValoHonoraires.Text.Length == 0)
+            {
+                MessageBox.Show("Merci de choisir un fichier d'honoraire.");
+                return;
+            }
+
+
             PopUp_Patienter waitForm = new PopUp_Patienter();
             waitForm.Show();
 
@@ -90,6 +107,38 @@ namespace LettreCooperation
 				{ "DateImmatriculation", client.date_immatriculation.ToString() },
 				{ "LieuImmatriculation", client.lieu_immatriculation },
 			};
+
+
+            using (var stream = File.Open(FichierValoHonoraires.Text, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    var result = reader.AsDataSet();
+
+                    var spreadsheet = result.Tables[2];
+
+
+
+                    for (int i = 0; i < spreadsheet.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < spreadsheet.Columns.Count; j++)
+                        {
+
+                            if ((spreadsheet.Rows[i][j].ToString()).Contains("{{"))
+                            {
+                                String chaine = spreadsheet.Rows[i][j].ToString();
+                                String[] cutChaine = chaine.Split(new[] { "{{", "}}" }, StringSplitOptions.RemoveEmptyEntries);
+                                chaine = cutChaine[0];
+                                donnees.Add(chaine, spreadsheet.Rows[i - 1][j].ToString());
+                            }
+
+                        }
+                    }
+                }
+            }
+
+
+
 
             try
             {
