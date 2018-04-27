@@ -299,7 +299,7 @@ namespace LettreCooperation
 
         private void VoireLesArchivesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Page_VoirArchives page_VoirArchives = new Page_VoirArchives();
+            PopUp_VoirArchives page_VoirArchives = new PopUp_VoirArchives();
             page_VoirArchives.Show();
         }
 

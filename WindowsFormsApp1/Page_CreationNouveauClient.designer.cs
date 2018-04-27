@@ -125,7 +125,7 @@
             // BoutonValider
             // 
             this.BoutonValider.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoutonValider.BackgroundImage")));
-            this.BoutonValider.Location = new System.Drawing.Point(726, 434);
+            this.BoutonValider.Location = new System.Drawing.Point(740, 433);
             this.BoutonValider.Name = "BoutonValider";
             this.BoutonValider.Size = new System.Drawing.Size(75, 23);
             this.BoutonValider.TabIndex = 59;
@@ -137,7 +137,7 @@
             // 
             this.BoutonAnnuler.BackColor = System.Drawing.Color.Red;
             this.BoutonAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.BoutonAnnuler.Location = new System.Drawing.Point(631, 434);
+            this.BoutonAnnuler.Location = new System.Drawing.Point(645, 433);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.BoutonAnnuler.TabIndex = 58;
@@ -179,7 +179,7 @@
             this.toolStripDropDownButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(829, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(859, 25);
             this.toolStrip1.TabIndex = 53;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -187,7 +187,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(10, 41);
+            this.tabControl1.Location = new System.Drawing.Point(24, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(802, 376);
@@ -946,7 +946,7 @@
             // 
             this.messageErr.AutoSize = true;
             this.messageErr.ForeColor = System.Drawing.Color.Red;
-            this.messageErr.Location = new System.Drawing.Point(405, 424);
+            this.messageErr.Location = new System.Drawing.Point(419, 423);
             this.messageErr.Name = "messageErr";
             this.messageErr.Size = new System.Drawing.Size(0, 13);
             this.messageErr.TabIndex = 60;
@@ -962,7 +962,7 @@
             this.Controls.Add(this.BoutonAnnuler);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Page_CreationNouveauClient";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Size = new System.Drawing.Size(859, 514);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

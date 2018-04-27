@@ -65,7 +65,7 @@
             // 
             this.groupBox1.Controls.Add(this.comboClient);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(46, 93);
+            this.groupBox1.Location = new System.Drawing.Point(53, 93);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(478, 88);
             this.groupBox1.TabIndex = 0;
@@ -76,7 +76,7 @@
             // 
             this.comboClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboClient.FormattingEnabled = true;
-            this.comboClient.Location = new System.Drawing.Point(227, 32);
+            this.comboClient.Location = new System.Drawing.Point(234, 32);
             this.comboClient.Name = "comboClient";
             this.comboClient.Size = new System.Drawing.Size(234, 21);
             this.comboClient.TabIndex = 1;
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 37);
+            this.label1.Location = new System.Drawing.Point(39, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.comboLC);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(46, 206);
+            this.groupBox2.Location = new System.Drawing.Point(53, 206);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(478, 185);
             this.groupBox2.TabIndex = 1;
@@ -113,7 +113,7 @@
             // labelSignataire
             // 
             this.labelSignataire.AutoSize = true;
-            this.labelSignataire.Location = new System.Drawing.Point(262, 149);
+            this.labelSignataire.Location = new System.Drawing.Point(269, 149);
             this.labelSignataire.Name = "labelSignataire";
             this.labelSignataire.Size = new System.Drawing.Size(16, 13);
             this.labelSignataire.TabIndex = 9;
@@ -122,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(161, 149);
+            this.label6.Location = new System.Drawing.Point(168, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 8;
@@ -131,7 +131,7 @@
             // labelCreateur
             // 
             this.labelCreateur.AutoSize = true;
-            this.labelCreateur.Location = new System.Drawing.Point(262, 124);
+            this.labelCreateur.Location = new System.Drawing.Point(269, 124);
             this.labelCreateur.Name = "labelCreateur";
             this.labelCreateur.Size = new System.Drawing.Size(16, 13);
             this.labelCreateur.TabIndex = 7;
@@ -140,7 +140,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(161, 124);
+            this.label5.Location = new System.Drawing.Point(168, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 6;
@@ -149,7 +149,7 @@
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(262, 99);
+            this.labelStatus.Location = new System.Drawing.Point(269, 99);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(16, 13);
             this.labelStatus.TabIndex = 5;
@@ -158,7 +158,7 @@
             // labelDateCrea
             // 
             this.labelDateCrea.AutoSize = true;
-            this.labelDateCrea.Location = new System.Drawing.Point(262, 73);
+            this.labelDateCrea.Location = new System.Drawing.Point(269, 73);
             this.labelDateCrea.Name = "labelDateCrea";
             this.labelDateCrea.Size = new System.Drawing.Size(16, 13);
             this.labelDateCrea.TabIndex = 4;
@@ -167,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(161, 99);
+            this.label4.Location = new System.Drawing.Point(168, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 3;
@@ -176,7 +176,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 73);
+            this.label3.Location = new System.Drawing.Point(168, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 2;
@@ -186,7 +186,7 @@
             // 
             this.comboLC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLC.FormattingEnabled = true;
-            this.comboLC.Location = new System.Drawing.Point(35, 36);
+            this.comboLC.Location = new System.Drawing.Point(42, 36);
             this.comboLC.Name = "comboLC";
             this.comboLC.Size = new System.Drawing.Size(426, 21);
             this.comboLC.TabIndex = 1;
@@ -195,7 +195,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 16);
+            this.label2.Location = new System.Drawing.Point(168, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 13);
             this.label2.TabIndex = 0;
@@ -204,7 +204,7 @@
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(542, 397);
+            this.button1.Location = new System.Drawing.Point(549, 397);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -215,7 +215,7 @@
             // radioButtonAttSignExp
             // 
             this.radioButtonAttSignExp.AutoSize = true;
-            this.radioButtonAttSignExp.Location = new System.Drawing.Point(9, 26);
+            this.radioButtonAttSignExp.Location = new System.Drawing.Point(16, 26);
             this.radioButtonAttSignExp.Name = "radioButtonAttSignExp";
             this.radioButtonAttSignExp.Size = new System.Drawing.Size(168, 17);
             this.radioButtonAttSignExp.TabIndex = 4;
@@ -227,7 +227,7 @@
             // radioButtonSignerExp
             // 
             this.radioButtonSignerExp.AutoSize = true;
-            this.radioButtonSignerExp.Location = new System.Drawing.Point(9, 52);
+            this.radioButtonSignerExp.Location = new System.Drawing.Point(16, 52);
             this.radioButtonSignerExp.Name = "radioButtonSignerExp";
             this.radioButtonSignerExp.Size = new System.Drawing.Size(168, 17);
             this.radioButtonSignerExp.TabIndex = 5;
@@ -239,7 +239,7 @@
             // radioButtonEnvoieCli
             // 
             this.radioButtonEnvoieCli.AutoSize = true;
-            this.radioButtonEnvoieCli.Location = new System.Drawing.Point(9, 79);
+            this.radioButtonEnvoieCli.Location = new System.Drawing.Point(16, 79);
             this.radioButtonEnvoieCli.Name = "radioButtonEnvoieCli";
             this.radioButtonEnvoieCli.Size = new System.Drawing.Size(115, 17);
             this.radioButtonEnvoieCli.TabIndex = 6;
@@ -251,7 +251,7 @@
             // radioButtonArchive
             // 
             this.radioButtonArchive.AutoSize = true;
-            this.radioButtonArchive.Location = new System.Drawing.Point(9, 106);
+            this.radioButtonArchive.Location = new System.Drawing.Point(16, 106);
             this.radioButtonArchive.Name = "radioButtonArchive";
             this.radioButtonArchive.Size = new System.Drawing.Size(72, 17);
             this.radioButtonArchive.TabIndex = 7;
@@ -263,7 +263,7 @@
             // radioButtonRefus
             // 
             this.radioButtonRefus.AutoSize = true;
-            this.radioButtonRefus.Location = new System.Drawing.Point(9, 134);
+            this.radioButtonRefus.Location = new System.Drawing.Point(16, 134);
             this.radioButtonRefus.Name = "radioButtonRefus";
             this.radioButtonRefus.Size = new System.Drawing.Size(117, 17);
             this.radioButtonRefus.TabIndex = 8;
@@ -284,7 +284,7 @@
             this.groupBoxEtat.Controls.Add(this.radioButtonArchive);
             this.groupBoxEtat.Controls.Add(this.radioButtonSignerExp);
             this.groupBoxEtat.Controls.Add(this.radioButtonEnvoieCli);
-            this.groupBoxEtat.Location = new System.Drawing.Point(539, 206);
+            this.groupBoxEtat.Location = new System.Drawing.Point(546, 206);
             this.groupBoxEtat.Name = "groupBoxEtat";
             this.groupBoxEtat.Size = new System.Drawing.Size(262, 185);
             this.groupBoxEtat.TabIndex = 9;
@@ -295,7 +295,7 @@
             // 
             this.labelNbrRefus.AutoSize = true;
             this.labelNbrRefus.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrRefus.Location = new System.Drawing.Point(197, 134);
+            this.labelNbrRefus.Location = new System.Drawing.Point(204, 134);
             this.labelNbrRefus.Name = "labelNbrRefus";
             this.labelNbrRefus.Size = new System.Drawing.Size(0, 13);
             this.labelNbrRefus.TabIndex = 13;
@@ -304,7 +304,7 @@
             // 
             this.labelNbrArchive.AutoSize = true;
             this.labelNbrArchive.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrArchive.Location = new System.Drawing.Point(197, 108);
+            this.labelNbrArchive.Location = new System.Drawing.Point(204, 108);
             this.labelNbrArchive.Name = "labelNbrArchive";
             this.labelNbrArchive.Size = new System.Drawing.Size(0, 13);
             this.labelNbrArchive.TabIndex = 12;
@@ -313,7 +313,7 @@
             // 
             this.labelNbrEnvoieCli.AutoSize = true;
             this.labelNbrEnvoieCli.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrEnvoieCli.Location = new System.Drawing.Point(197, 80);
+            this.labelNbrEnvoieCli.Location = new System.Drawing.Point(204, 80);
             this.labelNbrEnvoieCli.Name = "labelNbrEnvoieCli";
             this.labelNbrEnvoieCli.Size = new System.Drawing.Size(0, 13);
             this.labelNbrEnvoieCli.TabIndex = 11;
@@ -322,7 +322,7 @@
             // 
             this.labelNbrSigneExp.AutoSize = true;
             this.labelNbrSigneExp.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrSigneExp.Location = new System.Drawing.Point(197, 54);
+            this.labelNbrSigneExp.Location = new System.Drawing.Point(204, 54);
             this.labelNbrSigneExp.Name = "labelNbrSigneExp";
             this.labelNbrSigneExp.Size = new System.Drawing.Size(0, 13);
             this.labelNbrSigneExp.TabIndex = 10;
@@ -331,7 +331,7 @@
             // 
             this.labelNbrAttenteSigne.AutoSize = true;
             this.labelNbrAttenteSigne.ForeColor = System.Drawing.Color.YellowGreen;
-            this.labelNbrAttenteSigne.Location = new System.Drawing.Point(197, 26);
+            this.labelNbrAttenteSigne.Location = new System.Drawing.Point(204, 26);
             this.labelNbrAttenteSigne.Name = "labelNbrAttenteSigne";
             this.labelNbrAttenteSigne.Size = new System.Drawing.Size(0, 13);
             this.labelNbrAttenteSigne.TabIndex = 9;
@@ -340,7 +340,7 @@
             // 
             this.buttonSupprimer.BackColor = System.Drawing.Color.Silver;
             this.buttonSupprimer.Enabled = false;
-            this.buttonSupprimer.Location = new System.Drawing.Point(449, 397);
+            this.buttonSupprimer.Location = new System.Drawing.Point(456, 397);
             this.buttonSupprimer.Name = "buttonSupprimer";
             this.buttonSupprimer.Size = new System.Drawing.Size(75, 23);
             this.buttonSupprimer.TabIndex = 10;
@@ -361,7 +361,7 @@
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.Name = "Page_ManagerLc";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Size = new System.Drawing.Size(859, 514);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

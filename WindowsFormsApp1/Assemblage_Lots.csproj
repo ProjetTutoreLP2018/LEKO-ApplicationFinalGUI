@@ -228,11 +228,11 @@
     <Compile Include="PopUp_AfficherPDF.Designer.cs">
       <DependentUpon>PopUp_AfficherPDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page_VoirArchives.cs">
+    <Compile Include="PopUp_VoirArchives.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Page_VoirArchives.Designer.cs">
-      <DependentUpon>Page_VoirArchives.cs</DependentUpon>
+    <Compile Include="PopUp_VoirArchives.Designer.cs">
+      <DependentUpon>PopUp_VoirArchives.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp_ChangeCheminDossierFINACOOP.cs">
       <SubType>Form</SubType>
@@ -399,8 +399,8 @@
     <EmbeddedResource Include="PopUp_AfficherPDF.resx">
       <DependentUpon>PopUp_AfficherPDF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page_VoirArchives.resx">
-      <DependentUpon>Page_VoirArchives.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp_VoirArchives.resx">
+      <DependentUpon>PopUp_VoirArchives.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp_ChangeCheminDossierFINACOOP.resx">
       <DependentUpon>PopUp_ChangeCheminDossierFINACOOP.cs</DependentUpon>

@@ -81,7 +81,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(160, 56);
+            this.groupBox1.Location = new System.Drawing.Point(186, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(531, 389);
             this.groupBox1.TabIndex = 0;
@@ -331,7 +331,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.Name = "Page_CreerNouveauUtilisateur";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Size = new System.Drawing.Size(859, 514);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

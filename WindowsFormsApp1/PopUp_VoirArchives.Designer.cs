@@ -1,6 +1,6 @@
 ﻿namespace LettreCooperation
 {
-    partial class Page_VoirArchives
+    partial class PopUp_VoirArchives
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_VoirArchives));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp_VoirArchives));
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxLC = new System.Windows.Forms.ComboBox();

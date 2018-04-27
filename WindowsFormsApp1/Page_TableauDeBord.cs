@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LettreCooperation.Model;
 using LettreCooperation.modele;
@@ -27,6 +21,7 @@ namespace LettreCooperation
 			int nbLcSigneesValidees = 0;
 			int nbLcEnvoyees = 0;
 			int nbLcRefusees = 0;
+            int nbLcArchivees = 0;
 
 			ModelManager modele = new ModelManager();
 			List<LC> listLc = modele.GetListLc();
@@ -40,13 +35,17 @@ namespace LettreCooperation
 					nbLcEnvoyees++;
 				if (lc.id_etat == 11)
 					nbLcRefusees++;
-			}
+                if (lc.id_etat == 10)
+                    nbLcArchivees++;
+            }
 
 			nbLCEnAttenteDeSignature.Text = nbLcAttenteSignature.ToString();
 			nbLCSigneesValidees.Text = nbLcSigneesValidees.ToString();
 			nbLCEnvoyees.Text = nbLcEnvoyees.ToString();
 			nbLCRefusees.Text = nbLcRefusees.ToString();
-		}
+            lcArchivees.Text = nbLcArchivees.ToString();
+
+        }
 
 		private void UCTableauBord_Load(object sender, EventArgs e)
 		{

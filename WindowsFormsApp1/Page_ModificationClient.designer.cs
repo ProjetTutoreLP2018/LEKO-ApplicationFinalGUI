@@ -124,7 +124,7 @@
             // BoutonValider
             // 
             this.BoutonValider.BackColor = System.Drawing.Color.YellowGreen;
-            this.BoutonValider.Location = new System.Drawing.Point(722, 444);
+            this.BoutonValider.Location = new System.Drawing.Point(732, 444);
             this.BoutonValider.Name = "BoutonValider";
             this.BoutonValider.Size = new System.Drawing.Size(75, 23);
             this.BoutonValider.TabIndex = 59;
@@ -136,7 +136,7 @@
             // 
             this.BoutonAnnuler.BackColor = System.Drawing.Color.White;
             this.BoutonAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.BoutonAnnuler.Location = new System.Drawing.Point(627, 444);
+            this.BoutonAnnuler.Location = new System.Drawing.Point(637, 444);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.BoutonAnnuler.TabIndex = 58;
@@ -148,7 +148,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(9, 62);
+            this.tabControl1.Location = new System.Drawing.Point(17, 62);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(807, 376);
@@ -532,7 +532,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(818, 350);
+            this.tabPage2.Size = new System.Drawing.Size(799, 350);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contact";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -931,7 +931,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 29);
+            this.comboBox2.Location = new System.Drawing.Point(150, 29);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
@@ -941,7 +941,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 29);
+            this.label7.Location = new System.Drawing.Point(22, 29);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 13);
@@ -952,7 +952,7 @@
             // 
             this.SupprimerClient.BackColor = System.Drawing.Color.Red;
             this.SupprimerClient.ForeColor = System.Drawing.Color.Black;
-            this.SupprimerClient.Location = new System.Drawing.Point(13, 444);
+            this.SupprimerClient.Location = new System.Drawing.Point(23, 444);
             this.SupprimerClient.Name = "SupprimerClient";
             this.SupprimerClient.Size = new System.Drawing.Size(75, 23);
             this.SupprimerClient.TabIndex = 5000001;
@@ -982,7 +982,7 @@
             this.Controls.Add(this.BoutonValider);
             this.Controls.Add(this.BoutonAnnuler);
             this.Name = "Page_ModificationClient";
-            this.Size = new System.Drawing.Size(829, 514);
+            this.Size = new System.Drawing.Size(859, 514);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

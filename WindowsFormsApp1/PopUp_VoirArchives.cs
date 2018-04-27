@@ -6,14 +6,14 @@ using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
-    public partial class Page_VoirArchives : Form
+    public partial class PopUp_VoirArchives : Form
     {
 
         private ModelManager modelManager = new ModelManager();
         private List<Client> clients;
         private List<LC> lCs;
 
-        public Page_VoirArchives()
+        public PopUp_VoirArchives()
         {
             InitializeComponent();
 
