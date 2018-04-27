@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Windows.Forms;
 using WordToPDF;
 
@@ -162,9 +163,30 @@ namespace LettreCooperation
             };
 
 
-            string body = "Voici votre LC";
+            Dictionary<string, string> donnees = new Dictionary<string, string>()
+            {
+                {"Annee", lc.date_lc.Year.ToString()},
+                {"RaisonSociale", client.raison_sociale},
+                {"Millesime", DateTime.Today.Year.ToString()},
+                {"Prenom", client.prenom_referent}
+            };
 
-            mail.Body = body;
+            string text = File.ReadAllText(Program.FINACOOPFolder + Properties.Settings.Default.PathModeles + "Mail_Template.txt", Encoding.UTF8);
+            string[] lines = File.ReadAllLines(Program.FINACOOPFolder + Properties.Settings.Default.PathModeles + "Mail_Template.txt");
+            int i = 0;
+            foreach (var item in donnees)
+            {
+                text = text.Replace("{{" + item.Key + "}}", item.Value);
+                for (i = 0; i < lines.Length; i++)
+                {
+                    lines[i] = lines[i].Replace("{{" + item.Key + "}}", item.Value);
+                }
+            }
+            text.Replace("\n", Environment.NewLine);
+
+            File.WriteAllText("Mail_Template.txt", text, Encoding.UTF8);
+
+            mail.Body = text;
 
             try
             {

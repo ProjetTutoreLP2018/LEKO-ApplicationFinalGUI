@@ -59,9 +59,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonSigner_Click(object sender, EventArgs e)
         {
-           
+            string pass = EncryptePass(textBoxPass.Text);
 
-            if (!textBoxPass.Text.Equals(Page_Principale.Utilisateur.mdp_utilisateur))
+            if (!pass.Equals(Page_Principale.Utilisateur.mdp_utilisateur))
             {
                 MessageBox.Show("Votre mot de passe est incorrecte");
                 return;
@@ -162,6 +162,17 @@ namespace LettreCooperation
 
             Init();
             waitForm.Close();
+        }
+
+
+        private string EncryptePass(string pass)
+        {
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(pass);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+
+            return hash;
         }
 
 
