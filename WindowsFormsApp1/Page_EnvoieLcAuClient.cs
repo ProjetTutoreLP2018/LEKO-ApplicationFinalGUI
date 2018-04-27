@@ -111,9 +111,12 @@ namespace LettreCooperation
                     {
                         MessageBox.Show("Une erreur est survenue, l'Email n'a pas était envoyé.");
                     }
-                    
+
                     if (envoieMail)
+                    {
                         ChangeEtat(listLc[i]);
+                        modelManager.UpdatePathLc(listLc[i], Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(listLc[i].id_client).raison_sociale + "\\" + listLc[i].nom_lc);
+                    }
                 }
             }
 
@@ -170,23 +173,23 @@ namespace LettreCooperation
                 if (!pj.Equals(""))
                     mail.Attachments.Add(new Attachment(pj));
             }
-            catch (System.UnauthorizedAccessException)
+            catch (UnauthorizedAccessException)
             {
                 MessageBox.Show("Vous n'avez pas l'autorisation d'ouvrir ce fichier. L' Email n'est pas envoyé");
                 throw;
             }
 
 
-            try
-            {
+           /* try
+            {*/
                 oSmtp.Send(mail);
                 MessageBox.Show("Votre mail a bien été envoyé à l'adresse : " + to, "Message envoyé");
                 envoieMail = true;
-            }
+            /*}
             catch (Exception)
             {
                 MessageBox.Show("Problème lors de l'envoi du message : Merci de vérifier votre Adresse Mail", "Erreur : Mail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
 
@@ -218,7 +221,9 @@ namespace LettreCooperation
 
             }
 
-            //MessageBox.Show(Program.FINACOOPFolder + lc.chemin_lc);
+            MessageBox.Show("Lien du ficher a copier : " + 
+                Program.FINACOOPFolder + lc.chemin_lc
+                );
 
             File.Copy(
                 Program.FINACOOPFolder + lc.chemin_lc,
@@ -260,7 +265,7 @@ namespace LettreCooperation
                 ObjetWord.Word2PdfCOnversion();
             }
 
-            modelManager.UpdatePathLc(lc, Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + lc.nom_lc);
+            
             pathPDF = Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
 
             MessageBox.Show("Le PDF a était créer : " + pathPDF);

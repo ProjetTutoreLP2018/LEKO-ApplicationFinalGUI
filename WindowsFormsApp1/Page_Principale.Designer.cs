@@ -324,7 +324,7 @@
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.PictureBox pictureLogout;
         private System.Windows.Forms.ToolStripMenuItem retourLCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem archiveLCToolStripMenuItem;
+       // private System.Windows.Forms.ToolStripMenuItem archiveLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnModèleDeLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerCheminDossierFINACOOPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerSMTPToolStripMenuItem;
