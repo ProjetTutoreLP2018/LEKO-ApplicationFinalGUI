@@ -25,12 +25,10 @@ namespace LettreCooperation
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 // =================================================
-                 //Properties.Settings.Default.PathFINACOOP = String.Empty;
+                Properties.Settings.Default.PathFINACOOP = String.Empty;
                 //==================================================
 
-                
-
-                if (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP))
+                if (Properties.Settings.Default.PathFINACOOP.Length == 0)
                 {
                     
                     while (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP) && !QuitApp)

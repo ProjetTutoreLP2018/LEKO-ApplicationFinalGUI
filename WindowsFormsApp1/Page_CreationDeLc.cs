@@ -80,17 +80,19 @@ namespace LettreCooperation
 
 
             Dictionary<string, string> donnees = new Dictionary<string, string>()
-			{
-				{ "RaisonSociale", client.raison_sociale },
-				{ "FormeJuridique", client.forme_juridique },
-				{
-					"Adresse",
-					String.Format("{0} {1}", client.Adresse.numero,
-														client.Adresse.voie)
-				},
-				{ "CP", client.Adresse.code_postal },
-				{ "Ville", client.Adresse.ville },
-				//{ "Activite", client.Activite.libelle_activite },
+            {
+                { "RaisonSociale", client.raison_sociale },
+                { "FormeJuridique", client.forme_juridique },
+                {
+                    "Adresse",
+                    String.Format("{0} {1}", client.Adresse.numero,
+                                                        client.Adresse.voie)
+                },
+                { "CP", client.Adresse.code_postal },
+                { "Ville", client.Adresse.ville },
+                { "Activite", client.activite },
+                { "ExerciceSocial", ((DateTime) client.exercice_debut).ToString("yyyy_MM_dd") +
+                "  -  " + ((DateTime) client.exercice_fin).ToString("yyyy_MM_dd") },
 				{ "DateCourante", DateTime.Today.ToShortDateString() },
 				{ "Millesime", DateTime.Today.Year.ToString() },
 				{ "Prenom", client.prenom_referent },
@@ -109,34 +111,39 @@ namespace LettreCooperation
 			};
 
 
-            using (var stream = File.Open(FichierValoHonoraires.Text, FileMode.Open, FileAccess.Read))
-            {
-                using (var reader = ExcelReaderFactory.CreateReader(stream))
+            try { 
+                using (var stream = File.Open(FichierValoHonoraires.Text, FileMode.Open, FileAccess.Read))
                 {
-                    var result = reader.AsDataSet();
-
-                    var spreadsheet = result.Tables[2];
-
-
-
-                    for (int i = 0; i < spreadsheet.Rows.Count; i++)
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
                     {
-                        for (int j = 0; j < spreadsheet.Columns.Count; j++)
+                        var result = reader.AsDataSet();
+
+                        var spreadsheet = result.Tables[2];
+
+
+
+                        for (int i = 0; i < spreadsheet.Rows.Count; i++)
                         {
-
-                            if ((spreadsheet.Rows[i][j].ToString()).Contains("{{"))
+                            for (int j = 0; j < spreadsheet.Columns.Count; j++)
                             {
-                                String chaine = spreadsheet.Rows[i][j].ToString();
-                                String[] cutChaine = chaine.Split(new[] { "{{", "}}" }, StringSplitOptions.RemoveEmptyEntries);
-                                chaine = cutChaine[0];
-                                donnees.Add(chaine, spreadsheet.Rows[i - 1][j].ToString());
-                            }
 
+                                if ((spreadsheet.Rows[i][j].ToString()).Contains("{{"))
+                                {
+                                    String chaine = spreadsheet.Rows[i][j].ToString();
+                                    String[] cutChaine = chaine.Split(new[] { "{{", "}}" }, StringSplitOptions.RemoveEmptyEntries);
+                                    chaine = cutChaine[0];
+                                    donnees.Add(chaine, spreadsheet.Rows[i - 1][j].ToString());
+                                }
+
+                            }
                         }
                     }
                 }
             }
-
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigner le bon fichier FINACOOP");
+            }
 
 
 

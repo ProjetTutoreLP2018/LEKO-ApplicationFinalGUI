@@ -610,7 +610,7 @@
             // 
             this.adresseMailMess.AutoSize = true;
             this.adresseMailMess.ForeColor = System.Drawing.Color.Red;
-            this.adresseMailMess.Location = new System.Drawing.Point(250, 137);
+            this.adresseMailMess.Location = new System.Drawing.Point(125, 131);
             this.adresseMailMess.Name = "adresseMailMess";
             this.adresseMailMess.Size = new System.Drawing.Size(0, 13);
             this.adresseMailMess.TabIndex = 59;

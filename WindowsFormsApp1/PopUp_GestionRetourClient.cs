@@ -164,11 +164,8 @@ namespace LettreCooperation
             /* J'ouvre la fenetre permettant d'aller chercher le fichier à 'déplacer|archiver' */
             openFile.ShowDialog();
 
-            if(openFile.SafeFileName.Length == 0)
-            {
-                MessageBox.Show("Vous n'avez pas renseigné de fichier");
+            if (openFile.SafeFileName.Length == 0)
                 return;
-            }
 
 
             /* Je sauvegarde le nom du fichier dans une variable à part - nomDeLaLcAarchiver */

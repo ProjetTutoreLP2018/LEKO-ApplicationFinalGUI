@@ -31,7 +31,12 @@ namespace LettreCooperation
                 if (nombreEntreprises > 10)
                 {
                     MessageBox.Show("Votre requête " + MotsCles.Text + " donne " + nombreEntreprises + " résultats.\nVeuillez modifier vos mots-clés ou rajouter.");
-                } else
+                }
+                else if (nombreEntreprises == 0)
+                {
+                    MessageBox.Show("Votre requête n'a pas retournée de résultats.");
+                }
+                else
                 {
                     foreach(Record enregistrement in this.entreprises.records)
                     {

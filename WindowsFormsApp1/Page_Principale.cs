@@ -60,6 +60,7 @@ namespace LettreCooperation
 
         private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            
             CloseAllWordFile();
         }
 

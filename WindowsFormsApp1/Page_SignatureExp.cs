@@ -102,7 +102,8 @@ namespace LettreCooperation
                         {
                             if(listLc[i].id_signataire != Page_Principale.Utilisateur.id_utilisateur)
                             {
-                                MessageBox.Show("Seul le signataire originale de cette LC ou l'administrateur peut la revalider");
+                                Utilisateur signataireOrigine = modelManager.GetUser(listLc[i].id_signataire);
+                                MessageBox.Show("Seul le signataire originale de cette LC (" + signataireOrigine.nom_utilisateur + " " + signataireOrigine.prenom_utilisateur + ") ou l'administrateur peut la revalider");
                             } else
                             {
                                 modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);

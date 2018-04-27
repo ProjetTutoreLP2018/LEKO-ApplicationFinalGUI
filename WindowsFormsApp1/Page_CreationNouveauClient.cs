@@ -36,7 +36,7 @@ namespace LettreCooperation
                     FormeJuridique.Text = "";
 
                 if (enregistrement.fields.numvoie != null && enregistrement.fields.typvoie != null && enregistrement.fields.libvoie != null)
-                    Adresse.Text = String.Format("{0} {1} {2}", enregistrement.fields.numvoie, enregistrement.fields.typvoie, enregistrement.fields.libvoie);
+                    Adresse.Text = String.Format("{0} {1}", enregistrement.fields.typvoie, enregistrement.fields.libvoie);
                 else
                     Adresse.Text = "";
 

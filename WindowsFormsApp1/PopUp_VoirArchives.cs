@@ -62,6 +62,9 @@ namespace LettreCooperation
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBoxLC.SelectedIndex < 0)
+                return;
+
             axAcroPDF1.src = Program.FINACOOPFolder + lCs[comboBoxLC.SelectedIndex].chemin_lc;
         }
     }

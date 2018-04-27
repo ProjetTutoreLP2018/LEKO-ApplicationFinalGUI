@@ -75,6 +75,9 @@ namespace LettreCooperation
             TelephonePortableRepresentant.Text = string.Empty;
             VolumesAnnuels.Text = string.Empty;
             CourrielRepresentant.Text = string.Empty;
+            dateTimeExercice_fin.Value = DateTime.Now;
+            dateTimeExercice_debut.Value = DateTime.Now;
+            textBoxActivite.Text = string.Empty;
 
             ReloadComboBox();
         }
@@ -131,6 +134,21 @@ namespace LettreCooperation
             FonctionRepresentant.Text = clients[index].fonction_referent;
             TelephonePortableRepresentant.Text = clients[index].tel_portable;
             TelephoneRepresentant.Text = clients[index].tel_fix;
+
+            if (clients[index].activite == null)
+                textBoxActivite.Text = string.Empty;
+            else
+                textBoxActivite.Text = clients[index].activite;
+
+            if (clients[index].exercice_debut == null)
+                dateTimeExercice_debut.Value = DateTime.Now;
+            else
+                dateTimeExercice_debut.Value =(DateTime) clients[index].exercice_debut;
+
+            if (clients[index].exercice_fin == null)
+                dateTimeExercice_fin.Value = DateTime.Now;
+            else
+                dateTimeExercice_fin.Value = (DateTime)clients[index].exercice_fin;
 
         }
 

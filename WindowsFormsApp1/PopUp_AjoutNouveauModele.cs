@@ -61,18 +61,18 @@ namespace LettreCooperation
             this.typeLettre = this.comboBox1.SelectedItem.ToString();
 
 
-          //  string[] files = Directory.GetFiles(this.pathDestination);
+            string[] files = Directory.GetFiles(Program.FINACOOPFolder +  this.pathDestination);
             bool nomUtilise = false;
             
 
-            /*foreach (string file in files)
+            foreach (string file in files)
             {
                 if (Path.GetFileName(file).Equals(this.nomFichier))
                 {
                     nomUtilise = true;
                     break;
                 }
-            }*/
+            }
 
             if (nomUtilise)
             {

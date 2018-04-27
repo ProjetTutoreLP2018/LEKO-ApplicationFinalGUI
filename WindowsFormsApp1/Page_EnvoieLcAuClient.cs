@@ -249,9 +249,9 @@ namespace LettreCooperation
 
             }
 
-            MessageBox.Show("Lien du ficher a copier : " + 
-                Program.FINACOOPFolder + lc.chemin_lc
-                );
+         //   MessageBox.Show("Lien du ficher a copier : " + 
+          //      Program.FINACOOPFolder + lc.chemin_lc
+         //       );
 
             File.Copy(
                 Program.FINACOOPFolder + lc.chemin_lc,
@@ -296,7 +296,7 @@ namespace LettreCooperation
             
             pathPDF = Properties.Settings.Default.PathEnvoyer + modelManager.FindClient(lc.id_client).raison_sociale + "\\" + ExtensionCible;
 
-            MessageBox.Show("Le PDF a était créer : " + pathPDF);
+           // MessageBox.Show("Le PDF a était créer : " + pathPDF);
         }
 
 

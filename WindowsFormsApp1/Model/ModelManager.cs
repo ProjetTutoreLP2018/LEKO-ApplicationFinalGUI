@@ -181,6 +181,9 @@ namespace LettreCooperation.modele
                         where lc.nom_lc == nom
                         select lc).ToList();
 
+                if (lcs == null)
+                    return null;
+
                 return lcs.First();
             }
             catch (System.Data.Entity.Core.EntityException)
