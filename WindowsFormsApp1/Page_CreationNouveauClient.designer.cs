@@ -125,7 +125,7 @@
             // BoutonValider
             // 
             this.BoutonValider.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BoutonValider.BackgroundImage")));
-            this.BoutonValider.Location = new System.Drawing.Point(741, 434);
+            this.BoutonValider.Location = new System.Drawing.Point(726, 434);
             this.BoutonValider.Name = "BoutonValider";
             this.BoutonValider.Size = new System.Drawing.Size(75, 23);
             this.BoutonValider.TabIndex = 59;
@@ -137,7 +137,7 @@
             // 
             this.BoutonAnnuler.BackColor = System.Drawing.Color.Red;
             this.BoutonAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.BoutonAnnuler.Location = new System.Drawing.Point(646, 434);
+            this.BoutonAnnuler.Location = new System.Drawing.Point(631, 434);
             this.BoutonAnnuler.Name = "BoutonAnnuler";
             this.BoutonAnnuler.Size = new System.Drawing.Size(75, 23);
             this.BoutonAnnuler.TabIndex = 58;
@@ -187,10 +187,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 41);
+            this.tabControl1.Location = new System.Drawing.Point(10, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(826, 376);
+            this.tabControl1.Size = new System.Drawing.Size(802, 376);
             this.tabControl1.TabIndex = 51;
             // 
             // tabPage1
@@ -199,7 +199,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(818, 350);
+            this.tabPage1.Size = new System.Drawing.Size(794, 350);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entité";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@
             this.groupBox1.Controls.Add(this.ESSNon);
             this.groupBox1.Location = new System.Drawing.Point(7, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(803, 338);
+            this.groupBox1.Size = new System.Drawing.Size(805, 338);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             // 

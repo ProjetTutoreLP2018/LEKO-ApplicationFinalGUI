@@ -91,58 +91,64 @@ namespace LettreCooperation
 				{ "LieuImmatriculation", client.lieu_immatriculation },
 			};
 
-
-            using (DocX documentModele = DocX.Load(Program.FINACOOPFolder + modeles[comboBoxModel.SelectedIndex].chemin_modele + ".docx"))
+            try
             {
-
-                foreach (var item in donnees)
+                using (DocX documentModele = DocX.Load(Program.FINACOOPFolder + modeles[comboBoxModel.SelectedIndex].chemin_modele + ".docx"))
                 {
-                    documentModele.ReplaceText("{{" + item.Key + "}}", item.Value);
-                }
 
-                string pathFolder = Program.FINACOOPFolder + Properties.Settings.Default.PathRealiser + client.raison_sociale;
-
-                if (!Directory.Exists(pathFolder))
-                {
-                    Directory.CreateDirectory(pathFolder);
-                    File.SetAttributes(pathFolder, FileAttributes.Normal);
-
-                }
-
-                LC lc = new LC();
-
-                lc.chemin_lc = Properties.Settings.Default.PathRealiser + client.raison_sociale + @"\" + nomFichier;
-                lc.date_debut = DateTime.Today;
-                lc.id_client = client.id_client;
-                lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;
-                lc.nom_lc = nomFichier;
-                lc.id_etat = 1;
-                lc.id_utilisateur = Page_Principale.Utilisateur.id_utilisateur;
-
-
-                if (File.Exists(pathFolder + @"\" + nomFichier))
-                {
-                    string message = "Cette LC existe déjà, voulez-vous l'écraser ?";
-                    string caption = "Lettre de coopération existant";
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    DialogResult result = MessageBox.Show(message, caption, buttons);
-
-                    if (result == DialogResult.No)
+                    foreach (var item in donnees)
                     {
-                        waitForm.Close();
-                        return;
+                        documentModele.ReplaceText("{{" + item.Key + "}}", item.Value);
                     }
 
+                    string pathFolder = Program.FINACOOPFolder + Properties.Settings.Default.PathRealiser + client.raison_sociale;
+
+                    if (!Directory.Exists(pathFolder))
+                    {
+                        Directory.CreateDirectory(pathFolder);
+                        File.SetAttributes(pathFolder, FileAttributes.Normal);
+
+                    }
+
+                    LC lc = new LC();
+
+                    lc.chemin_lc = Properties.Settings.Default.PathRealiser + client.raison_sociale + @"\" + nomFichier;
+                    lc.date_debut = DateTime.Today;
+                    lc.id_client = client.id_client;
+                    lc.id_modele = modeles[comboBoxModel.SelectedIndex].id_modele;
+                    lc.nom_lc = nomFichier;
+                    lc.id_etat = 1;
+                    lc.id_utilisateur = Page_Principale.Utilisateur.id_utilisateur;
+
+
+                    if (File.Exists(pathFolder + @"\" + nomFichier))
+                    {
+                        string message = "Cette LC existe déjà, voulez-vous l'écraser ?";
+                        string caption = "Lettre de coopération existant";
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        DialogResult result = MessageBox.Show(message, caption, buttons);
+
+                        if (result == DialogResult.No)
+                        {
+                            waitForm.Close();
+                            return;
+                        }
+
+                    }
+
+                    documentModele.SaveAs(pathFolder + @"\" + nomFichier);
+
+                    AfficherLC(pathFolder + @"\" + nomFichier);
+
+                    SaveLC(lc);
+                    waitForm.Close();
+                    MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"\" + nomFichier + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
-
-                documentModele.SaveAs(pathFolder + @"\" + nomFichier);
-
-                AfficherLC(pathFolder + @"\" + nomFichier);
-
-                SaveLC(lc);
-                waitForm.Close();
-                MessageBox.Show("La lettre de coopération a été générée dans le fichier " + pathFolder + @"\" + nomFichier + ".\nAssurez-vous que la lettre de coopération générée ne contient pas d'erreurs, modifiez-la si nécessaire.", "Lettre de coopération générée", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigner le bon fichier FINACOOP");
             }
         }
 

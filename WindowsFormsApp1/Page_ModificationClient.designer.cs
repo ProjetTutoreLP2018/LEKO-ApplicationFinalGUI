@@ -148,10 +148,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(1, 62);
+            this.tabControl1.Location = new System.Drawing.Point(9, 62);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(826, 376);
+            this.tabControl1.Size = new System.Drawing.Size(807, 376);
             this.tabControl1.TabIndex = 51;
             // 
             // tabPage1
@@ -160,7 +160,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(818, 350);
+            this.tabPage1.Size = new System.Drawing.Size(799, 350);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Entité";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -931,7 +931,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(129, 29);
+            this.comboBox2.Location = new System.Drawing.Point(140, 29);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(208, 21);
@@ -941,7 +941,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1, 29);
+            this.label7.Location = new System.Drawing.Point(12, 29);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 13);
@@ -952,7 +952,7 @@
             // 
             this.SupprimerClient.BackColor = System.Drawing.Color.Red;
             this.SupprimerClient.ForeColor = System.Drawing.Color.Black;
-            this.SupprimerClient.Location = new System.Drawing.Point(9, 444);
+            this.SupprimerClient.Location = new System.Drawing.Point(13, 444);
             this.SupprimerClient.Name = "SupprimerClient";
             this.SupprimerClient.Size = new System.Drawing.Size(75, 23);
             this.SupprimerClient.TabIndex = 5000001;

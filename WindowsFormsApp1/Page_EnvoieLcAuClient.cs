@@ -105,13 +105,13 @@ namespace LettreCooperation
                             " ou déplacé.");
                     }
 
-                    try
-                    {
+                  /*  try
+                    {*/
                         SendMailClient(listLc[i], this.textBoxPass.Text);
-                    }catch(Exception)
+                  /*  }catch(Exception)
                     {
                         MessageBox.Show("Une erreur est survenue, l'Email n'a pas était envoyé.");
-                    }
+                    }*/
 
                     if (envoieMail)
                     {

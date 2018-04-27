@@ -163,14 +163,22 @@ namespace LettreCooperation
             openFile.Filter = "Fichiers pdf|*.pdf";
             /* J'ouvre la fenetre permettant d'aller chercher le fichier à 'déplacer|archiver' */
             openFile.ShowDialog();
+
+            if(openFile.SafeFileName.Length == 0)
+            {
+                MessageBox.Show("Vous n'avez pas renseigné de fichier");
+                return;
+            }
+
+
             /* Je sauvegarde le nom du fichier dans une variable à part - nomDeLaLcAarchiver */
             string nomDeLaLcAarchier = openFile.SafeFileName;
             /* Je sauvegarde le chemin absolue du fichier dans une variable à part - fichierSrc */
             string fichierSrc = openFile.FileName;
             
             /* Essaye d'archiver le fichier */
-           /* try
-            {*/
+            try
+            {
                 /* fichierDest = correspond "chemin du fichier" + "Raison Sociale du Client = dossier du client" + "Nom final du fichier à déplacer" */
              //   string dossierCibleArchive = @"\Interne\5.LC & Prospection\5.Lettres de coopération\zzz_old\";
                 string pathDest = Program.FINACOOPFolder + Properties.Settings.Default.PathArchiver + clientChoisi + @"\";
@@ -195,12 +203,12 @@ namespace LettreCooperation
                 MessageBox.Show("Lettre de Coopération Archivée ! \n" + "LC archivée : " + lcDuClient.nom_lc + "\n Client concerné : " + lcDuClient.chemin_lc);
 
                 Init();
-            /*}
+            }
             catch (Exception)
             {
                 /* Message qui indique à l'utilisateur que la LC n'a pas été archiver */
                // MessageBox.Show("Archivage non réalisé !");
-           /* }*/
+            }
         }
 
         private void btnRefuserLC_Click(object sender, EventArgs e)
