@@ -113,7 +113,9 @@ namespace LettreCooperation
             this.indexClient = comboClient.SelectedIndex;
             comboLC.Items.Clear();
             comboLC.ResetText();
-          
+
+            button1.Enabled = true;
+
 
             if (listClient == null || indexClient < 0)
                 return;
@@ -309,13 +311,24 @@ namespace LettreCooperation
 
         private void RadioButtonSignerExp_CheckedChanged(object sender, EventArgs e)
         {
+ 
             UpdateListLC();
+
+            if (!Page_Principale.Utilisateur.isAdmin || Page_Principale.Utilisateur.id_droit == 1)
+                button1.Enabled = false;
+            else
+                button1.Enabled = true;
         }
 
 
         private void RadioButtonEnvoieCli_CheckedChanged(object sender, EventArgs e)
         {
             UpdateListLC();
+
+            if (!Page_Principale.Utilisateur.isAdmin || Page_Principale.Utilisateur.id_droit == 1)
+                button1.Enabled = false;
+            else
+                button1.Enabled = true;
         }
 
         private void RadioButtonArchive_CheckedChanged(object sender, EventArgs e)

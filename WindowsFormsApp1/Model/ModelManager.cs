@@ -55,6 +55,11 @@ namespace LettreCooperation.modele
 
                 return;
             }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                MessageBox.Show("Cetta adresse Email existe déjà dans la base de donée.");
+                return;
+            }
         }
 
 
@@ -90,6 +95,11 @@ namespace LettreCooperation.modele
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
+                return;
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                MessageBox.Show("Cetta adresse Email existe déjà dans la base de donée.");
                 return;
             }
         }

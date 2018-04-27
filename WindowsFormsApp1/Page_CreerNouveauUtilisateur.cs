@@ -149,9 +149,6 @@ namespace LettreCooperation
             utilisateur.id_droit = index;
             utilisateur.mdp_utilisateur = EncryptePass(textPass.Text);
 
-           
-            MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
-                " " + utilisateur.prenom_utilisateur + " a bien était créer");
 
             if (!String.IsNullOrEmpty(labelPathImage.Text))
             {
@@ -166,6 +163,9 @@ namespace LettreCooperation
 
             model.CreerUtilisateur(utilisateur);
             Init();
+
+            MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
+                " " + utilisateur.prenom_utilisateur + " a bien était créer");
         }
 
 

@@ -110,13 +110,13 @@ namespace LettreCooperation
                             " ou déplacé.");
                     }
 
-                  /*  try
-                    {*/
-                        SendMailClient(listLc[i], this.textBoxPass.Text);
-                  /*  }catch(Exception)
+                    try
                     {
-                        MessageBox.Show("Une erreur est survenue, l'Email n'a pas était envoyé.");
-                    }*/
+                        SendMailClient(listLc[i], this.textBoxPass.Text);
+                    }catch(Exception)
+                    {
+                        MessageBox.Show("Une erreur est survenue, l'Email n'a pas était envoyé. Merci de vérifier votre connexion internet et que le port SMTP 587 soit bien ouvert.");
+                    }
 
                     if (envoieMail)
                     {
@@ -318,6 +318,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            if (!Page_Principale.Utilisateur.isAdmin)
+                return;
 
             if (dataGridView.CurrentCell.ColumnIndex == 0)
                 AfficherLC(Program.FINACOOPFolder + listLc[dataGridView.CurrentCell.RowIndex].chemin_lc);
