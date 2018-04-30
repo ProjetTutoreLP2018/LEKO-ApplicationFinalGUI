@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Page_TableauDeBord));
             this.label7 = new System.Windows.Forms.Label();
             this.nbLCRefusees = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,7 +60,7 @@
             this.nbLCRefusees.AutoSize = true;
             this.nbLCRefusees.BackColor = System.Drawing.Color.Transparent;
             this.nbLCRefusees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.nbLCRefusees.ForeColor = System.Drawing.Color.White;
+            this.nbLCRefusees.ForeColor = System.Drawing.Color.Red;
             this.nbLCRefusees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.nbLCRefusees.Location = new System.Drawing.Point(747, 376);
             this.nbLCRefusees.Name = "nbLCRefusees";
@@ -86,7 +87,7 @@
             this.nbLCEnvoyees.AutoSize = true;
             this.nbLCEnvoyees.BackColor = System.Drawing.Color.Transparent;
             this.nbLCEnvoyees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.nbLCEnvoyees.ForeColor = System.Drawing.Color.White;
+            this.nbLCEnvoyees.ForeColor = System.Drawing.Color.GreenYellow;
             this.nbLCEnvoyees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.nbLCEnvoyees.Location = new System.Drawing.Point(394, 376);
             this.nbLCEnvoyees.Name = "nbLCEnvoyees";
@@ -101,7 +102,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(9, 413);
+            this.label3.Location = new System.Drawing.Point(159, 343);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 48);
             this.label3.TabIndex = 33;
@@ -113,9 +114,9 @@
             this.nbLCSigneesValidees.AutoSize = true;
             this.nbLCSigneesValidees.BackColor = System.Drawing.Color.Transparent;
             this.nbLCSigneesValidees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.nbLCSigneesValidees.ForeColor = System.Drawing.Color.White;
+            this.nbLCSigneesValidees.ForeColor = System.Drawing.Color.GreenYellow;
             this.nbLCSigneesValidees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nbLCSigneesValidees.Location = new System.Drawing.Point(60, 360);
+            this.nbLCSigneesValidees.Location = new System.Drawing.Point(210, 290);
             this.nbLCSigneesValidees.Name = "nbLCSigneesValidees";
             this.nbLCSigneesValidees.Size = new System.Drawing.Size(39, 42);
             this.nbLCSigneesValidees.TabIndex = 32;
@@ -129,7 +130,7 @@
             this.texteLCEnAttenteDeSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.texteLCEnAttenteDeSignature.ForeColor = System.Drawing.Color.Transparent;
             this.texteLCEnAttenteDeSignature.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.texteLCEnAttenteDeSignature.Location = new System.Drawing.Point(9, 71);
+            this.texteLCEnAttenteDeSignature.Location = new System.Drawing.Point(3, 429);
             this.texteLCEnAttenteDeSignature.Name = "texteLCEnAttenteDeSignature";
             this.texteLCEnAttenteDeSignature.Size = new System.Drawing.Size(143, 48);
             this.texteLCEnAttenteDeSignature.TabIndex = 31;
@@ -141,9 +142,9 @@
             this.nbLCEnAttenteDeSignature.AutoSize = true;
             this.nbLCEnAttenteDeSignature.BackColor = System.Drawing.Color.Transparent;
             this.nbLCEnAttenteDeSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.nbLCEnAttenteDeSignature.ForeColor = System.Drawing.Color.White;
+            this.nbLCEnAttenteDeSignature.ForeColor = System.Drawing.Color.GreenYellow;
             this.nbLCEnAttenteDeSignature.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nbLCEnAttenteDeSignature.Location = new System.Drawing.Point(59, 18);
+            this.nbLCEnAttenteDeSignature.Location = new System.Drawing.Point(53, 376);
             this.nbLCEnAttenteDeSignature.Name = "nbLCEnAttenteDeSignature";
             this.nbLCEnAttenteDeSignature.Size = new System.Drawing.Size(39, 42);
             this.nbLCEnAttenteDeSignature.TabIndex = 30;
@@ -153,8 +154,8 @@
             // 
             this.lcArchivees.AutoSize = true;
             this.lcArchivees.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.lcArchivees.ForeColor = System.Drawing.Color.White;
-            this.lcArchivees.Location = new System.Drawing.Point(744, 19);
+            this.lcArchivees.ForeColor = System.Drawing.Color.GreenYellow;
+            this.lcArchivees.Location = new System.Drawing.Point(576, 291);
             this.lcArchivees.Name = "lcArchivees";
             this.lcArchivees.Size = new System.Drawing.Size(39, 42);
             this.lcArchivees.TabIndex = 38;
@@ -165,7 +166,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(696, 71);
+            this.label2.Location = new System.Drawing.Point(528, 343);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 32);
             this.label2.TabIndex = 39;
@@ -177,6 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lcArchivees);

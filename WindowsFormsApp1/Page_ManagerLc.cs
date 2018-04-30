@@ -214,6 +214,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonAfficher_Click(object sender, EventArgs e)
         {
+            if (comboClient.SelectedIndex < 0 || comboLC.SelectedIndex < 0)
+                return;
+
             Cursor.Current = Cursors.WaitCursor;
 
             if (radioButtonArchive.Checked)
@@ -354,6 +357,8 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonSupprimer_Click(object sender, EventArgs e)
         {
+            if (comboClient.SelectedIndex < 0 || comboLC.SelectedIndex < 0)
+                return;
 
             Cursor.Current = Cursors.WaitCursor;
             DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer definitivement cette Lettre de coopération ?",

@@ -137,6 +137,9 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonModifier_Click(object sender, EventArgs e)
         {
+            if (comboNomUtilisateur.SelectedIndex < 0)
+                return;
+
             Cursor.Current = Cursors.WaitCursor;
 
             adresseMailMess.Text = string.Empty;
@@ -265,6 +268,10 @@ namespace LettreCooperation
         /// <param name="e"></param>
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
+
+            if (comboNomUtilisateur.SelectedIndex < 0)
+                return;
+
             Cursor.Current = Cursors.WaitCursor;
             model.SupprimerUtilisateur(utilisateurs[index]);
             MessageBox.Show("Votre utilisateur a bien été supprimé");
