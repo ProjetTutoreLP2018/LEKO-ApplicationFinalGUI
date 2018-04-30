@@ -166,7 +166,7 @@
         AIAE8QIAACSIFwAAIEG8AAAACeIFAAAIOMw/f5d0mtLs3mQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="butonParcour.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonParcours.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAy8AAAHCCAYAAADmaPZFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAAAd0SU1FB+IEBhMHD4Ytf0oAAAnSSURBVHhe7dehTQRQFERRGqGPLRXKQKBIqABN

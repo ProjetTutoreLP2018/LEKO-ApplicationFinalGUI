@@ -58,7 +58,7 @@
             this.modeleLc.Name = "modeleLc";
             this.modeleLc.Size = new System.Drawing.Size(73, 13);
             this.modeleLc.TabIndex = 1;
-            this.modeleLc.Text = "Modéle de LC";
+            this.modeleLc.Text = "Modèle de LC";
             // 
             // supprimerModele
             // 

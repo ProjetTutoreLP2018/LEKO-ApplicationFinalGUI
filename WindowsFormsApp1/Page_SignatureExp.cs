@@ -70,7 +70,7 @@ namespace LettreCooperation
             if (!pass.Equals(Page_Principale.Utilisateur.mdp_utilisateur))
             {
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Votre mot de passe est incorrecte");
+                MessageBox.Show("Votre mot de passe est incorrect");
                 return;
             }
 
@@ -107,12 +107,12 @@ namespace LettreCooperation
                             if(listLc[i].id_signataire != Page_Principale.Utilisateur.id_utilisateur)
                             {
                                 Utilisateur signataireOrigine = modelManager.GetUser(listLc[i].id_signataire);
-                                MessageBox.Show("Seul le signataire originale de cette LC (" + signataireOrigine.nom_utilisateur + " " + signataireOrigine.prenom_utilisateur + ") ou l'administrateur peut la revalider");
+                                MessageBox.Show("Seul le signataire original de cette LC (" + signataireOrigine.nom_utilisateur + " " + signataireOrigine.prenom_utilisateur + ") ou l'administrateur peut la revalider");
                             } else
                             {
                                 modelManager.ChangerEtatLC_Signer(listLc[i].id_lc);
                                 AfficherLC(Program.FINACOOPFolder + listLc[i].chemin_lc);
-                                MessageBox.Show("Votre fichier a revalider");
+                                MessageBox.Show("Votre fichier a été revalidé");
 
                             }
 
@@ -124,7 +124,7 @@ namespace LettreCooperation
 
                             doc.Activate();
 
-                            //récuperation du mot a remplacer
+                            //récuperation du mot à remplacer
                             //************************************************
                             var motcle = "signature";
                             // MessageBox.Show("Remplacement du mot: " + motcle + " ...");
@@ -155,7 +155,7 @@ namespace LettreCooperation
 
                             AjoutNomSignataire(Program.FINACOOPFolder + listLc[i].chemin_lc);
                             AfficherLC(Program.FINACOOPFolder + listLc[i].chemin_lc);
-                            MessageBox.Show("Votre fichier a bien était signée");
+                            MessageBox.Show("Votre fichier a bien été signé");
 
                         }
 
@@ -188,7 +188,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet de gérer les fichier Word
+        /// Méthode qui permet de gérer les fichiers Word
         /// </summary>
         /// <param name="pathOrigine"></param>
         private void AfficherLC(string pathOrigine)
@@ -229,7 +229,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthodeu qui permet de transformer un tableau
+        /// Méthode qui permet de transformer un tableau
         /// de Byte en image
         /// </summary>
         /// <param name="byteArrayIn"></param>
@@ -256,7 +256,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet d'ouvrir un LC avant de la signer
+        /// Méthode qui permet d'ouvrir une LC avant de la signer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

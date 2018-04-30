@@ -232,9 +232,9 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(373, 274);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(95, 13);
+            this.label44.Size = new System.Drawing.Size(89, 13);
             this.label44.TabIndex = 62;
-            this.label44.Text = "Excercice Social : ";
+            this.label44.Text = "Exercice Social : ";
             // 
             // label43
             // 
@@ -366,9 +366,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(19, 169);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 13);
+            this.label20.Size = new System.Drawing.Size(91, 13);
             this.label20.TabIndex = 45;
-            this.label20.Text = "Chiffres d\'affaires : ";
+            this.label20.Text = "Chiffre d\'affaires : ";
             // 
             // label3
             // 

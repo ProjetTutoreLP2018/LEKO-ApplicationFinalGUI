@@ -82,7 +82,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Permet d'initialiser les élélements
+        /// Permet d'initialiser les éléments
         /// de la page principale après la connexion
         /// </summary>
         private void InitMainPage()

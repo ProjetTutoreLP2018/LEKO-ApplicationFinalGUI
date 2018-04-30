@@ -38,7 +38,7 @@
             this.signerUneLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.envoyerUneLCAuClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retourLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.voireLesArchivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voirLesArchivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDesClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créerUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.voirModifierUnClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +87,7 @@
             this.signerUneLCToolStripMenuItem,
             this.envoyerUneLCAuClientToolStripMenuItem,
             this.retourLCToolStripMenuItem,
-            this.voireLesArchivesToolStripMenuItem});
+            this.voirLesArchivesToolStripMenuItem});
             this.gestionDesLettreDeCoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gestionDesLettreDeCoToolStripMenuItem.Name = "gestionDesLettreDeCoToolStripMenuItem";
             resources.ApplyResources(this.gestionDesLettreDeCoToolStripMenuItem, "gestionDesLettreDeCoToolStripMenuItem");
@@ -122,11 +122,11 @@
             resources.ApplyResources(this.retourLCToolStripMenuItem, "retourLCToolStripMenuItem");
             this.retourLCToolStripMenuItem.Click += new System.EventHandler(this.RetourLCToolStripMenuItem_Click);
             // 
-            // voireLesArchivesToolStripMenuItem
+            // voirLesArchivesToolStripMenuItem
             // 
-            this.voireLesArchivesToolStripMenuItem.Name = "voireLesArchivesToolStripMenuItem";
-            resources.ApplyResources(this.voireLesArchivesToolStripMenuItem, "voireLesArchivesToolStripMenuItem");
-            this.voireLesArchivesToolStripMenuItem.Click += new System.EventHandler(this.VoireLesArchivesToolStripMenuItem_Click);
+            this.voirLesArchivesToolStripMenuItem.Name = "voirLesArchivesToolStripMenuItem";
+            resources.ApplyResources(this.voirLesArchivesToolStripMenuItem, "voirLesArchivesToolStripMenuItem");
+            this.voirLesArchivesToolStripMenuItem.Click += new System.EventHandler(this.VoirLesArchivesToolStripMenuItem_Click);
             // 
             // gestionDesClientsToolStripMenuItem
             // 
@@ -336,7 +336,7 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterUnModèleDeLCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerCheminDossierFINACOOPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerSMTPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem voireLesArchivesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem voirLesArchivesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerUnModèleDeLCToolStripMenuItem;
     }
 }

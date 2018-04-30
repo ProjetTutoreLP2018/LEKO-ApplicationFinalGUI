@@ -252,11 +252,11 @@
     <Compile Include="PopUp_ChoixDossierFINACOOP.Designer.cs">
       <DependentUpon>PopUp_ChoixDossierFINACOOP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page_EnvoieLcAuClient.cs">
+    <Compile Include="Page_EnvoiLcAuClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Page_EnvoieLcAuClient.Designer.cs">
-      <DependentUpon>Page_EnvoieLcAuClient.cs</DependentUpon>
+    <Compile Include="Page_EnvoiLcAuClient.Designer.cs">
+      <DependentUpon>Page_EnvoiLcAuClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Page_CreationDeLc.cs">
       <SubType>UserControl</SubType>
@@ -411,8 +411,8 @@
     <EmbeddedResource Include="PopUp_ChoixDossierFINACOOP.resx">
       <DependentUpon>PopUp_ChoixDossierFINACOOP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page_EnvoieLcAuClient.resx">
-      <DependentUpon>Page_EnvoieLcAuClient.cs</DependentUpon>
+    <EmbeddedResource Include="Page_EnvoiLcAuClient.resx">
+      <DependentUpon>Page_EnvoiLcAuClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Page_CreationDeLc.resx">
       <DependentUpon>Page_CreationDeLc.cs</DependentUpon>

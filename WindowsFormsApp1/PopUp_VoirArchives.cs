@@ -20,7 +20,7 @@ namespace LettreCooperation
             // Centrage de la page
             this.CenterToScreen();
 
-            // Nous fixons les dimmentions de l'application
+            // Nous fixons les dimensions de l'application
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

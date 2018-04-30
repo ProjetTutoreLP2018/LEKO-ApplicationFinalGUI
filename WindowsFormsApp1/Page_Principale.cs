@@ -76,11 +76,11 @@ namespace LettreCooperation
         ///======================================================================
 
         /// <summary>
-        /// Initialisation de l'User Controle avant chaque séléctions
+        /// Initialisation de l'User Control avant chaque sélection
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void InitUserContole(UserControl userControl)
+        private void InitUserControl(UserControl userControl)
         {
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(userControl);
@@ -89,33 +89,33 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui gére l'événement 'Créer Une Lc"
+        /// Méthode qui gère l'évènement 'Créer Une Lc"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void CréerUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            InitUserContole(new Page_CreationDeLc());
+            InitUserControl(new Page_CreationDeLc());
             Cursor.Current = Cursors.Default;
         }
 
 
         /// <summary>
-        /// Méthode qui gére l'événement 'Voir / Modifier une LC"
+        /// Méthode qui gère l'évènement 'Voir / Modifier une LC"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void VoirModifierUneLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            InitUserContole(new Page_ManagerLc());
+            InitUserControl(new Page_ManagerLc());
             Cursor.Current = Cursors.Default;
         }
 
 
         /// <summary>
-        /// Méthode qui gére l'événement 'Signer une LC"
+        /// Méthode qui gère l'évènement 'Signer une LC"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -124,7 +124,7 @@ namespace LettreCooperation
             if (Utilisateur.id_droit == 2)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                InitUserContole(new Page_SignatureExp());
+                InitUserControl(new Page_SignatureExp());
                 Cursor.Current = Cursors.Default;
             }
             else
@@ -134,7 +134,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui gére l'événement 'Créer un Utilisateur"
+        /// Méthode qui gère l'évènement 'Créer un Utilisateur"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -144,7 +144,7 @@ namespace LettreCooperation
             if (Utilisateur.isAdmin)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                InitUserContole(new Page_CreerNouveauUtilisateur());
+                InitUserControl(new Page_CreerNouveauUtilisateur());
                 Cursor.Current = Cursors.Default;
             }
             else
@@ -154,7 +154,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui gére l'événement 'Manager un Utilisateur"
+        /// Méthode qui gère l'évènement 'Manager un Utilisateur"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -164,7 +164,7 @@ namespace LettreCooperation
             if (Utilisateur.isAdmin)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                InitUserContole(new Page_ManagerUtilisateur());
+                InitUserControl(new Page_ManagerUtilisateur());
                 Cursor.Current = Cursors.Default;
             }
             else
@@ -180,13 +180,13 @@ namespace LettreCooperation
         private void PictureHome_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            InitUserContole(new Page_TableauDeBord());
+            InitUserControl(new Page_TableauDeBord());
             Cursor.Current = Cursors.Default;
         }
 
 
         /// <summary>
-        /// Méthode qui gére la déconnection de l'application
+        /// Méthode qui gère la déconnection de l'application
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -200,7 +200,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui gére l'envoir de la LC au client par mail
+        /// Méthode qui gère l'envoi de la LC au client par mail
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -209,7 +209,7 @@ namespace LettreCooperation
             if (Utilisateur.id_droit == 2)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                InitUserContole(new Page_EnvoieLcAuClient());
+                InitUserControl(new Page_EnvoiLcAuClient());
                 Cursor.Current = Cursors.Default;
             }
             else
@@ -284,7 +284,7 @@ namespace LettreCooperation
         private void CréerUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            InitUserContole(new Page_CreationNouveauClient());
+            InitUserControl(new Page_CreationNouveauClient());
             Cursor.Current = Cursors.Default;
         }
 
@@ -298,7 +298,7 @@ namespace LettreCooperation
         private void VoirModifierUnClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            InitUserContole(new Page_ModificationClient());
+            InitUserControl(new Page_ModificationClient());
             Cursor.Current = Cursors.Default;
         }
 
@@ -329,7 +329,7 @@ namespace LettreCooperation
                 MessageBox.Show("Vous n'avez pas la permission de faire cette action.");
         }
 
-        private void VoireLesArchivesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void VoirLesArchivesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             PopUp_VoirArchives page_VoirArchives = new PopUp_VoirArchives();

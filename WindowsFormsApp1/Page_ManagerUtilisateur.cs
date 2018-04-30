@@ -68,7 +68,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode de gestion du chagement de la page
+        /// Méthode de gestion du chargement de la page
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
@@ -81,9 +81,9 @@ namespace LettreCooperation
 
         /// <summary>
         /// Méthode qui permet de gérer le changement
-        /// de l'élément séléctionner dans la comboBox.
-        /// Elle permet de chager les éléments dans le
-        /// reste de la page en fonction de la séléction
+        /// de l'élément sélectionné dans la comboBox.
+        /// Elle permet de charger les éléments dans le
+        /// reste de la page en fonction de la sélection
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -130,7 +130,7 @@ namespace LettreCooperation
 
         /// <summary>
         /// Méthode qui permet de modifier les éléments
-        /// inscrit dans les champs en fonction de l'élément séléctionné
+        /// inscrits dans les champs en fonction de l'élément sélectionné
         /// dans la comboBox
         /// </summary>
         /// <param name="sender"></param>
@@ -258,7 +258,7 @@ namespace LettreCooperation
         /// <summary>
         /// Méthode qui permet de supprimer 
         /// de la base de données l'utilisateur
-        /// en fonction de l'élément séléctionné
+        /// en fonction de l'élément sélectionné
         /// dans la comboBox
         /// </summary>
         /// <param name="sender"></param>
@@ -274,7 +274,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet de récupèrer l'image
+        /// Méthode qui permet de récupérer l'image
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

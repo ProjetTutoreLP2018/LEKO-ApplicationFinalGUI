@@ -57,8 +57,8 @@ namespace LettreCooperation
 
             } catch (System.Data.SqlClient.SqlException)
             {
-                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
-                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+                MessageBox.Show("Vous n'êtes pas connecté à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou de vérifier que le port 1433 de votre Box est bien ouvert.");
             }
         }
     }

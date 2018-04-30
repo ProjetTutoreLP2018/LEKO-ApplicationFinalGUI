@@ -97,7 +97,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ButtonShearchImage_Click);
+            this.button1.Click += new System.EventHandler(this.ButtonSearchImage_Click);
             // 
             // labelPathImage
             // 
@@ -312,7 +312,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Prenom : ";
+            this.label2.Text = "Prénom : ";
             // 
             // label1
             // 

@@ -30,11 +30,11 @@ namespace LettreCooperation
                 int nombreEntreprises = this.entreprises.nhits;
                 if (nombreEntreprises > 10)
                 {
-                    MessageBox.Show("Votre requête " + MotsCles.Text + " donne " + nombreEntreprises + " résultats.\nVeuillez modifier vos mots-clés ou rajouter.");
+                    MessageBox.Show("Votre requête " + MotsCles.Text + " donne " + nombreEntreprises + " résultats.\nVeuillez modifier vos mots-clés ou en rajouter.");
                 }
                 else if (nombreEntreprises == 0)
                 {
-                    MessageBox.Show("Votre requête n'a pas retournée de résultats.");
+                    MessageBox.Show("Votre requête n'a pas retourné de résultats.");
                 }
                 else
                 {
@@ -75,7 +75,7 @@ namespace LettreCooperation
                 int nombreEntreprises = this.entreprises.nhits;
                 if (nombreEntreprises > 10)
                 {
-                    MessageBox.Show("Votre requête " + MotsCles.Text + " donne " + nombreEntreprises + " résultats.\nVeuillez modifier vos mots-clés ou rajouter.");
+                    MessageBox.Show("Votre requête " + MotsCles.Text + " donne " + nombreEntreprises + " résultats.\nVeuillez modifier vos mots-clés ou en rajouter.");
                 }
                 else if (nombreEntreprises > 10)
                 {
@@ -97,8 +97,8 @@ namespace LettreCooperation
             catch (HttpRequestException)
             {
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
-                   "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+                MessageBox.Show("Vous n'êtes pas connecté à la base de données. Merci" +
+                   "de vérifier votre connexion internet ou de vérifier que le port 1433 de votre Box est bien ouvert.");
             }
 
             Cursor.Current = Cursors.Default;

@@ -68,7 +68,7 @@ namespace LettreCooperation
             Cursor.Current = Cursors.WaitCursor;
             if (FichierValoHonoraires.Text.Length == 0)
             {
-                MessageBox.Show("Merci de choisir un fichier d'honoraire.");
+                MessageBox.Show("Merci de choisir un fichier d'honoraires");
                 Cursor.Current = Cursors.Default;
                 return;
             }
@@ -148,7 +148,7 @@ namespace LettreCooperation
             }
             catch (Exception)
             {
-                MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigner le bon fichier FINACOOP");
+                MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigné le bon fichier FINACOOP");
                 Cursor.Current = Cursors.Default;
             }
 
@@ -188,7 +188,7 @@ namespace LettreCooperation
                     if (File.Exists(pathFolder + @"\" + nomFichier))
                     {
                         string message = "Cette LC existe déjà, voulez-vous l'écraser ?";
-                        string caption = "Lettre de coopération existant";
+                        string caption = "Lettre de coopération existante";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         DialogResult result = MessageBox.Show(message, caption, buttons);
 
@@ -213,7 +213,7 @@ namespace LettreCooperation
             }
             catch (Exception)
             {
-                MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigner le bon fichier FINACOOP");
+                MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigné le bon fichier FINACOOP");
                 Cursor.Current = Cursors.Default;
             }
         }

@@ -169,55 +169,6 @@
         AIAE8QIAACSIFwAAIEG8AAAACeIFAAAIOMw/f5d0mtLs3mQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 20</value>
-  </data>
-  <data name="gestionDesLettreDeCoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestion des LC</value>
-  </data>
-  <data name="gestionDesClientsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 20</value>
-  </data>
-  <data name="gestionDesClientsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestion des Clients</value>
-  </data>
-  <data name="gestionDesUtilisateursToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
-  </data>
-  <data name="gestionDesUtilisateursToolStripMenuItem.Text" xml:space="preserve">
-    <value>Administrateur</value>
-  </data>
-  <data name="aProposToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
-  </data>
-  <data name="aProposToolStripMenuItem.Text" xml:space="preserve">
-    <value>Á propos</value>
-  </data>
-  <data name="mainMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>843, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mainMenu.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
-    <value>mainMenu</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="créerUneLCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
@@ -246,25 +197,37 @@
     <value>204, 22</value>
   </data>
   <data name="retourLCToolStripMenuItem.Text" xml:space="preserve">
-    <value>Gestion le retour des LC</value>
+    <value>Gérer le retour des LC</value>
   </data>
-  <data name="voireLesArchivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="voirLesArchivesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
-  <data name="voireLesArchivesToolStripMenuItem.Text" xml:space="preserve">
+  <data name="voirLesArchivesToolStripMenuItem.Text" xml:space="preserve">
     <value>Les Archives</value>
   </data>
+  <data name="gestionDesLettreDeCoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
+  </data>
+  <data name="gestionDesLettreDeCoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestion des LC</value>
+  </data>
   <data name="créerUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="créerUnClientToolStripMenuItem.Text" xml:space="preserve">
     <value>Créer un Client</value>
   </data>
   <data name="voirModifierUnClientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="voirModifierUnClientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Manager  un Client</value>
+    <value>Manager un Client</value>
+  </data>
+  <data name="gestionDesClientsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 20</value>
+  </data>
+  <data name="gestionDesClientsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Gestion des Clients</value>
   </data>
   <data name="créerUnUtilisateurToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 22</value>
@@ -301,6 +264,43 @@
   </data>
   <data name="changerSMTPToolStripMenuItem.Text" xml:space="preserve">
     <value>Changer SMTP</value>
+  </data>
+  <data name="gestionDesUtilisateursToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="gestionDesUtilisateursToolStripMenuItem.Text" xml:space="preserve">
+    <value>Administrateur</value>
+  </data>
+  <data name="aProposToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 20</value>
+  </data>
+  <data name="aProposToolStripMenuItem.Text" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="mainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>843, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mainMenu.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
+    <value>mainMenu</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="labelUtilisateur.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -4153,10 +4153,10 @@
   <data name="&gt;&gt;retourLCToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;voireLesArchivesToolStripMenuItem.Name" xml:space="preserve">
-    <value>voireLesArchivesToolStripMenuItem</value>
+  <data name="&gt;&gt;voirLesArchivesToolStripMenuItem.Name" xml:space="preserve">
+    <value>voirLesArchivesToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;voireLesArchivesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;voirLesArchivesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gestionDesClientsToolStripMenuItem.Name" xml:space="preserve">

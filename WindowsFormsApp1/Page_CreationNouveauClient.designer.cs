@@ -1,4 +1,6 @@
-﻿namespace LettreCooperation
+﻿using System;
+
+namespace LettreCooperation
 {
 	partial class Page_CreationNouveauClient
 	{
@@ -268,9 +270,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(384, 265);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 13);
+            this.label15.Size = new System.Drawing.Size(89, 13);
             this.label15.TabIndex = 59;
-            this.label15.Text = "Excercice Social : ";
+            this.label15.Text = "Exercice Social : ";
             // 
             // label41
             // 
@@ -386,9 +388,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(30, 188);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(96, 13);
+            this.label20.Size = new System.Drawing.Size(91, 13);
             this.label20.TabIndex = 45;
-            this.label20.Text = "Chiffres d\'affaires : ";
+            this.label20.Text = "Chiffre d\'affaires : ";
             // 
             // label3
             // 
@@ -1012,8 +1014,8 @@
 
 		}
 
-		#endregion
-		private System.Windows.Forms.Button BoutonValider;
+        #endregion
+        private System.Windows.Forms.Button BoutonValider;
 		private System.Windows.Forms.Button BoutonAnnuler;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem préremplirAutomatiquementToolStripMenuItem1;

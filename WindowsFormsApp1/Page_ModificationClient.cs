@@ -87,7 +87,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode de gestion du chagement de la page
+        /// Méthode de gestion du chargement de la page
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)

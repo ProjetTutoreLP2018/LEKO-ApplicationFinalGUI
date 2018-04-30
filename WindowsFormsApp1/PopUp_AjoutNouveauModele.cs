@@ -21,7 +21,7 @@ namespace LettreCooperation
             // Centrage de la page
             this.CenterToScreen();
 
-            // Nous fixons les dimmentions de l'application
+            // Nous fixons les dimensions de l'application
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -34,7 +34,7 @@ namespace LettreCooperation
            
         }
 
-        //Fonction pour ajouter un modele de LC
+        //Fonction pour ajouter un modèle de LC
         private void Ajouter_Click(object sender, EventArgs e) {
 
             Cursor.Current = Cursors.WaitCursor;
@@ -58,7 +58,7 @@ namespace LettreCooperation
             if (this.comboBox1.SelectedIndex < 0)
             {
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Merci de séléctionner un type de Modèle.");
+                MessageBox.Show("Merci de sélectionner un type de Modèle.");
                 return;
             }
 
@@ -100,7 +100,7 @@ namespace LettreCooperation
 
                 else
                 {
-                    MessageBox.Show("Le model LC inexistant");
+                    MessageBox.Show("Le modèle LC est inexistant");
                     return;
                 }
 
@@ -114,7 +114,7 @@ namespace LettreCooperation
                 Console.WriteLine("The process failed: {0}", var.ToString());
             }
             
-            // Désactiver la bouton ajouter
+            // Désactiver le bouton ajouter
             this.Ajouter.Enabled = false;
 
  
@@ -123,14 +123,14 @@ namespace LettreCooperation
             this.textBoxNomMision.Clear();
 
 
-            /* Accée BDD pour sauvegarder les élements */
+            /* Accès BDD pour sauvegarder les élements */
             modeleManager.AjouterModel(this.pathDestination, this.nomFichier, this.nomMission, this.typeLettre);
 
             Cursor.Current = Cursors.Default;
         }
 
        
-        // Fonction pour selectionner le modele de LC à ajouter
+        // Fonction pour sélectionner le modèle de LC à ajouter
         private void Selectionner_Click(object sender, EventArgs e)
         {
             OpenFileDialog fdlg = new OpenFileDialog();
@@ -140,7 +140,7 @@ namespace LettreCooperation
             fdlg.FilterIndex = 2;
             fdlg.RestoreDirectory = true;
 
-            //Vérifier si ont a choisis un fichier
+            //Vérifier si on a choisi un fichier
             if (fdlg.ShowDialog() == DialogResult.OK)
             {
                 adresseFichier.Text = fdlg.FileName;

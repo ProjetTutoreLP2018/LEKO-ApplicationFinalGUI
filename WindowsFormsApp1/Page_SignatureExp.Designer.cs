@@ -61,7 +61,7 @@
             // 
             // nom_LC
             // 
-            this.nom_LC.HeaderText = "Lettres de Coopérations validée en attente d\'envoie";
+            this.nom_LC.HeaderText = "Lettres de Coopération validées en attente d\'envoi";
             this.nom_LC.Name = "nom_LC";
             this.nom_LC.ReadOnly = true;
             this.nom_LC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -69,7 +69,7 @@
             // 
             // nom_client
             // 
-            this.nom_client.HeaderText = "Raison social du client";
+            this.nom_client.HeaderText = "Raison sociale du client";
             this.nom_client.Name = "nom_client";
             this.nom_client.ReadOnly = true;
             this.nom_client.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;

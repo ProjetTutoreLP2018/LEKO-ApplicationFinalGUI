@@ -23,7 +23,7 @@ namespace LettreCooperation
                 Visible = true
             };
 
-            // objet vide pour les parémétres inutilisés
+            // objet vide pour les paramètres inutilisés
             Object missing = System.Reflection.Missing.Value;
 
             // ouvrir le doc word 

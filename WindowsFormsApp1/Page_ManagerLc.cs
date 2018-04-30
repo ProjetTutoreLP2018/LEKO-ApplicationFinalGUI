@@ -1,10 +1,10 @@
-﻿using System;
+﻿using LettreCooperation.Model;
+using LettreCooperation.modele;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using LettreCooperation.modele;
-using LettreCooperation.Model;
 
 namespace LettreCooperation
 {
@@ -57,7 +57,7 @@ namespace LettreCooperation
 
         /// <summary>
         /// Méthode qui permet de choisir un client
-        /// et donc de remettre à jour la liste de LC a afficher
+        /// et donc de remettre à jour la liste de LC à afficher
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -70,7 +70,7 @@ namespace LettreCooperation
 
         /// <summary>
         /// Permet de mettre à jour les compteurs
-        /// pour le différents status
+        /// pour le différents statuts
         /// </summary>
         /// <param name="listLc"></param>
         private void UpdateNbr(List<LC> listLc)
@@ -109,7 +109,7 @@ namespace LettreCooperation
 
         /// <summary>
         /// Méthode qui permet de mettre à jour la liste
-        /// de LC en fonction du client séléctionné
+        /// de LC en fonction du client sélectionné
         /// </summary>
         private void UpdateListLC()
         {
@@ -139,7 +139,7 @@ namespace LettreCooperation
 
         /// <summary>
         /// Méthode qui permet de manager les radio
-        /// bouttons de filtre de status de LC
+        /// buttons de filtres de statuts de LC
         /// </summary>
         private void RadioButtonManager()
         {
@@ -167,7 +167,7 @@ namespace LettreCooperation
                 }
             }
 
-            else if (radioButtonEnvoieCli.Checked)
+            else if (radioButtonEnvoiCli.Checked)
             {
                 this.etat = 8;
 
@@ -208,7 +208,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet d'affichier la LC séléctionnée
+        /// Méthode qui permet d'afficher la LC sélectionnée
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -258,7 +258,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet de remmetre à jour les information
+        /// Méthode qui permet de remettre à jour les informations
         /// de la LC dans les champs
         /// </summary>
         /// <param name="sender"></param>
@@ -292,17 +292,17 @@ namespace LettreCooperation
 
 
             if (etat.libelle_etat.Equals("C"))
-                labelStatus.Text = "En attente de validation comptable";
+                labelStatut.Text = "En attente de validation comptable";
             if (etat.libelle_etat.Equals("AC"))
-                labelStatus.Text = "En attente de signature du client";
+                labelStatut.Text = "En attente de signature du client";
             if (etat.libelle_etat.Equals("S"))
-                labelStatus.Text = "Signée par le client";
+                labelStatut.Text = "Signée par le client";
             if (etat.libelle_etat.Equals("A"))
-                labelStatus.Text = "Archivée";
+                labelStatut.Text = "Archivée";
             if (etat.libelle_etat.Equals("R"))
-                labelStatus.Text = "Refus du client";
+                labelStatut.Text = "Refus du client";
             if (etat.libelle_etat.Equals("SE"))
-                labelStatus.Text = "Signée par l'expert-comptable";
+                labelStatut.Text = "Signée par l'expert-comptable";
         }
 
 
@@ -325,7 +325,7 @@ namespace LettreCooperation
         }
 
 
-        private void RadioButtonEnvoieCli_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonEnvoiCli_CheckedChanged(object sender, EventArgs e)
         {
             UpdateListLC();
 
@@ -348,7 +348,7 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet de suprimer une LC
+        /// Méthode qui permet de suprimmer une LC
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -357,7 +357,7 @@ namespace LettreCooperation
 
             Cursor.Current = Cursors.WaitCursor;
             DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer definitivement cette Lettre de coopération ?",
-                "Êtes vous sûr?", MessageBoxButtons.YesNo);
+                "Êtes vous sûr ?", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.No)
             {
@@ -369,7 +369,7 @@ namespace LettreCooperation
             if(comboLC.Text.Length == 0)
             {
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Merci de séléctionner une Lettre de coopération.");
+                MessageBox.Show("Merci de sélectionner une Lettre de coopération.");
                 return;
             }
 
@@ -382,7 +382,7 @@ namespace LettreCooperation
 
                 model.DeleteLC(lcVisible);
 
-                MessageBox.Show("Votre LC a bien était supprimer");
+                MessageBox.Show("Votre LC a bien été supprimée");
                 
 
             }

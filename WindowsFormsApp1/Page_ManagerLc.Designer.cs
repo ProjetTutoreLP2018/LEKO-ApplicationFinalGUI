@@ -37,7 +37,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.labelCreateur = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.labelStatus = new System.Windows.Forms.Label();
+            this.labelStatut = new System.Windows.Forms.Label();
             this.labelDateCrea = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.radioButtonAttSignExp = new System.Windows.Forms.RadioButton();
             this.radioButtonSignerExp = new System.Windows.Forms.RadioButton();
-            this.radioButtonEnvoieCli = new System.Windows.Forms.RadioButton();
+            this.radioButtonEnvoiCli = new System.Windows.Forms.RadioButton();
             this.radioButtonArchive = new System.Windows.Forms.RadioButton();
             this.radioButtonRefus = new System.Windows.Forms.RadioButton();
             this.groupBoxEtat = new System.Windows.Forms.GroupBox();
@@ -97,7 +97,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.labelCreateur);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.labelStatus);
+            this.groupBox2.Controls.Add(this.labelStatut);
             this.groupBox2.Controls.Add(this.labelDateCrea);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -146,14 +146,14 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Déchiffreuse : ";
             // 
-            // labelStatus
+            // labelStatut
             // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(269, 99);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(16, 13);
-            this.labelStatus.TabIndex = 5;
-            this.labelStatus.Text = "...";
+            this.labelStatut.AutoSize = true;
+            this.labelStatut.Location = new System.Drawing.Point(269, 99);
+            this.labelStatut.Name = "labelStatut";
+            this.labelStatut.Size = new System.Drawing.Size(16, 13);
+            this.labelStatut.TabIndex = 5;
+            this.labelStatut.Text = "...";
             // 
             // labelDateCrea
             // 
@@ -169,9 +169,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(168, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Status : ";
+            this.label4.Text = "Statut : ";
             // 
             // label3
             // 
@@ -236,17 +236,17 @@
             this.radioButtonSignerExp.UseVisualStyleBackColor = true;
             this.radioButtonSignerExp.CheckedChanged += new System.EventHandler(this.RadioButtonSignerExp_CheckedChanged);
             // 
-            // radioButtonEnvoieCli
+            // radioButtonEnvoiCli
             // 
-            this.radioButtonEnvoieCli.AutoSize = true;
-            this.radioButtonEnvoieCli.Location = new System.Drawing.Point(16, 79);
-            this.radioButtonEnvoieCli.Name = "radioButtonEnvoieCli";
-            this.radioButtonEnvoieCli.Size = new System.Drawing.Size(115, 17);
-            this.radioButtonEnvoieCli.TabIndex = 5;
-            this.radioButtonEnvoieCli.TabStop = true;
-            this.radioButtonEnvoieCli.Text = "Envoyées au client";
-            this.radioButtonEnvoieCli.UseVisualStyleBackColor = true;
-            this.radioButtonEnvoieCli.CheckedChanged += new System.EventHandler(this.RadioButtonEnvoieCli_CheckedChanged);
+            this.radioButtonEnvoiCli.AutoSize = true;
+            this.radioButtonEnvoiCli.Location = new System.Drawing.Point(16, 79);
+            this.radioButtonEnvoiCli.Name = "radioButtonEnvoiCli";
+            this.radioButtonEnvoiCli.Size = new System.Drawing.Size(115, 17);
+            this.radioButtonEnvoiCli.TabIndex = 5;
+            this.radioButtonEnvoiCli.TabStop = true;
+            this.radioButtonEnvoiCli.Text = "Envoyées au client";
+            this.radioButtonEnvoiCli.UseVisualStyleBackColor = true;
+            this.radioButtonEnvoiCli.CheckedChanged += new System.EventHandler(this.RadioButtonEnvoiCli_CheckedChanged);
             // 
             // radioButtonArchive
             // 
@@ -283,7 +283,7 @@
             this.groupBoxEtat.Controls.Add(this.radioButtonAttSignExp);
             this.groupBoxEtat.Controls.Add(this.radioButtonArchive);
             this.groupBoxEtat.Controls.Add(this.radioButtonSignerExp);
-            this.groupBoxEtat.Controls.Add(this.radioButtonEnvoieCli);
+            this.groupBoxEtat.Controls.Add(this.radioButtonEnvoiCli);
             this.groupBoxEtat.Location = new System.Drawing.Point(546, 206);
             this.groupBoxEtat.Name = "groupBoxEtat";
             this.groupBoxEtat.Size = new System.Drawing.Size(262, 185);
@@ -381,7 +381,7 @@
         private System.Windows.Forms.ComboBox comboLC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Label labelStatut;
         private System.Windows.Forms.Label labelDateCrea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -389,7 +389,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButtonAttSignExp;
         private System.Windows.Forms.RadioButton radioButtonSignerExp;
-        private System.Windows.Forms.RadioButton radioButtonEnvoieCli;
+        private System.Windows.Forms.RadioButton radioButtonEnvoiCli;
         private System.Windows.Forms.RadioButton radioButtonArchive;
         private System.Windows.Forms.RadioButton radioButtonRefus;
         private System.Windows.Forms.GroupBox groupBoxEtat;

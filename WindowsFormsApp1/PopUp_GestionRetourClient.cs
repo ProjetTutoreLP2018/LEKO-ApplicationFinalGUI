@@ -41,7 +41,7 @@ namespace LettreCooperation
             // Centrage de la page
             this.CenterToScreen();
 
-            // Nous fixons les dimmentions de l'application
+            // Nous fixons les dimensions de l'application
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -97,9 +97,9 @@ namespace LettreCooperation
         }
 
 
-        /* Lorsque l'élément selectionner de la 1ere liste déroulante change
-         * On effactue les taches ci-dessous 
-         * Taches : + Efface tout les items de la 2ème liste déroulante (Elle contient les noms des LC du Client spécifique) 
+        /* Lorsque l'élément selectionné de la 1ere liste déroulante change
+         * On effectue les tâches ci-dessous 
+         * Tâches : + Efface tout les items de la 2ème liste déroulante (Elle contient les noms des LC du Client spécifique) 
          *          + Efface le contenu "Text" de la liste déroulante 
          *          + LesLcDuCLient = Variable qui contient toutes les LC du Client Choisi 
          *          + Ajout des LC du Client spécifique dans la 2ème liste déroulante */
@@ -116,7 +116,7 @@ namespace LettreCooperation
             /* Variable contenant la raison sociale du Client choisi */
             clientChoisi = cbChoixClient.SelectedItem.ToString();
                         
-            /* Supprime les composants de la 2è Liste déroulante 
+            /* Supprime les composants de la 2ème Liste déroulante 
              * But : Mettre les LC correspondant uniquement au Client choisi */
             cbChoixLcDuClient.Items.Clear();
             cbChoixLcDuClient.ResetText();
@@ -132,33 +132,33 @@ namespace LettreCooperation
 
         private void CbChoixLcDuClient_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /* Utilisation d'une variable intermediaire qui me permet de connaitre l'emplacement de la LC dans ma liste 
-             * BUT : Retrouver l'id exacte de la LC dans la Liste des id des LC du Client 
-             *       Les modifications seront précises et cela évite des erreurs */
+            /* Utilisation d'une variable intermédiaire qui me permet de connaitre l'emplacement de la LC dans ma liste 
+             * BUT : Retrouver l'id exact de la LC dans la Liste des id des LC du Client 
+             *       Les modifications seront précises et cela évitera des erreurs */
             int idEmplacementLcDansLaListeDeroulante = cbChoixLcDuClient.SelectedIndex;
             // MessageBox.Show(idEmplacementLcDansLaListeDeroulante.ToString());
 
-            /* Récupération de l'id de la LC choisi 
+            /* Récupération de l'id de la LC choisie
              * On récupère l'id exacte des LC lors du remplissage du la Liste des LC du Client 
              * BUT : Sauvegarder les id des LC du Client pour les repérer plus rapidement par la suite */
             idDeLaLcChoisi = lesLcDuClient[idEmplacementLcDansLaListeDeroulante].id_lc;
             // MessageBox.Show(idDeLaLcChoisi.ToString());
 
-            /* Récupération de la LC choisi complètement (objet entier) */
+            /* Récupération de la LC choisie complètement (objet entier) */
             //lcDuClient = manager.getLaLcDuClient(idDeLaLcChoisi, cbChoixLcDuClient.SelectedItem.ToString());
             lcDuClient = lesLcDuClient[idEmplacementLcDansLaListeDeroulante];
 
 
-            /* Récupère et affiche l'état de la LC choisi */
+            /* Récupère et affiche l'état de la LC choisie */
            // lblEtatLc2.Text = manager.getEtatDeLaLC(lcDuClient);
           //  lblEtatLc2.Text = manager.GetEtatById(lcDuClient.id_etat).libelle_etat;
           //  lblEtatLc2.ForeColor = Color.Black;
 
             /* Activation du bouton "Archiver" 
-             * Toute les données necessaires sont disponible */
+             * Toutes les données necessaires sont disponibles */
             btnArchiverLC.Enabled = true;
             /* Activation du bouton "Refuser" 
-             * Toute les données necessaires sont disponible */
+             * Toutes les données necessaires sont disponibles */
             btnRefuserLC.Enabled = true;
             
         }
@@ -168,10 +168,10 @@ namespace LettreCooperation
 
             Cursor.Current = Cursors.WaitCursor;
             /* openFile me permet d'obtenir le fichier que je veux 'déplacer|archiver' 
-             * Ici j'initialise ma variable openFile qui va contenir le chemin absolue du fichier */
+             * Ici j'initialise ma variable openFile qui va contenir le chemin absolu du fichier */
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Fichiers pdf|*.pdf";
-            /* J'ouvre la fenetre permettant d'aller chercher le fichier à 'déplacer|archiver' */
+            /* J'ouvre la fenêtre permettant d'aller chercher le fichier à 'déplacer|archiver' */
             openFile.ShowDialog();
 
             if (openFile.SafeFileName.Length == 0)
@@ -181,9 +181,9 @@ namespace LettreCooperation
             }
 
 
-            /* Je sauvegarde le nom du fichier dans une variable à part - nomDeLaLcAarchiver */
-            string nomDeLaLcAarchier = openFile.SafeFileName;
-            /* Je sauvegarde le chemin absolue du fichier dans une variable à part - fichierSrc */
+            /* Je sauvegarde le nom du fichier dans une variable à part - nomDeLaLcAArchiver */
+            string nomDeLaLcAArchiver = openFile.SafeFileName;
+            /* Je sauvegarde le chemin absolu du fichier dans une variable à part - fichierSrc */
             string fichierSrc = openFile.FileName;
             
             /* Essaye d'archiver le fichier */
@@ -194,22 +194,22 @@ namespace LettreCooperation
                 string pathDest = Program.FINACOOPFolder + Properties.Settings.Default.PathArchiver + clientChoisi + @"\";
                 string fichierDest = "";
 
-                /* Vérifie si le dossier des archives du client existe dans le repertoire  */
+                /* Vérifie si le dossier des archives du client existe dans le répertoire  */
                 if (!Directory.Exists(pathDest))
                      Directory.CreateDirectory(pathDest);
 
-                fichierDest = pathDest + nomDeLaLcAarchier;
+                fichierDest = pathDest + nomDeLaLcAArchiver;
                 
                 
-                /* File.Move permet de déplacer le fichier d'un dossier à un autre grâce a 2 variables : CHEMIN absolue du fichier SOURCE capter plus haut ET CHEMIN absolue FINAL du fichier archiver déterminer plus haut  */
+                /* File.Move permet de déplacer le fichier d'un dossier à un autre grâce a 2 variables : CHEMIN absolu du fichier SOURCE capté plus haut ET CHEMIN absolu FINAL du fichier archivé déterminé plus haut  */
                 File.Move(sourceFileName: fichierSrc, destFileName: fichierDest);
-                /* Changement de l'état de la LC qui passe en "Archiver" (libelle de l'Etat d'une LC archivé = "A") dans le programme */
+                /* Changement de l'état de la LC qui passe en "Archivée" (libelle de l'Etat d'une LC archivé = "A") dans le programme */
                 lcDuClient.id_etat = manager.GetIdEtatArchiver();
-                /* La LC a été archiver, son chemin change donc d'adresse */
-                lcDuClient.chemin_lc = Properties.Settings.Default.PathArchiver + clientChoisi + @"\" + nomDeLaLcAarchier;
-                /* Sauvegarde du changement de l'état de la LC qui passe en "Archiver" dans la Base De Données */
+                /* La LC a été archivée, son chemin change donc d'adresse */
+                lcDuClient.chemin_lc = Properties.Settings.Default.PathArchiver + clientChoisi + @"\" + nomDeLaLcAArchiver;
+                /* Sauvegarde du changement de l'état de la LC qui passe en "Archivée" dans la Base De Données */
                 manager.SaveBDD();
-                /* Message qui indique à l'utilisateur que la LC a bien été archiver */
+                /* Message qui indique à l'utilisateur que la LC a bien été archivée */
                 MessageBox.Show("Lettre de Coopération Archivée ! \n" + "LC archivée : " + lcDuClient.nom_lc + "\n Client concerné : " + lcDuClient.chemin_lc);
 
                 Init();
@@ -217,7 +217,7 @@ namespace LettreCooperation
             catch (Exception)
             {
                 Cursor.Current = Cursors.Default;
-                /* Message qui indique à l'utilisateur que la LC n'a pas été archiver */
+                /* Message qui indique à l'utilisateur que la LC n'a pas été archivée */
                  MessageBox.Show("Archivage non réalisé !");
             }
         }
@@ -230,33 +230,33 @@ namespace LettreCooperation
             /* string dossierCibleRefus = @"LC à réaliser et envoyer";
              string pathDest = pathGeneral + @"\" + dossierCibleRefus + @"\" + clientChoisi;
 
-             // Vérifie l'existance de l'arborescance - elle doit normalement déjà exister 
+             // Vérifie l'existence de l'arborescence - elle doit normalement déjà exister
              if (Directory.Exists(pathDest))
              {
-                 // Essaye de refuser le fichier 
+                 // Essaye de refuser le fichier
                  try
                  {
-                     // Changement de l'état de la LC qui passe en "Refuser" (libelle de l'Etat d'une LC refusé = "R") dans le programme 
+                     // Changement de l'état de la LC qui passe en "Refusée" (libelle de l'Etat d'une LC refusée = "R") dans le programme
                      lcDuClient.id_etat = manager.GetIdEtatRefuser();
-                     // La LC à été refuser donc elle change de dossier 
+                     // La LC a été refusée donc elle change de dossier 
                      lcDuClient.chemin_lc = pathDest + @"\" + lcDuClient.nom_lc;
 
-                     // Sauvegarde du changement de l'état de la LC qui passe en "Refuser" dans la Base De Données 
+                     // Sauvegarde du changement de l'état de la LC qui passe en "Refusée" dans la Base De Données
                      manager.SaveBDD();
-                     // Message qui indique à l'utilisateur que la LC a bien été archiver 
+                     // Message qui indique à l'utilisateur que la LC a bien été archivée
                      MessageBox.Show("Lettre de Coopération Refusée ! \n" + "LC Refusée : " + lcDuClient.nom_lc + "\n Client concerné : " + clientChoisi);
 
                      Init();
                  }
                  catch (Exception)
                  {
-                     // Message qui indique à l'utilisateur que la LC n'a pas été archiver 
+                     // Message qui indique à l'utilisateur que la LC n'a pas été archivée
                      MessageBox.Show("Refus non réalisé !");
                  }
              }
              else
              {
-                 MessageBox.Show("Chemin inexistant ! \n Vérifier l'existance de la LC");
+                 MessageBox.Show("Chemin inexistant ! \n Vérifier l'existence de la LC");
              }*/
 
 
@@ -275,7 +275,7 @@ namespace LettreCooperation
         private void BtnReinitialiserLaFenetre_Click(object sender, EventArgs e)
         {
             this.Init();
-           // lblEtatLc2.Text = "Choississez un Client et une Lettre de Coopération ";
+           // lblEtatLc2.Text = "Choisissez un Client et une Lettre de Coopération ";
         }
 
         
@@ -305,7 +305,7 @@ namespace LettreCooperation
 
         private void InitialiserLabelEtatLc()
         {
-           // lblEtatLc2.Text = "Choississez un Client et une Lettre de Coopération";
+           // lblEtatLc2.Text = "Choisissez un Client et une Lettre de Coopération";
           //  lblEtatLc2.ForeColor = Color.Red;
         }
 

@@ -14,12 +14,12 @@ namespace LettreCooperation
             // Centrage de la page
             this.CenterToScreen();
 
-            // Nous fixons les dimmentions de l'application
+            // Nous fixons les dimensions de l'application
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            labelMessage.Text = "Vous pouvez ici changer changer le chemin\n"
+            labelMessage.Text = "Vous pouvez changer ici le chemin\n"
                 + "de votre dossier FINACOOP.";
         }
        
@@ -68,7 +68,7 @@ namespace LettreCooperation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButonParcour_Click(object sender, EventArgs e)
+        private void ButtonParcours_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {

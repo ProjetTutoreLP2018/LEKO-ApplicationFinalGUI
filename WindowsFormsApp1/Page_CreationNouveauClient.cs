@@ -199,7 +199,7 @@ namespace LettreCooperation
 
 				modele.CreerClient(client);
 
-                MessageBox.Show("Votre client " + client.raison_sociale + " a bien était enregistré");
+                MessageBox.Show("Votre client " + client.raison_sociale + " a bien été enregistré");
 
                 Init();
 
@@ -250,6 +250,5 @@ namespace LettreCooperation
             
         }
 
-      
     }
 }

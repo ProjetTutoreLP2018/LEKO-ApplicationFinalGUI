@@ -33,7 +33,7 @@
             this.textBoxPath = new System.Windows.Forms.TextBox();
             this.labelMessage = new System.Windows.Forms.Label();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.butonParcour = new System.Windows.Forms.Button();
+            this.buttonParcours = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Size = new System.Drawing.Size(35, 13);
             this.labelMessage.TabIndex = 5;
-            this.labelMessage.Text = "lavel1";
+            this.labelMessage.Text = "label1";
             // 
             // buttonValider
             // 
@@ -75,16 +75,16 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.ButtonValider_Click);
             // 
-            // butonParcour
+            // buttonParcours
             // 
-            this.butonParcour.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butonParcour.BackgroundImage")));
-            this.butonParcour.Location = new System.Drawing.Point(336, 95);
-            this.butonParcour.Name = "butonParcour";
-            this.butonParcour.Size = new System.Drawing.Size(75, 23);
-            this.butonParcour.TabIndex = 2;
-            this.butonParcour.Text = "Parcourir...";
-            this.butonParcour.UseVisualStyleBackColor = true;
-            this.butonParcour.Click += new System.EventHandler(this.ButonParcour_Click);
+            this.buttonParcours.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonParcours.BackgroundImage")));
+            this.buttonParcours.Location = new System.Drawing.Point(336, 95);
+            this.buttonParcours.Name = "buttonParcours";
+            this.buttonParcours.Size = new System.Drawing.Size(75, 23);
+            this.buttonParcours.TabIndex = 2;
+            this.buttonParcours.Text = "Parcourir...";
+            this.buttonParcours.UseVisualStyleBackColor = true;
+            this.buttonParcours.Click += new System.EventHandler(this.ButtonParcours_Click);
             // 
             // PopUp_ChangeCheminDossierFINACOOP
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.textBoxPath);
-            this.Controls.Add(this.butonParcour);
+            this.Controls.Add(this.buttonParcours);
             this.Controls.Add(this.labelMessage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PopUp_ChangeCheminDossierFINACOOP";
@@ -110,7 +110,7 @@
         private System.Windows.Forms.Button buttonAnnuler;
         private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.TextBox textBoxPath;
-        private System.Windows.Forms.Button butonParcour;
+        private System.Windows.Forms.Button buttonParcours;
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }

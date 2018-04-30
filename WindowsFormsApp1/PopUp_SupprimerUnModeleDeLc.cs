@@ -23,7 +23,7 @@ namespace LettreCooperation
             // Centrage de la page
             this.CenterToScreen();
 
-            // Nous fixons les dimmentions de l'application
+            // Nous fixons les dimensions de l'application
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -56,12 +56,12 @@ namespace LettreCooperation
             if (this.comboBox1.SelectedIndex < 0)
             {
                 Cursor.Current = Cursors.Default;
-                MessageBox.Show("Merci de séléctionner un type de Modèle.");
+                MessageBox.Show("Merci de sélectionner un type de Modèle.");
                 return;
             }
 
 
-            DialogResult dialog = MessageBox.Show("Êtes-vous sûr de vouloir supprimer définitivement ce modéle ? ", " Alerte ", MessageBoxButtons.YesNo);
+            DialogResult dialog = MessageBox.Show("Êtes-vous sûr de vouloir supprimer définitivement ce modèle ? ", " Alerte ", MessageBoxButtons.YesNo);
 
             if (dialog == DialogResult.No)
                 return;

@@ -147,8 +147,8 @@ namespace LettreCooperation
 
             if(droits == null)
             {
-                MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
-                    "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
+                MessageBox.Show("Vous n'êtes pas connecté à la base de données. Merci" +
+                    "de vérifier votre connexion internet ou de vérifier que le port 1433 de votre Box est bien ouvert.");
 
                 return;
             }
@@ -184,7 +184,7 @@ namespace LettreCooperation
             Cursor.Current = Cursors.Default;
 
             MessageBox.Show("L'utilisateur " + utilisateur.nom_utilisateur +
-                " " + utilisateur.prenom_utilisateur + " a bien était créer");
+                " " + utilisateur.prenom_utilisateur + " a bien été créé");
         }
 
 
@@ -249,11 +249,11 @@ namespace LettreCooperation
 
 
         /// <summary>
-        /// Méthode qui permet de récupèrer l'image
+        /// Méthode qui permet de récupérer l'image
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ButtonShearchImage_Click(object sender, EventArgs e)
+        private void ButtonSearchImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile2 = new OpenFileDialog();
             openFile2.Filter = "Image Files|*.png;*.jpg;*.gif;";
