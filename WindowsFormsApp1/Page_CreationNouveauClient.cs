@@ -26,71 +26,83 @@ namespace LettreCooperation
 			if (fenPreRemplissageAutomatique.ShowDialog(this) == DialogResult.OK)
 			{
 				Record enregistrement = fenPreRemplissageAutomatique.entrepriseSelectionnee;
-                if (enregistrement.fields.l1_normalisee != null)
-                    NomOrganisation.Text = enregistrement.fields.l1_normalisee;
-                else
-                    NomOrganisation.Text = "";
 
-                if (enregistrement.fields.libnj != null)
-                    FormeJuridique.Text = enregistrement.fields.libnj.Split(',')[0];
-                else
-                    FormeJuridique.Text = "";
+                if(NomOrganisation.Text == string.Empty) 
+                    if (enregistrement.fields.l1_normalisee != null)
+                        NomOrganisation.Text = enregistrement.fields.l1_normalisee;
+                    else
+                        NomOrganisation.Text = "";
 
-                if (enregistrement.fields.numvoie != null && enregistrement.fields.typvoie != null && enregistrement.fields.libvoie != null)
-                    Adresse.Text = String.Format("{0} {1}", enregistrement.fields.typvoie, enregistrement.fields.libvoie);
-                else
-                    Adresse.Text = "";
+                if (FormeJuridique.Text == string.Empty)
+                    if (enregistrement.fields.libnj != null)
+                        FormeJuridique.Text = enregistrement.fields.libnj.Split(',')[0];
+                    else
+                        FormeJuridique.Text = "";
 
-                if (enregistrement.fields.codpos != null)
-                    CodePostal.Text = enregistrement.fields.codpos;
-                else
-                    CodePostal.Text = "";
+                if (Adresse.Text == string.Empty)
+                    if (enregistrement.fields.numvoie != null && enregistrement.fields.typvoie != null && enregistrement.fields.libvoie != null)
+                        Adresse.Text = String.Format("{0} {1}", enregistrement.fields.typvoie, enregistrement.fields.libvoie);
+                    else
+                        Adresse.Text = "";
 
-                if (enregistrement.fields.libcom != null)
-                    Ville.Text = enregistrement.fields.libcom;
-                else
-                    Ville.Text = "";
+                if (CodePostal.Text == string.Empty)
+                    if (enregistrement.fields.codpos != null)
+                        CodePostal.Text = enregistrement.fields.codpos;
+                    else
+                        CodePostal.Text = "";
 
-                if (enregistrement.fields.siret != null)
-                    NumeroSiret.Text = enregistrement.fields.siret;
-                else
-                    NumeroSiret.Text = "";
+                if (Ville.Text == string.Empty)
+                    if (enregistrement.fields.libcom != null)
+                        Ville.Text = enregistrement.fields.libcom;
+                    else
+                        Ville.Text = "";
 
-                if (enregistrement.fields.libapet != null)
-                    textBoxActivite.Text = enregistrement.fields.libapet;
-                else
-                    textBoxActivite.Text = "";
+                if (NumeroSiret.Text == string.Empty)
+                    if (enregistrement.fields.siret != null)
+                        NumeroSiret.Text = enregistrement.fields.siret;
+                    else
+                        NumeroSiret.Text = "";
 
-                if (enregistrement.fields.numvoie != null)
-                    NumeroVoie.Value = Int32.Parse(enregistrement.fields.numvoie);
-                else
-                    NumeroVoie.Value = 0;
+                if (textBoxActivite.Text == string.Empty)
+                    if (enregistrement.fields.libapet != null)
+                        textBoxActivite.Text = enregistrement.fields.libapet;
+                    else
+                        textBoxActivite.Text = "";
 
-                if (enregistrement.fields.dcren != null)
-                    DateImmatriculation.Text = enregistrement.fields.dcren;
-                else
-                    DateImmatriculation.Text = "";
+                if (NumeroVoie.Text == string.Empty)
+                    if (enregistrement.fields.numvoie != null)
+                        NumeroVoie.Value = Int32.Parse(enregistrement.fields.numvoie);
+                    else
+                        NumeroVoie.Value = 0;
 
-                if (enregistrement.fields.efetcent.Equals("NN"))
-                    Effectif.Value = 0;
-                else
-                    Effectif.Value = Int32.Parse(enregistrement.fields.efetcent);
+                if (DateImmatriculation.Text == string.Empty)
+                    if (enregistrement.fields.dcren != null)
+                        DateImmatriculation.Text = enregistrement.fields.dcren;
+                    else
+                        DateImmatriculation.Text = "";
 
-                if (enregistrement.fields.indrep != null)
-                {
-                    if (enregistrement.fields.indrep.Equals("T"))
-                        IndiceRepetition.Text = "ter";
-                    if (enregistrement.fields.indrep.Equals("B"))
-                        IndiceRepetition.Text = "bis";
-                    if (enregistrement.fields.indrep.Equals("Q"))
-                        IndiceRepetition.Text = "quater";
-                    if (enregistrement.fields.indrep.Equals("C"))
-                        IndiceRepetition.Text = "quinquies";
+                if (Effectif.Text == string.Empty)
+                    if (enregistrement.fields.efetcent.Equals("NN"))
+                        Effectif.Value = 0;
+                    else
+                        Effectif.Value = Int32.Parse(enregistrement.fields.efetcent);
 
-                } else
-                {
-                    enregistrement.fields.indrep = "";
-                }
+                if (IndiceRepetition.Text == string.Empty)
+                    if (enregistrement.fields.indrep != null)
+                    {
+                        if (enregistrement.fields.indrep.Equals("T"))
+                            IndiceRepetition.Text = "ter";
+                        if (enregistrement.fields.indrep.Equals("B"))
+                            IndiceRepetition.Text = "bis";
+                        if (enregistrement.fields.indrep.Equals("Q"))
+                            IndiceRepetition.Text = "quater";
+                        if (enregistrement.fields.indrep.Equals("C"))
+                            IndiceRepetition.Text = "quinquies";
+
+                    } else
+                    {
+                        IndiceRepetition.Text = "";
+                    }
 
 
             }
