@@ -25,32 +25,21 @@ namespace LettreCooperation
                 Application.SetCompatibleTextRenderingDefault(false);
 
                 // =================================================
-                Properties.Settings.Default.PathFINACOOP = String.Empty;
+                // Properties.Settings.Default.PathFINACOOP = "null";
+                // Properties.Settings.Default.Save();
                 //==================================================
 
-                if (Properties.Settings.Default.PathFINACOOP.Length == 0)
-                {
-                    
-                    while (String.IsNullOrEmpty(Properties.Settings.Default.PathFINACOOP) && !QuitApp)
-                    {
-                        PopUp_ChoixDossierFINACOOP choosePath = new PopUp_ChoixDossierFINACOOP();
-                        Application.Run(choosePath);
+               // MessageBox.Show(Properties.Settings.Default.PathFINACOOP);
 
-                        if (!String.IsNullOrEmpty(FINACOOPFolder))
-                        {
-                            Properties.Settings.Default.PathFINACOOP = FINACOOPFolder;
-                            Properties.Settings.Default.Save();
-                        } else
-                        {
-                            MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
-                        }
-        
-                    }
-
-                } else
+                if (Properties.Settings.Default.PathFINACOOP.Equals("null"))
                 {
-                    FINACOOPFolder = Properties.Settings.Default.PathFINACOOP;
+                                    
+                    PopUp_ChoixDossierFINACOOP choosePath = new PopUp_ChoixDossierFINACOOP();
+                    Application.Run(choosePath);
+
                 }
+                
+                FINACOOPFolder = Properties.Settings.Default.PathFINACOOP;
 
                 if(!QuitApp)
                     Application.Run(new Page_Principale());

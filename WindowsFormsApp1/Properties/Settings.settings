@@ -70,7 +70,7 @@
       <Value Profile="(Default)">}}</Value>
     </Setting>
     <Setting Name="PathFINACOOP" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">null</Value>
     </Setting>
     <Setting Name="SMTP" Type="System.String" Scope="User">
       <Value Profile="(Default)">smtp.gmail.com</Value>

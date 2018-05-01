@@ -22,6 +22,8 @@ namespace LettreCooperation
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
+            textBoxPath.Text = Properties.Settings.Default.PathFINACOOP;
+
             labelMessage.Text = "Bonjour, bienvenue dans votre application\n" +
                 "de gestion de Lettres de Coopération.\n" +
                 "Merci de renseigner ici le chemin d'accès à votre dossier\n" +
@@ -39,14 +41,28 @@ namespace LettreCooperation
         {
             // Si le chemin du dossier est renseigné,
             // nous pouvons ouvrir l'application
-            if (textBoxPath.Text.Length == 0)
+            if (textBoxPath.Text.Equals("null"))
             {
                 MessageBox.Show("Merci de renseigner le chemin du dossier 'FINACOOP'");
                 return;
             }
 
-            Program.FINACOOPFolder = textBoxPath.Text;
+            Properties.Settings.Default.PathFINACOOP = textBoxPath.Text;
+            Properties.Settings.Default.Save();
+
             this.Close();
+        }
+
+
+        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            if (textBoxPath.Text.Equals("null"))
+            {
+                Program.QuitApp = true;
+            }
+
+           // e.Cancel = true;
         }
 
 
@@ -74,7 +90,7 @@ namespace LettreCooperation
         private void ButtonAnnuler_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            Program.QuitApp = true;
+           
         }
     }
 }

@@ -230,7 +230,7 @@ namespace LettreCooperation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("null")]
         public string PathFINACOOP {
             get {
                 return ((string)(this["PathFINACOOP"]));

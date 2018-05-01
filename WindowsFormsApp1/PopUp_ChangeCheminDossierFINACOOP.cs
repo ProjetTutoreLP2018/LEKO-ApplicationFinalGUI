@@ -21,6 +21,8 @@ namespace LettreCooperation
 
             labelMessage.Text = "Vous pouvez changer ici le chemin\n"
                 + "de votre dossier FINACOOP.";
+
+            textBoxPath.Text = Properties.Settings.Default.PathFINACOOP;
         }
        
 

@@ -101,6 +101,7 @@
             this.Name = "PopUp_ChoixDossierFINACOOP";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
 
         }
 
