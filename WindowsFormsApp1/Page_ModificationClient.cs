@@ -162,6 +162,9 @@ namespace LettreCooperation
 
         private void BoutonValider_Click(object sender, EventArgs e)
         {
+            if(comboBox2.SelectedIndex < 0)
+                return;
+
             Cursor.Current = Cursors.WaitCursor;
 
             messageErr.Text = string.Empty;
@@ -279,6 +282,14 @@ namespace LettreCooperation
 
         private void SupprimerClient_Click(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedIndex < 0)
+                return;
+
+            DialogResult dialog = MessageBox.Show("Êtes-vous sûr de vouloir supprimer définitivement ce Client ? ", " Alerte ", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.No)
+                return;
+
             Cursor.Current = Cursors.WaitCursor;
 
             bool isDeleted = model.SupprimerClient(clients[index]);

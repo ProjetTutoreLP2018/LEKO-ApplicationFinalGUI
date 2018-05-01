@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using LettreCooperation.modele;
 using LettreCooperation.Model;
+using app_lp;
 
 namespace LettreCooperation
 {
@@ -95,10 +96,107 @@ namespace LettreCooperation
             }
 		}
 
-		private void préremplirAvecUnFichierClientToolStripMenuItem1_Click(object sender, EventArgs e)
+
+		private void PréremplirAvecUnFichierClientToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
-			//TODO : à implémenter
-		}
+            PopUp_ChoixClientTypeForm choixClientTypeForm = new PopUp_ChoixClientTypeForm();
+            if (choixClientTypeForm.ShowDialog(this) == DialogResult.OK)
+            {
+                InfoEntreprise entrepriseChoisie = PopUp_ChoixClientTypeForm.infoEntreprise;
+                if (String.IsNullOrWhiteSpace(NomOrganisation.Text))
+                {
+                    NomOrganisation.Text = entrepriseChoisie.nomEntreprise;
+                }
+
+                if (String.IsNullOrWhiteSpace(FormeJuridique.Text))
+                {
+                    FormeJuridique.Text = entrepriseChoisie.statut_commercial;
+                }
+
+                if (String.IsNullOrWhiteSpace(Adresse.Text))
+                {
+                    Adresse.Text = entrepriseChoisie.adresse1;
+                }
+
+                if (String.IsNullOrWhiteSpace(SexeRepresentant.Text))
+                {
+                    if (entrepriseChoisie.civilite == "Madame")
+                    {
+                        SexeRepresentant.Text = "F";
+                    }
+                    else
+                    {
+                        SexeRepresentant.Text = "M";
+                    }
+                }
+
+                if (String.IsNullOrWhiteSpace(NomRepresentant.Text))
+                {
+                    NomRepresentant.Text = entrepriseChoisie.nom_contact;
+                }
+
+                if (String.IsNullOrWhiteSpace(PrenomRepresentant.Text))
+                {
+                    PrenomRepresentant.Text = entrepriseChoisie.prenom;
+                }
+
+                if (String.IsNullOrWhiteSpace(Ville.Text))
+                {
+                    Ville.Text = entrepriseChoisie.ville;
+                }
+
+                if (String.IsNullOrWhiteSpace(CodePostal.Text))
+                {
+                    CodePostal.Text = entrepriseChoisie.code_postal;
+                }
+
+                if (String.IsNullOrWhiteSpace(DateImmatriculation.Text))
+                {
+                    DateImmatriculation.Text = entrepriseChoisie.date_creation;
+                }
+
+                if (String.IsNullOrWhiteSpace(CA.Value.ToString()))
+                {
+                    CA.Value = Int32.Parse(entrepriseChoisie.ca);
+                }
+
+                if (String.IsNullOrWhiteSpace(FonctionRepresentant.Text))
+                {
+                    FonctionRepresentant.Text = entrepriseChoisie.fonction;
+                }
+
+                if (String.IsNullOrWhiteSpace(Effectif.Value.ToString()))
+                {
+                    Effectif.Value = Int32.Parse(entrepriseChoisie.effectif);
+                }
+
+                if (String.IsNullOrWhiteSpace(OrganisationComptable.Text))
+                {
+                    OrganisationComptable.Text = entrepriseChoisie.organisation_comptable;
+                }
+
+                if (String.IsNullOrWhiteSpace(VolumesAnnuels.Text))
+                {
+                    VolumesAnnuels.Text = entrepriseChoisie.volume_recette;
+                }
+
+                if (String.IsNullOrWhiteSpace(DateImmatriculation.Text))
+                {
+                    DateImmatriculation.Text = entrepriseChoisie.date_immatriculation;
+                }
+
+                if (String.IsNullOrWhiteSpace(LieuImmatriculation.Text))
+                {
+                    LieuImmatriculation.Text = entrepriseChoisie.lieu_immatriculation;
+                }
+
+                if (String.IsNullOrEmpty(textBoxActivite.Text))
+                {
+                    textBoxActivite.Text = entrepriseChoisie.activites;
+                }
+            }
+        }
+
 
 		private void BoutonValider_ClickAsync(object sender, EventArgs e)
 		{

@@ -210,6 +210,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\answer_json.cs" />
+    <Compile Include="Model\Formulaire1.cs" />
+    <Compile Include="Model\Formulaire2.cs" />
+    <Compile Include="Model\FormulaireAbstract.cs" />
+    <Compile Include="Model\form_json.cs" />
+    <Compile Include="Model\Identifiants.cs" />
+    <Compile Include="Model\InfoEntreprise.cs" />
+    <Compile Include="Model\typeFormApi.cs" />
+    <Compile Include="PopUp_ChoixClientTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp_ChoixClientTypeForm.designer.cs">
+      <DependentUpon>PopUp_ChoixClientTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp_SupprimerUnModeleDeLc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +404,9 @@
       <DependentUpon>PopUp_Patienter.cs</DependentUpon>
     </Compile>
     <Compile Include="WordTools.cs" />
+    <EmbeddedResource Include="PopUp_ChoixClientTypeForm.resx">
+      <DependentUpon>PopUp_ChoixClientTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp_SupprimerUnModeleDeLc.resx">
       <DependentUpon>PopUp_SupprimerUnModeleDeLc.cs</DependentUpon>
     </EmbeddedResource>

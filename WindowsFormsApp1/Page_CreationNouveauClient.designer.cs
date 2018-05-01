@@ -164,18 +164,18 @@ namespace LettreCooperation
             // 
             this.préremplirAutomatiquementToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.préremplirAutomatiquementToolStripMenuItem1.Name = "préremplirAutomatiquementToolStripMenuItem1";
-            this.préremplirAutomatiquementToolStripMenuItem1.Size = new System.Drawing.Size(246, 22);
-            this.préremplirAutomatiquementToolStripMenuItem1.Text = "Pré-remplir automatiquement";
+            this.préremplirAutomatiquementToolStripMenuItem1.Size = new System.Drawing.Size(240, 22);
+            this.préremplirAutomatiquementToolStripMenuItem1.Text = "Pré-remplir avec la base SIRENE";
             this.préremplirAutomatiquementToolStripMenuItem1.ToolTipText = "Pré-remplir automatiquement";
             this.préremplirAutomatiquementToolStripMenuItem1.Click += new System.EventHandler(this.préremplirAutomatiquementToolStripMenuItem1_Click);
             // 
             // préremplirAvecUnFichierClientToolStripMenuItem1
             // 
             this.préremplirAvecUnFichierClientToolStripMenuItem1.Name = "préremplirAvecUnFichierClientToolStripMenuItem1";
-            this.préremplirAvecUnFichierClientToolStripMenuItem1.Size = new System.Drawing.Size(246, 22);
-            this.préremplirAvecUnFichierClientToolStripMenuItem1.Text = "Pré-remplir avec un fichier client";
+            this.préremplirAvecUnFichierClientToolStripMenuItem1.Size = new System.Drawing.Size(240, 22);
+            this.préremplirAvecUnFichierClientToolStripMenuItem1.Text = "Pré-remplir avec TypeForm";
             this.préremplirAvecUnFichierClientToolStripMenuItem1.ToolTipText = "Pré-remplir avec un fichier client";
-            this.préremplirAvecUnFichierClientToolStripMenuItem1.Click += new System.EventHandler(this.préremplirAvecUnFichierClientToolStripMenuItem1_Click);
+            this.préremplirAvecUnFichierClientToolStripMenuItem1.Click += new System.EventHandler(this.PréremplirAvecUnFichierClientToolStripMenuItem1_Click);
             // 
             // toolStrip1
             // 
