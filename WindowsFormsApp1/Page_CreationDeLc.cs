@@ -191,7 +191,7 @@ namespace LettreCooperation
                         string caption = "Lettre de coopération existante";
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         DialogResult result = MessageBox.Show(message, caption, buttons);
-
+                        
                         if (result == DialogResult.No)
                         {
                             waitForm.Close();
@@ -202,6 +202,9 @@ namespace LettreCooperation
                     }
 
                     documentModele.SaveAs(pathFolder + @"\" + nomFichier);
+
+                    File.Copy(FichierValoHonoraires.Text,
+                        pathFolder + @"\" + nomFichier.Replace(".docx", ".xlsx"));
 
                     AfficherLC(pathFolder + @"\" + nomFichier);
 

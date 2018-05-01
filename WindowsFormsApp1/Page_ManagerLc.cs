@@ -385,6 +385,9 @@ namespace LettreCooperation
                 else
                     MessageBox.Show("Le Fichier n'existe pas");
 
+                if (File.Exists(Program.FINACOOPFolder + lcVisible.chemin_lc.Replace(".docx", ".xlsx")))
+                    File.Delete(Program.FINACOOPFolder + lcVisible.chemin_lc.Replace(".docx", ".xlsx"));
+ 
                 model.DeleteLC(lcVisible);
 
                 MessageBox.Show("Votre LC a bien été supprimée");

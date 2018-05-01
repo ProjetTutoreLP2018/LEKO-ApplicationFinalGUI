@@ -259,7 +259,15 @@ namespace LettreCooperation
                 true
                 );
 
-           // MessageBox.Show("La copie a été faite.");
+            File.Copy(
+                Program.FINACOOPFolder + lc.chemin_lc.Replace(".docx", ".xlsx"),
+                dossier + "\\" + lc.nom_lc.Replace(".docx", ".xlsx"),
+                true
+                );
+
+
+
+            // MessageBox.Show("La copie a été faite.");
         }
 
 
