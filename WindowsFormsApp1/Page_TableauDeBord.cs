@@ -27,15 +27,15 @@ namespace LettreCooperation
 			List<LC> listLc = modele.GetListLc();
 
 			foreach (LC lc in listLc) {
-				if (lc.id_etat == 1)
+				if (lc.id_etat == modele.GetEtatByLibelle("C"))
 					nbLcAttenteSignature++;
-				if (lc.id_etat == 7)
+				if (lc.id_etat == modele.GetEtatByLibelle("SE"))
 					nbLcSigneesValidees++;
-				if (lc.id_etat == 8)
+				if (lc.id_etat == modele.GetEtatByLibelle("AC"))
 					nbLcEnvoyees++;
-				if (lc.id_etat == 11)
+				if (lc.id_etat == modele.GetEtatByLibelle("R"))
 					nbLcRefusees++;
-                if (lc.id_etat == 10)
+                if (lc.id_etat == modele.GetEtatByLibelle("A"))
                     nbLcArchivees++;
             }
 

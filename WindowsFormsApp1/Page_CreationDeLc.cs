@@ -217,7 +217,8 @@ namespace LettreCooperation
                     File.Delete(pathFolder + @"\" + nomFichier);
                     documentModele.SaveAs(pathFolder + @"\" + nomFichier);
 
-                    File.Copy(FichierValoHonoraires.Text,
+                File.Delete(pathFolder + @"\" + nomFichier.Replace(".docx", ".xlsx"));
+                File.Copy(FichierValoHonoraires.Text,
                         pathFolder + @"\" + nomFichier.Replace(".docx", ".xlsx"));
 
                     AfficherLC(pathFolder + @"\" + nomFichier);

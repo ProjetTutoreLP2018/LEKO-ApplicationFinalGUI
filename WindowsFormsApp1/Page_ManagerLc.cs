@@ -93,15 +93,15 @@ namespace LettreCooperation
 
             foreach(LC lc in listLc)
             {
-                if (lc.id_etat == 1)
+                if (lc.id_etat == model.GetEtatByLibelle("C"))
                     NbrAttenteSigne++;
-                if (lc.id_etat == 7)
+                if (lc.id_etat == model.GetEtatByLibelle("SE"))
                     nbrValidExp++;
-                if (lc.id_etat == 8)
+                if (lc.id_etat == model.GetEtatByLibelle("AC"))
                     nbrEnvoiCli++;
-                if (lc.id_etat == 10)
+                if (lc.id_etat == model.GetEtatByLibelle("A"))
                     nbrArchive++;
-                if (lc.id_etat == 11)
+                if (lc.id_etat == model.GetEtatByLibelle("R"))
                     nbrRefus++;
 
             }
@@ -154,13 +154,13 @@ namespace LettreCooperation
         {
             if (radioButtonAttSignExp.Checked)
             {
-                this.etat = 1;
+                this.etat = model.GetEtatByLibelle("C");
                 buttonSupprimer.Enabled = true;
                 buttonSupprimer.BackColor = Color.Red;
             }
             else if (radioButtonSignerExp.Checked)
             {
-                this.etat = 7;
+                this.etat = model.GetEtatByLibelle("SE");
                 buttonSupprimer.Enabled = false;
                 buttonSupprimer.BackColor = Color.Silver;
 
@@ -178,7 +178,7 @@ namespace LettreCooperation
 
             else if (radioButtonEnvoiCli.Checked)
             {
-                this.etat = 8;
+                this.etat = model.GetEtatByLibelle("AC");
 
                 if (Page_Principale.Utilisateur.isAdmin)
                 {
@@ -194,7 +194,7 @@ namespace LettreCooperation
 
             else if (radioButtonArchive.Checked)
             {
-                this.etat = 10;
+                this.etat = model.GetEtatByLibelle("A");
 
                 if (Page_Principale.Utilisateur.isAdmin)
                 {
@@ -210,7 +210,7 @@ namespace LettreCooperation
 
             else
             {
-                this.etat = 11;
+                this.etat = model.GetEtatByLibelle("R");
                 buttonSupprimer.Enabled = true;
             }
         }

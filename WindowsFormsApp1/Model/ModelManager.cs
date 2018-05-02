@@ -842,6 +842,10 @@ namespace LettreCooperation.modele
 
                 return null;
             }
+            catch (System.NotSupportedException)
+            {
+                return null;
+            }
 
         }
 

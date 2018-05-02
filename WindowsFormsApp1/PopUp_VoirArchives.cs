@@ -35,7 +35,11 @@ namespace LettreCooperation
             clients = modelManager.GetListClientArchive();
 
             if (clients == null)
+            {
+                MessageBox.Show("Il n'y a pas d'archive.");
                 return;
+            }
+                
 
             foreach (Client client in clients)
             {
@@ -51,6 +55,10 @@ namespace LettreCooperation
             lCs = modelManager.GetListLCFromClienteArchive(
                 clients[comboBoxClient.SelectedIndex].id_client
                 );
+
+            if (lCs == null)
+                return;
+
             foreach (LC lc in lCs)
             {
                 comboBoxLC.Items.Add(lc.nom_lc);
