@@ -39,12 +39,13 @@
             this.sauvegarderFichier = new System.Windows.Forms.SaveFileDialog();
             this.ouvrirFichierModele = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimeExercice_fin = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeExercice_debut = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
             this.textBoxMission = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxModel = new System.Windows.Forms.ComboBox();
             this.buttonGenerer = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxMillésime = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,8 +118,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBoxMillésime);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.dateTimeExercice_fin);
+            this.groupBox1.Controls.Add(this.dateTimeExercice_debut);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.textBoxMission);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBoxModel);
@@ -130,9 +132,32 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(93, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(661, 272);
+            this.groupBox1.Size = new System.Drawing.Size(661, 291);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            // 
+            // dateTimeExercice_fin
+            // 
+            this.dateTimeExercice_fin.Location = new System.Drawing.Point(239, 247);
+            this.dateTimeExercice_fin.Name = "dateTimeExercice_fin";
+            this.dateTimeExercice_fin.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeExercice_fin.TabIndex = 61;
+            // 
+            // dateTimeExercice_debut
+            // 
+            this.dateTimeExercice_debut.Location = new System.Drawing.Point(239, 221);
+            this.dateTimeExercice_debut.Name = "dateTimeExercice_debut";
+            this.dateTimeExercice_debut.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeExercice_debut.TabIndex = 60;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(51, 231);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 13);
+            this.label15.TabIndex = 62;
+            this.label15.Text = "Exercice Social : ";
             // 
             // textBoxMission
             // 
@@ -163,29 +188,13 @@
             // buttonGenerer
             // 
             this.buttonGenerer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGenerer.BackgroundImage")));
-            this.buttonGenerer.Location = new System.Drawing.Point(679, 356);
+            this.buttonGenerer.Location = new System.Drawing.Point(679, 382);
             this.buttonGenerer.Name = "buttonGenerer";
             this.buttonGenerer.Size = new System.Drawing.Size(75, 23);
             this.buttonGenerer.TabIndex = 6;
             this.buttonGenerer.Text = "Générer";
             this.buttonGenerer.UseVisualStyleBackColor = true;
             this.buttonGenerer.Click += new System.EventHandler(this.BoutonGenerer_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 217);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Millésime :";
-            // 
-            // textBoxMillésime
-            // 
-            this.textBoxMillésime.Location = new System.Drawing.Point(239, 217);
-            this.textBoxMillésime.Name = "textBoxMillésime";
-            this.textBoxMillésime.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMillésime.TabIndex = 26;
             // 
             // Page_CreationDeLc
             // 
@@ -218,7 +227,8 @@
         private System.Windows.Forms.ComboBox comboBoxModel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxMission;
-        private System.Windows.Forms.TextBox textBoxMillésime;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimeExercice_fin;
+        private System.Windows.Forms.DateTimePicker dateTimeExercice_debut;
+        private System.Windows.Forms.Label label15;
     }
 }

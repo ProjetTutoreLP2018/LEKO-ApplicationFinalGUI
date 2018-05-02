@@ -69,7 +69,7 @@ namespace LettreCooperation
                     else
                         textBoxActivite.Text = "";
 
-                if (NumeroVoie.Text == string.Empty)
+                if (NumeroVoie.Text == string.Empty || NumeroVoie.Text.Equals("0"))
                     if (enregistrement.fields.numvoie != null)
                         NumeroVoie.Value = Int32.Parse(enregistrement.fields.numvoie);
                     else
@@ -81,7 +81,7 @@ namespace LettreCooperation
                     else
                         DateImmatriculation.Text = "";
 
-                if (Effectif.Text == string.Empty)
+                if (Effectif.Text == string.Empty || Effectif.Text.Equals("0"))
                     if (enregistrement.fields.efetcent.Equals("NN"))
                         Effectif.Value = 0;
                     else
@@ -167,7 +167,7 @@ namespace LettreCooperation
                     DateImmatriculation.Text = entrepriseChoisie.date_creation;
                 }
 
-                if (String.IsNullOrWhiteSpace(CA.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(CA.Value.ToString()) || CA.Value.Equals("0"))
                 {
                     CA.Value = Int32.Parse(entrepriseChoisie.ca);
                 }
@@ -177,7 +177,7 @@ namespace LettreCooperation
                     FonctionRepresentant.Text = entrepriseChoisie.fonction;
                 }
 
-                if (String.IsNullOrWhiteSpace(Effectif.Value.ToString()))
+                if (String.IsNullOrWhiteSpace(Effectif.Value.ToString()) || Effectif.Value.Equals("0"))
                 {
                     Effectif.Value = Int32.Parse(entrepriseChoisie.effectif);
                 }
@@ -187,7 +187,7 @@ namespace LettreCooperation
                     OrganisationComptable.Text = entrepriseChoisie.organisation_comptable;
                 }
 
-                if (String.IsNullOrWhiteSpace(VolumesAnnuels.Text))
+                if (String.IsNullOrWhiteSpace(VolumesAnnuels.Text) || VolumesAnnuels.Text.Equals("0"))
                 {
                     VolumesAnnuels.Text = entrepriseChoisie.volume_recette;
                 }
@@ -280,8 +280,8 @@ namespace LettreCooperation
                     raison_sociale = NomOrganisation.Text,
                     sexe_referent = SexeRepresentant.Text,
                     siret = NumeroSiret.Text,
-                    exercice_debut = dateTimeExercice_debut.Value,
-                    exercice_fin = dateTimeExercice_fin.Value,
+                    //exercice_debut = dateTimeExercice_debut.Value,
+                    //exercice_fin = dateTimeExercice_fin.Value,
                     activite = textBoxActivite.Text
                 };
 

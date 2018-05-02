@@ -637,7 +637,7 @@ namespace LettreCooperation.modele
         {
             try { 
                 LC lc = context.LC.Find(i);
-                lc.id_etat = 7;
+                lc.id_etat = GetEtatByLibelle("SE"); 
                 context.SaveChanges();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -647,6 +647,14 @@ namespace LettreCooperation.modele
 
                 return;
             }
+        }
+
+
+        public int GetEtatByLibelle(string libelle)
+        {
+            return (from etat in context.Etat
+                    where etat.libelle_etat == libelle
+                    select etat).ToList().First().id_etat;
         }
 
         /// <summary>
@@ -801,7 +809,7 @@ namespace LettreCooperation.modele
                 return (from client in context.Client
                         join lc in context.LC
                         on client.id_client equals lc.id_client
-                        where lc.id_etat == 8
+                        where lc.id_etat == GetEtatByLibelle("AC")
                         select client).Distinct().ToList();
 
             }
@@ -823,7 +831,7 @@ namespace LettreCooperation.modele
                 return (from client in context.Client
                         join lc in context.LC
                         on client.id_client equals lc.id_client
-                        where lc.id_etat == 10
+                        where lc.id_etat == GetEtatByLibelle("A") 
                         select client).Distinct().ToList();
 
             }

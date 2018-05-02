@@ -78,8 +78,8 @@ namespace LettreCooperation
             TelephonePortableRepresentant.Text = string.Empty;
             VolumesAnnuels.Text = string.Empty;
             CourrielRepresentant.Text = string.Empty;
-            dateTimeExercice_fin.Value = DateTime.Now;
-            dateTimeExercice_debut.Value = DateTime.Now;
+        //    dateTimeExercice_fin.Value = DateTime.Now;
+        //    dateTimeExercice_debut.Value = DateTime.Now;
             textBoxActivite.Text = string.Empty;
 
             ReloadComboBox();
@@ -143,7 +143,7 @@ namespace LettreCooperation
             else
                 textBoxActivite.Text = clients[index].activite;
 
-            if (clients[index].exercice_debut == null)
+        /*    if (clients[index].exercice_debut == null)
                 dateTimeExercice_debut.Value = DateTime.Now;
             else
                 dateTimeExercice_debut.Value =(DateTime) clients[index].exercice_debut;
@@ -152,7 +152,7 @@ namespace LettreCooperation
                 dateTimeExercice_fin.Value = DateTime.Now;
             else
                 dateTimeExercice_fin.Value = (DateTime)clients[index].exercice_fin;
-
+                */
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -198,8 +198,8 @@ namespace LettreCooperation
             clients[index].forme_juridique = FormeJuridique.Text;
             clients[index].effectifs = (int) Effectif.Value;
             clients[index].CA = (double) CA.Value;
-            clients[index].exercice_debut = dateTimeExercice_debut.Value;
-            clients[index].exercice_fin = dateTimeExercice_fin.Value;
+          //  clients[index].exercice_debut = dateTimeExercice_debut.Value;
+           // clients[index].exercice_fin = dateTimeExercice_fin.Value;
             clients[index].activite = textBoxActivite.Text;
 
             if (String.IsNullOrEmpty(SiteInternet.Text))

@@ -228,7 +228,7 @@ namespace LettreCooperation
         /// <param name="lc"></param>
         private void ChangeEtat(LC lc)
         {
-            modelManager.UpdateEtatLc(lc, 8);
+            modelManager.UpdateEtatLc(lc, modelManager.GetEtatByLibelle("AC"));
         }
 
 

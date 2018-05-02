@@ -26,6 +26,8 @@ namespace LettreCooperation.Model
         public Nullable<int> id_utilisateur { get; set; }
         public Nullable<int> id_signataire { get; set; }
         public string millesime { get; set; }
+        public Nullable<System.DateTime> exercice_debut { get; set; }
+        public Nullable<System.DateTime> exercice_fin { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Etat Etat { get; set; }

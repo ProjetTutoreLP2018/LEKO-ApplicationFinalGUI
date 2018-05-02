@@ -42,8 +42,6 @@
           <Property Name="tel_portable" Type="varchar" MaxLength="20" />
           <Property Name="mail_referent" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="activite" Type="varchar" MaxLength="200" />
-          <Property Name="exercice_debut" Type="date" />
-          <Property Name="exercice_fin" Type="date" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -74,7 +72,9 @@
           <Property Name="id_etat" Type="int" />
           <Property Name="id_utilisateur" Type="int" />
           <Property Name="id_signataire" Type="int" />
-          <Property Name="millesime" Type="varchar" MaxLength="10" />
+          <Property Name="millesime" Type="varchar" MaxLength="50" />
+          <Property Name="exercice_debut" Type="date" />
+          <Property Name="exercice_fin" Type="date" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -270,8 +270,6 @@
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_client" FromRole="Client" ToRole="LC" />
           <Property Name="mail_referent" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="activite" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="exercice_debut" Type="DateTime" Precision="0" />
-          <Property Name="exercice_fin" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -309,7 +307,9 @@
           <NavigationProperty Name="Utilisateur" Relationship="Self.FK_LC_UTILISATEUR" FromRole="LC" ToRole="Utilisateur" />
           <Property Name="id_signataire" Type="Int32" />
           <NavigationProperty Name="Utilisateur1" Relationship="LCBDModel.FK_SignerLC" FromRole="LC" ToRole="Utilisateur" />
-          <Property Name="millesime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="millesime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="exercice_debut" Type="DateTime" Precision="0" />
+          <Property Name="exercice_fin" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -487,8 +487,6 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="LCBDModel.Client">
               <MappingFragment StoreEntitySet="Client">
-                <ScalarProperty Name="exercice_fin" ColumnName="exercice_fin" />
-                <ScalarProperty Name="exercice_debut" ColumnName="exercice_debut" />
                 <ScalarProperty Name="activite" ColumnName="activite" />
                 <ScalarProperty Name="mail_referent" ColumnName="mail_referent" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />
@@ -532,6 +530,8 @@
           <EntitySetMapping Name="LC">
             <EntityTypeMapping TypeName="LCBDModel.LC">
               <MappingFragment StoreEntitySet="LC">
+                <ScalarProperty Name="exercice_fin" ColumnName="exercice_fin" />
+                <ScalarProperty Name="exercice_debut" ColumnName="exercice_debut" />
                 <ScalarProperty Name="millesime" ColumnName="millesime" />
                 <ScalarProperty Name="id_signataire" ColumnName="id_signataire" />
                 <ScalarProperty Name="id_lc" ColumnName="id_lc" />

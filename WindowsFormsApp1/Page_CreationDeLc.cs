@@ -79,7 +79,7 @@ namespace LettreCooperation
 
             string raisonSociale = ListeDeroulanteChoixClient.SelectedItem.ToString();
 
-            String nomFichier = DateTime.Today.ToString("yyyy_MM_dd") + "_" + ListeDeroulanteChoixClient.SelectedItem.ToString() + "_" + "FINACOOP_" + textBoxMission.Text + ".docx";
+            String nomFichier = DateTime.Today.ToString("dd_MM_yyyy") + "_" + ListeDeroulanteChoixClient.SelectedItem.ToString() + "_" + "FINACOOP_" + textBoxMission.Text + ".docx";
 
             Client client = new Client();
             client = clients[ListeDeroulanteChoixClient.SelectedIndex];
@@ -97,8 +97,8 @@ namespace LettreCooperation
                 { "CP", client.Adresse.code_postal??" " },
                 { "Ville", client.Adresse.ville??" " },
                 { "Activite", client.activite??" " },
-                { "ExerciceSocial", ((DateTime) client.exercice_debut).ToString("yyyy_MM_dd")??" " +
-                "  -  " + ((DateTime) client.exercice_fin).ToString("yyyy_MM_dd")??" " },
+               // { "ExerciceSocial", ((DateTime) client.exercice_debut).ToString("yyyy_MM_dd")??" " +
+               // "  -  " + ((DateTime) client.exercice_fin).ToString("yyyy_MM_dd")??" " },
 				{ "DateCourante", DateTime.Today.ToShortDateString()??" " },
 				//{ "Millesime", DateTime.Today.Year.ToString()??" " },
 				{ "Prenom", client.prenom_referent??" " },
@@ -114,7 +114,10 @@ namespace LettreCooperation
 				{ "VolumesAnnuels", client.volume_annuel.ToString()??" " },
 				{ "DateImmatriculation", client.date_immatriculation.ToString()??" " },
 				{ "LieuImmatriculation", client.lieu_immatriculation??" " },
-                { "Millesime", textBoxMillésime.Text??" " }
+                { "Millesime",  dateTimeExercice_debut.Value.ToString("dd/MM/yyyy") +
+                " - " + dateTimeExercice_fin.Value.ToString("dd/MM/yyyy") },
+                {"ExerciceSocial", dateTimeExercice_debut.Value.ToString("dd/MM/yyyy") + 
+                " - " + dateTimeExercice_fin.Value.ToString("dd/MM/yyyy") }
 			};
 
 
@@ -147,10 +150,11 @@ namespace LettreCooperation
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception er)
             {
                 MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigné le bon fichier FINACOOP");
                 Cursor.Current = Cursors.Default;
+                MessageBox.Show(er.StackTrace);
             }
 
 
@@ -181,12 +185,16 @@ namespace LettreCooperation
                         id_client = client.id_client,
                         id_modele = modeles[comboBoxModel.SelectedIndex].id_modele,
                         nom_lc = nomFichier,
-                        id_etat = 1,
+                        id_etat = modeleManager.GetEtatByLibelle("C"),
                         id_utilisateur = Page_Principale.Utilisateur.id_utilisateur
+                        
 
                     };
 
-                    lc.millesime = textBoxMillésime.Text;
+                    lc.millesime = dateTimeExercice_debut.Value.ToString("dd_MM_yyyy") +
+                " - " + dateTimeExercice_fin.Value.ToString("dd_MM_yyyy");
+                    lc.exercice_debut =  dateTimeExercice_debut.Value;
+                    lc.exercice_fin = dateTimeExercice_fin.Value;
 
 
                     if (File.Exists(pathFolder + @"\" + nomFichier))
@@ -218,10 +226,12 @@ namespace LettreCooperation
 
                 }
             }
-            catch (Exception)
+            catch (Exception er)
             {
                 MessageBox.Show("Erreur de chargement. Merci de vérifier que vous avez renseigné le bon fichier FINACOOP");
+                MessageBox.Show(er.StackTrace);
                 Cursor.Current = Cursors.Default;
+                waitForm.Close();
             }
         }
 

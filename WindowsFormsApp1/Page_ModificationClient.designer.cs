@@ -34,9 +34,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimeExercice_fin = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeExercice_debut = new System.Windows.Forms.DateTimePicker();
-            this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.textBoxActivite = new System.Windows.Forms.TextBox();
@@ -170,9 +167,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimeExercice_fin);
-            this.groupBox1.Controls.Add(this.dateTimeExercice_debut);
-            this.groupBox1.Controls.Add(this.label44);
             this.groupBox1.Controls.Add(this.label43);
             this.groupBox1.Controls.Add(this.label33);
             this.groupBox1.Controls.Add(this.textBoxActivite);
@@ -213,34 +207,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // dateTimeExercice_fin
-            // 
-            this.dateTimeExercice_fin.Location = new System.Drawing.Point(502, 289);
-            this.dateTimeExercice_fin.Name = "dateTimeExercice_fin";
-            this.dateTimeExercice_fin.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeExercice_fin.TabIndex = 15;
-            // 
-            // dateTimeExercice_debut
-            // 
-            this.dateTimeExercice_debut.Location = new System.Drawing.Point(502, 263);
-            this.dateTimeExercice_debut.Name = "dateTimeExercice_debut";
-            this.dateTimeExercice_debut.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeExercice_debut.TabIndex = 14;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(373, 274);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(89, 13);
-            this.label44.TabIndex = 62;
-            this.label44.Text = "Exercice Social : ";
-            // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.ForeColor = System.Drawing.Color.Red;
-            this.label43.Location = new System.Drawing.Point(477, 153);
+            this.label43.Location = new System.Drawing.Point(477, 178);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(11, 13);
             this.label43.TabIndex = 61;
@@ -250,7 +221,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(490, 188);
+            this.label33.Location = new System.Drawing.Point(490, 213);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(11, 13);
             this.label33.TabIndex = 60;
@@ -258,7 +229,7 @@
             // 
             // textBoxActivite
             // 
-            this.textBoxActivite.Location = new System.Drawing.Point(500, 69);
+            this.textBoxActivite.Location = new System.Drawing.Point(500, 94);
             this.textBoxActivite.Name = "textBoxActivite";
             this.textBoxActivite.Size = new System.Drawing.Size(265, 20);
             this.textBoxActivite.TabIndex = 9;
@@ -266,7 +237,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(369, 72);
+            this.label17.Location = new System.Drawing.Point(369, 97);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(54, 13);
             this.label17.TabIndex = 58;
@@ -276,7 +247,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(412, 24);
+            this.label16.Location = new System.Drawing.Point(412, 49);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(11, 13);
             this.label16.TabIndex = 56;
@@ -315,7 +286,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(369, 29);
+            this.label4.Location = new System.Drawing.Point(369, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 51;
@@ -324,7 +295,7 @@
             // VolumesAnnuels
             // 
             this.VolumesAnnuels.DecimalPlaces = 2;
-            this.VolumesAnnuels.Location = new System.Drawing.Point(502, 228);
+            this.VolumesAnnuels.Location = new System.Drawing.Point(502, 253);
             this.VolumesAnnuels.Maximum = new decimal(new int[] {
             -1981284352,
             -1966660860,
@@ -336,7 +307,7 @@
             // 
             // NumeroSiret
             // 
-            this.NumeroSiret.Location = new System.Drawing.Point(500, 24);
+            this.NumeroSiret.Location = new System.Drawing.Point(500, 49);
             this.NumeroSiret.Name = "NumeroSiret";
             this.NumeroSiret.Size = new System.Drawing.Size(265, 20);
             this.NumeroSiret.TabIndex = 8;
@@ -356,7 +327,7 @@
             // 
             // OrganisationComptable
             // 
-            this.OrganisationComptable.Location = new System.Drawing.Point(502, 190);
+            this.OrganisationComptable.Location = new System.Drawing.Point(502, 215);
             this.OrganisationComptable.Name = "OrganisationComptable";
             this.OrganisationComptable.Size = new System.Drawing.Size(263, 20);
             this.OrganisationComptable.TabIndex = 12;
@@ -373,7 +344,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(369, 92);
+            this.label3.Location = new System.Drawing.Point(369, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 3;
@@ -388,11 +359,11 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(369, 230);
+            this.label22.Location = new System.Drawing.Point(369, 255);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(96, 13);
+            this.label22.Size = new System.Drawing.Size(105, 13);
             this.label22.TabIndex = 48;
-            this.label22.Text = "Volumes annuels : ";
+            this.label22.Text = "Nb pièces prévues : ";
             // 
             // label19
             // 
@@ -429,7 +400,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(369, 193);
+            this.label21.Location = new System.Drawing.Point(369, 218);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(127, 13);
             this.label21.TabIndex = 47;
@@ -445,7 +416,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(369, 114);
+            this.label18.Location = new System.Drawing.Point(369, 139);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(119, 13);
             this.label18.TabIndex = 27;
@@ -453,7 +424,7 @@
             // 
             // DateImmatriculation
             // 
-            this.DateImmatriculation.Location = new System.Drawing.Point(502, 111);
+            this.DateImmatriculation.Location = new System.Drawing.Point(502, 136);
             this.DateImmatriculation.Name = "DateImmatriculation";
             this.DateImmatriculation.Size = new System.Drawing.Size(200, 20);
             this.DateImmatriculation.TabIndex = 10;
@@ -471,7 +442,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 156);
+            this.label6.Location = new System.Drawing.Point(369, 181);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 41;
@@ -488,7 +459,7 @@
             // 
             // LieuImmatriculation
             // 
-            this.LieuImmatriculation.Location = new System.Drawing.Point(502, 153);
+            this.LieuImmatriculation.Location = new System.Drawing.Point(502, 178);
             this.LieuImmatriculation.Name = "LieuImmatriculation";
             this.LieuImmatriculation.Size = new System.Drawing.Size(263, 20);
             this.LieuImmatriculation.TabIndex = 11;
@@ -528,9 +499,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 237);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ESS ? :";
+            this.label1.Text = "ESS :";
             // 
             // ESSOui
             // 
@@ -1111,8 +1082,5 @@
         private System.Windows.Forms.Label messageErr;
         private System.Windows.Forms.Label adresseMailMess;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.DateTimePicker dateTimeExercice_fin;
-        private System.Windows.Forms.DateTimePicker dateTimeExercice_debut;
-        private System.Windows.Forms.Label label44;
     }
     }
