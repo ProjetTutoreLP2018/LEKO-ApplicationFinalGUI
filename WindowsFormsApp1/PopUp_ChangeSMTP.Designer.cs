@@ -34,6 +34,8 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.buttonValider = new System.Windows.Forms.Button();
             this.textBoxSMTP = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPort = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonAnnuler
@@ -50,7 +52,7 @@
             // labelMessage
             // 
             this.labelMessage.AutoSize = true;
-            this.labelMessage.Location = new System.Drawing.Point(61, 30);
+            this.labelMessage.Location = new System.Drawing.Point(61, 11);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Size = new System.Drawing.Size(0, 13);
             this.labelMessage.TabIndex = 10;
@@ -68,10 +70,26 @@
             // 
             // textBoxSMTP
             // 
-            this.textBoxSMTP.Location = new System.Drawing.Point(133, 79);
+            this.textBoxSMTP.Location = new System.Drawing.Point(133, 60);
             this.textBoxSMTP.Name = "textBoxSMTP";
             this.textBoxSMTP.Size = new System.Drawing.Size(210, 20);
             this.textBoxSMTP.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(80, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Port : ";
+            // 
+            // textBoxPort
+            // 
+            this.textBoxPort.Location = new System.Drawing.Point(133, 101);
+            this.textBoxPort.Name = "textBoxPort";
+            this.textBoxPort.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPort.TabIndex = 12;
             // 
             // PopUp_ChangeSMTP
             // 
@@ -79,6 +97,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(494, 184);
+            this.Controls.Add(this.textBoxPort);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSMTP);
             this.Controls.Add(this.buttonAnnuler);
             this.Controls.Add(this.buttonValider);
@@ -86,6 +106,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PopUp_ChangeSMTP";
             this.Text = "ChangeSMTP";
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +119,7 @@
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.TextBox textBoxSMTP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPort;
     }
 }

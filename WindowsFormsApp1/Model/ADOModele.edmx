@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LCBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="LCBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adresse">
           <Key>
             <PropertyRef Name="id_adresse" />
@@ -29,7 +29,7 @@
           <Property Name="effectifs" Type="int" Nullable="false" />
           <Property Name="organisation_comptable" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="volume_annuel" Type="float" />
-          <Property Name="date_immatriculation" Type="date" />
+          <Property Name="date_immatriculation" Type="datetime" />
           <Property Name="lieu_immatriculation" Type="varchar" MaxLength="50" />
           <Property Name="nom_referent" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="prenom_referent" Type="varchar" MaxLength="50" Nullable="false" />
@@ -63,9 +63,9 @@
           </Key>
           <Property Name="id_lc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="chemin_lc" Type="varchar" MaxLength="500" />
-          <Property Name="date_lc" Type="date" Nullable="false" />
-          <Property Name="date_debut" Type="date" />
-          <Property Name="date_fin" Type="date" />
+          <Property Name="date_lc" Type="datetime" Nullable="false" />
+          <Property Name="date_debut" Type="datetime" />
+          <Property Name="date_fin" Type="datetime" />
           <Property Name="id_client" Type="int" Nullable="false" />
           <Property Name="id_modele" Type="int" Nullable="false" />
           <Property Name="nom_lc" Type="varchar" MaxLength="150" />
@@ -73,8 +73,8 @@
           <Property Name="id_utilisateur" Type="int" />
           <Property Name="id_signataire" Type="int" />
           <Property Name="millesime" Type="varchar" MaxLength="50" />
-          <Property Name="exercice_debut" Type="date" />
-          <Property Name="exercice_fin" Type="date" />
+          <Property Name="exercice_debut" Type="datetime" />
+          <Property Name="exercice_fin" Type="datetime" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -226,7 +226,8 @@
             <End Role="Utilisateur" EntitySet="Utilisateur" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LCBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -255,7 +256,7 @@
           <Property Name="effectifs" Type="Int32" Nullable="false" />
           <Property Name="organisation_comptable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="volume_annuel" Type="Double" />
-          <Property Name="date_immatriculation" Type="DateTime" Precision="0" />
+          <Property Name="date_immatriculation" Type="DateTime" Precision="3" />
           <Property Name="lieu_immatriculation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nom_referent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prenom_referent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -266,10 +267,10 @@
           <Property Name="ESS" Type="Boolean" />
           <Property Name="tel_fix" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="tel_portable" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mail_referent" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activite" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Adresse" Relationship="Self.FK_Client_Adresse" FromRole="Client" ToRole="Adresse" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_client" FromRole="Client" ToRole="LC" />
-          <Property Name="mail_referent" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="activite" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Droit">
           <Key>
@@ -293,23 +294,23 @@
           </Key>
           <Property Name="id_lc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="chemin_lc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="date_lc" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="date_debut" Type="DateTime" Precision="0" />
-          <Property Name="date_fin" Type="DateTime" Precision="0" />
+          <Property Name="date_lc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="date_debut" Type="DateTime" Precision="3" />
+          <Property Name="date_fin" Type="DateTime" Precision="3" />
           <Property Name="id_client" Type="Int32" Nullable="false" />
           <Property Name="id_modele" Type="Int32" Nullable="false" />
           <Property Name="nom_lc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="id_etat" Type="Int32" />
           <Property Name="id_utilisateur" Type="Int32" />
+          <Property Name="id_signataire" Type="Int32" />
+          <Property Name="millesime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="exercice_debut" Type="DateTime" Precision="3" />
+          <Property Name="exercice_fin" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Client" Relationship="Self.FK_LC_client" FromRole="LC" ToRole="Client" />
           <NavigationProperty Name="Etat" Relationship="Self.FK_LC_Etat" FromRole="LC" ToRole="Etat" />
           <NavigationProperty Name="Modele" Relationship="Self.FK_LC_modele" FromRole="LC" ToRole="Modele" />
           <NavigationProperty Name="Utilisateur" Relationship="Self.FK_LC_UTILISATEUR" FromRole="LC" ToRole="Utilisateur" />
-          <Property Name="id_signataire" Type="Int32" />
-          <NavigationProperty Name="Utilisateur1" Relationship="LCBDModel.FK_SignerLC" FromRole="LC" ToRole="Utilisateur" />
-          <Property Name="millesime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="exercice_debut" Type="DateTime" Precision="0" />
-          <Property Name="exercice_fin" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Utilisateur1" Relationship="Self.FK_SignerLC" FromRole="LC" ToRole="Utilisateur" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -319,8 +320,8 @@
           <Property Name="chemin_modele" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="nom_fichier" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="nom_mission" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="LC" Relationship="Self.FK_LC_modele" FromRole="Modele" ToRole="LC" />
           <Property Name="type_lettre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LC" Relationship="Self.FK_LC_modele" FromRole="Modele" ToRole="LC" />
         </EntityType>
         <EntityType Name="Utilisateur">
           <Key>
@@ -333,10 +334,10 @@
           <Property Name="id_droit" Type="Int32" Nullable="false" />
           <Property Name="mdp_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="image_Blob_Signature" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Droit" Relationship="Self.FK_Utilisateur_id_droit" FromRole="Utilisateur" ToRole="Droit" />
           <NavigationProperty Name="LC" Relationship="Self.FK_LC_UTILISATEUR" FromRole="Utilisateur" ToRole="LC" />
-          <NavigationProperty Name="LC1" Relationship="LCBDModel.FK_SignerLC" FromRole="Utilisateur" ToRole="LC" />
-          <Property Name="image_Blob_Signature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="LC1" Relationship="Self.FK_SignerLC" FromRole="Utilisateur" ToRole="LC" />
         </EntityType>
         <Association Name="FK_Client_Adresse">
           <End Role="Adresse" Type="Self.Adresse" Multiplicity="1">
@@ -416,7 +417,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LCBDEntities2" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_SignerLC">
+          <End Role="Utilisateur" Type="Self.Utilisateur" Multiplicity="0..1" />
+          <End Role="LC" Type="Self.LC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Utilisateur">
+              <PropertyRef Name="id_utilisateur" />
+            </Principal>
+            <Dependent Role="LC">
+              <PropertyRef Name="id_signataire" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LCBDEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Adresse" EntityType="Self.Adresse" />
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Droit" EntityType="Self.Droit" />
@@ -448,29 +461,17 @@
             <End Role="Utilisateur" EntitySet="Utilisateur" />
             <End Role="LC" EntitySet="LC" />
           </AssociationSet>
-          <AssociationSet Name="FK_SignerLC" Association="LCBDModel.FK_SignerLC">
+          <AssociationSet Name="FK_SignerLC" Association="Self.FK_SignerLC">
             <End Role="Utilisateur" EntitySet="Utilisateur" />
             <End Role="LC" EntitySet="LC" />
           </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_SignerLC">
-          <End Type="LCBDModel.Utilisateur" Role="Utilisateur" Multiplicity="0..1" />
-          <End Type="LCBDModel.LC" Role="LC" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Utilisateur">
-              <PropertyRef Name="id_utilisateur" />
-            </Principal>
-            <Dependent Role="LC">
-              <PropertyRef Name="id_signataire" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LCBDModelStoreContainer" CdmEntityContainer="LCBDEntities2">
+        <EntityContainerMapping StorageEntityContainer="LCBDModelStoreContainer" CdmEntityContainer="LCBDEntities3">
           <EntitySetMapping Name="Adresse">
             <EntityTypeMapping TypeName="LCBDModel.Adresse">
               <MappingFragment StoreEntitySet="Adresse">
@@ -487,8 +488,6 @@
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="LCBDModel.Client">
               <MappingFragment StoreEntitySet="Client">
-                <ScalarProperty Name="activite" ColumnName="activite" />
-                <ScalarProperty Name="mail_referent" ColumnName="mail_referent" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />
                 <ScalarProperty Name="siret" ColumnName="siret" />
                 <ScalarProperty Name="forme_juridique" ColumnName="forme_juridique" />
@@ -508,6 +507,8 @@
                 <ScalarProperty Name="ESS" ColumnName="ESS" />
                 <ScalarProperty Name="tel_fix" ColumnName="tel_fix" />
                 <ScalarProperty Name="tel_portable" ColumnName="tel_portable" />
+                <ScalarProperty Name="mail_referent" ColumnName="mail_referent" />
+                <ScalarProperty Name="activite" ColumnName="activite" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -530,10 +531,6 @@
           <EntitySetMapping Name="LC">
             <EntityTypeMapping TypeName="LCBDModel.LC">
               <MappingFragment StoreEntitySet="LC">
-                <ScalarProperty Name="exercice_fin" ColumnName="exercice_fin" />
-                <ScalarProperty Name="exercice_debut" ColumnName="exercice_debut" />
-                <ScalarProperty Name="millesime" ColumnName="millesime" />
-                <ScalarProperty Name="id_signataire" ColumnName="id_signataire" />
                 <ScalarProperty Name="id_lc" ColumnName="id_lc" />
                 <ScalarProperty Name="chemin_lc" ColumnName="chemin_lc" />
                 <ScalarProperty Name="date_lc" ColumnName="date_lc" />
@@ -544,24 +541,27 @@
                 <ScalarProperty Name="nom_lc" ColumnName="nom_lc" />
                 <ScalarProperty Name="id_etat" ColumnName="id_etat" />
                 <ScalarProperty Name="id_utilisateur" ColumnName="id_utilisateur" />
+                <ScalarProperty Name="id_signataire" ColumnName="id_signataire" />
+                <ScalarProperty Name="millesime" ColumnName="millesime" />
+                <ScalarProperty Name="exercice_debut" ColumnName="exercice_debut" />
+                <ScalarProperty Name="exercice_fin" ColumnName="exercice_fin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Modele">
             <EntityTypeMapping TypeName="LCBDModel.Modele">
               <MappingFragment StoreEntitySet="Modele">
-                <ScalarProperty Name="type_lettre" ColumnName="type_lettre" />
                 <ScalarProperty Name="id_modele" ColumnName="id_modele" />
                 <ScalarProperty Name="chemin_modele" ColumnName="chemin_modele" />
                 <ScalarProperty Name="nom_fichier" ColumnName="nom_fichier" />
                 <ScalarProperty Name="nom_mission" ColumnName="nom_mission" />
+                <ScalarProperty Name="type_lettre" ColumnName="type_lettre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Utilisateur">
             <EntityTypeMapping TypeName="LCBDModel.Utilisateur">
               <MappingFragment StoreEntitySet="Utilisateur">
-                <ScalarProperty Name="image_Blob_Signature" ColumnName="image_Blob_Signature" />
                 <ScalarProperty Name="id_utilisateur" ColumnName="id_utilisateur" />
                 <ScalarProperty Name="nom_utilisateur" ColumnName="nom_utilisateur" />
                 <ScalarProperty Name="prenom_utilisateur" ColumnName="prenom_utilisateur" />
@@ -569,6 +569,7 @@
                 <ScalarProperty Name="id_droit" ColumnName="id_droit" />
                 <ScalarProperty Name="mdp_utilisateur" ColumnName="mdp_utilisateur" />
                 <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="image_Blob_Signature" ColumnName="image_Blob_Signature" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

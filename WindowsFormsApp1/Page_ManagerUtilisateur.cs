@@ -272,6 +272,13 @@ namespace LettreCooperation
             if (comboNomUtilisateur.SelectedIndex < 0)
                 return;
 
+            DialogResult dialogResult = MessageBox.Show("Êtes vous sûr de vouloir supprimer definitivement cet Utilisateur ?",
+               "Êtes vous sûr ?", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.No)
+                return;
+            
+
             Cursor.Current = Cursors.WaitCursor;
             model.SupprimerUtilisateur(utilisateurs[index]);
             MessageBox.Show("Votre utilisateur a bien été supprimé");

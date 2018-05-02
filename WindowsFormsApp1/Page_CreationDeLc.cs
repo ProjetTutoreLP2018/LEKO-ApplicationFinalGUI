@@ -27,7 +27,7 @@ namespace LettreCooperation
 		{
             clients = modeleManager.GetListClient();
             
-            if(clients == null)
+            if(clients.Count == 0)
                 return;
 
             modeles = modeleManager.GetModeles();
@@ -161,7 +161,7 @@ namespace LettreCooperation
 
             try
             {
-                using (DocX documentModele = DocX.Load(Program.FINACOOPFolder + modeles[comboBoxModel.SelectedIndex].chemin_modele + ".docx"))
+                using (DocX documentModele = DocX.Load(Program.FINACOOPFolder + modeles[comboBoxModel.SelectedIndex].chemin_modele))
                 {
 
                     foreach (var item in donnees)
@@ -186,15 +186,16 @@ namespace LettreCooperation
                         id_modele = modeles[comboBoxModel.SelectedIndex].id_modele,
                         nom_lc = nomFichier,
                         id_etat = modeleManager.GetEtatByLibelle("C"),
-                        id_utilisateur = Page_Principale.Utilisateur.id_utilisateur
-                        
+                        id_utilisateur = Page_Principale.Utilisateur.id_utilisateur,
+                        millesime = dateTimeExercice_debut.Value.ToString("dd_MM_yyyy") +
+                " - " + dateTimeExercice_fin.Value.ToString("dd_MM_yyyy"),
+                        date_lc = DateTime.Now
 
+                        // lc.exercice_debut =  dateTimeExercice_debut.Value;
+                        //  lc.exercice_fin = dateTimeExercice_fin.Value;
                     };
 
-                    lc.millesime = dateTimeExercice_debut.Value.ToString("dd_MM_yyyy") +
-                " - " + dateTimeExercice_fin.Value.ToString("dd_MM_yyyy");
-                    lc.exercice_debut =  dateTimeExercice_debut.Value;
-                    lc.exercice_fin = dateTimeExercice_fin.Value;
+                  
 
 
                     if (File.Exists(pathFolder + @"\" + nomFichier))
@@ -213,6 +214,7 @@ namespace LettreCooperation
 
                     }
 
+                    File.Delete(pathFolder + @"\" + nomFichier);
                     documentModele.SaveAs(pathFolder + @"\" + nomFichier);
 
                     File.Copy(FichierValoHonoraires.Text,

@@ -46,12 +46,21 @@ namespace LettreCooperation
             listClient = model.GetListClient();
             comboClient.Items.Clear();
             comboClient.Text = String.Empty;
+            comboLC.Items.Clear();
+            comboLC.Text = String.Empty;
 
             if (listClient == null)
                 return;
 
             foreach (Client client in listClient)
                 comboClient.Items.Add(client.raison_sociale);
+
+
+            labelNbrAttenteSigne.Text = "( 0 )";
+            labelNbrSigneExp.Text = "( 0 )";
+            labelNbrEnvoieCli.Text = "( 0 )";
+            labelNbrArchive.Text = "( 0 )";
+            labelNbrRefus.Text = "( 0 )";
         }
 
 

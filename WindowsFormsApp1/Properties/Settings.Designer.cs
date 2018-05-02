@@ -299,5 +299,17 @@ namespace LettreCooperation.Properties {
                 this["PathModeles"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("587")]
+        public int PortSMTP {
+            get {
+                return ((int)(this["PortSMTP"]));
+            }
+            set {
+                this["PortSMTP"] = value;
+            }
+        }
     }
 }

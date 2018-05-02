@@ -20,6 +20,7 @@ namespace LettreCooperation
             this.MinimizeBox = false;
 
             textBoxSMTP.Text = Properties.Settings.Default.SMTP;
+            textBoxPort.Text = Properties.Settings.Default.PortSMTP.ToString();
 
             labelMessage.Text = "Vous pouvez changer ici votre SMTP.";
         }
@@ -34,6 +35,7 @@ namespace LettreCooperation
         private void ButtonValider_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.SMTP = textBoxSMTP.Text;
+            Properties.Settings.Default.PortSMTP = Int32.Parse(textBoxPort.Text);
             Properties.Settings.Default.Save();
         }
 
@@ -47,5 +49,7 @@ namespace LettreCooperation
         {
             this.Close();
         }
+
+      
     }
 }

@@ -87,5 +87,8 @@
     <Setting Name="PathModeles" Type="System.String" Scope="User">
       <Value Profile="(Default)">\Interne\5.LC &amp; Prospection\5.Lettres de coopération\Modèles LC\</Value>
     </Setting>
+    <Setting Name="PortSMTP" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

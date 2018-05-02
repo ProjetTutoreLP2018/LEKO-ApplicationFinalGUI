@@ -162,10 +162,10 @@ namespace LettreCooperation
                     CodePostal.Text = entrepriseChoisie.code_postal;
                 }
 
-                if (String.IsNullOrWhiteSpace(DateImmatriculation.Text))
-                {
+               /* if (String.IsNullOrWhiteSpace(DateImmatriculation.Text))
+                { */
                     DateImmatriculation.Text = entrepriseChoisie.date_creation;
-                }
+                /*}*/
 
                 if (String.IsNullOrWhiteSpace(CA.Value.ToString()) || CA.Value.Equals("0"))
                 {
@@ -192,10 +192,10 @@ namespace LettreCooperation
                     VolumesAnnuels.Text = entrepriseChoisie.volume_recette;
                 }
 
-                if (String.IsNullOrWhiteSpace(DateImmatriculation.Text))
-                {
+               /* if (String.IsNullOrWhiteSpace(DateImmatriculation.Text))
+                {*/
                     DateImmatriculation.Text = entrepriseChoisie.date_immatriculation;
-                }
+                /*}*/
 
                 if (String.IsNullOrWhiteSpace(LieuImmatriculation.Text))
                 {

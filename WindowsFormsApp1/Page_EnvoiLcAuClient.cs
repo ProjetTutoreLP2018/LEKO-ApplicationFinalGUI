@@ -157,7 +157,7 @@ namespace LettreCooperation
             // Set email body
 
 
-            SmtpClient oSmtp = new SmtpClient(Properties.Settings.Default.SMTP, 587)
+            SmtpClient oSmtp = new SmtpClient(Properties.Settings.Default.SMTP, Properties.Settings.Default.PortSMTP)
             {
                 Credentials = new NetworkCredential(Page_Principale.Utilisateur.email_utilisateur, password),
                 EnableSsl = true

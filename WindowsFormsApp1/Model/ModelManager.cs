@@ -11,11 +11,11 @@ namespace LettreCooperation.modele
     class ModelManager
     {
 
-        private LCBDEntities2 context;
+        private LCBDEntities3 context;
 
         public ModelManager()
         {
-            context = new LCBDEntities2();
+            context = new LCBDEntities3();
         }
 
 

@@ -31,7 +31,19 @@ namespace LettreCooperation
             this.label2.Enabled = false;
             this.textBoxNomMision.Enabled = false;
             this.comboBox1.Enabled = false;
+
+            Init();
            
+        }
+
+
+        private void Init()
+        {
+            pathSource = string.Empty;
+            pathDestination = Properties.Settings.Default.PathModeles;
+            nomFichier = string.Empty;
+            nomMission = string.Empty;
+            typeLettre = string.Empty;
         }
 
         //Fonction pour ajouter un modèle de LC
@@ -125,6 +137,8 @@ namespace LettreCooperation
 
             /* Accès BDD pour sauvegarder les élements */
             modeleManager.AjouterModel(this.pathDestination, this.nomFichier, this.nomMission, this.typeLettre);
+
+            Init();
 
             Cursor.Current = Cursors.Default;
         }

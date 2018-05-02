@@ -210,14 +210,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ADOModele.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOModele.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ADOModele.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ADOModele.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADOModele.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Adresse.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\answer_json.cs" />
+    <Compile Include="Model\Client.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Droit.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Etat.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Formulaire1.cs" />
     <Compile Include="Model\Formulaire2.cs" />
     <Compile Include="Model\FormulaireAbstract.cs" />
     <Compile Include="Model\form_json.cs" />
     <Compile Include="Model\Identifiants.cs" />
     <Compile Include="Model\InfoEntreprise.cs" />
+    <Compile Include="Model\LC.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Modele.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\typeFormApi.cs" />
+    <Compile Include="Model\Utilisateur.cs">
+      <DependentUpon>ADOModele.tt</DependentUpon>
+    </Compile>
     <Compile Include="PopUp_ChoixClientTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,50 +326,14 @@
     <Compile Include="PopUp_AjoutNouveauModele.designer.cs">
       <DependentUpon>PopUp_AjoutNouveauModele.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ADOModele.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADOModele.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ADOModele.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ADOModele.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADOModele.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Adresse.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Client.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Droit.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Etat.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Facet.cs" />
     <Compile Include="Model\FacetGroup.cs" />
     <Compile Include="Model\Fields.cs" />
     <Compile Include="Model\Geometry.cs" />
-    <Compile Include="Model\LC.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\ModelManager.cs" />
-    <Compile Include="Model\Modele.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Parameters.cs" />
     <Compile Include="Model\Record.cs" />
     <Compile Include="Model\SIRENE.cs" />
-    <Compile Include="Model\Utilisateur.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
-    </Compile>
     <Compile Include="Page_ModificationClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
