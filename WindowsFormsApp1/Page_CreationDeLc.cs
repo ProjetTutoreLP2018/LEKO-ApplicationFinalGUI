@@ -88,7 +88,7 @@ namespace LettreCooperation
             Dictionary<string, string> donnees = new Dictionary<string, string>()
             {
                 { "RaisonSociale", client.raison_sociale??" " },
-                { "FormeJuridique", client.forme_juridique??" " },
+                { "FormeJuridique", "( " + client.forme_juridique + " )"??"( )" },
                 {
                     "Adresse",
                     String.Format("{0} {1}", client.Adresse.numero??" ",
