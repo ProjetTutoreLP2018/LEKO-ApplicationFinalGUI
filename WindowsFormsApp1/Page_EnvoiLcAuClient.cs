@@ -169,7 +169,8 @@ namespace LettreCooperation
                 {"Annee", lc.date_lc.Year.ToString()},
                 {"RaisonSociale", client.raison_sociale},
                 {"Millesime", DateTime.Today.Year.ToString()},
-                {"Prenom", client.prenom_referent}
+                {"Prenom", client.prenom_referent},
+                { "Millésime", lc.millesime }
             };
 
             string text = File.ReadAllText(Program.FINACOOPFolder + Properties.Settings.Default.PathModeles + "Mail_Template.txt", Encoding.UTF8);

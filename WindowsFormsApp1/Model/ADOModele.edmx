@@ -74,6 +74,7 @@
           <Property Name="id_etat" Type="int" />
           <Property Name="id_utilisateur" Type="int" />
           <Property Name="id_signataire" Type="int" />
+          <Property Name="millesime" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -308,6 +309,7 @@
           <NavigationProperty Name="Utilisateur" Relationship="Self.FK_LC_UTILISATEUR" FromRole="LC" ToRole="Utilisateur" />
           <Property Name="id_signataire" Type="Int32" />
           <NavigationProperty Name="Utilisateur1" Relationship="LCBDModel.FK_SignerLC" FromRole="LC" ToRole="Utilisateur" />
+          <Property Name="millesime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Modele">
           <Key>
@@ -530,6 +532,7 @@
           <EntitySetMapping Name="LC">
             <EntityTypeMapping TypeName="LCBDModel.LC">
               <MappingFragment StoreEntitySet="LC">
+                <ScalarProperty Name="millesime" ColumnName="millesime" />
                 <ScalarProperty Name="id_signataire" ColumnName="id_signataire" />
                 <ScalarProperty Name="id_lc" ColumnName="id_lc" />
                 <ScalarProperty Name="chemin_lc" ColumnName="chemin_lc" />

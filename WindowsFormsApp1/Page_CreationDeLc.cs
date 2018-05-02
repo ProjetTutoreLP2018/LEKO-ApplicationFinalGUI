@@ -87,33 +87,34 @@ namespace LettreCooperation
 
             Dictionary<string, string> donnees = new Dictionary<string, string>()
             {
-                { "RaisonSociale", client.raison_sociale },
-                { "FormeJuridique", client.forme_juridique },
+                { "RaisonSociale", client.raison_sociale??" " },
+                { "FormeJuridique", client.forme_juridique??" " },
                 {
                     "Adresse",
-                    String.Format("{0} {1}", client.Adresse.numero,
-                                                        client.Adresse.voie)
+                    String.Format("{0} {1}", client.Adresse.numero??" ",
+                                                        client.Adresse.voie??" ")
                 },
-                { "CP", client.Adresse.code_postal },
-                { "Ville", client.Adresse.ville },
-                { "Activite", client.activite },
-                { "ExerciceSocial", ((DateTime) client.exercice_debut).ToString("yyyy_MM_dd") +
-                "  -  " + ((DateTime) client.exercice_fin).ToString("yyyy_MM_dd") },
-				{ "DateCourante", DateTime.Today.ToShortDateString() },
-				{ "Millesime", DateTime.Today.Year.ToString() },
-				{ "Prenom", client.prenom_referent },
-				{ "Nom", client.nom_referent },
-				{ "Fonction", client.fonction_referent },
+                { "CP", client.Adresse.code_postal??" " },
+                { "Ville", client.Adresse.ville??" " },
+                { "Activite", client.activite??" " },
+                { "ExerciceSocial", ((DateTime) client.exercice_debut).ToString("yyyy_MM_dd")??" " +
+                "  -  " + ((DateTime) client.exercice_fin).ToString("yyyy_MM_dd")??" " },
+				{ "DateCourante", DateTime.Today.ToShortDateString()??" " },
+				//{ "Millesime", DateTime.Today.Year.ToString()??" " },
+				{ "Prenom", client.prenom_referent??" " },
+				{ "Nom", client.nom_referent??" " },
+				{ "Fonction", client.fonction_referent??" " },
 				{ "Civilite",
-					(client.sexe_referent == "M" ? "Monsieur" : "Madame")
+					(client.sexe_referent == "M" ? "Monsieur" : "Madame")??" "
 				},
-				{ "CherGenre", (client.sexe_referent == "M" ? "Cher" : "Chère") },
-				{ "CA", client.CA.ToString() },
-				{ "Effectif", client.effectifs.ToString() },
-				{ "OrganisationComptable", client.organisation_comptable },
-				{ "VolumesAnnuels", client.volume_annuel.ToString() },
-				{ "DateImmatriculation", client.date_immatriculation.ToString() },
-				{ "LieuImmatriculation", client.lieu_immatriculation },
+				{ "CherGenre", (client.sexe_referent == "M" ? "Cher" : "Chère")??" " },
+				{ "CA", client.CA.ToString()??" " },
+				{ "Effectif", client.effectifs.ToString()??" " },
+				{ "OrganisationComptable", client.organisation_comptable??" " },
+				{ "VolumesAnnuels", client.volume_annuel.ToString()??" " },
+				{ "DateImmatriculation", client.date_immatriculation.ToString()??" " },
+				{ "LieuImmatriculation", client.lieu_immatriculation??" " },
+                { "Millesime", textBoxMillésime.Text??" " }
 			};
 
 
@@ -182,7 +183,10 @@ namespace LettreCooperation
                         nom_lc = nomFichier,
                         id_etat = 1,
                         id_utilisateur = Page_Principale.Utilisateur.id_utilisateur
+
                     };
+
+                    lc.millesime = textBoxMillésime.Text;
 
 
                     if (File.Exists(pathFolder + @"\" + nomFichier))
