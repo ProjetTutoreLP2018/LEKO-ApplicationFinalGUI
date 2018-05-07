@@ -26,7 +26,7 @@ namespace LettreCooperation
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ButtonConnexion_Click(object sender, EventArgs e)
-        {
+        { 
             Cursor.Current = Cursors.WaitCursor;
    
             if (this.textBoxUtilisateur.Text != "" && this.textBoxPass.Text != "")
