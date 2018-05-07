@@ -429,7 +429,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LCBDEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LCBDEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Adresse" EntityType="Self.Adresse" />
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Droit" EntityType="Self.Droit" />
@@ -471,7 +471,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LCBDModelStoreContainer" CdmEntityContainer="LCBDEntities3">
+        <EntityContainerMapping StorageEntityContainer="LCBDModelStoreContainer" CdmEntityContainer="LCBDEntities4">
           <EntitySetMapping Name="Adresse">
             <EntityTypeMapping TypeName="LCBDModel.Adresse">
               <MappingFragment StoreEntitySet="Adresse">

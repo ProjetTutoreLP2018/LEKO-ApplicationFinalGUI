@@ -13,10 +13,10 @@ namespace LettreCooperation.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LCBDEntities3 : DbContext
+    public partial class LCBDEntities4 : DbContext
     {
-        public LCBDEntities3()
-            : base("name=LCBDEntities3")
+        public LCBDEntities4()
+            : base("name=LCBDEntities4")
         {
         }
     

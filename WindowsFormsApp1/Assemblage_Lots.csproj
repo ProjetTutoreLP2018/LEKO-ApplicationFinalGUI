@@ -210,33 +210,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ADOModele.Context.cs">
+    <Compile Include="Model\ADOModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ADOModele.Context.tt</DependentUpon>
+      <DependentUpon>ADOModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ADOModele.cs">
+    <Compile Include="Model\ADOModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\ADOModele.Designer.cs">
+    <Compile Include="Model\ADOModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ADOModele.edmx</DependentUpon>
+      <DependentUpon>ADOModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Adresse.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\answer_json.cs" />
     <Compile Include="Model\Client.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Droit.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Etat.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Formulaire1.cs" />
     <Compile Include="Model\Formulaire2.cs" />
@@ -245,14 +245,14 @@
     <Compile Include="Model\Identifiants.cs" />
     <Compile Include="Model\InfoEntreprise.cs" />
     <Compile Include="Model\LC.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Modele.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\typeFormApi.cs" />
     <Compile Include="Model\Utilisateur.cs">
-      <DependentUpon>ADOModele.tt</DependentUpon>
+      <DependentUpon>ADOModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PopUp_ChoixClientTypeForm.cs">
       <SubType>Form</SubType>
@@ -486,12 +486,12 @@
     <EmbeddedResource Include="PopUp_Patienter.resx">
       <DependentUpon>PopUp_Patienter.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\ADOModele.edmx">
+    <EntityDeploy Include="Model\ADOModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ADOModele.Designer.cs</LastGenOutput>
+      <LastGenOutput>ADOModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\ADOModele.edmx.diagram">
-      <DependentUpon>ADOModele.edmx</DependentUpon>
+    <None Include="Model\ADOModel.edmx.diagram">
+      <DependentUpon>ADOModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -517,15 +517,15 @@
     <Content Include="Images\wait.png" />
     <Content Include="Leko.ico" />
     <Content Include="logo.ico" />
-    <Content Include="Model\ADOModele.Context.tt">
+    <Content Include="Model\ADOModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ADOModele.edmx</DependentUpon>
-      <LastGenOutput>ADOModele.Context.cs</LastGenOutput>
+      <DependentUpon>ADOModel.edmx</DependentUpon>
+      <LastGenOutput>ADOModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\ADOModele.tt">
+    <Content Include="Model\ADOModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ADOModele.edmx</DependentUpon>
-      <LastGenOutput>ADOModele.cs</LastGenOutput>
+      <DependentUpon>ADOModel.edmx</DependentUpon>
+      <LastGenOutput>ADOModel.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\Close_16x.png" />
     <Content Include="Resources\Copy_16x.png" />

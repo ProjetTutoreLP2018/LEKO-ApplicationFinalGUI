@@ -15,17 +15,17 @@ namespace LettreCooperation.Model
     public partial class LC
     {
         public int id_lc { get; set; }
-        public string chemin_lc { get; set; } //
-        public System.DateTime date_lc { get; set; } //
-        public Nullable<System.DateTime> date_debut { get; set; } //
+        public string chemin_lc { get; set; }
+        public System.DateTime date_lc { get; set; }
+        public Nullable<System.DateTime> date_debut { get; set; }
         public Nullable<System.DateTime> date_fin { get; set; }
-        public int id_client { get; set; } //
-        public int id_modele { get; set; } //
-        public string nom_lc { get; set; } //
-        public Nullable<int> id_etat { get; set; } //
-        public Nullable<int> id_utilisateur { get; set; } //
+        public int id_client { get; set; }
+        public int id_modele { get; set; }
+        public string nom_lc { get; set; }
+        public Nullable<int> id_etat { get; set; }
+        public Nullable<int> id_utilisateur { get; set; }
         public Nullable<int> id_signataire { get; set; }
-        public string millesime { get; set; } //
+        public string millesime { get; set; }
         public Nullable<System.DateTime> exercice_debut { get; set; }
         public Nullable<System.DateTime> exercice_fin { get; set; }
     

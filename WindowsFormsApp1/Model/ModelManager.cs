@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,11 +10,11 @@ namespace LettreCooperation.modele
     class ModelManager
     {
 
-        private LCBDEntities3 context;
+        private LCBDEntities4 context;
 
         public ModelManager()
         {
-            context = new LCBDEntities3();
+            context = new LCBDEntities4();
         }
 
 
