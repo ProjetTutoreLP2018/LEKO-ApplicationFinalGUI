@@ -267,9 +267,9 @@ namespace LettreCooperation
 
                 Client client = new Client
                 {
-                    CA = (double)CA.Value,
+                    CA = Convert.ToDouble(CA.Value),
                     date_immatriculation = DateImmatriculation.Value,
-                    effectifs = (int)Effectif.Value,
+                    effectifs = Convert.ToInt32(Effectif.Value),
                     ESS = ESSOui.Checked,
                     fonction_referent = FonctionRepresentant.Text,
                     forme_juridique = FormeJuridique.Text,
@@ -302,8 +302,11 @@ namespace LettreCooperation
                 else
                     client.tel_portable = TelephonePortableRepresentant.Text;
 
+                if (String.IsNullOrEmpty(VolumesAnnuels.Value.ToString()))
+                    client.volume_annuel = 0;
+                else
+                    client.volume_annuel = Double.Parse(VolumesAnnuels.Text);
 
-				client.volume_annuel = Double.Parse(VolumesAnnuels.Text);
 				client.id_adresse = adresse.id_adresse;
                 client.mail_referent = CourrielRepresentant.Text;
 
@@ -333,12 +336,13 @@ namespace LettreCooperation
 
 
             NumeroVoie.Text = string.Empty;
-
+            textBoxActivite.Text = string.Empty;
             IndiceRepetition.Items.Clear();
             Adresse.Text = string.Empty;
             Complement.Text = string.Empty;
             CodePostal.Text = string.Empty;
             Ville.Text = string.Empty;
+            
             
             CA.Value = 0;
             DateImmatriculation.Value = DateTime.Now;

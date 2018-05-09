@@ -10,11 +10,11 @@ namespace LettreCooperation.modele
     class ModelManager
     {
 
-        private LCBDEntities4 context;
+        private LCBDEntities context;
 
         public ModelManager()
         {
-            context = new LCBDEntities4();
+            context = new LCBDEntities();
         }
 
 
@@ -24,7 +24,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Droit> GetListDroit()
         {
-            try { 
+            try
+            {
                 return context.Droit.ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -43,7 +44,8 @@ namespace LettreCooperation.modele
         /// <param name="utilisateur"></param>
         public void CreerUtilisateur(Utilisateur utilisateur)
         {
-            try { 
+            try
+            {
                 context.Utilisateur.Add(utilisateur);
                 context.SaveChanges();
             }
@@ -68,7 +70,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Utilisateur> GetListUtilisateurs()
         {
-            try { 
+            try
+            {
                 return context.Utilisateur.ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -86,7 +89,8 @@ namespace LettreCooperation.modele
         /// </summary>
         public void SaveBDD()
         {
-            try { 
+            try
+            {
                 context.SaveChanges();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -110,7 +114,8 @@ namespace LettreCooperation.modele
         /// <param name="utilisateur"></param>
         public void SupprimerUtilisateur(Utilisateur utilisateur)
         {
-            try { 
+            try
+            {
                 context.Utilisateur.Remove(utilisateur);
                 context.SaveChanges();
             }
@@ -130,7 +135,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GetListLc()
         {
-            try { 
+            try
+            {
                 return context.LC.ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -150,7 +156,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GetListLcASigner()
         {
-            try { 
+            try
+            {
                 return (from lc in context.LC
                         join etat in context.Etat
                         on lc.id_etat equals etat.id_etat
@@ -175,10 +182,11 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public LC GetListLCByName(string nom)
         {
-            try { 
+            try
+            {
                 List<LC> lcs = (from lc in context.LC
-                        where lc.nom_lc == nom
-                        select lc).ToList();
+                                where lc.nom_lc == nom
+                                select lc).ToList();
 
                 if (lcs == null)
                     return null;
@@ -201,7 +209,8 @@ namespace LettreCooperation.modele
         /// <param name="lc"></param>
         public void DeleteLC(LC lc)
         {
-            try { 
+            try
+            {
                 LC lcASupp = context.LC.Find(lc.id_lc);
                 context.LC.Remove(lcASupp);
                 context.SaveChanges();
@@ -222,7 +231,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Client> GetListClient()
         {
-            try { 
+            try
+            {
                 return context.Client.ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -243,7 +253,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<LC> GestLcFromClient(int indexClient)
         {
-            try { 
+            try
+            {
                 return context.LC.Where(a => a.id_client == indexClient).ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -276,18 +287,18 @@ namespace LettreCooperation.modele
                     return null;
 
             }
-            catch(System.Data.Entity.Core.EntityException)
+            catch (System.Data.Entity.Core.EntityException)
             {
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
                 return null;
             }
-           
+
 
             Utilisateur utilisateur = new Utilisateur();
 
-            foreach(var result in users)
+            foreach (var result in users)
             {
                 utilisateur.id_utilisateur = result.id_utilisateur;
                 utilisateur.nom_utilisateur = result.nom_utilisateur;
@@ -312,7 +323,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Etat GetEtat(int? index)
         {
-            try { 
+            try
+            {
                 return context.Etat.Find(index);
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -332,7 +344,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Utilisateur GetUser(int? index)
         {
-            try { 
+            try
+            {
                 return context.Utilisateur.Find(index);
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -351,7 +364,8 @@ namespace LettreCooperation.modele
         /// <param name="client"></param>
         public void CreerClient(Client client)
         {
-            try { 
+            try
+            {
                 context.Client.Add(client);
                 context.SaveChanges();
             }
@@ -371,7 +385,8 @@ namespace LettreCooperation.modele
         /// <param name="adresse"></param>
         public void CreerAdresse(Adresse adresse)
         {
-            try { 
+            try
+            {
                 context.Adresse.Add(adresse);
                 context.SaveChanges();
             }
@@ -393,12 +408,13 @@ namespace LettreCooperation.modele
         public List<LC> GetListLCWaitingSend()
         {
 
-            try { 
+            try
+            {
                 return (from lc in context.LC
-                       join etat in context.Etat
-                       on lc.id_etat equals etat.id_etat
-                       where etat.libelle_etat == "SE" 
-                       select lc).ToList();
+                        join etat in context.Etat
+                        on lc.id_etat equals etat.id_etat
+                        where etat.libelle_etat == "SE"
+                        select lc).ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
             {
@@ -409,7 +425,7 @@ namespace LettreCooperation.modele
             }
         }
 
-        
+
         /// <summary>
         /// Méthode qui permet de trouver un client avec son id
         /// </summary>
@@ -417,7 +433,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Client FindClient(int id)
         {
-            try { 
+            try
+            {
                 return context.Client.Find(id);
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -439,7 +456,8 @@ namespace LettreCooperation.modele
         public Utilisateur FindUtilisateur(int? id)
         {
 
-            try { 
+            try
+            {
                 Utilisateur u = context.Utilisateur.Find(id);
 
                 if (u == null)
@@ -464,7 +482,8 @@ namespace LettreCooperation.modele
         /// <param name="etat"></param>
         public void UpdateEtatLc(LC lc, int etat)
         {
-            try { 
+            try
+            {
                 lc.id_etat = etat;
                 context.SaveChanges();
             }
@@ -486,7 +505,8 @@ namespace LettreCooperation.modele
         /// <param name="path"></param>
         public void UpdatePathLc(LC lc, string path)
         {
-            try { 
+            try
+            {
                 lc.chemin_lc = path;
                 context.SaveChanges();
             }
@@ -499,7 +519,7 @@ namespace LettreCooperation.modele
             }
         }
 
- 
+
         /// <summary>
         /// Méthode de suppression d'un clinet
         /// </summary>
@@ -518,7 +538,8 @@ namespace LettreCooperation.modele
 
             if (PossedeLC == false)
             {
-                try { 
+                try
+                {
                     context.Client.Remove(client);
                     context.SaveChanges();
                     return true;
@@ -547,7 +568,8 @@ namespace LettreCooperation.modele
         public Client GetClients(string raisonSociale)
         {
 
-            try { 
+            try
+            {
                 IEnumerable<Client> client_sql = from c
                                     in context.Client
                                                  where c.raison_sociale == raisonSociale
@@ -572,7 +594,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Modele> GetModeles()
         {
-            try {
+            try
+            {
                 return context.Modele.ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -592,7 +615,8 @@ namespace LettreCooperation.modele
         /// <param name="lc"></param>
         public void SaveLC(LC lc)
         {
-            try { 
+            try
+            {
                 context.LC.Add(lc);
                 context.SaveChanges();
             }
@@ -614,7 +638,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Etat GetEtatById(int? i)
         {
-            try { 
+            try
+            {
                 return context.Etat.Find(i);
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -622,11 +647,11 @@ namespace LettreCooperation.modele
                 MessageBox.Show("Vous n'êtes pas connecter à la base de données. Merci" +
                     "de vérifier votre connexion internet ou vérifier que le port 1433 de votre Box soit bien ouvert.");
 
-                return null; 
-            } 
+                return null;
+            }
         }
 
-         
+
         /// <summary>
         /// Méthode qui eprmet de changer l'état d'une LC
         /// en 'LC_Signer'
@@ -634,9 +659,10 @@ namespace LettreCooperation.modele
         /// <param name="i"></param>
         public void ChangerEtatLC_Signer(int i)
         {
-            try { 
+            try
+            {
                 LC lc = context.LC.Find(i);
-                lc.id_etat = GetEtatByLibelle("SE"); 
+                lc.id_etat = GetEtatByLibelle("SE");
                 context.SaveChanges();
             }
             catch (System.Data.Entity.Core.EntityException)
@@ -664,11 +690,12 @@ namespace LettreCooperation.modele
         /// <param name="utilisateur"></param>
         public void AjoutSignataire(LC lc, Utilisateur utilisateur)
         {
-            try { 
+            try
+            {
                 LC lcFromDB = context.LC.Find(lc.id_lc);
 
                 //MessageBox.Show("Utilisateur signataire id : " + utilisateur.id_utilisateur
-                  //  + " Nom :" + utilisateur.nom_utilisateur);
+                //  + " Nom :" + utilisateur.nom_utilisateur);
 
                 lcFromDB.id_signataire = utilisateur.id_utilisateur;
                 context.SaveChanges();
@@ -691,7 +718,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            try { 
+            try
+            {
                 MemoryStream ms = new MemoryStream(byteArrayIn);
                 Image returnImage = Image.FromStream(ms);
                 return returnImage;
@@ -740,9 +768,10 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public List<Etat> GetLesEtatsLC()
         {
-            try { 
+            try
+            {
                 return (from Etat in context.Etat
-                       select Etat).ToList();
+                        select Etat).ToList();
             }
             catch (System.Data.Entity.Core.EntityException)
             {
@@ -760,10 +789,11 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public int GetIdEtatArchiver()
         {
-            try { 
-                var idEtatArchiver =  from etat in context.Etat
-                        where etat.libelle_etat == "A"
-                        select etat.id_etat;
+            try
+            {
+                var idEtatArchiver = from etat in context.Etat
+                                     where etat.libelle_etat == "A"
+                                     select etat.id_etat;
 
                 return idEtatArchiver.First();
             }
@@ -785,7 +815,8 @@ namespace LettreCooperation.modele
         /// <returns></returns>
         public int GetIdEtatRefuser()
         {
-            try { 
+            try
+            {
                 var idEtatArchiver = from etat in context.Etat
                                      where etat.libelle_etat == "R"
                                      select etat.id_etat;
@@ -804,7 +835,8 @@ namespace LettreCooperation.modele
 
         public List<Client> GetListClientRetour()
         {
-            try { 
+            try
+            {
                 return (from client in context.Client
                         join lc in context.LC
                         on client.id_client equals lc.id_client
@@ -826,11 +858,12 @@ namespace LettreCooperation.modele
 
         public List<Client> GetListClientArchive()
         {
-            try { 
+            try
+            {
                 return (from client in context.Client
                         join lc in context.LC
                         on client.id_client equals lc.id_client
-                        where lc.id_etat == GetEtatByLibelle("A") 
+                        where lc.id_etat == GetEtatByLibelle("A")
                         select client).Distinct().ToList();
 
             }
@@ -851,7 +884,8 @@ namespace LettreCooperation.modele
 
         public List<LC> GetListLCFromClienteRetour(int id)
         {
-            try { 
+            try
+            {
                 return (from client in context.Client
                         join lc in context.LC
                         on client.id_client equals lc.id_client
@@ -873,7 +907,8 @@ namespace LettreCooperation.modele
 
         public List<LC> GetListLCFromClienteArchive(int id)
         {
-            try { 
+            try
+            {
                 return (from lc in context.LC
                         where lc.id_client == id
                         && lc.id_etat == 10
